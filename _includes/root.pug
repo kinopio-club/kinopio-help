@@ -1,5 +1,5 @@
 ---
-baseTitle: Hello Kinopio –
+baseTitle: Kinopio –
 title: Hello
 ---
 html(lang="en")
@@ -8,10 +8,17 @@ html(lang="en")
     title !{baseTitle} !{title}
   body
     header
-      p [img] kinopio
+      p
+        a(href="/") [img] kinopio
       nav
         ul
-          li Privacy
-          li API
+          li
+            a(href="/api") API Docs
+          li
+            a(href="/help") Help
+          li
+            a(href="/privacy") Privacy
+          li
+            a(href="/terms-of-service") Terms of Service
     main !{content}
   footer
