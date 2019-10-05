@@ -1,6 +1,7 @@
 ---
 layout: default.pug
 title: hello
+tags: ['page']
 ---
 sup yo
 

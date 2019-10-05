@@ -2,6 +2,7 @@
 layout: default.pug
 baseTitle: Kinopio Help -
 title: Hello
+tags: ['page']
 ---
 
 # Help
