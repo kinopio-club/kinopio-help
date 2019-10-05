@@ -4,6 +4,6 @@ baseTitle: Kinopio API -
 title: Spaces
 ---
 
-## Spaces
+## {{title}}
 
 hiii

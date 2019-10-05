@@ -4,6 +4,6 @@ baseTitle: Kinopio API -
 title: Users
 ---
 
-## Users
+## {{title}}
 
 userrr

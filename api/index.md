@@ -4,4 +4,12 @@ baseTitle: Kinopio API -
 title: Hello
 ---
 
-yolo test welcome to api
+## {{title}}
+
+The [Kinopio](https://kinopio.club) API is used to find, save, and update the data of users who've signed up for accounts. You can use it to build wonders I've never even dreamed of.
+
+      ___     ___      ___
+     {o,o}   {o.o}    {o,o}
+     |)__)   |)_(|    (__(|
+    --"-"-----"-"------"-"--
+    O RLY?  YA RLY   NO WAI!

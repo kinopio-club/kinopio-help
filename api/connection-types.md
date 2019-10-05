@@ -4,6 +4,7 @@ baseTitle: Kinopio API -
 title: Connection Types
 ---
 
-## Connection Types
+## {{title}}
 
-hiii
+connection types are
+[img]

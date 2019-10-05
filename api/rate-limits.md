@@ -1,9 +1,9 @@
 ---
 layout: api.pug
 baseTitle: Kinopio API -
-title: Connections
+title: Rate Limits
 ---
 
 ## {{title}}
 
-about connections
+hiii

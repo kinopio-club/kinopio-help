@@ -4,6 +4,6 @@ baseTitle: Kinopio API -
 title: Cards
 ---
 
-## Cards
+## {{title}}
 
 hiii

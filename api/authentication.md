@@ -1,9 +1,9 @@
 ---
 layout: api.pug
 baseTitle: Kinopio API -
-title: Hello
+title: Authentication
 ---
 
-## Authentication
+## {{title}}
 
 hiii
