@@ -7,3 +7,5 @@ title: Hello
 # Help
 
 yolo test welcome to help
+
+use tags to organize subpages

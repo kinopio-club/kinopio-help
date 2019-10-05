@@ -1,9 +1,6 @@
 # kinopio-meta
 
-A small, simple static website for pages like:
-- Privacy Policy
-- Terms of Service
-- API Docs
+A simple static website for Kinopio meta pages.
 
 still a wip, using
 https://www.11ty.io/docs/usage/
@@ -19,3 +16,7 @@ npm install
 
 npm run serve
 http://localhost:8081
+
+
+# TODO
+- set up stylus, bundle the watcher into npm run serve (or a seperate `npm run stylus`)
