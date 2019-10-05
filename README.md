@@ -17,5 +17,5 @@ npm install
 
 ## Run
 
-npx @11ty/eleventy --serve --port=8081
+npm run serve
 http://localhost:8081
