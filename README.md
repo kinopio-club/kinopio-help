@@ -1,22 +1,20 @@
-# kinopio-meta
+# Kinopio Help
 
-A simple static website for Kinopio meta pages.
+help.kinopio.club
 
-still a wip, using
-https://www.11ty.io/docs/usage/
-to be served from meta.kinopio.club
+An [11ty](https://www.11ty.io/docs/usage/) website for Kinopio help and info pages, such as
 
-## Install
+- support articles
+- api docs
+- privacy policy
+- terms of service
 
-git clone https://github.com/kinopio-club/kinopio-meta.git
-cd kinopio-meta
-npm install
+## Setup
+
+	$ npm install
 
 ## Run
 
-npm run serve
+	$ npm run start
+
 http://localhost:8081
-
-
-# TODO
-- set up stylus, bundle the watcher into npm run serve (or a seperate `npm run stylus`)
