@@ -5,12 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx @11ty/eleventy --serve --port=8081"
+    "start": "npx @11ty/eleventy --serve --port=8081",
+    "styles": "nodemon --exec 'stylus ./styles/styles.styl -o ./styles/styles.css'"
   },
   "keywords": [],
   "author": "pirijan",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "styles/"
+    ],
+    "ext": "styl"
   }
 }
