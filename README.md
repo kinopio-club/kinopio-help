@@ -14,8 +14,6 @@ An [11ty](https://www.11ty.io/docs/usage/) website for Kinopio help and info pag
 ## Setup
 
 	$ npm install
-	$ npm install stylus --global
-	$ npm install nodemon --global
 
 ## Run
 
