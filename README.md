@@ -19,7 +19,7 @@ An [11ty](https://www.11ty.io/docs/usage/) website for Kinopio help and info pag
 
 ## Run
 
-	$ npm run start
+	$ npm run serve
 	$ npm run styles
 
 http://localhost:8081
