@@ -4,9 +4,11 @@ baseTitle: Kinopio Help
 title:
 tags: ['page']
 ---
-# Kinopio Help and Support
+# Hello
 
-ALL Knitwear is a slow-growing collection of heirloom sweaters
+Kinopio is the thinking, diagramming, and planning tool for your hardest problems.
+
+It works how our brains work.
 
 I made Kinopio to help you connect your thoughts, ideas, and plans together. If you have questions, comments, or requests please don't hesitate to reach out to me at [hi@kinopio.club](mailto:hi@kinopio.club)
 
