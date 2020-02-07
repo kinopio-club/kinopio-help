@@ -1,6 +1,6 @@
 ---
-layout: default.pug
-title: Terms of Service
+layout: policies.pug
+title: – Terms of Service
 tags: ['page']
 ---
 

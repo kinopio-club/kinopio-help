@@ -5,6 +5,6 @@ title: Connections
 tags: ['page']
 ---
 
-## {{title}}
+# {{title}}
 
 about connections

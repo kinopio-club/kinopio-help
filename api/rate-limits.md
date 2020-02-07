@@ -5,6 +5,6 @@ title: Rate Limits
 tags: ['page']
 ---
 
-## {{title}}
+# {{title}}
 
 hiii

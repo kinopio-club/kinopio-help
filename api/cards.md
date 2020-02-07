@@ -5,6 +5,6 @@ title: Cards
 tags: ['page']
 ---
 
-## {{title}}
+# {{title}}
 
 hiii

@@ -5,6 +5,6 @@ title: Authentication
 tags: ['page']
 ---
 
-## {{title}}
+# {{title}}
 
 hiii

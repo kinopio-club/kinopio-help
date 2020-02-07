@@ -5,6 +5,6 @@ title: Spaces
 tags: ['page']
 ---
 
-## {{title}}
+# {{title}}
 
 hiii

@@ -1,6 +1,6 @@
 ---
-baseTitle: Kinopio Help –
-title: Hello
+baseTitle: Kinopio Help
+title: – Hello
 ---
 html(lang="en")
   head
@@ -9,17 +9,19 @@ html(lang="en")
     link(rel="stylesheet" href="/styles/styles.css")
   body
     header
-      p
-        a(href="/") [img] kinopio
-      nav
-        ul
-          li
-            a(href="/api") API Docs
-          li
-            a(href="/help") Help
-          li
-            a(href="/privacy") Privacy
-          li
-            a(href="/terms-of-service") Terms of Service
+      a(href="/") 
+        img.froggo(src="/assets/froggo.png")
+      a(href="/") 
+          span Kinopio Help
+    nav
+      ul
+        li
+          a(href="/api") API Docs
+        li
+          a(href="/support") Support
+        li
+          a(href="/press") Press Kit
+        li
+          a(href="/policies") Policies
     main !{content}
   footer

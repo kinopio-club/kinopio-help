@@ -1,6 +1,6 @@
 ---
-layout: default.pug
-title: Privacy
+layout: policies.pug
+title: Privacy Policy
 tags: ['page']
 ---
 

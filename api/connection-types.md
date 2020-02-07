@@ -5,7 +5,7 @@ title: Connection Types
 tags: ['page']
 ---
 
-## {{title}}
+# {{title}}
 
 connection types are
 [img]
