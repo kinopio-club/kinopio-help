@@ -1,12 +1,12 @@
 :root
   // theme vars
-  // --primary black
-  // --primary-background white
+  --primary black
+  --primary-background white
 
   // // --secondary #818181
-  // --secondary-background #e3e3e3
-  // --secondary-hover-background #d8d8d8
-  // --secondary-active-background #cdcdcd
+  --secondary-background #e3e3e3
+  --secondary-hover-background #d8d8d8
+  --secondary-active-background #cdcdcd
 
   // --light-shadow rgba(0,0,0,0.20)
   // --heavy-shadow rgba(0,0,0,0.25)
@@ -26,19 +26,57 @@
   // --button-hover-shadow 2px 2px 0 var(--heavy-shadow)
   // --button-active-inset-shadow inset 0 1px 2px var(--heavy-shadow)    
 
-// body
-//   background #e3e3e3
+body
+  background #d5bff7
+  font-family Helvetica, Arial, sansserif
 
 header
   display flex
   align-items center
+  justify-content space-between
   .froggo
-    width 65px
-    padding-right 6px
+    width 100px
+    // padding-right 6px
 nav
+  // font-family monospace
+  // font-size 14px
   ul
     list-style none
     padding 0
+    width 100px
+  li
+    border 2px solid black
+    border-bottom none
+    padding 6px
+    // background #e8ab94
+    background var(--primary-background)
+    &:hover
+      // background #dd704b
+      background var(--secondary-hover-background)
+    &:active
+      // background #e86a50
+      background var(--secondary-active-background)
+  a
+    &:first-child
+      li
+        border-top-left-radius 5px
+        border-top-right-radius 5px
+    &:last-child
+      li
+        border-bottom 2px solid black
+        border-bottom-left-radius 5px
+        border-bottom-right-radius 5px
+  a
+    color black
+    text-decoration none
 
-// a
+p
+  max-width 550px
+a
+  text-decoration none
 //   color blue
+
+// .cat
+//   width 300px
+.email
+  width 100px

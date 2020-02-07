@@ -10,4 +10,4 @@ tags: ['page']
 
 http://ashorthike.com/press/
 
-blah blah
+ALL Knitwear is a slow-growing collection of heirloom sweaters

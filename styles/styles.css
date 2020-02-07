@@ -1,12 +1,58 @@
+:root {
+  --primary: #000;
+  --primary-background: #fff;
+  --secondary-background: #e3e3e3;
+  --secondary-hover-background: #d8d8d8;
+  --secondary-active-background: #cdcdcd;
+}
+body {
+  background: #d5bff7;
+  font-family: Helvetica, Arial, sansserif;
+}
 header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 header .froggo {
-  width: 65px;
-  padding-right: 6px;
+  width: 100px;
 }
 nav ul {
   list-style: none;
   padding: 0;
+  width: 100px;
+}
+nav li {
+  border: 2px solid #000;
+  border-bottom: none;
+  padding: 6px;
+  background: var(--primary-background);
+}
+nav li:hover {
+  background: var(--secondary-hover-background);
+}
+nav li:active {
+  background: var(--secondary-active-background);
+}
+nav a:first-child li {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+nav a:last-child li {
+  border-bottom: 2px solid #000;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+nav a {
+  color: #000;
+  text-decoration: none;
+}
+p {
+  max-width: 550px;
+}
+a {
+  text-decoration: none;
+}
+.email {
+  width: 100px;
 }
