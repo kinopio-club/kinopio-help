@@ -27,8 +27,10 @@
   // --button-active-inset-shadow inset 0 1px 2px var(--heavy-shadow)    
 
 body
-  background #d5bff7
-  font-family Helvetica, Arial, sansserif
+  background var(--primary-background)
+  // background #d5bff7
+  // background #9999ff
+  // font-family Helvetica, Arial, sansserif
 
 header
   display flex
@@ -43,32 +45,33 @@ nav
   ul
     list-style none
     padding 0
-    width 100px
-  li
-    border 2px solid black
-    border-bottom none
-    padding 6px
-    // background #e8ab94
-    background var(--primary-background)
-    &:hover
-      // background #dd704b
-      background var(--secondary-hover-background)
-    &:active
-      // background #e86a50
-      background var(--secondary-active-background)
-  a
-    &:first-child
-      li
-        border-top-left-radius 5px
-        border-top-right-radius 5px
-    &:last-child
-      li
-        border-bottom 2px solid black
-        border-bottom-left-radius 5px
-        border-bottom-right-radius 5px
-  a
-    color black
-    text-decoration none
+    // width 100px
+  // li
+  //   border 2px solid black
+  //   border-bottom none
+  //   padding 6px
+  //   // background #e8ab94
+  //   background #9999ff
+  //   // background var(--primary-background)
+  //   &:hover
+  //     // background #dd704b
+  //     background var(--secondary-hover-background)
+  //   &:active
+  //     // background #e86a50
+  //     background var(--secondary-active-background)
+  // a
+  //   &:first-child
+  //     li
+  //       border-top-left-radius 5px
+  //       border-top-right-radius 5px
+  //   &:last-child
+  //     li
+  //       border-bottom 2px solid black
+  //       border-bottom-left-radius 5px
+  //       border-bottom-right-radius 5px
+  // a
+  //   color black
+  //   text-decoration none
 
 p
   max-width 550px
