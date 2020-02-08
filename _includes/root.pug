@@ -9,24 +9,35 @@ html(lang="en")
     title !{baseTitle} !{title}
     link(rel="stylesheet" href="/styles/styles.css")
   body
-  
+
     header
-      a(href="/") 
-        img.froggo(src="/assets/froggo.png")
-      // a(href="/") 
-        // span Kinopio Help
+      a(href="/")
+        h1 Help & Support
+        // img.froggo(src="/assets/froggo.png")
+        // img.title(src="/assets/title.svg")
       a(href="https://kinopio.club")
         button
-          span [logo] Kinopio.club
+          img.logo(src="/assets/logo-base.png")
+          span Kinopio.club →
     nav.main
-      ul
-        li
-          a(href="/api") API Docs
-        li
-          a(href="/support") Support
-        li
-          a(href="/press") Press Kit
-        li
-          a(href="/policies") Policies
+      // ul
+      //   li
+      //     a(href="/api") API Docs
+      //   li
+      //     a(href="/support") Support
+      //   li
+      //     a(href="/press") Press Kit
+      //   li
+      //     a(href="/policies") Policies
+      .segmented-buttons
+        a(href="")
+          button API
+        a(href="")
+          button Support
+        a(href="")
+          button Press
+        a(href="")
+          button Policies
+
     main !{content}
   footer
