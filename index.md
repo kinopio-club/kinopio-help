@@ -16,11 +16,13 @@ It works how our brains work.
 
 [add vids and quick guides from post]
 
-I made Kinopio to help you connect your thoughts, ideas, and plans together. If you have questions, comments, or requests please don't hesitate to reach out at [hi@kinopio.club](mailto:hi@kinopio.club).
+I made Kinopio to help you connect your thoughts, ideas, and plans together.
 
-Or on [Twitter](http://twitter.com/pketh), or [Are.na](http://twitter.com/pketh)
+If you have questions, comments, or requests, please don't hesitate to reach out at [hi@kinopio.club](mailto:hi@kinopio.club).
+
+Or on [Twitter](https://twitter.com/KinopioClub), or [Are.na](https://www.are.na/kinopio)
 <!-- <img src="/assets/tatiana-egoshina.png" class="cat"> -->
 
 <!-- <img src="/assets/email.gif" class="email"> -->
 
-– [Pirijan](http://twitter.com/pketh), Kinopio creator
+– [Pirijan](http://pketh.org), Creator

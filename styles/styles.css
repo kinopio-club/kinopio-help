@@ -444,6 +444,10 @@ a {
 }
 a:hover {
   text-decoration: none;
+  background: var(--secondary-hover-background);
+}
+a:active {
+  background: var(--secondary-active-background);
 }
 nav {
   display: flex;
@@ -463,6 +467,8 @@ nav .logo {
   }
   nav .kinopio-button {
     margin: 0;
+  }
+  nav .kinopio-button button {
     margin-top: 10px;
   }
 }
