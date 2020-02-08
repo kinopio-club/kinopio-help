@@ -9,16 +9,10 @@ html(lang="en")
     title !{baseTitle} !{title}
     link(rel="stylesheet" href="/styles/styles.css")
   body
-
     header
-      a(href="/")
-        h1 Help & Support
-        // img.froggo(src="/assets/froggo.png")
-        // img.title(src="/assets/title.svg")
-      a(href="https://kinopio.club")
-        button
-          img.logo(src="/assets/logo-base.png")
-          span Kinopio.club →
+      h1
+        a(href="/")
+          span Help & Support
     nav.main
       // ul
       //   li
@@ -38,6 +32,11 @@ html(lang="en")
           button Press
         a(href="")
           button Policies
+
+      a(href="https://kinopio.club")
+        button.kinopio-button
+          img.logo(src="/assets/logo-base.png")
+          span Kinopio.club →
 
     main !{content}
   footer
