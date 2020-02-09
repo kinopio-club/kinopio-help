@@ -8,5 +8,6 @@ tags: ['page']
 
 mumms the word
 
+https://www.quirk.fyi/about/
 https://www.notion.so/Cocoon-Privacy-Policy-d0749575c4c946c0b0dc246882738e77
 overcast
