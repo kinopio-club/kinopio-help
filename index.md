@@ -5,10 +5,6 @@ title:
 ---
 # Hello
 
-<!-- <img src="/assets/logo-base.png" width=100/> -->
-
-
-
 [Kinopio](https://kinopio.club) is the thinking, diagramming, and planning tool for your hardest problems.
 
 By making it easy to get your thoughts out and form connections organically, Kinopio works how our brains work.
@@ -20,26 +16,6 @@ By making it easy to get your thoughts out and form connections organically, Kin
     <a href="mailto:hi@kinopio.club">hi@kinopio.club</a>. Or on <a href="https://twitter.com/KinopioClub">Twitter</a>, or <a href="https://www.are.na/kinopio">Are.na</a>.
   </p>
 </div>
-<!-- <img src="/assets/tatiana-egoshina.png" class="cat"> -->
-
-<!-- <video autoplay="" loop="" muted="" playsinline="">
-    <source src="http://pketh.org/images/2019/connecting.mp4">
-</video>
- -->
-<!-- <div class="row">
-  <img src="/assets/email.gif" />
-  <span>
-    If you have questions, comments, or requests, please don't hesitate to reach out to [hi@kinopio.club](mailto:hi@kinopio.club). Or on [Twitter](https://twitter.com/KinopioClub), or [Are.na](https://www.are.na/kinopio).
-  </span>
-</div>
- -->
-
-<!-- ![](/assets/froggo.png) -->
-
-
-
-
-<!-- <img src="/assets/email.gif" class="email"> -->
 
 ## About Kinopio
 
@@ -87,8 +63,5 @@ By making it easy to get your thoughts out and form connections organically, Kin
 
 - [How Do I Delete My Account]()
 
-
-
-
-
-<img src="/assets/froggo.png" class="froggo">
+<!-- <img src="/assets/froggo.png" class="froggo"> -->
+<!-- use froggo in guide instead? -->
