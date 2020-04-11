@@ -1,30 +1,33 @@
 :root
   // theme vars
   --primary black
-  --primary-background white
+  // --primary-background white
 
   // --secondary #818181
-  --secondary-background #e3e3e3
-  --secondary-hover-background #d8d8d8
-  --secondary-active-background #cdcdcd
+  // --secondary-background #e3e3e3
+  // --secondary-hover-background #d8d8d8
+  // --secondary-active-background #cdcdcd
 
-  --light-shadow rgba(0,0,0,0.20)
-  --heavy-shadow rgba(0,0,0,0.25)
+  // --light-shadow rgba(0,0,0,0.20)
+  // --heavy-shadow rgba(0,0,0,0.25)
 
-  --danger-background #ffb8b3
-  --danger-hover-background #ffa49e
-  --danger-active-background #ff928b
+  // --danger-background #ffb8b3
+  // --danger-hover-background #ffa49e
+  // --danger-active-background #ff928b
 
   --info-background #90ffff
-  --success-background #98f49f
+  // --success-background #98f49f
 
   // non-theme vars
-  --max-z 2147483647
-  --hover-shadow 3px 3px 0 var(--heavy-shadow)
-  --active-shadow 5px 5px 0 var(--light-shadow)
-  --active-inset-shadow inset 0 2px 3px var(--light-shadow)
-  --button-hover-shadow 2px 2px 0 var(--heavy-shadow)
-  --button-active-inset-shadow inset 0 1px 2px var(--heavy-shadow)
+  // --max-z 2147483647
+  // --hover-shadow 3px 3px 0 var(--heavy-shadow)
+  // --active-shadow 5px 5px 0 var(--light-shadow)
+  // --active-inset-shadow inset 0 2px 3px var(--light-shadow)
+  // --button-hover-shadow 2px 2px 0 var(--heavy-shadow)
+  // --button-active-inset-shadow inset 0 1px 2px var(--heavy-shadow)
+
+  // help site vars
+  --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
 
 @font-face
   font-family 'OsakaMono-Kinopio'
@@ -41,9 +44,8 @@
 body
   margin 20px
   color var(--primary)
-  background-color var(--primary-background)
-  // overflow auto // enables window.scrollBy support
-  font-family Helvetica, Arial, sans-serif
+  // background-color var(--secondary-background)
+  font-family var(--sans-serif)
 
 .logo
   width 50px
@@ -53,22 +55,62 @@ body
 h1
   font-size 20px
 h2
-  font-size 18px
-h3
-  font-weight normal
-  font-style italic
+  font-size 16px
+// h3
+//   font-size 16px
+//   font-weight normal
+//   font-style italic
 p
-  max-width 500px
-video
-  width 100%
-  max-width 420px
+  max-width 520px
 a
   &:hover
     text-decoration none
+input
+  font-size 16px
+  font-family var(--sans-serif)
+  background-color transparent
+  border none
+  border-bottom 1px solid black
+  // &:focus
+  //   border-radius 3px
+  // &::placeholder
+  //   color black
+img
+  width 100%
+  max-width 600px
+video
+  width 100%
+  max-width 420px
+blockquote
+  margin 0
+  background var(--info-background)
+  border-radius 3px
+  padding 8px
+  max-width 520px
+  p
+    margin 0
+
+.row
+  display flex
+  align-items center
+  max-width 520px
+
 header
   margin-bottom 2rem
-  a
-    color var(--primary)
-    text-decoration none
-    &:hover
-      text-decoration underline
+  h1
+    a
+      color var(--primary)
+      text-decoration none
+      &:hover
+        text-decoration underline
+
+
+.froggo
+  margin-top 2rem
+  margin-bottom 2rem
+  max-width 100px
+
+.email
+  height 70px
+  width auto
+  margin-right 16px

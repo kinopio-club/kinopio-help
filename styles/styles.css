@@ -1,22 +1,7 @@
 :root {
   --primary: #000;
-  --primary-background: #fff;
-  --secondary-background: #e3e3e3;
-  --secondary-hover-background: #d8d8d8;
-  --secondary-active-background: #cdcdcd;
-  --light-shadow: rgba(0,0,0,0.2);
-  --heavy-shadow: rgba(0,0,0,0.25);
-  --danger-background: #ffb8b3;
-  --danger-hover-background: #ffa49e;
-  --danger-active-background: #ff928b;
   --info-background: #90ffff;
-  --success-background: #98f49f;
-  --max-z: 2147483647;
-  --hover-shadow: 3px 3px 0 var(--heavy-shadow);
-  --active-shadow: 5px 5px 0 var(--light-shadow);
-  --active-inset-shadow: inset 0 2px 3px var(--light-shadow);
-  --button-hover-shadow: 2px 2px 0 var(--heavy-shadow);
-  --button-active-inset-shadow: inset 0 1px 2px var(--heavy-shadow);
+  --sans-serif: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 @font-face {
   font-family: 'OsakaMono-Kinopio';
@@ -32,8 +17,7 @@
 body {
   margin: 20px;
   color: var(--primary);
-  background-color: var(--primary-background);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: var(--sans-serif);
 }
 .logo {
   width: 50px;
@@ -44,29 +28,61 @@ h1 {
   font-size: 20px;
 }
 h2 {
-  font-size: 18px;
-}
-h3 {
-  font-weight: normal;
-  font-style: italic;
+  font-size: 16px;
 }
 p {
-  max-width: 500px;
+  max-width: 520px;
+}
+a:hover {
+  text-decoration: none;
+}
+input {
+  font-size: 16px;
+  font-family: var(--sans-serif);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+img {
+  width: 100%;
+  max-width: 600px;
 }
 video {
   width: 100%;
   max-width: 420px;
 }
-a:hover {
-  text-decoration: none;
+blockquote {
+  margin: 0;
+  background: var(--info-background);
+  border-radius: 3px;
+  padding: 8px;
+  max-width: 520px;
+}
+blockquote p {
+  margin: 0;
+}
+.row {
+  display: flex;
+  align-items: center;
+  max-width: 520px;
 }
 header {
   margin-bottom: 2rem;
 }
-header a {
+header h1 a {
   color: var(--primary);
   text-decoration: none;
 }
-header a:hover {
+header h1 a:hover {
   text-decoration: underline;
+}
+.froggo {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 100px;
+}
+.email {
+  height: 70px;
+  width: auto;
+  margin-right: 16px;
 }
