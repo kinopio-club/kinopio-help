@@ -57,6 +57,7 @@ blockquote {
   border-radius: 3px;
   padding: 8px;
   max-width: 520px;
+  display: inline-block;
 }
 blockquote p {
   margin: 0;
