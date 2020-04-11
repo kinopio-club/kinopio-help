@@ -2,27 +2,35 @@
 layout: default.pug
 baseTitle: Kinopio Help
 title:
-tags: ['page']
 ---
-# About Kinopio
+<!-- <input type="search" placeholder="Search"/>
+ -->
+<!-- ## About Kinopio -->
 
-<img src="/assets/logo-base.png" width=100/>
+<!-- <img src="/assets/logo-base.png" width=100/> -->
 
 Kinopio is the thinking, diagramming, and planning tool for your hardest problems.
 
-It works how our brains work.
+By letting you get your thoughts out and form connections, It works how our brains work.
 
-[add vids and quick guides from post]
-
-I made Kinopio to help you connect your thoughts, ideas, and plans together.
-
-> I like how cute and quirky it is and I'm surprised at how it's helping me organise my thoughts without even trying, It's like magic. – raph
-
-If you have questions, comments, or requests, please don't hesitate to reach out at [hi@kinopio.club](mailto:hi@kinopio.club).
-
-Or on [Twitter](https://twitter.com/KinopioClub), or [Are.na](https://www.are.na/kinopio)
+<!-- <video autoplay="" loop="" muted="" playsinline="">
+    <source src="http://pketh.org/images/2019/connecting.mp4">
+</video>
+ -->
+If you have questions, comments, or requests, please don't hesitate to reach out to [hi@kinopio.club](mailto:hi@kinopio.club). Or on [Twitter](https://twitter.com/KinopioClub), or [Are.na](https://www.are.na/kinopio).
 <!-- <img src="/assets/tatiana-egoshina.png" class="cat"> -->
 
 <!-- <img src="/assets/email.gif" class="email"> -->
 
-– [Pirijan](http://pketh.org), Creator
+### What is Kinopio
+
+- [asdlfkj]()
+- [asdflkjasdf]()
+- [sdfsdflkjsadf]()
+
+
+### Another Topic
+
+- [sdfsdflkjsadf]()
+- [asdlfkj]()
+- [asdflkjasdf]()

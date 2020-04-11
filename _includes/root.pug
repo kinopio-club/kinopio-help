@@ -1,6 +1,6 @@
 ---
-baseTitle: Kinopio Help –
-title: Hello
+baseTitle: Kinopio Help
+// title: Hello
 
 ---
 html(lang="en")
@@ -12,8 +12,10 @@ html(lang="en")
     header
       h1
         a(href="/")
-          span Help & Support
+          img.logo(src="/assets/logo-base.png")
+          span Kinopio Help
     nav.main
+
       // ul
       //   li
       //     a(href="/api") API Docs
@@ -23,22 +25,22 @@ html(lang="en")
       //     a(href="/press") Press Kit
       //   li
       //     a(href="/policies") Policies
-      .segmented-buttons
+      // .segmented-buttons
         // a(href="")
         //   button.active About
-        a(href="")
-          button API
-        a(href="")
-          button Support
-        a(href="")
-          button Policies
-        a(href="")
-          button Press
+        // a(href="")
+        //   button API
+        // a(href="")
+        //   button Support
+        // a(href="")
+        //   button Policies
+        // a(href="")
+        //   button Press
 
-      a.kinopio-button(href="https://kinopio.club")
-        button
-          img.logo(src="/assets/logo-base.png")
-          span Kinopio.club →
+      // a.kinopio-button(href="https://kinopio.club")
+      //   button
+      //     img.logo(src="/assets/logo-base.png")
+      //     span Kinopio.club →
 
     main !{content}
   footer
