@@ -18,6 +18,7 @@ body {
   margin: 20px;
   color: var(--primary);
   font-family: var(--sans-serif);
+  max-width: 100%;
 }
 .logo {
   width: 50px;
