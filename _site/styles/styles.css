@@ -34,6 +34,9 @@ h2 {
 p {
   max-width: 520px;
 }
+a {
+  color: #00f;
+}
 a:hover {
   text-decoration: none;
 }
@@ -42,6 +45,7 @@ input {
   font-family: var(--sans-serif);
   background-color: transparent;
   border: none;
+  border-radius: 0;
   border-bottom: 1px solid #000;
 }
 img {
@@ -63,20 +67,41 @@ blockquote {
 blockquote p {
   margin: 0;
 }
-.row {
-  display: flex;
-  align-items: center;
-  max-width: 520px;
+ul {
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+ul li a {
+  color: var(--primary);
+  text-decoration: none;
+  background: #0ff;
+  padding: 4px 5px;
+  border-radius: 3px;
+}
+ul li a:hover {
+  filter: hue-rotate(45deg);
 }
 header {
   margin-bottom: 2rem;
 }
-header h1 a {
+header a {
   color: var(--primary);
   text-decoration: none;
 }
-header h1 a:hover {
+header a:hover {
   text-decoration: underline;
+}
+nav.search {
+  display: flex;
+}
+nav.search img {
+  width: 18px;
+  padding-right: 4px;
+  cursor: text;
+  margin-top: 1px;
 }
 .email {
   height: 70px;
@@ -87,4 +112,13 @@ header h1 a:hover {
   margin-top: 1rem;
   margin-bottom: 2rem;
   max-width: 75px;
+}
+canvas#background {
+  position: fixed;
+  background-color: #dbdbdb;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }

@@ -7,12 +7,16 @@ html(lang="en")
     link(rel="stylesheet" href="/styles/styles.css")
   body
     header
+      a(href="https://kinopio.club")
+        // todo hover/active change img
+        img.logo(src="/assets/logo-base.png")
       h1
-        a(href="/")
-          img.logo(src="/assets/logo-base.png")
-          span Help and Support
-      input.search(placeholder="Search")
+        a(href="/") Help and Support
+
+      nav.search
+        img(src="/assets/search.svg")
+        input(placeholder="Search")
     main !{content}
   footer
-  // canvas#canvas
+  canvas#background
   script(src="/assets/logic.js")

@@ -9,7 +9,7 @@ title:
 
 By making it easy to get your thoughts out and form connections organically, Kinopio works how our brains work.
 
-<div class="row">
+<!-- <div class="row">
   <img src="/assets/email.gif" class="email"/>
   <p>
     If you have questions, comments, or requests, please don't hesitate to reach out to
@@ -17,9 +17,16 @@ By making it easy to get your thoughts out and form connections organically, Kin
   </p>
 </div>
 
+ -->
+<p>
+  If you have questions, comments, or requests, please don't hesitate to reach out to
+  <a href="mailto:hi@kinopio.club">hi@kinopio.club</a>. Or on <a href="https://twitter.com/KinopioClub">Twitter</a>, or <a href="https://www.are.na/kinopio">Are.na</a>.
+</p>
+
+
 ## About Kinopio
 
-- [How to Use]() [Guide]
+- [How to Use]()
 - [How much does it cost?]()
 - [What can I use it for?]()
 - [Who makes it?]()
@@ -30,7 +37,7 @@ By making it easy to get your thoughts out and form connections organically, Kin
 
 ## Explore
 
-- [What is Explore?]() [Guide]
+- [What is Explore?]()
 - [How do I add a my space to Explore?]()
 
 ## Importing and Exporting

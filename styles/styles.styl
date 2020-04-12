@@ -64,6 +64,7 @@ h2
 p
   max-width 520px
 a
+  color blue
   &:hover
     text-decoration none
 input
@@ -71,11 +72,8 @@ input
   font-family var(--sans-serif)
   background-color transparent
   border none
+  border-radius 0
   border-bottom 1px solid black
-  // &:focus
-  //   border-radius 3px
-  // &::placeholder
-  //   color black
 img
   width 100%
   max-width 600px
@@ -92,19 +90,42 @@ blockquote
   p
     margin 0
 
-.row
-  display flex
-  align-items center
-  max-width 520px
+// .row
+//   display flex
+//   align-items center
+//   max-width 520px
 
-header
-  margin-bottom 2rem
-  h1
+// temp code for prototyping index.md badges
+ul
+  padding 0
+  li
+    list-style none
+    margin-bottom 12px
     a
       color var(--primary)
       text-decoration none
+      background cyan
+      padding 4px 5px
+      border-radius 3px
       &:hover
-        text-decoration underline
+        filter hue-rotate(45deg)
+
+
+header
+  margin-bottom 2rem
+  a
+    color var(--primary)
+    text-decoration none
+    &:hover
+      text-decoration underline
+
+nav.search
+  display flex
+  img
+    width 18px
+    padding-right 4px
+    cursor text
+    margin-top 1px
 
 .email
   height 70px
@@ -115,3 +136,12 @@ header
   margin-top 1rem
   margin-bottom 2rem
   max-width 75px
+
+canvas#background
+  position: fixed;
+  background-color #dbdbdb
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
