@@ -79,7 +79,7 @@ function throttle(ms, fn) {
 
 function drawOnCanvas() {
                   context.clearRect(0, 0, canvas.width, canvas.height);
-                  console.log(lineWidth)
+                  // console.log(lineWidth)
 
     if (plots.length !== 0) {
 
@@ -94,6 +94,8 @@ function drawOnCanvas() {
         context.lineTo(plots[i].x, plots[i].y);
       }
       context.stroke();
+      canvasImage = context.getImageData(0, 0, canvas.width, canvas.height);
+
     }
 }
 
@@ -103,7 +105,7 @@ function drawOnCanvas() {
 
 // }
 
-window.onload = function () {
+// window.onload = function () {
   randomColor();
   randomSize()
   canvas = document.getElementById('background');
@@ -143,4 +145,4 @@ window.onload = function () {
     plots.push({x: cursorPosition.x, y: cursorPosition.y})
     drawOnCanvas()
   });
-}
+// }
