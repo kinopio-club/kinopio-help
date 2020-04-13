@@ -2,11 +2,11 @@
 
 # Kinopio Help
 
-<img src="https://help.kinopio.club/assets/froggo.png" width="200">
+<img src="https://help.kinopio.club/assets/froggo.png" width="100">
 
 [help.kinopio.club](https://help.kinopio.club)
 
-A simple static [11ty](https://www.11ty.io/docs/usage/) website for [Kinopio](https://kinopio.club) help posts
+A simple static [11ty](https://www.11ty.io/docs/usage/) website for [Kinopio](https://kinopio.club) help articles
 
 ## Setup
 
