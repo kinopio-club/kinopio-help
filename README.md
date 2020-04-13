@@ -2,7 +2,7 @@
 
 # Kinopio Help
 
-<img src="https://help.kinopio.club/assets/froggo.png" width="200">
+![froggo](https://help.kinopio.club/assets/froggo.png)
 
 [help.kinopio.club](https://help.kinopio.club)
 
