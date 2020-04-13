@@ -1,6 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/02be71fd-867f-4bfb-b000-9ff43f76a2e3/deploy-status)](https://app.netlify.com/sites/kinopio-help/deploys)
+
 # Kinopio Help
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/02be71fd-867f-4bfb-b000-9ff43f76a2e3/deploy-status)](https://app.netlify.com/sites/kinopio-help/deploys)
+<img src="https://help.kinopio.club/assets/froggo.png" width="200">
 
 [help.kinopio.club](https://help.kinopio.club)
 
