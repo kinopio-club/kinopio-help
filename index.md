@@ -1,7 +1,6 @@
 ---
 layout: default.pug
-baseTitle: Kinopio Help
-title:
+title: Kinopio Help
 ---
 # Hello
 
@@ -18,6 +17,7 @@ By making it easy to get your thoughts out and form connections organically, Kin
 - [Bulk Actions]()
 - [Adding Images to Cards]()
 - [Editing Connections]()
+- [Mobile Tips]()
 
 ## About Kinopio
 
@@ -40,6 +40,7 @@ By making it easy to get your thoughts out and form connections organically, Kin
 - [What is Explore?]()
 - [How Do I Add a My Space to Explore?]()
 - [Favoriting Spaces and Users]()
+- [Code of Conduct]()
 
 ## Importing and Exporting
 
@@ -52,6 +53,7 @@ By making it easy to get your thoughts out and form connections organically, Kin
 - [Privacy Policy]()
 - [Terms of Service]()
 - [Kinopio Principles]()
+- [Supported Browsers]()
 
 ## Press
 
