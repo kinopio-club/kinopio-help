@@ -41,6 +41,7 @@ By making it easy to get your thoughts out and form connections organically, Kin
 - [How Do I Add a My Space to Explore?]()
 - [Favoriting Spaces and Users]()
 - [Code of Conduct]()
+- [Where Can I Find Templates?]()
 
 ## Importing and Exporting
 
@@ -51,13 +52,20 @@ By making it easy to get your thoughts out and form connections organically, Kin
 ## Policies and Principles
 
 - [Privacy Policy]()
+<!-- https://www.quirk.fyi/about/
+https://www.notion.so/Cocoon-Privacy-Policy-d0749575c4c946c0b0dc246882738e77
+overcast -->
 - [Terms of Service]()
+<!-- overcast -->
 - [Kinopio Principles]()
 - [Supported Browsers]()
 
 ## Press
 
 - [Press Kit]()
+<!-- http://ashorthike.com/press/
+ALL Knitwear is a slow-growing collection of heirloom sweaters
+ -->
 
 ## Sharing and Privacy
 
@@ -66,12 +74,6 @@ By making it easy to get your thoughts out and form connections organically, Kin
 - [An Overview of Space Privacy Settings]()
 - [Why Do I Need an Account to Share or Collaborate?]()
 
-## Templates
-
-- [Uses of Kinopio - dupe]()
-- [Where Can I Find Templates?]()
-
 ## User Settings
 
 - [How Do I Delete My Account]()
-
