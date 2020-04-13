@@ -5,70 +5,69 @@ title:
 ---
 # Hello
 
-[Kinopio](https://kinopio.club) is the thinking, diagramming, and planning tool for your hardest problems.
+[Kinopio](https://kinopio.club) is the visual thinking tool for new ideas and hard problems.
 
 By making it easy to get your thoughts out and form connections organically, Kinopio works how our brains work.
 
-<!-- <div class="row">
-  <img src="/assets/email.gif" class="email"/>
-  <p>
-    If you have questions, comments, or requests, please don't hesitate to reach out to
-    <a href="mailto:hi@kinopio.club">hi@kinopio.club</a>. Or on <a href="https://twitter.com/KinopioClub">Twitter</a>, or <a href="https://www.are.na/kinopio">Are.na</a>.
-  </p>
-</div>
+( ・_・)ノ゛If you have questions, comments, or requests, please don't hesitate to reach out to [hi@kinopio.club](mailto:hi@kinopio.club). Or on [Twitter](https://twitter.com/KinopioClub), or [Are.na](https://www.are.na/kinopio).
 
- -->
-<p>
-  If you have questions, comments, or requests, please don't hesitate to reach out to
-  <a href="mailto:hi@kinopio.club">hi@kinopio.club</a>. Or on <a href="https://twitter.com/KinopioClub">Twitter</a>, or <a href="https://www.are.na/kinopio">Are.na</a>.
-</p>
 
+## How to Use
+
+- [Creating Cards and Connections]()
+- [Bulk Actions]()
+- [Adding Images to Cards]()
+- [Editing Connections]()
 
 ## About Kinopio
 
-- [How to Use]()
-- [How much does it cost?]()
-- [What can I use it for?]()
-- [Who makes it?]()
+- [How much does Kinopio cost?]()
+- [Uses of Kinopio]()
+- [Who makes Kinopio?]()
 
 ## API
 
 - [Where are the API Docs?]()
 
+## Collaboration
+
+- [Inviting Collaborators to a Space]()
+- [Managing Collaborators]()
+
 ## Explore
 
 - [What is Explore?]()
-- [How do I add a my space to Explore?]()
+- [How Do I Add a My Space to Explore?]()
+- [Favoriting Spaces and Users]()
 
 ## Importing and Exporting
 
-- [sdfsdflkjsadf]()
-- [asdlfkj]()
-- [asdflkjasdf]()
+- [Duplicating a Space]()
+- [Import]()
+- [Export]()
 
 ## Policies and Principles
 
-- [sdfsdflkjsadf]()
-- [asdlfkj]()
-- [asdflkjasdf]()
+- [Privacy Policy]()
+- [Terms of Service]()
+- [Kinopio Principles]()
 
 ## Press
 
-- [press kit]()
+- [Press Kit]()
 
-## Sharing and Collaboration
+## Sharing and Privacy
 
-- [sdfsdflkjsadf]()
-- [asdlfkj]()
-- [asdflkjasdf]()
+- [Who Can See What I Make?]()
+- [Sharing Spaces]()
+- [An Overview of Space Privacy Settings]()
 
 ## Templates
 
-- [Where are the Templates?]()
+- [Uses of Kinopio - dupe]()
+- [Where Can I Find Templates?]()
 
 ## User Settings
 
 - [How Do I Delete My Account]()
 
-<!-- <img src="/assets/froggo.png" class="froggo"> -->
-<!-- use froggo in guide instead? -->
