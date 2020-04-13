@@ -20,9 +20,24 @@ body {
   font-family: var(--sans-serif);
 }
 .logo {
+  background-image: url("/assets/logo-base.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 50px;
+  height: 42px;
   vertical-align: -13px;
   margin-right: 12px;
+  display: inline-block;
+}
+.logo:hover,
+.logo:focus {
+  background-image: url("/assets/logo-hover.png");
+}
+.logo:active {
+  background-image: url("/assets/logo-active.png");
+}
+.hidden {
+  display: none;
 }
 h1 {
   font-size: 20px;

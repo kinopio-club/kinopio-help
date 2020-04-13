@@ -23,6 +23,7 @@ By making it easy to get your thoughts out and form connections organically, Kin
 
 - [How much does Kinopio cost?]()
 - [Uses of Kinopio]()
+<!-- ^ brainstorming etc, see miro , mural https://www.notion.so/kinopio/Sortof-competitors-606f3dc0589642c7a2bb6e9b7c100181 -->
 - [Who makes Kinopio?]()
 
 ## API
@@ -43,8 +44,8 @@ By making it easy to get your thoughts out and form connections organically, Kin
 ## Importing and Exporting
 
 - [Duplicating a Space]()
-- [Import]()
-- [Export]()
+- [Importing]()
+- [Exporting]()
 
 ## Policies and Principles
 
@@ -61,6 +62,7 @@ By making it easy to get your thoughts out and form connections organically, Kin
 - [Who Can See What I Make?]()
 - [Sharing Spaces]()
 - [An Overview of Space Privacy Settings]()
+- [Why Do I Need an Account to Share or Collaborate?]()
 
 ## Templates
 
