@@ -4,12 +4,7 @@
 
 [help.kinopio.club](https://help.kinopio.club)
 
-An [11ty](https://www.11ty.io/docs/usage/) website for Kinopio help and info pages, such as
-
-- support articles
-- api docs
-- privacy policy
-- terms of service
+A simple static [11ty](https://www.11ty.io/docs/usage/) website for [Kinopio](https://kinopio.club) help posts
 
 ## Setup
 
@@ -19,5 +14,4 @@ An [11ty](https://www.11ty.io/docs/usage/) website for Kinopio help and info pag
 
 	$ npm run serve
 	$ npm run styles
-
-http://localhost:8081
+	http://localhost:8081
