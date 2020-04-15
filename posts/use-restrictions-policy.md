@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Use Restrictions Policy
+tags: ['Policies']
 color: cyan
 ---
-# Use Restrictions Policy
 
 Kinopio helps people understand themselves and be understood by sharing thoughts and ideas. But an expressive tool is also one that can be used maliciously.
 

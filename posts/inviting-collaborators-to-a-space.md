@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Inviting Collaborators to a Space
+tags: ['Collaboration']
 color: cyan
 ---
-# Inviting Collaborators to a Space
 
 Invite Collaborators to give them edit access to the contents of your space. Inviting is especially useful for working together on `Private` spaces, but you can do it with any privacy setting.
 

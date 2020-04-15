@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Privacy Policy
+tags: ['Policies']
 color: cyan
 ---
-# Privacy Policy
 
 Friends don't spy on friends. In life and in business, I endeavor to treat everyone fairly, ethically, and honestly.
 

@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
+title: Mobile Tips
 tags: ['How to Use']
 color: cyan
 ---
-# Mobile Tips
 
 On a touch device like a phone dragging your finger along the screen scrolls the page, just like it does in a normal website. It also paints on your space, like it does on desktop.
 

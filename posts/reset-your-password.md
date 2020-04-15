@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Reset Your Password
+tags: ['User Settings']
 color: cyan
 ---
-# Reset Your Password
 
 If you've lost your password, you can set a new password.
 

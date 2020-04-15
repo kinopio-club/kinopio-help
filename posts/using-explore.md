@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Exploring Community Spaces
+tags: ['Explore and Favorites']
 color: cyan
 ---
-# Using Explore
 
 Explore is a list of cool spaces made and explicitly shared by other people with the Kinopio community.
 

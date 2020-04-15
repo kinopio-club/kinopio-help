@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Managing Collaborators
+tags: ['Collaboration']
 color: cyan
 ---
-# Managing Collaborators
 
 You, or your collaborators, can view the list of space collaborators from `Share`.
 

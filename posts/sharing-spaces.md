@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Sharing Spaces
+tags: ['Sharing and Privacy']
 color: cyan
 ---
-# Sharing Spaces
 
 Share your spaces with the world by copying the URL provided in the `Share` dialog.
 

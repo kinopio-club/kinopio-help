@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Who Can See What I Make?
+tags: ['Sharing and Privacy']
 color: cyan
 ---
-# Who Can See What I Make?
 
 ## Not Signed Up
 

@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Exporting
+tags: ['Importing and Exporting']
 color: cyan
 ---
-# Exporting
 
 ## Export Space
 

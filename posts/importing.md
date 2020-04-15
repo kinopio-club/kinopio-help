@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Importing
+tags: ['Importing and Exporting']
 color: cyan
 ---
-# Importing
 
 You can import the JSON of exported spaces you've saved to your computer with `Spaces → Import → [JSON] Select File`
 

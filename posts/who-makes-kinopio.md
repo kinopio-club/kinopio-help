@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Who Makes Kinopio?
+tags: ['About Kinopio']
 color: cyan
 ---
-# Who Makes Kinopio?
 
 ( ゜ρ゜)ノ
 

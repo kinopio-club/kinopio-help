@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Favoriting Spaces and People
+tags: ['Explore and Favorites']
 color: cyan
 ---
-# Favoriting Spaces and People
 
 You can bookmark spaces or people to return to later by favoriting them.
 

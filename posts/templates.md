@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Templates
+tags: ['Explore and Favorites']
 color: cyan
 ---
-# Templates
 
 A categorized list of pre-created templates to help you get started is available through `Explore → Templates`
 

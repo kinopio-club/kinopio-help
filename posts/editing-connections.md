@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
+title: Editing Connections
 tags: ['How to Use']
 color: cyan
 ---
-# Editing Connections
 
 The connection lines between cards have connection types. These connection types have a name and color that can be shared amongst the connections on your space
 

@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
+title: Uses of Kinopio
 tags: ['How to Use']
 color: cyan
 ---
-# Uses of Kinopio
 
 Kinopio is great for things like mindmapping, whiteboarding, making charts, or collecting ideas and inspiration. and note-taking.
 

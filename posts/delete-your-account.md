@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Delete Your Account
+tags: ['User Settings']
 color: cyan
 ---
-# Delete Your Account
 
 You can permanently delete your account – including all the spaces in it. You can do this by going to `Your user avatar → Settings → Remove All Your Data`.
 

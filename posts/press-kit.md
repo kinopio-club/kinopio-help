@@ -1,9 +1,8 @@
 ---
-title: Adding Images to Cards
-tags: ['How to Use']
+title: Press Kit
+tags: ['Press']
 color: cyan
 ---
-# Press Kit
 
 [download all assets (100kb zip file)]
 
