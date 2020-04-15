@@ -1,10 +1,12 @@
+// window.onload = function () {
+
 console.log('🍍')
 
 // search
 
-document.querySelector('nav.search img').addEventListener('click',
+document.querySelector('nav img').addEventListener('click',
   () => {
-    document.querySelector('nav.search input').focus()
+    document.querySelector('nav input').focus()
   }
 )
 
@@ -106,43 +108,44 @@ function drawOnCanvas() {
 // }
 
 // window.onload = function () {
-  randomColor();
-  randomSize()
-  canvas = document.getElementById('background');
+randomColor();
+randomSize()
+canvas = document.getElementById('background');
+canvas.width = window.innerWidth * 2
+canvas.height = window.innerHeight * 2
+context = canvas.getContext('2d')
+    context.strokeStyle = color;
+    context.lineWidth = lineWidth; // to linewidth
+    context.lineCap = context.lineJoin = 'round'
+
+
+
+window.onresize = throttle(100, function () {
   canvas.width = window.innerWidth * 2
   canvas.height = window.innerHeight * 2
-  context = canvas.getContext('2d')
-      context.strokeStyle = color;
-      context.lineWidth = lineWidth; // to linewidth
-      context.lineCap = context.lineJoin = 'round'
+  context.clearRect(0,0, canvas.width, canvas.height);
+  canvasImage && context.putImageData(canvasImage, 0, 0);
+});
 
+window.onmousemove = throttle(10, function (event) {
+  cursorPosition = {
+    x: event.clientX * 2,
+    y: event.clientY * 2,
+  };
+  // drawCircle(event);
+  plots.push({x: cursorPosition.x, y: cursorPosition.y})
+  drawOnCanvas()
+});
 
-
-  window.onresize = throttle(100, function () {
-    canvas.width = window.innerWidth * 2
-    canvas.height = window.innerHeight * 2
-    context.clearRect(0,0, canvas.width, canvas.height);
-    canvasImage && context.putImageData(canvasImage, 0, 0);
-  });
-
-  window.onmousemove = throttle(10, function (event) {
-    cursorPosition = {
-      x: event.clientX * 2,
-      y: event.clientY * 2,
-    };
-    // drawCircle(event);
-    plots.push({x: cursorPosition.x, y: cursorPosition.y})
-    drawOnCanvas()
-  });
-
-  window.ontouchmove = throttle(10, function (event) {
-    // round nums for touch screen
-    cursorPosition = {
-      x: event.touches[0].clientX * 2,
-      y: event.touches[0].clientY * 2,
-    };
-    // drawCircle(event);
-    plots.push({x: cursorPosition.x, y: cursorPosition.y})
-    drawOnCanvas()
-  });
+window.ontouchmove = throttle(10, function (event) {
+  // round nums for touch screen
+  cursorPosition = {
+    x: event.touches[0].clientX * 2,
+    y: event.touches[0].clientY * 2,
+  };
+  // drawCircle(event);
+  plots.push({x: cursorPosition.x, y: cursorPosition.y})
+  drawOnCanvas()
+});
+// }
 // }
