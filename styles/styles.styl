@@ -58,11 +58,40 @@ body
   vertical-align -13px
   margin-right 12px
   display inline-block
-  &:hover,
-  &:focus
-    background-image url('/assets/logo-hover.png')
-  &:active
-    background-image url('/assets/logo-active.png')
+
+header
+  h1
+    margin-top 0
+    padding-top 0.67em // h1 default margin
+  a
+    color var(--primary)
+    text-decoration none
+    &:hover,
+    &:focus
+      text-decoration underline
+      .logo
+        background-image url('/assets/logo-hover.png')
+    &:active
+      .logo
+        background-image url('/assets/logo-active.png')
+
+
+nav
+  display flex
+  margin-bottom 2rem
+  img
+    width 18px
+    padding-right 4px
+    cursor text
+    margin-top 1px
+
+footer
+  margin-top 2rem
+  margin-bottom 2rem
+
+button
+  cursor pointer
+  // take from app
 
 .hidden
   display none
@@ -122,32 +151,6 @@ ul
       border-radius 3px
       &:hover
         filter hue-rotate(45deg)
-
-header
-  margin-bottom 2rem
-  a
-    color var(--primary)
-    text-decoration none
-    &:hover
-      text-decoration underline
-
-nav.search
-  display flex
-  img
-    width 18px
-    padding-right 4px
-    cursor text
-    margin-top 1px
-
-footer
-  margin-top 2rem
-  margin-bottom 2rem
-
-
-.email
-  height 70px
-  width auto
-  margin-right 16px
 
 .froggo
   max-width 75px

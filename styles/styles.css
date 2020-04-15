@@ -30,12 +30,41 @@ body {
   margin-right: 12px;
   display: inline-block;
 }
-.logo:hover,
-.logo:focus {
+header h1 {
+  margin-top: 0;
+  padding-top: 0.67em;
+}
+header a {
+  color: var(--primary);
+  text-decoration: none;
+}
+header a:hover,
+header a:focus {
+  text-decoration: underline;
+}
+header a:hover .logo,
+header a:focus .logo {
   background-image: url("/assets/logo-hover.png");
 }
-.logo:active {
+header a:active .logo {
   background-image: url("/assets/logo-active.png");
+}
+nav {
+  display: flex;
+  margin-bottom: 2rem;
+}
+nav img {
+  width: 18px;
+  padding-right: 4px;
+  cursor: text;
+  margin-top: 1px;
+}
+footer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+button {
+  cursor: pointer;
 }
 .hidden {
   display: none;
@@ -98,34 +127,6 @@ ul li a {
 }
 ul li a:hover {
   filter: hue-rotate(45deg);
-}
-header {
-  margin-bottom: 2rem;
-}
-header a {
-  color: var(--primary);
-  text-decoration: none;
-}
-header a:hover {
-  text-decoration: underline;
-}
-nav.search {
-  display: flex;
-}
-nav.search img {
-  width: 18px;
-  padding-right: 4px;
-  cursor: text;
-  margin-top: 1px;
-}
-footer {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.email {
-  height: 70px;
-  width: auto;
-  margin-right: 16px;
 }
 .froggo {
   max-width: 75px;

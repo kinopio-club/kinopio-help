@@ -10,28 +10,20 @@ html(lang="en")
     link(rel="canonical" href="https://kinopio.club")
   body
     header
-      a(href="https://kinopio.club")
+      a(href="/")
         img.hidden(src="/assets/logo-hover.png")
         img.hidden(src="/assets/logo-active.png")
         .logo
-      h1
-        a(href="/") Help and Support
-
-      nav.search
-        img(src="/assets/search.svg")
-        input(placeholder="Search")
+        h1 Help and Support
+    a(href="https://kinopio.club")
+      button Kinopio →
+    nav
+      img(src="/assets/search.svg")
+      input(placeholder="Search")
     main !{content}
   footer
-    a(href="/")
-      img.froggo(src="/assets/froggo.png")
-    p
-      | ( ・_・)ノ゛If you have questions, comments, or requests, please don't hesitate to reach out to&nbsp;
-      a(href='mailto:hi@kinopio.club') hi@kinopio.club
-      |. Or on&nbsp;
-      a(href='https://twitter.com/KinopioClub') Twitter
-      | , or&nbsp;
-      a(href='https://www.are.na/kinopio') Are.na
-      | .
+    img.froggo(src="/assets/froggo.png")
+    include contact.pug
 
   canvas#background
   script(src="/assets/logic.js")
