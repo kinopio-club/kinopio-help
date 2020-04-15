@@ -28,7 +28,7 @@
 
   // help site vars
   --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
-
+  --max-page-width 520px
 @font-face
   font-family 'OsakaMono-Kinopio'
   src url("/assets/OsakaMono-Kinopio.woff2") format("woff2")
@@ -76,7 +76,7 @@ h2
 //   font-weight normal
 //   font-style italic
 p
-  max-width 520px
+  max-width var(--max-page-width)
 a
   color blue
   &:hover
@@ -93,13 +93,13 @@ img
   max-width 600px
 video
   width 100%
-  max-width 420px
+  max-width var(--max-page-width)
 blockquote
   margin 0
-  background var(--info-background) // change this to a darker grey like secondary-active-background? treat like callout
+  background pink
   border-radius 3px
   padding 8px
-  max-width 520px
+  max-width var(--max-page-width)
   display inline-block
   p
     margin 0
@@ -107,9 +107,8 @@ blockquote
 // .row
 //   display flex
 //   align-items center
-//   max-width 520px
+//   max-width var(--max-page-width)
 
-// temp code for prototyping index.md badges
 ul
   padding 0
   li
@@ -118,12 +117,11 @@ ul
     a
       color var(--primary)
       text-decoration none
-      background cyan
+      background var(--info-background)
       padding 4px 5px
       border-radius 3px
       &:hover
         filter hue-rotate(45deg)
-
 
 header
   margin-bottom 2rem
@@ -155,10 +153,10 @@ footer
   max-width 75px
 
 canvas#background
-  position: fixed;
+  position: fixed
   background-color #dbdbdb
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  height 100%
+  width 100%
+  top 0
+  left 0
+  z-index -1

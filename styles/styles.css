@@ -2,6 +2,7 @@
   --primary: #000;
   --info-background: #90ffff;
   --sans-serif: Helvetica Neue, Helvetica, Arial, sans-serif;
+  --max-page-width: 520px;
 }
 @font-face {
   font-family: 'OsakaMono-Kinopio';
@@ -46,7 +47,7 @@ h2 {
   font-size: 16px;
 }
 p {
-  max-width: 520px;
+  max-width: var(--max-page-width);
 }
 a {
   color: #00f;
@@ -68,14 +69,14 @@ img {
 }
 video {
   width: 100%;
-  max-width: 420px;
+  max-width: var(--max-page-width);
 }
 blockquote {
   margin: 0;
-  background: var(--info-background);
+  background: #ffc0cb;
   border-radius: 3px;
   padding: 8px;
-  max-width: 520px;
+  max-width: var(--max-page-width);
   display: inline-block;
 }
 blockquote p {
@@ -91,7 +92,7 @@ ul li {
 ul li a {
   color: var(--primary);
   text-decoration: none;
-  background: #0ff;
+  background: var(--info-background);
   padding: 4px 5px;
   border-radius: 3px;
 }
