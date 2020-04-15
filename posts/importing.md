@@ -1,7 +1,7 @@
 ---
 title: Importing
 tags: ['Importing and Exporting']
-color: cyan
+color: #90ffff
 ---
 
 You can import the JSON of exported spaces you've saved to your computer with `Spaces → Import → [JSON] Select File`

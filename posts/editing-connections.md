@@ -1,7 +1,7 @@
 ---
 title: Editing Connections
 tags: ['How to Use']
-color: cyan
+color: #90ffff
 ---
 
 The connection lines between cards have connection types. These connection types have a name and color that can be shared amongst the connections on your space

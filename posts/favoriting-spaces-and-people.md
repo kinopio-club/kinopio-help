@@ -1,7 +1,7 @@
 ---
 title: Favoriting Spaces and People
 tags: ['Explore and Favorites']
-color: cyan
+color: #90ffff
 ---
 
 You can bookmark spaces or people to return to later by favoriting them.

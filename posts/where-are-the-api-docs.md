@@ -1,7 +1,7 @@
 ---
 title: Where are the API Docs?
 tags: ['API']
-color: cyan
+color: #90ffff
 ---
 
 The public API for Kinopio is useable but very much a work in progress. If you're interested in trying it out please email [hi@kinopio.club](mailto:hi@kinopio.club)

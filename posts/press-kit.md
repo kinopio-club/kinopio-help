@@ -1,7 +1,7 @@
 ---
 title: Press Kit
 tags: ['Press']
-color: cyan
+color: #90ffff
 ---
 
 [download all assets (100kb zip file)]

@@ -1,7 +1,7 @@
 ---
 title: How Much Does Kinopio Cost?
 tags: ['About Kinopio']
-color: cyan
+color: #90ffff
 ---
 
 Currently Kinopio is totally free to use. Once all the core features to support professional use have been built, billing and payments systems will be added ([Roadmap](https://kinopio.club/-kinopio-roadmap-6TRE21gchHI7alHLuwzd5)).

@@ -1,7 +1,7 @@
 ---
 title: Adding Images to Cards
 tags: ['How to Use']
-color: cyan
+color: #90ffff
 ---
 
 You can add images to cards by pasting in an image url from elsewhere on the internet. In desktop browsers you can get the url from an image by right clicking and selecting `Copy Image Address`

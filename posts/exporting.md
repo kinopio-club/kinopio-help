@@ -1,7 +1,7 @@
 ---
 title: Exporting
 tags: ['Importing and Exporting']
-color: cyan
+color: #90ffff
 ---
 
 ## Export Space

@@ -1,7 +1,7 @@
 ---
 title: Sharing Spaces
 tags: ['Sharing and Privacy']
-color: cyan
+color: #90ffff
 ---
 
 Share your spaces with the world by copying the URL provided in the `Share` dialog.

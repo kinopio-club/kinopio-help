@@ -1,7 +1,7 @@
 ---
 title: Terms of Service
 tags: ['Policies']
-color: cyan
+color: #90ffff
 ---
 
 In life and in business, I endeavor to treat everyone fairly, ethically, and honestly. But for that unlikely but possible nefarious actor, this boring legal document exists. This document is adapted from [Basecamp's](https://basecamp.com/about/policies/terms) Terms of Service.

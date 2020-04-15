@@ -1,7 +1,7 @@
 ---
 title: Exploring Community Spaces
 tags: ['Explore and Favorites']
-color: cyan
+color: #90ffff
 ---
 
 Explore is a list of cool spaces made and explicitly shared by other people with the Kinopio community.
