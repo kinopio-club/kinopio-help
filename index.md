@@ -18,13 +18,16 @@ By making it easy to get your thoughts out and form connections organically, Kin
 - [Adding Images to Cards]()
 - [Editing Connections]()
 - [Mobile Tips]()
+- [Restoring Removed Cards and Spaces]()
+- [Filtering]()
+- [Keyboard Shortbuts]()
+- [Duplicating a Space]()
 
 ## About Kinopio
 
-- [How much does Kinopio cost?]()
+- [How Much Does Kinopio Cost?]()
 - [Uses of Kinopio]()
-<!-- ^ brainstorming etc, see miro , mural https://www.notion.so/kinopio/Sortof-competitors-606f3dc0589642c7a2bb6e9b7c100181 -->
-- [Who makes Kinopio?]()
+- [Who Makes Kinopio?]()
 
 ## API
 
@@ -35,45 +38,33 @@ By making it easy to get your thoughts out and form connections organically, Kin
 - [Inviting Collaborators to a Space]()
 - [Managing Collaborators]()
 
-## Explore
+## Explore and Favorites
 
-- [What is Explore?]()
-- [How Do I Add a My Space to Explore?]()
-- [Favoriting Spaces and Users]()
-- [Code of Conduct]()
-- [Where Can I Find Templates?]()
+- [Using Explore]()
+- [Favoriting Spaces and People]()
+- [Templates]()
 
 ## Importing and Exporting
 
-- [Duplicating a Space]()
 - [Importing]()
 - [Exporting]()
 
-## Policies and Principles
+## Policies
 
 - [Privacy Policy]()
-<!-- https://www.quirk.fyi/about/
-https://www.notion.so/Cocoon-Privacy-Policy-d0749575c4c946c0b0dc246882738e77
-overcast -->
 - [Terms of Service]()
-<!-- overcast -->
-- [Kinopio Principles]()
-- [Supported Browsers]()
+- [Use Restrictions Policy]()
 
 ## Press
 
 - [Press Kit]()
-<!-- http://ashorthike.com/press/
-ALL Knitwear is a slow-growing collection of heirloom sweaters
- -->
 
 ## Sharing and Privacy
 
 - [Who Can See What I Make?]()
 - [Sharing Spaces]()
-- [An Overview of Space Privacy Settings]()
-- [Why Do I Need an Account to Share or Collaborate?]()
 
 ## User Settings
 
-- [How Do I Delete My Account]()
+- [Delete Your Account]()
+- [Reset Your Password]()
