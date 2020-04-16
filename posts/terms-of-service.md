@@ -4,7 +4,9 @@ tags: ['Policies']
 color: 'pink'
 ---
 
-In life and in business, I endeavor to treat everyone fairly, ethically, and honestly. But for that unlikely but possible nefarious actor, this boring legal document exists. This document is adapted from [Basecamp's](https://basecamp.com/about/policies/terms) Terms of Service.
+In life and in business, I endeavor to treat everyone fairly, ethically, and honestly. But for that unlikely but possible nefarious actor, this boring legal document exists.
+
+This document is adapted from [Basecamp's](https://basecamp.com/about/policies/terms) Terms of Service.
 
 (The Privacy Policy is a shorter read)
 
