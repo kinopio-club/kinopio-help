@@ -1,7 +1,7 @@
 ---
 title: Delete Your Account
 tags: ['User Settings']
-color: #90ffff
+color: '#deb1ff'
 ---
 
 You can permanently delete your account – including all the spaces in it. You can do this by going to `Your user avatar → Settings → Remove All Your Data`.

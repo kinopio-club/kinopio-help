@@ -1,7 +1,7 @@
 ---
 title: Uses of Kinopio
-tags: ['How to Use']
-color: #90ffff
+tags: ['About Kinopio']
+color: '#bbd0ff'
 ---
 
 Kinopio is great for things like mindmapping, whiteboarding, making charts, or collecting ideas and inspiration. and note-taking.

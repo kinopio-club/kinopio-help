@@ -1,7 +1,7 @@
 ---
 title: Reset Your Password
 tags: ['User Settings']
-color: #90ffff
+color: '#deb1ff'
 ---
 
 If you've lost your password, you can set a new password.

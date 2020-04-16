@@ -1,7 +1,7 @@
 ---
 title: Inviting Collaborators to a Space
 tags: ['Collaboration']
-color: #90ffff
+color: '#f1ffc4'
 ---
 
 Invite Collaborators to give them edit access to the contents of your space. Inviting is especially useful for working together on `Private` spaces, but you can do it with any privacy setting.

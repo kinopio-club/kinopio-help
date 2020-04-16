@@ -1,7 +1,7 @@
 ---
 title: Who Can See What I Make?
 tags: ['Sharing and Privacy']
-color: #90ffff
+color: '#ebcb88'
 ---
 
 ## Not Signed Up

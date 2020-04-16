@@ -9,7 +9,7 @@
   --secondary-active-background #cdcdcd
 
   // --light-shadow rgba(0,0,0,0.20)
-  // --heavy-shadow rgba(0,0,0,0.25)
+  --heavy-shadow rgba(0,0,0,0.25)
 
   // --danger-background #ffb8b3
   // --danger-hover-background #ffa49e
@@ -151,8 +151,14 @@ ul
       background var(--info-background)
       padding 4px 5px
       border-radius 3px
-      &:hover
-        filter hue-rotate(45deg)
+      &:hover,
+      &:focus
+        box-shadow var(--button-hover-shadow)
+      &:active
+        box-shadow var(--button-active-inset-shadow)
+
+      // &:hover
+      //   box-shadow var(--button-hover-shadow)
 
 .froggo
   max-width 75px

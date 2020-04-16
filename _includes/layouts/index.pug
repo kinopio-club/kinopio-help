@@ -11,117 +11,42 @@ p By making it easy to get your thoughts out and form connections organically, K
 
 include /contact.pug
 
+mixin posts(collection)
+  h2 #{collection}
+  ul
+    each post in collections[collection]
+      li
+        a(href=post.url style={background: post.data.color})
+          span #{post.data.title}
+
+
 section
-  h2 How to Use
-  ul
-    li
-      a(href="/posts/creating-cards-and-connections")
-        span Creating Cards and Connections
-    li
-      a(href="#")
-        span Bulk Actions
-    li
-      a(href="#")
-        span Adding Images to Cards
-    li
-      a(href="#")
-        span Editing Connections
-    li
-      a(href="#")
-        span Mobile Tips
-    li
-      a(href="#")
-        span Restoring Removed Cards and Spaces
-    li
-      a(href="#")
-        span Filtering
-    li
-      a(href="#")
-        span Keyboard Shortbuts
-    li
-      a(href="#")
-        span Duplicating a Space
+  - var collection = 'How to Use'
+  +posts(collection)
 
-  h2 About Kinopio
-  ul
-    li
-      a(href="#")
-        span How Much Does Kinopio Cost?
-    li
-      a(href="#")
-        span Uses of Kinopio
-    li
-      a(href="#")
-        span Who Makes Kinopio?
+  - var collection = 'About Kinopio'
+  +posts(collection)
 
-  h2 API
-  ul
-    li
-      a(href="#")
-        span Where are the API Docs?
+  - var collection = 'API'
+  +posts(collection)
 
-  h2 Collaboration
-  ul
-    li
-      a(href="#")
-        span Inviting Collaborators to a Space
-    li
-      a(href="#")
-        span Managing Collaborators
+  - var collection = 'Collaboration'
+  +posts(collection)
 
-  h2 Explore and Favorites
-  ul
-    li
-      a(href="#")
-        span Using Explore
-    li
-      a(href="#")
-        span Favoriting Spaces and People
-    li
-      a(href="#")
-        span Templates
+  - var collection = 'Explore and Favorites'
+  +posts(collection)
 
-  h2 Importing and Exporting
-  ul
-    li
-      a(href="#")
-        span Importing
-    li
-      a(href="#")
-        span Exporting
+  - var collection = 'Importing and Exporting'
+  +posts(collection)
 
-  h2 Policies
-  ul
-    li
-      a(href="#")
-        span Privacy Policy
-    li
-      a(href="#")
-        span Terms of Service
-    li
-      a(href="#")
-        span Use Restrictions Policy
+  - var collection = 'Policies'
+  +posts(collection)
 
-  h2 Press
-  ul
-    li
-      a(href="#")
-        span Press Kit
+  - var collection = 'Press'
+  +posts(collection)
 
-  h2 Sharing and Privacy
-  ul
-    li
-      a(href="#")
-        span Who Can See What I Make?
-    li
-      a(href="#")
-        span Sharing Spaces
+  - var collection = 'Sharing and Privacy'
+  +posts(collection)
 
-  h2 User Settings
-  ul
-    li
-      a(href="#")
-        span Delete Your Account
-    li
-      a(href="#")
-        span Reset Your Password
+  - var collection = 'User Settings'
+  +posts(collection)

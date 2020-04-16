@@ -1,7 +1,7 @@
 ---
 title: Templates
 tags: ['Explore and Favorites']
-color: #90ffff
+color: '#ffc1e7'
 ---
 
 A categorized list of pre-created templates to help you get started is available through `Explore → Templates`

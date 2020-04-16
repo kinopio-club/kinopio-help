@@ -1,7 +1,7 @@
 ---
 title: Who Makes Kinopio?
 tags: ['About Kinopio']
-color: #90ffff
+color: '#bbd0ff'
 ---
 
 ( ゜ρ゜)ノ

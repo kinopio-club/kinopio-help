@@ -1,7 +1,7 @@
 ---
 title: Managing Collaborators
 tags: ['Collaboration']
-color: #90ffff
+color: '#f1ffc4'
 ---
 
 You, or your collaborators, can view the list of space collaborators from `Share`.

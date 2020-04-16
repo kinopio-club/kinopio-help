@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 tags: ['Policies']
-color: #90ffff
+color: 'pink'
 ---
 
 Friends don't spy on friends. In life and in business, I endeavor to treat everyone fairly, ethically, and honestly.
