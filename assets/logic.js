@@ -25,13 +25,12 @@ let color = '#e5e5e5';
 
 function randomColor() {
   const colors = [
-    '#fcd1c4',
-    '#abfcec',
-    '#a3d9e1',
-    '#fbbfff',
-    '#a9ef8f',
-    '#fff0b2',
-    '#fff0b2',
+    '#fcd1c4', // light pink
+    '#abfcec', // light blue
+    '#a3d9e1', // blue
+    '#fbbfff', // purple
+    '#99f6c6', // green
+    '#fff0b2', // yellow
   ]
   color = colors[Math.floor(Math.random() * colors.length)];
 }

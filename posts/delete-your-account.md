@@ -4,7 +4,7 @@ tags: ['User Settings']
 color: '#deb1ff'
 ---
 
-You can permanently delete your account – including all the spaces in it. You can do this by going to `Your user avatar → Settings → Remove All Your Data`.
+You can permanently delete your account – including all the spaces in it. You can do this by going to `You → Settings → Remove All Your Data`.
 
 - Be careful, your data will be immediately and permanently deleted from the Kinopio database.
 - If you have spaces that other people are collaborating on, those spaces will no longer be accessible to them.
