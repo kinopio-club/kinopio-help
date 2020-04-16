@@ -6,12 +6,17 @@ color: '#90ffff'
 
 You can move or edit multiple cards and connections at once by painting over them.
 
-[vid - How do I place cards above the top of my space (move everything down)]
+<video autoplay loop muted playsinline>
+  <source src="/assets/posts/paint-move-cards.mp4">
+</video>
 
-Painting over connections lets you make them all the same type quickly
+## Painting over connections lets you make them all the same type quickly
 
-[vid]
+<video autoplay loop muted playsinline class="wide">
+  <source src="https://kinopio-updates.s3.us-east-1.amazonaws.com/paint-select-connections.mp4
+">
+</video>
 
-Painting over cards also lets you move those cards to another space
+## Painting over cards also lets you move those cards to another space
 
-[vid]
+![move-cards](/assets/posts/move-cards.png)

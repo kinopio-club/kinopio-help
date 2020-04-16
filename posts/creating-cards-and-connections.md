@@ -23,7 +23,7 @@ Think of **cards** like individual thoughts, and ideas. New ideas and insights f
 ## Connect cards together by dragging from the connector to anywhere on another card
 
 <video autoplay loop muted playsinline>
-  <source src="/assets/posts/create-connection.mp4">
+  <source src="https://kinopio-updates.s3.us-east-1.amazonaws.com/connect-cards2.mp4">
 </video>
 
 Besides that, there's really no right or wrong way to use Kinopio. Do what feels right.

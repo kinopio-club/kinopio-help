@@ -4,22 +4,22 @@ tags: ['How to Use']
 color: '#90ffff'
 ---
 
-You can add images to cards by pasting in an image url from elsewhere on the internet. In desktop browsers you can get the url from an image by right clicking and selecting `Copy Image Address`
+## Paste in an image URL
 
-[img]
+In desktop browsers you can get the URL of an image by right clicking and selecting `Copy Image Address`. On mobile, you can usually get an image URL by long pressing it and selecting the copy URL command.
 
-On mobile, you can usually get an image url by long pressing it and selecting the copy URL command
+![image-card-url](/assets/posts/image-card-url.png)
 
-[img of long press ios]
+Kinopio requires image URLs to specify image file extensions like `space.com/image.jpg`.  `jpeg`, `jpg`, `png`, and `gif` format images are supported.
 
-To view the image fullsize, click the `→` button next to the connector
+Some websites obscure their image URLs to not include the file extension `space.com/maybe-an-image`. These will only display as links in cards.
 
-[img]
+## To view the image fullsize, click the `→` button next to the connector
 
-- Kinopio requires image urls to specify image file extensions like `space.com/image.jpg`.  `jpeg`, `jpg`, `png`, and `gif` format images are supported.
+![image-card](/assets/posts/image-card.png)
 
-Some websites obscure their image urls to not include the file extension `space.com/maybe-an-image`. These urls will only display as links in cards.
+(psst, animated gifs work great)
 
-(psst, animated gifs also work great)
-
-[Adding%20Images%20to%20Cards/Screen_Recording_2020-04-10_at_7.24.38_PM.mov](Adding%20Images%20to%20Cards/Screen_Recording_2020-04-10_at_7.24.38_PM.mov)
+<video class="wide" autoplay loop muted playsinline>
+  <source src="/assets/posts/example-space.mp4">
+</video>

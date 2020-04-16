@@ -8,19 +8,21 @@ Invite Collaborators to give them edit access to the contents of your space. Inv
 
 You should think of collaborators as people you fully trust because they'll be able to edit and remove almost everything in a space.
 
-- For collaborating with the world, or with people you don't fully trust, consider changing your space privacy to `Open` and sharing the normal url instead. That way they'll only be able to add cards and edit what they've created.
+> If collaborating with people you don't know or fully trust, consider changing your space privacy to `Open` and sharing the normal URL instead. That way others will only be able to add  and edit the cards that they've created.
 
-Send someone a collaborator invite by copying the url found in `Spaces → Invite Collaborators`
+## Invite Collaborator
 
-[img share → invite]
+Send someone a collaborator invite by copying the URL found in `Spaces → Invite Collaborators`
 
-Collaborators can:
+![invite-collaborators](/assets/posts/invite-collaborators.png)
+
+## Collaborators can
 
 - Create, move, remove and edit all cards and connections
 - Invite other collaborators
 - Remove other collaborators
 
-But collaborators cannot:
+## But collaborators cannot
 
 - Remove the space
 - Rename the space

@@ -4,13 +4,20 @@ tags: ['Press']
 color: '#c4c4c4'
 ---
 
-[download all assets (100kb zip file)]
+[Download kinopio-assets.zip (14.6mb)](/assets/posts/press-kit/kinopio-assets.zip)
 
-![Press%20Kit/logo-active.png](Press%20Kit/logo-active.png)
+<img src="/assets/posts/press-kit/logo-base.png" class="no-shadow"/>
+<br><br>
+<video autoplay loop muted playsinline class="wide">
+  <source src="/assets/posts/press-kit/example-space.mp4">
+</video>
+<br><br>
 
-![Press%20Kit/original_1d913c99f7bc25a9ddcf15659fd10b57.png](Press%20Kit/original_1d913c99f7bc25a9ddcf15659fd10b57.png)
+<video autoplay loop muted playsinline class="wide">
+  <source src="/assets/posts/press-kit/screenrec2.mp4">
+</video>
 
-[more screens and vids - maybe from other articles]
+<img src="/assets/posts/press-kit/screenshot1.png" class="wide no-shadow"/>
 
 ## Description
 
@@ -22,13 +29,10 @@ By making it easy to get your thoughts out and form connections organically, Kin
 
 ## History
 
-Previously, I co-created [Glitch](http://glitch.com), where I [designed and built](http://pketh.org/the-first-four-years-of-glitch.html) a web code editor and a community social network that made web development fun and accessible.
 
-In 2019, I left to create a different kind of productivity tool. Rather than being about task-tracking, or managing projects and people, Kinopio is a tool to organize complex thoughts, create new ideas, and make hard decisions.
+Before making Kinopio, I was the co-creator of Glitch.com. Where I designed and built it's original user interfaces.
 
-[Who Makes Kinopio?]
-
-[Hello Kinopio](http://pketh.org/hello-kinopio.html)
+In 2019, I quit my job to create a different kind of productivity tool. Instead of being about tracking tasks or traditional project management, Kinopio is designed to help you organize complex thoughts, create new ideas, and make hard decisions.
 
 ## Features
 
@@ -40,6 +44,8 @@ In 2019, I left to create a different kind of productivity tool. Rather than bei
 - Invite collaborators to private spaces
 - keyboard shortcuts for power users
 
-[Roadmap](https://kinopio.club/-kinopio-roadmap-6TRE21gchHI7alHLuwzd5)
+## See also
 
-[Design History](https://www.are.na/kinopio/kinopio-design)
+- [Hello Kinopio blog post](http://pketh.org/hello-kinopio.html)
+- [Roadmap](https://kinopio.club/-kinopio-roadmap-6TRE21gchHI7alHLuwzd5)
+- [Design History](https://www.are.na/kinopio/kinopio-design)

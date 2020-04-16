@@ -6,7 +6,7 @@ color: '#deb1ff'
 
 If you've lost your password, you can set a new password.
 
-1. If you're signed in, sign out by clicking `Your Avatar → Sign Out`
+1. If you're currently signed in, sign out by clicking `You → Sign Out`
 2. Click `Sign Up or In`
 3. In the dialog that appears, click `Sign In`
 4. Click `Forgot Password?`

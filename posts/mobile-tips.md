@@ -4,12 +4,12 @@ tags: ['How to Use']
 color: '#90ffff'
 ---
 
-On a touch device like a phone dragging your finger along the screen scrolls the page, just like it does in a normal website. It also paints on your space, like it does on desktop.
+On a touch device, like a phone, dragging your finger along the screen scrolls the page, just like it does in a normal website. But it also paints on your space, like it does on desktop. It can be tricky to paint over cards while the screen is scrolling.
 
-However because both scrolling and painting happen as you drag, this introduces an issue when trying to paint over cards and having the page scroll at the same time
+## Long-press the screen to begin painting
 
-[vid]
+This will lock the screen from swipe scrolling during painting, enabling you to precisely paint cards and connections.
 
-To solve this, simply long-press the screen when you want to paint. This will lock screen scrolling, enabling you to precisely paint over cards and connections.
-
-[vid long press]
+<video autoplay loop muted playsinline>
+  <source src="/assets/posts/long-press.mp4">
+</video>

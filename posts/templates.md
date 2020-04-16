@@ -6,4 +6,4 @@ color: '#ffc1e7'
 
 A categorized list of pre-created templates to help you get started is available through `Explore → Templates`
 
-[img]
+![templates](/assets/posts/templates.png)

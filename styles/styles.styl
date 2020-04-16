@@ -1,5 +1,4 @@
 :root
-  // theme vars
   --primary black
   // --primary-background white
 
@@ -31,6 +30,9 @@
   --max-page-width 520px
   --page-margin 20px
 
+
+// Elements
+
 @font-face
   font-family 'OsakaMono-Kinopio'
   src url("/assets/OsakaMono-Kinopio.woff2") format("woff2")
@@ -57,6 +59,109 @@ body
   vertical-align -13px
   margin-right 12px
   display inline-block
+
+.hidden
+  display none
+
+h1
+  font-size 20px
+
+h2
+  font-size 16px
+
+h1,
+h2,
+a,
+p
+  max-width var(--max-page-width)
+
+a
+  color blue
+  &:hover
+    text-decoration none
+
+input
+  font-size 16px
+  font-family var(--sans-serif)
+  background-color transparent
+  border none
+  border-radius 0
+  border-bottom 1px solid black
+
+img
+  width 100%
+  max-width var(--max-page-width)
+
+ul
+  padding 0
+  li
+    list-style none
+    margin-bottom 12px
+    a
+      color var(--primary)
+      text-decoration none
+      background var(--info-background)
+      padding 4px 5px
+      border-radius 3px
+      &:hover,
+      &:focus
+        box-shadow var(--button-hover-shadow)
+      &:active
+        box-shadow var(--button-active-inset-shadow)
+
+button
+  touch-action manipulation
+  text-align left
+  padding 7px
+  padding-top 4px
+  padding-bottom 4px
+  margin 0
+  border 1px solid var(--primary)
+  background-color transparent
+  border-radius 3px
+  cursor pointer
+  user-select none
+  font-size 14px
+  font-family var(--sans-serif)
+  &:hover,
+  &:focus
+    box-shadow var(--button-hover-shadow)
+    background var(--secondary-hover-background)
+  &:active
+    color var(--primary)
+    box-shadow var(--button-active-inset-shadow)
+    background var(--secondary-active-background)
+
+code
+  background var(--success-background)
+  color var(--primary)
+  padding 2px
+  padding-left 6px
+  padding-right 6px
+  border-radius 3px
+  font-family "OsakaMono-Kinopio", monospace
+
+blockquote
+  margin 0
+  background var(--success-background)
+  border-radius 3px
+  padding 8px
+  max-width var(--max-page-width)
+  display inline-block
+  p
+    margin 0
+
+canvas#background
+  position: fixed
+  background-color #dbdbdb
+  height 100%
+  width 100%
+  top 0
+  left 0
+  z-index -1
+
+
+// Components
 
 header
   h1
@@ -87,132 +192,34 @@ footer
   margin-top 2rem
   margin-bottom 2rem
 
-.hidden
-  display none
-
-h1
-  font-size 20px
-
-h2
-  font-size 16px
-
-// h3
-//   font-size 16px
-//   font-weight normal
-//   font-style italic
-
-p
-  max-width var(--max-page-width)
-
-a
-  color blue
-  &:hover
-    text-decoration none
-
-input
-  font-size 16px
-  font-family var(--sans-serif)
-  background-color transparent
-  border none
-  border-radius 0
-  border-bottom 1px solid black
-
-img
-  width 100%
-  max-width var(--max-page-width)
-
-blockquote
-  margin 0
-  background pink
-  border-radius 3px
-  padding 8px
-  max-width var(--max-page-width)
-  display inline-block
-  p
-    margin 0
-
-// .row
-//   display flex
-//   align-items center
-//   max-width var(--max-page-width)
-
-ul
-  padding 0
-  li
-    list-style none
-    margin-bottom 12px
-    a
-      color var(--primary)
-      text-decoration none
-      background var(--info-background)
-      padding 4px 5px
-      border-radius 3px
-      &:hover,
-      &:focus
-        box-shadow var(--button-hover-shadow)
-      &:active
-        box-shadow var(--button-active-inset-shadow)
-
-.froggo
-  max-width 75px
-
-canvas#background
-  position: fixed
-  background-color #dbdbdb
-  height 100%
-  width 100%
-  top 0
-  left 0
-  z-index -1
-
-button
-  touch-action manipulation
-  text-align left
-  padding 7px
-  padding-top 4px
-  padding-bottom 4px
-  margin 0
-  border 1px solid var(--primary)
-  background-color transparent
-  border-radius 3px
-  cursor pointer
-  user-select none
-  font-size 14px
-  font-family var(--sans-serif)
-  &:hover,
-  &:focus
-    box-shadow var(--button-hover-shadow)
-    background var(--secondary-hover-background)
-  &:active
-    color var(--primary)
-    box-shadow var(--button-active-inset-shadow)
-    background var(--secondary-active-background)
-
 button.kinopio
   position absolute
   right var(--page-margin)
   top var(--page-margin)
 
-code
-  background var(--success-background)
-  color var(--primary)
-  padding 2px
-  padding-left 6px
-  padding-right 6px
-  border-radius 3px
-  font-family "OsakaMono-Kinopio", monospace
-
 article
-  ul
+  ul,
+  ol
     max-width var(--max-page-width)
     padding-left 1rem
-    margin-left 5px
+    margin-left 1rem
+    li
+      margin-bottom 12px
+
+  ul
     li
       list-style-type disc
+
+  img,
   video
     width 420px
     max-width 100%
     border-radius 3px
-  img,
-  video
     box-shadow 4px 4px 0 var(--light-shadow)
+    &.wide
+      width 700px
+    &.no-shadow
+      box-shadow none
+
+.froggo
+  max-width 75px
