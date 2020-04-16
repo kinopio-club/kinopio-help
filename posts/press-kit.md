@@ -25,12 +25,11 @@ color: '#c4c4c4'
 
 By making it easy to get your thoughts out and form connections organically, Kinopio works how our brains work.
 
-[Uses of Kinopio]
+[Uses of Kinopio](/posts/uses-of-kinopio/)
 
 ## History
 
-
-Before making Kinopio, I was the co-creator of Glitch.com. Where I designed and built it's original user interfaces.
+Before Kinopio, I was the co-creator of Glitch.com, where I designed and built its original user interfaces.
 
 In 2019, I quit my job to create a different kind of productivity tool. Instead of being about tracking tasks or traditional project management, Kinopio is designed to help you organize complex thoughts, create new ideas, and make hard decisions.
 

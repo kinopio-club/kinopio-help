@@ -15,4 +15,4 @@ If you have an account, then the space privacy setting dictates who can see what
 
 ![](https://kinopio-updates.s3.us-east-1.amazonaws.com/open%20privacy.png)
 
-> p.s. New spaces default to `Closed`
+p.s. New spaces default to `Closed`

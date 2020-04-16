@@ -17,3 +17,7 @@ A simple static [11ty](https://www.11ty.io/docs/usage/) website for [Kinopio](ht
 	$ npm run serve
 	$ npm run styles
 	http://localhost:8081
+
+## Create a New Post
+
+Duplicate and edit an existing post in `/posts` with the same collection tag of the new post. New files become posts with urls based on the file name, and get automatically added to the index page.
