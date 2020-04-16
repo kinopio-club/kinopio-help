@@ -1,6 +1,11 @@
-console.log('🍍')
+let params = (new URL(document.location)).searchParams
+let search = params.get("search")
+console.log('🍍', search)
+// if (search) {
+//   doSearch(search)
+// }
 
-// search
+// Search
 
 document.querySelector('nav img').addEventListener('click',
   () => {
@@ -31,16 +36,25 @@ document.querySelector('nav input').addEventListener('input',
 )
 
 
-// drawing
+// Drawing
 // code adapted from https://k-komma.de/assets/js/main.js
 
 let canvas, context, canvasImage, color
 let plots = []
-
 let cursorPosition = {
   x: undefined,
   y: undefined,
 }
+
+randomColor()
+randomSize()
+canvas = document.getElementById('background')
+canvas.width = window.innerWidth * 2
+canvas.height = window.innerHeight * 2
+context = canvas.getContext('2d')
+context.strokeStyle = color
+context.lineWidth = lineWidth
+context.lineCap = context.lineJoin = 'round'
 
 function randomColor() {
   const colors = [
@@ -83,16 +97,6 @@ function drawOnCanvas() {
   context.stroke()
   canvasImage = context.getImageData(0, 0, canvas.width, canvas.height)
 }
-
-randomColor()
-randomSize()
-canvas = document.getElementById('background')
-canvas.width = window.innerWidth * 2
-canvas.height = window.innerHeight * 2
-context = canvas.getContext('2d')
-context.strokeStyle = color
-context.lineWidth = lineWidth
-context.lineCap = context.lineJoin = 'round'
 
 window.onresize = throttle(100, function () {
   canvas.width = window.innerWidth * 2

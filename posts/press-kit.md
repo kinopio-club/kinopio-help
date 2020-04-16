@@ -24,7 +24,7 @@ By making it easy to get your thoughts out and form connections organically, Kin
 
 Previously, I co-created [Glitch](http://glitch.com), where I [designed and built](http://pketh.org/the-first-four-years-of-glitch.html) a web code editor and a community social network that made web development fun and accessible.
 
-In ~June 2019, I left to create a different kind of productivity tool. Rather than being about task-tracking, or managing projects and people, Kinopio is a tool for organizing complex thoughts, create new ideas, and make hard decisions.
+In 2019, I left to create a different kind of productivity tool. Rather than being about task-tracking, or managing projects and people, Kinopio is a tool to organize complex thoughts, create new ideas, and make hard decisions.
 
 [Who Makes Kinopio?]
 
