@@ -11,7 +11,10 @@ section#hello
   include /contact.pug
 
 mixin posts(collection)
-  h2 #{collection}
+  - let titles = []
+  each post in collections[collection]
+    - titles.push(post.data.title)
+  h2(data-posts=titles) #{collection}
   ul
     each post in collections[collection]
       li(data-title=post.data.title)
@@ -19,32 +22,34 @@ mixin posts(collection)
           span #{post.data.title}
 
 section
-  - var collection = 'How to Use'
+  - let collection
+
+  - collection = 'How to Use'
   +posts(collection)
 
-  - var collection = 'About Kinopio'
+  - collection = 'About Kinopio'
   +posts(collection)
 
-  - var collection = 'API'
+  - collection = 'API'
   +posts(collection)
 
-  - var collection = 'Collaboration'
+  - collection = 'Collaboration'
   +posts(collection)
 
-  - var collection = 'Explore and Favorites'
+  - collection = 'Explore and Favorites'
   +posts(collection)
 
-  - var collection = 'Importing and Exporting'
+  - collection = 'Importing and Exporting'
   +posts(collection)
 
-  - var collection = 'Policies'
+  - collection = 'Policies'
   +posts(collection)
 
-  - var collection = 'Press'
+  - collection = 'Press'
   +posts(collection)
 
-  - var collection = 'Sharing and Privacy'
+  - collection = 'Sharing and Privacy'
   +posts(collection)
 
-  - var collection = 'User Settings'
+  - collection = 'User Settings'
   +posts(collection)
