@@ -74,7 +74,6 @@ header
       .logo
         background-image url('/assets/logo-active.png')
 
-
 nav
   display flex
   margin-bottom 2rem
@@ -88,27 +87,28 @@ footer
   margin-top 2rem
   margin-bottom 2rem
 
-// button
-//   cursor pointer
-  // take from app
-
 .hidden
   display none
 
 h1
   font-size 20px
+
 h2
   font-size 16px
+
 // h3
 //   font-size 16px
 //   font-weight normal
 //   font-style italic
+
 p
   max-width var(--max-page-width)
+
 a
   color blue
   &:hover
     text-decoration none
+
 input
   font-size 16px
   font-family var(--sans-serif)
@@ -116,12 +116,11 @@ input
   border none
   border-radius 0
   border-bottom 1px solid black
+
 img
   width 100%
-  max-width 600px
-video
-  width 100%
   max-width var(--max-page-width)
+
 blockquote
   margin 0
   background pink
@@ -153,9 +152,6 @@ ul
         box-shadow var(--button-hover-shadow)
       &:active
         box-shadow var(--button-active-inset-shadow)
-
-      // &:hover
-      //   box-shadow var(--button-hover-shadow)
 
 .froggo
   max-width 75px
@@ -198,10 +194,8 @@ button.kinopio
   top var(--page-margin)
 
 code
-  // color tomato
   background var(--success-background)
-  // background white
-  color black
+  color var(--primary)
   padding 2px
   padding-left 6px
   padding-right 6px
@@ -215,3 +209,8 @@ article
     margin-left 5px
     li
       list-style-type disc
+  img,
+  video
+    width 100%
+    max-width var(--max-page-width)
+    border-radius 3px
