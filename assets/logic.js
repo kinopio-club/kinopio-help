@@ -4,42 +4,40 @@ console.log('🍍')
 
 let params = (new URL(document.location)).searchParams
 let search = params.get("search")
+const searchIcon = document.querySelector('nav #search')
+const removeIcon = document.querySelector('nav #remove')
+const searchInput = document.querySelector('nav input')
+const helloSection = document.querySelector('section#hello')
+
 if (search) {
   filterPage(search)
 }
 
-document.querySelector('nav img').addEventListener('click',
-  () => {
-    document.querySelector('nav input').focus()
-  }
-)
+searchIcon.addEventListener('click', () => {
+  document.querySelector('nav input').focus()
+})
 
-document.querySelector('nav input').addEventListener('input',
-  (event) => {
-    const value = document.querySelector('nav input').value
-    console.log('🌸',event, value)
-    // if event is keyup is 'enter' then load new page w search query
+removeIcon.addEventListener('click', () => {
+  clearFilter()
+})
 
-    if (value) { // to else if
-      filterPage(value)
-    } else {
-      clearFilter()
-    }
+searchInput.addEventListener('input', (event) => {
+  const value = document.querySelector('nav input').value
+  // TODO if event is keyup is 'enter' then load new page w search query
+  if (value) { // to else if
+    filterPage(value)
+  } else {
+    clearFilter()
   }
-)
+})
 
 function filterPage(value) {
-  const helloSection = document.querySelector('#hello')
-
-  console.log('🌹')
-  // elementsToHide add class hidden
-  // show an X next to search bar to clear search
-  // @click = clearSearch()
+  console.log('🌹', value)
+  helloSection.classList.add('hidden')
 }
 
 function clearFilter() {
-  console.log('🦋 x.i am empty')
-  // elementsToHide remove class hidden
+  helloSection.classList.remove('hidden')
 }
 
 
