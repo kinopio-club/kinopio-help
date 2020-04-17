@@ -4,7 +4,7 @@ tags: ['Policies']
 color: 'pink'
 ---
 
-> Friends don't spy on friends. I endeavor to treat everyone fairly, ethically, and honestly.
+> Friends don't spy on friends.
 
 - Kinopio won’t show you ads of any kind, or sell your data.
 - Children, and anyone else, will be able to use Kinopio anonymously. Without an account, none of your data will be transmitted to Kinopio servers.
