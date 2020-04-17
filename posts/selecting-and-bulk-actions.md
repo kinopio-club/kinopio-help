@@ -2,6 +2,7 @@
 title: Selecting and Bulk Actions
 tags: ['How to Use']
 color: '#90ffff'
+date: 2020-04-01
 ---
 
 You can move or edit multiple cards and connections at once by painting over them.
