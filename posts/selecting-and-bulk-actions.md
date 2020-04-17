@@ -1,5 +1,5 @@
 ---
-title: Bulk Actions
+title: Selecting and Bulk Actions
 tags: ['How to Use']
 color: '#90ffff'
 ---
