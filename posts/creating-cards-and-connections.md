@@ -2,6 +2,7 @@
 title: Creating Cards and Connections
 tags: ['How to Use']
 color: '#90ffff'
+date: 2020-01-01
 ---
 
 Think of **cards** like individual thoughts, and ideas. New ideas and insights form when we **connect** cards to each other, whether by ourselves, or by collaborating with friends.
