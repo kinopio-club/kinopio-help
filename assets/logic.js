@@ -6,17 +6,19 @@ let params = (new URL(document.location)).searchParams
 let search = params.get("search")
 const searchIcon = document.querySelector('nav #search')
 const removeIcon = document.querySelector('nav #remove')
+const searchForm = document.querySelector('nav form')
 const searchInput = document.querySelector('nav input')
 const helloSection = document.querySelector('section#hello')
 const headers = document.querySelectorAll('section#index h2')
 const posts = document.querySelectorAll('section#index li')
 
 if (search) {
+  searchInput.value = search
   filterPage(search)
 }
 
 searchIcon.addEventListener('click', () => {
-  document.querySelector('nav input').focus()
+  searchInput.focus()
 })
 
 removeIcon.addEventListener('click', () => {
@@ -24,14 +26,19 @@ removeIcon.addEventListener('click', () => {
 })
 
 searchInput.addEventListener('input', (event) => {
-  const value = document.querySelector('nav input').value
-  // console.log('🌹', value)
-  // TODO if event is keyup is 'enter' then load new page w search query
-  if (value) { // to else if
+  const value = searchInput.value
+  if (value) {
     filterPage(value)
   } else {
     clearFilter()
   }
+})
+
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault()
+  const value = searchInput.value
+  const searchUrl = `${window.location.origin}?search=${value}`
+  window.location.href = searchUrl
 })
 
 function filterPage(value) {

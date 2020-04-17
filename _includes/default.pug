@@ -18,9 +18,10 @@ html(lang="en")
     a(href="https://kinopio.club")
       button.kinopio Kinopio →
     nav
-      img#search(src="/assets/search.svg")
-      input(placeholder="Search")
-      img#remove.remove(src="/assets/add.svg")
+      form
+        img#search(src="/assets/search.svg")
+        input(placeholder="Search")
+        img#remove.remove(src="/assets/add.svg")
     main !{content}
   footer
     img.froggo(src="/assets/froggo.png")
