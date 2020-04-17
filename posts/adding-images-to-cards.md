@@ -2,6 +2,7 @@
 title: Adding Images to Cards
 tags: ['How to Use']
 color: '#90ffff'
+date: 2020-02-01
 ---
 
 ## Paste in an image URL
