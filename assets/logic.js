@@ -1,11 +1,12 @@
-let params = (new URL(document.location)).searchParams
-let search = params.get("search")
-console.log('🍍', search)
-// if (search) {
-//   doSearch(search)
-// }
+console.log('🍍')
 
 // Search
+
+let params = (new URL(document.location)).searchParams
+let search = params.get("search")
+if (search) {
+  filterPage(search)
+}
 
 document.querySelector('nav img').addEventListener('click',
   () => {
@@ -13,27 +14,33 @@ document.querySelector('nav img').addEventListener('click',
   }
 )
 
-// just filtering wont work in subpages
-// unless submitting the search , sends you to root w a query string
-  // onload , look for query string and set up search
 document.querySelector('nav input').addEventListener('input',
   (event) => {
     const value = document.querySelector('nav input').value
     console.log('🌸',event, value)
-    const helloSection = document.querySelector('#hello')
-    // const elementsToHide =
-    if (value) {
-      console.log('🌹')
-      // elementsToHide add class hidden
-      // show an X next to search bar to clear search
-            // @click = clearSearch()
+    // if event is keyup is 'enter' then load new page w search query
+
+    if (value) { // to else if
+      filterPage(value)
     } else {
-      console.log('🦋 x.i am empty')
-      // elementsToHide remove class hidden
-      // clearSearch()
+      clearFilter()
     }
   }
 )
+
+function filterPage(value) {
+  const helloSection = document.querySelector('#hello')
+
+  console.log('🌹')
+  // elementsToHide add class hidden
+  // show an X next to search bar to clear search
+  // @click = clearSearch()
+}
+
+function clearFilter() {
+  console.log('🦋 x.i am empty')
+  // elementsToHide remove class hidden
+}
 
 
 // Drawing
