@@ -2,6 +2,7 @@
 title: Editing Connections
 tags: ['How to Use']
 color: '#90ffff'
+date: 2020-03-01
 ---
 
 ## Use connections and labels to add flexible meaning, grouping, and structure to your spaces
