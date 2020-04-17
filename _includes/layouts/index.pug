@@ -11,9 +11,9 @@ section#hello
   include /contact.pug
 
 mixin posts(collection)
-  - let titles = []
+  - let titles = ''
   each post in collections[collection]
-    - titles.push(post.data.title)
+    - titles = titles + ',' + post.data.title
   h2(data-posts=titles) #{collection}
   ul
     each post in collections[collection]
@@ -21,7 +21,7 @@ mixin posts(collection)
         a(href=post.url style={background: post.data.color})
           span #{post.data.title}
 
-section
+section#index
   - let collection
 
   - collection = 'How to Use'
