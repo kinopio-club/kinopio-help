@@ -8,6 +8,8 @@ Currently Kinopio is totally free to use. Once all the basics are finished, a su
 
 > Eventually, Kinopio will cost 4$/month (USD) to create more than 150 cards.
 
+ I want the pricing to feel simple, straightforward, and obvious.
+
 📈 Cards you add will increment the card count
 
 📉 Cards you remove will decrement the card count
