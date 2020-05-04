@@ -69,7 +69,8 @@ body
 h1
   font-size 20px
 
-h2
+h2,
+h3
   font-size 16px
 
 h1,
@@ -77,6 +78,9 @@ h2,
 a,
 p
   max-width var(--max-page-width)
+
+p
+  line-height 1.2
 
 a
   color blue
@@ -248,6 +252,25 @@ article
       width 700px
     &.no-shadow
       box-shadow none
+
+ul.api-contents
+  margin-top 2rem
+  padding 0
+  margin-left 0
+  margin-right 0
+  position sticky
+  top 20px
+  li
+    list-style none
+    display inline-block
+    margin-right 6px
+
+.api
+  h2
+    display inline-block
+    background pink
+    padding 4px 5px
+    border-radius 3px
 
 .froggo
   max-width 75px

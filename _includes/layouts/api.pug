@@ -1,6 +1,15 @@
 ---
 layout: default.pug
 ---
+
+- items = [ {name: 'Users', link: '#users', color: 'pink'}, {name: 'Spaces', link: '#spaces', color: '#c1ffca'}, {name: 'Cards', link: '#cards', color: '#deb1ff'}, {name: 'Connections', link: '#connections', color: 'tomato'}, {name: 'Connection Types', link: '#connection-types', color: 'cyan'} ]
+
+ul.api-contents
+  each item in items
+    li
+      a(href=item.link style=`background: ${item.color}`)
+        span #{item.name}
+
 article.api
   h1 #{title}
   span !{content}
