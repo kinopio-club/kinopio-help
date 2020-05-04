@@ -30,6 +30,8 @@
   --max-page-width 520px
   --page-margin 20px
   --page-background #dbdbdb
+  --code-color #8c0000
+  --code-background rgba(0,0,0,0.1)
 
 
 // Elements
@@ -138,8 +140,8 @@ button
     background var(--secondary-active-background)
 
 code
-  background var(--success-background)
-  color var(--primary)
+  background var(--code-background)
+  color var(--code-color)
   padding 2px
   padding-left 6px
   padding-right 6px
@@ -148,7 +150,7 @@ code
 
 blockquote
   margin 0
-  background var(--success-background)
+  background var(--code-background)
   border-radius 3px
   padding 8px
   max-width var(--max-page-width)
@@ -166,19 +168,23 @@ canvas#background
   z-index -1
 
 table
-  // border-collapse collapse
-  border 1px solid black
-  border-radius 3px
-  background var(--page-background)
+  border-collapse collapse
+  // border 1px solid black
+  // border-radius 3px
+  // background var(--page-background)
   th,
   td
     padding 8px
     padding-right 12px
     // border-color grey
     text-align left
-  tr
-    &:even
-      background pink
+    border-bottom 1px solid var(--code-background)
+    // vertical-align top
+    &:first-child
+      padding-left 0
+  // tr
+  //   &::even
+  //     background pink
 
 
 // Components
@@ -199,7 +205,7 @@ header
       .logo
         background-image url('/assets/logo-active.png')
 
-nav
+.search
   display flex
   margin-bottom 2rem
   img
@@ -212,10 +218,12 @@ footer
   margin-top 2rem
   margin-bottom 2rem
 
-button.kinopio
+nav
   position absolute
   right var(--page-margin)
   top var(--page-margin)
+  button
+    margin-left 6px
 
 article
   ul,
@@ -243,6 +251,9 @@ article
 
 .froggo
   max-width 75px
+
+.cat
+  max-width 150px
 
 .remove
   transform rotate(45deg)

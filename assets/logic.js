@@ -4,10 +4,10 @@ console.log('🍍', fuzzy)
 
 let params = (new URL(document.location)).searchParams
 let search = params.get("search")
-const searchIcon = document.querySelector('nav #search')
-const removeIcon = document.querySelector('nav #remove')
-const searchForm = document.querySelector('nav form')
-const searchInput = document.querySelector('nav input')
+const searchIcon = document.querySelector('.search #search')
+const removeIcon = document.querySelector('.search #remove')
+const searchForm = document.querySelector('.search form')
+const searchInput = document.querySelector('.search input')
 const helloSection = document.querySelector('section#hello')
 const headers = document.querySelectorAll('section#index h2')
 const posts = document.querySelectorAll('section#index li')
@@ -115,7 +115,7 @@ function randomColor() {
 }
 
 function randomSize() {
-  lineWidth = Math.floor(Math.random() * 100 + 25)
+  lineWidth = Math.floor(Math.random() * 100 + 55)
 }
 
 function throttle(ms, fn) {
