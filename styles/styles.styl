@@ -29,6 +29,7 @@
   --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
   --max-page-width 520px
   --page-margin 20px
+  --page-background #dbdbdb
 
 
 // Elements
@@ -157,12 +158,27 @@ blockquote
 
 canvas#background
   position: fixed
-  background-color #dbdbdb
+  background-color var(--page-background)
   height 100%
   width 100%
   top 0
   left 0
   z-index -1
+
+table
+  // border-collapse collapse
+  border 1px solid black
+  border-radius 3px
+  background var(--page-background)
+  th,
+  td
+    padding 8px
+    padding-right 12px
+    // border-color grey
+    text-align left
+  tr
+    &:even
+      background pink
 
 
 // Components
