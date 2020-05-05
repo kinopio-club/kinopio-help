@@ -11,7 +11,7 @@ The Kinopio API is used to find, save, and update the spaces of signed up users.
 
 # Authentication
 
-Kinopio uses simple token-based authentication using your user `apiKey`. The easiest way to get your apiKey is by entering `JSON.parse(localStorage.user).apiKey` in your browser console on [kinopio.club](http://kinopio.club).
+Kinopio uses token-based authentication using your user `apiKey`. The easiest way to get your apiKey is by entering `JSON.parse(localStorage.user).apiKey` in your browser console on [kinopio.club](http://kinopio.club).
 
 Use your apiKey in the `Authorization` header of each request.
 
