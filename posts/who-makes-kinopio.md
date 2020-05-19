@@ -4,13 +4,13 @@ tags: ['About Kinopio']
 color: '#bbd0ff'
 ---
 
-(*・_・)ノ⌒*
+(*・_・)⊃══✫⌒*･ﾟ✲
 
-Hi, my name is Pirijan and I make Kinopio.
+Hi, my name is Pirijan and I make Kinopio,
 
-I went to school for biology, then I was a construction worker, then an urban planner. Now I'm a designer and engineer.
+I grew up in Canada, went to school for biology and urban design. I've worked as a waiter, cashier, and construction worker, then stumbled into being an illustrator, designer, and engineer.
 
-Before Kinopio, I was the co-creator of Glitch.com, where I designed and built its original user interfaces.
+Before Kinopio, I was the co-creator of [Glitch](http://pketh.org/the-first-four-years-of-glitch.html), where I designed and built its original community site and code editor.
 
 You can read my blog at [pketh.org](http://pketh.org), or follow me on Twitter [@pketh](http://twitter.com/pketh)
 
