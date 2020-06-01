@@ -1,5 +1,5 @@
 ---
-title: How Much Does Kinopio Cost?
+title: How Much Does Kinopio Cost? (Pricing)
 tags: ['About Kinopio']
 color: '#bbd0ff'
 ---

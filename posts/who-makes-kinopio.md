@@ -8,9 +8,19 @@ color: '#bbd0ff'
 
 Hi, my name is Pirijan and I make Kinopio.
 
-I went to school for biology, then I was a construction worker, then an urban planner. Now I'm a designer and engineer.
+I was born in Germany, grew up in Canada, and now live in Brooklyn, NY.
 
-Before Kinopio, I was the co-creator of Glitch.com, where I designed and built its original user interfaces.
+I went to school for biology and urban design. I've also had a lot of jobs:
+
+- Cashier at a pharmacy
+- Waiter/bartender
+- Construction worker
+- Intern at a government thinktank
+- Illustrator
+- Designer
+- Engineer
+
+Before Kinopio, I was the co-creator of Glitch.com, where I designed and built its original user interfaces. I believe in software that's designed by artists, and built by craftspeople.
 
 You can read my blog at [pketh.org](http://pketh.org), or follow me on Twitter [@pketh](http://twitter.com/pketh)
 

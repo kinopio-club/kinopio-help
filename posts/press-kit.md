@@ -4,7 +4,7 @@ tags: ['Press']
 color: '#c4c4c4'
 ---
 
-[Download kinopio-assets.zip (14.6mb)](/assets/posts/press-kit/kinopio-assets.zip)
+[Download kinopio-assets.zip (17mb)](/assets/posts/press-kit/kinopio-assets.zip)
 
 <img src="/assets/posts/press-kit/logo-base.png" class="no-shadow"/>
 <br><br>
@@ -15,6 +15,11 @@ color: '#c4c4c4'
 
 <video autoplay loop muted playsinline class="wide">
   <source src="/assets/posts/press-kit/screenrec2.mp4">
+</video>
+<br><br>
+
+<video autoplay loop muted playsinline class="wide">
+  <source src="/assets/posts/press-kit/real-time-collaboration.mp4">
 </video>
 
 <img src="/assets/posts/press-kit/screenshot1.png" class="wide no-shadow"/>
@@ -32,6 +37,8 @@ By making it easy to get your thoughts out and form connections organically, Kin
 Before Kinopio, I was the co-creator of Glitch.com, where I designed and built its original user interfaces.
 
 In 2019, I quit my job to create a different kind of productivity tool. Instead of being about tracking tasks or traditional project management, Kinopio is designed to help you organize complex thoughts, create new ideas, and make hard decisions.
+
+[Who Makes Kinopio?](/posts/who-makes-kinopio/)
 
 ## Features
 
