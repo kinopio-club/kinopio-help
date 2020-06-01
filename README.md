@@ -6,7 +6,7 @@
 
 [help.kinopio.club](https://help.kinopio.club)
 
-A simple static [11ty](https://www.11ty.io/docs/usage/) website for [Kinopio](https://kinopio.club) help articles
+A simple static [11ty](https://www.11ty.io/docs/usage/) website for [Kinopio](https://kinopio.club) help posts and API docs
 
 ## Setup
 

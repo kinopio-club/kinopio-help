@@ -4,9 +4,9 @@ tags: ['About Kinopio']
 color: '#bbd0ff'
 ---
 
-(*・_・)ノ⌒*
+(*・_・)⊃══✫⌒*･ﾟ✲
 
-Hi, my name is Pirijan and I make Kinopio.
+Hi, my name is Pirijan and I make Kinopio,
 
 I was born in Germany, grew up in Canada, and now live in Brooklyn, NY.
 
