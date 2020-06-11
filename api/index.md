@@ -25,6 +25,9 @@ The API is limited to 5 requests per second. If you exceed this rate, you will r
 
 # Routes
 
+<a name="all"></a>
+<h2 class="all">All</h2>
+
 [https://api.kinopio.club](https://api.kinopio.club) is the base path for all routes
 
 Method | Name | Description | Auth
@@ -32,7 +35,7 @@ Method | Name | Description | Auth
 `GET` | / | tells you if the api is online | None
 
 <a name="users"></a>
-## Users
+<h2 class="users">Users</h2>
 
 Users are representations of any account on Kinopio. Users are created by the server when they sign up.
 
