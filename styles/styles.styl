@@ -271,18 +271,41 @@ ul.api-contents
     background pink
     padding 4px 5px
     border-radius 3px
-    &.all
-      background khaki
-    &.users
-      background lightpink
-    &.spaces
-      background lightseagreen
-    &.cards
-      background violet
-    &.connections
-      background tomato
-    &.connection-types
-      background chocolate
+  code
+    line-height 1.3
+  .all,
+  .users,
+  .spaces,
+  .cards,
+  .connections,
+  .connection-types
+    color var(--primary)
+  .get-label,
+  .post-label,
+  .patch-label
+  .delete-label
+    color rgba(255,255,255,.8)
+
+  .all
+    background khaki
+  .users
+    background lightpink
+  .spaces
+    background lightseagreen
+  .cards
+    background violet
+  .connections
+    background tomato
+  .connection-types
+    background chocolate
+
+  .get-label
+    background teal
+  .patch-label
+    background blueviolet
+  .delete-label
+    background brown
+
 
 .froggo
   max-width 75px

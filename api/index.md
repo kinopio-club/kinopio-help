@@ -32,7 +32,7 @@ The API is limited to 5 requests per second. If you exceed this rate, you will r
 
 Method | Name | Description | Auth
 --- | --- | --- | ---
-`GET` | / | tells you if the api is online | None
+`GET` | <code class="all">/</code> | tells you if the api is online | None
 
 <a name="users"></a>
 <h2 class="users">Users</h2>
@@ -43,5 +43,11 @@ Users are representations of any account on Kinopio. Users are created by the se
 
 Method | Name | Description | Auth
 --- | --- | --- | ---
-`GET` | /user/public/:userId | Get public info on a user JSON.parse(localStorage.user).id | None
-`GET` | /user | Get all info on the authenticating user | apiKey in authorization header
+`GET` | <code class="users">/user/public/:userId</code> | Get public info on a user JSON.parse(localStorage.user).id | None
+`GET` | <code class="users">/user</code> | Get all info on the authenticating user | `apiKey`
+`GET` | <code class="users">/user/favorites</code> | Gets all info, including user and space favorites, on the authenticating user | `apiKey`
+`GET` | <code class="users">/user/spaces</code> | get a list of the user's spaces | `apiKey`
+`GET` | <code class="users">/user/removed-spaces</code> | Get spaces removed by the authenticating user | `apiKey`
+`GET` | <code class="users">/user/current-public-spaces</code> | get a list of all users currently viewing or editing spaces with privacy set to `open` | None
+`PATCH` | <code class="users">/user</code> | Update the authenticating user(s) based on object body. You can't patch `apiKey`, `password`, `emailIsVerified`, or `email` | `apiKey`
+`PATCH` | <code class="users">/user/favorites</code> | Add or remove favorite users or spaces. Acts like a toggle, if the user is already liked it then removes the like. If not already liked it adds the like. request body should be in the format. | `apiKey`
