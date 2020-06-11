@@ -40,7 +40,7 @@ Users are representations of any account on Kinopio. Users are created by the se
 
 Routes with Auth as `apiKey` mean that the Authorization header apiKey must match the requested user.
 
-### User Routes
+<h3 class="users">User Routes</h3>
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
@@ -53,7 +53,7 @@ Method | Path | Description | Auth
 `PATCH` | <code class="users">/user</code>                        | Update the authenticating user(s) based on an object body with user attributes. You can't patch `apiKey`, `password`, `emailIsVerified`, or `email` | `apiKey`
 `PATCH` | <code class="users">/user/favorites</code>              | Add or remove favorite users or spaces. Acts like a toggle, if the user is already liked it then removes the like. If not already liked it adds the like. request body should be in the format. | `apiKey`
 
-### User Attributes
+<h3 class="users">User Attributes</h3>
 
 Name | Type | Description
 --- | --- | ---
@@ -74,12 +74,12 @@ currentPublicSpaceId    | `String`  | The id of an space with privacy set to 'op
 
 Spaces are where you create cards and connections. You can edit and create spaces with the same abilities that a real human has.
 
-..... Routes with Auth as `apiKey` mean that the Authorization header apiKey must match the requested user.
+.auth explain.... Routes with Auth as `apiKey` mean that the Authorization header apiKey must match the requested user.
 canViewSpace
 canEditSpace
 isUser
 
-### Space Routes
+<h3 class="spaces">Space Routes</h3>
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
@@ -95,7 +95,7 @@ Method | Path | Description | Auth
 `DELETE` | <code class="spaces">/space/permanent</code>             | Permanently remove space(s) specified in request body                                | `canEditSpace`
 `DELETE` | <code class="spaces">/space/collaborator</code>          | Removes collaborator user from space. Request Body Keys: `spaceId`, `userId`                              | `canEditSpace`
 
-### Space Attributes
+<h3 class="spaces">Space Attributes</h3>
 
 Name | Type | Description
 --- | --- | ---

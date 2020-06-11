@@ -31,9 +31,7 @@
   --max-page-width 520px
   --page-margin 20px
   --page-background #dbdbdb
-  --code-color #8c0000
-  --code-background #c5c5c5
-  --blockquote-background rgba(0,0,0,0.1)
+  --table-border #c5c5c5
 
 
 // Elements
@@ -147,8 +145,8 @@ button
     background var(--secondary-active-background)
 
 code
-  background var(--code-background)
-  color var(--code-color)
+  background var(--success-background)
+  color var(--primary)
   padding 2px
   padding-left 6px
   padding-right 6px
@@ -157,7 +155,7 @@ code
 
 blockquote
   margin 0
-  background var(--blockquote-background)
+  background var(--success-background)
   border-radius 3px
   padding 8px
   max-width var(--max-page-width)
@@ -193,7 +191,7 @@ table
     padding-right 12px
     // border-color grey
     text-align left
-    border-bottom 1px solid var(--code-background)
+    border-bottom 1px solid var(--table-border)
     // vertical-align top
     &:first-child
       padding-left 0
@@ -277,9 +275,9 @@ ul.api-contents
     margin-right 6px
 
 .api
-  h2
+  h2,
+  h3
     display inline-block
-    background pink
     padding 4px 5px
     border-radius 3px
   code
@@ -298,7 +296,7 @@ ul.api-contents
   .users
     background #b9a8ff
   .spaces
-    background aquamarine
+    background pink
   .cards
     background violet
   .connections

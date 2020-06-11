@@ -105,17 +105,21 @@ context.lineCap = context.lineJoin = 'round'
 function randomColor() {
   const colors = [
     '#fcd1c4', // light pink
-    '#c7f0e8', // light teal
+    '#abfcec', // light blue
+    // '#c7f0e8', // light teal
     '#a3d9e1', // blue
-    '#f1d0f4', // purple
-    '#c4ecd7', // green
-    // '#fff0b2', // yellow
+    '#fbbfff', // purple
+    // '#f1d0f4', // purple
+    '#99f6c6', // green
+    // '#c4ecd7', // green
+    '#fff0b2', // yellow
   ]
   color = colors[Math.floor(Math.random() * colors.length)]
 }
 
 function randomSize() {
-  lineWidth = 125 //Math.floor(Math.random() * 100 + 55)
+  // lineWidth = 125
+  lineWidth = Math.floor(Math.random() * 100 + 25)
 }
 
 function throttle(ms, fn) {
