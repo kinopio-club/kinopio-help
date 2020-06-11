@@ -74,10 +74,7 @@ currentPublicSpaceId    | `String`  | The id of an space with privacy set to 'op
 
 Spaces are where you create cards and connections. You can edit and create spaces with the same abilities that a real human has.
 
-.auth explain.... Routes with Auth as `apiKey` mean that the Authorization header apiKey must match the requested user.
-canViewSpace
-canEditSpace
-isUser
+Routes with Auth as `canViewSpace` or `canEditSpace` requires that Authorization apiKey belong to a user with the permission to view or edit the space.
 
 <h3 class="spaces">Space Routes</h3>
 
@@ -87,10 +84,9 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/new-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed | None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get cards removed in a space                                                         | `canEditSpace`
 `GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (name-id)                                    | `canViewSpace`
-`POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body                                 | `isUser`
+`POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   | `apiKey`
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                       | `canEditSpace`
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                             | `canEditSpace`
-`PATCH`  | <code class="spaces">/space/collaborator</code>          | Adds the userId to the spaceId using the collaboratorKey specified in the request body. Request Body Keys: `collaboratorKey`, `spaceId`, `userId` | `spaceCollaboratorKey`
 `DELETE` | <code class="spaces">/space</code>                       | Remove space(s) specified in request body                                            | `canEditSpace`
 `DELETE` | <code class="spaces">/space/permanent</code>             | Permanently remove space(s) specified in request body                                | `canEditSpace`
 `DELETE` | <code class="spaces">/space/collaborator</code>          | Removes collaborator user from space. Request Body Keys: `spaceId`, `userId`                              | `canEditSpace`
