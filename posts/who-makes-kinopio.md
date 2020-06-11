@@ -4,13 +4,11 @@ tags: ['About Kinopio']
 color: '#bbd0ff'
 ---
 
-(*・_・)ノ⌒*
+(*・_・)⊃══✫⌒*･ﾟ✲
 
-Hi, my name is Pirijan and I make Kinopio.
+Hi, my name is Pirijan and I created Kinopio to help people and teams create new ideas and understand why they think the way they do.
 
-I went to school for biology, then I was a construction worker, then an urban planner. Now I'm a designer and engineer.
-
-Before Kinopio, I was the co-creator of Glitch.com, where I designed and built its original user interfaces.
+Before Kinopio, I was the co-creator of Glitch.com, where I designed and built its original user interfaces. I believe in software that's designed by artists, and built by craftspeople.
 
 You can read my blog at [pketh.org](http://pketh.org), or follow me on Twitter [@pketh](http://twitter.com/pketh)
 

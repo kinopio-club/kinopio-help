@@ -4,7 +4,7 @@ tags: ['How to Use']
 color: '#90ffff'
 ---
 
-On a touch device, like a phone, dragging your finger along the screen scrolls the page, just like it does in a normal website. But it also paints on your space, like it does on desktop. It can be tricky to paint over cards while the screen is scrolling.
+On a touch device, dragging your finger along the screen scrolls the page, and two-finger pinching zooms in and out, just like it does on a normal website.
 
 ## Long-press to lock screen and paint
 
