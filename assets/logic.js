@@ -109,7 +109,7 @@ function randomColor() {
     '#a3d9e1', // blue
     '#f1d0f4', // purple
     '#c4ecd7', // green
-    '#fff0b2', // yellow
+    // '#fff0b2', // yellow
   ]
   color = colors[Math.floor(Math.random() * colors.length)]
 }

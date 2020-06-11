@@ -174,11 +174,19 @@ canvas#background
   left 0
   z-index -1
 
+.table-wrap
+  overflow-x auto
+  border-radius 3px
+  padding-left 8px
+
+
 table
   border-collapse collapse
+  max-width 1000px
   // border 1px solid black
   // border-radius 3px
-  // background var(--page-background)
+  // background white
+  // padding-left 8px
   th,
   td
     padding 8px
@@ -276,6 +284,8 @@ ul.api-contents
     border-radius 3px
   code
     line-height 1.2
+
+  // colors should match api.pug
   .all,
   .users,
   .spaces,
@@ -286,9 +296,9 @@ ul.api-contents
   .all
     background khaki
   .users
-    background #9999ff
+    background #b9a8ff
   .spaces
-    background #08ffe8
+    background aquamarine
   .cards
     background violet
   .connections
@@ -296,17 +306,19 @@ ul.api-contents
   .connection-types
     background chocolate
 
-  // .get-label,
-  // .post-label,
-  // .patch-label
-  // .delete-label
-  //   color rgba(255,255,255,.8)
-  // .get-label
-  //   background teal
-  // .patch-label
-  //   background blueviolet
-  // .delete-label
-  //   background brown
+  .get-label,
+  .post-label,
+  .patch-label
+  .delete-label
+    color rgba(255,255,255,0.9)
+  .get-label
+    background forestgreen
+  .post-label
+    background blueviolet
+  .patch-label
+    background peru
+  .delete-label
+    background firebrick
 
 
 .froggo
