@@ -59,16 +59,16 @@ Method | Path | Description | Auth
 
 Name | Type | Description
 --- | --- | ---
-id                      | `String`  | The unique ID of the user. Is not user updateable
-name                    | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
-email                   | `String`  | The unique email address of the user required to create an account"
-emailIsVerified         | `Boolean` | Whether the user has verified their email address
-apiKey                  | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
-lastSpaceId             | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
-color                   | `String`  | User color changes your paint stroke and default avatar color
-defaultConnectionTypeId | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new connections
-lastReadNewStuffId      | `String`  | The id of the last read article from the 'new stuff' newsfeed
-currentPublicSpaceId    | `String`  | The id of an space with privacy set to 'open' that the user is currently viewing or editing
+<code class="users">id</code>                      | `String`  | The unique ID of the user. Is not user updateable
+<code class="users">name</code>                    | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
+<code class="users">email</code>                   | `String`  | The unique email address of the user required to create an account"
+<code class="users">emailIsVerified</code>         | `Boolean` | Whether the user has verified their email address
+<code class="users">apiKey</code>                  | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
+<code class="users">lastSpaceId</code>             | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
+<code class="users">color</code>                   | `String`  | User color changes your paint stroke and default avatar color
+<code class="users">defaultConnectionTypeId</code> | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new connections
+<code class="users">lastReadNewStuffId</code>      | `String`  | The id of the last read article from the 'new stuff' newsfeed
+<code class="users">currentPublicSpaceId</code>    | `String`  | The id of an space with privacy set to 'open' that the user is currently viewing or editing
 
 
 <a name="spaces"></a>
@@ -101,22 +101,16 @@ Method | Path | Request Body Keys | Description | Auth
 
 Name | Type | Description
 --- | --- | ---
-id                  | `String` | The unique ID of the space. Is not user updateable
-name                | `String` | The name of the space. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
-ownerUserId         | `String` | The userId of the user who created the space. Used to create url slugs. In the future ownership will be transferable
-Privacy             | `String` | Can be `open`, `closed`, `private`
-isRemoved           | `Boolean` | Sets whether the space has been soft-removed. (can then be restored or permanently removed)
-removedByUserId     | `String` | "The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed"
-collaboratorKey     | `String` | "kinda like an apikey but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret"
-collaborators       | `Array` | List of users added to space as collaborators
+<code class="spaces">id</code>                  | `String` | The unique ID of the space. Is not user updateable
+<code class="spaces">name</code>                | `String` | The name of the space. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
+<code class="spaces">url</code>                 | `String` | The url of a space is determined by it's `name` and `id`. For example, `kinopio.club/:space-name-:id`
+<code class="spaces">ownerUserId</code>         | `String` | The userId of the user who created the space. Used to create url slugs. In the future ownership will be transferable
+<code class="spaces">Privacy</code>             | `String` | Can be `open`, `closed`, `private`
+<code class="spaces">isRemoved</code>           | `Boolean` | Sets whether the space has been soft-removed. (can then be restored or permanently removed)
+<code class="spaces">removedByUserId</code>     | `String` | The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed
+<code class="spaces">collaboratorKey</code>     | `String` | kinda like an apikey but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
+<code class="spaces">collaborators</code>       | `Array` | List of users added to space as collaborators
+<code class="spaces">users</code>               | `Array` | the user who created/owns the space (a space will always have only one user)
+<code class="spaces">collaborators</code>       | `Array` | a list of users that can also edit the space
 
 
-
-.....
-
-.....
-
-// space attributes
-users |  Array | the user who created/owns the space (a space will always have only one user)
-collaborators | Array | a list of users that can also edit the space
-url | String | The url of a space is determined by it's `name` and `id`. For example, `kinopio.club/:space-name-:id`
