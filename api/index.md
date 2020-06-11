@@ -38,9 +38,9 @@ Method | Name | Description | Auth
 
 Users are representations of any account on Kinopio. Users are created by the server when they sign up.
 
-Routes with Auth as `apiKey` mean that the Authorization header apiKey must match the requested user.
-
 <h3 class="users">User Routes</h3>
+
+Routes with Auth as `apiKey` mean that the Authorization header apiKey must match the requested user.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
@@ -74,9 +74,9 @@ currentPublicSpaceId    | `String`  | The id of an space with privacy set to 'op
 
 Spaces are where you create cards and connections. You can edit and create spaces with the same abilities that a real human has.
 
-Routes with Auth as `canViewSpace` or `canEditSpace` requires that Authorization apiKey belong to a user with the permission to view or edit the space.
-
 <h3 class="spaces">Space Routes</h3>
+
+Routes with Auth as `canViewSpace` or `canEditSpace` requires that Authorization apiKey belong to a user with the permission to view or edit the space.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
@@ -108,3 +108,33 @@ users               | `Array` | the user who created/owns the space (a space wil
 collaborators       | `Array` | a list of users that can also edit the space
 
 
+<a name="cards"></a>
+<h2 class="cards">Cards</h2>
+
+Cards are the building blocks of spaces. They have `x`, `y`, and `z` positions and a `name`.
+
+<h3 class="cards">Cards Routes</h3>
+
+Routes with Auth as `canViewSpace` or `canEditSpace` requires that Authorization apiKey belong to a user with the permission to view or edit the space.
+
+Method | Path | Description | Auth
+--- | --- | --- | ---
+`GET`     | <code class="cards">/card/:cardId</code>   | Get info on a card                                                                      | `canViewCard`
+`POST`    | <code class="cards">/card</code>           | Create card(s) from object(s) in request body. Object must contain id and spaceId       | `canEditCard`
+`PATCH`   | <code class="cards">/card</code>           | Update card(s) from object(s) in request body. card obj must contain id                 | `canEditCard`
+`PATCH`   | <code class="cards">/card/restore</code>   | Restore removed card specified in body                                                  | `canEditCard`
+`DELETE`  | <code class="cards">/card</code>           | Remove card specified in body                                                           | `canEditCard`
+`DELETE`  | <code class="cards">/card/permanent</code> | Permanently remove card specified in body                                               | `canEditCard`
+
+<h3 class="cards">Card Attributes</h3>
+
+Name | Type | Description
+--- | --- | ---
+id        | `String`  | The unique ID of the card. Is not user updateable
+name      | `String`  | The name of the card is it's main text
+x         | `Integer` | x-axis position
+y         | `Integer` | y-axis position
+z         | `Integer` | z-axis position
+frameId   | `String`  | The id of type of frame applied to the card, if any
+isRemoved | `Boolean` | Sets whether the card has been soft-removed. (can be restored or permanently removed by space users)
+SpaceId   | `String`  | The space that the card belongs to
