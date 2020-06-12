@@ -167,3 +167,28 @@ path              | `String` | SVG path that defines the connection line and it'
 ConnectionTypeId  | `String` | The connection-type that the connection belongs to
 SpaceId           | `String` | The space that the connection belongs to
 
+
+<a data-section="💐" name="connection-types"></a>
+<h2 class="connection-types">Connection Types</h2>
+
+Connection Types group connections together to allow the attributes of multiple connection lines to be represented and edited together.
+
+<h3 class="connection-types">Connection Type Routes</h3>
+
+Routes with Auth `canViewConnectionType` or `canEditConnectionType` requires that your Authorization apiKey belongs to a user with the permission to view or edit the connection type.
+
+Method | Path | Description | Auth
+--- | --- | --- | ---
+`GET`     | <code class="connection-types">/connection-type/:connectionTypeId</code>  | Get info on a connectionType                                                                         | `canViewConnectionType`
+`POST`    | <code class="connection-types">/connection-type</code>                    | Create connectionType(s) from object (or array) in request body. Object must contain `id`, `spaceId` | `canEditConnectionType`
+`PATCH`   | <code class="connection-types">/connection-type</code>                    | Update connectionType(s) from object in request body                                                 | `canEditConnectionType`
+`DELETE`  | <code class="connection-types">/connection-type</code>                    | Permenently remove connectionType                                                                    | `canEditConnectionType`
+
+<h3 class="connection-types">Connection Type Attributes</h3>
+
+Name | Type | Description
+--- | --- | ---
+id      | `String` | The unique ID of the connection. Is not user updateable
+name    | `String` | The name of the connection-type
+color   | `String` | User color changes your paint stroke and default avatar color
+SpaceId | `String` | The space that the connection-type belongs to
