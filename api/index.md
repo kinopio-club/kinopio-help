@@ -33,7 +33,7 @@ Method | Name | Description | Auth
 `GET` | <code class="all">/</code> | tells you if the api is online | None
 
 
-<a name="users"></a>
+<a data-section="👯‍♀️" name="users"></a>
 <h2 class="users">Users</h2>
 
 Users are representations of any account on Kinopio. Users are created by the server when they sign up.
@@ -69,14 +69,14 @@ lastReadNewStuffId      | `String`  | The id of the last read article from the '
 currentPublicSpaceId    | `String`  | The id of an space with privacy set to 'open' that the user is currently viewing or editing
 
 
-<a name="spaces"></a>
+<a data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
 
 Spaces are where you create cards and connections. You can edit and create spaces with the same abilities that a real human has.
 
 <h3 class="spaces">Space Routes</h3>
 
-Routes with Auth as `canViewSpace` or `canEditSpace` requires that Authorization apiKey belong to a user with the permission to view or edit the space.
+Routes with Auth `canViewSpace` or `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to view or edit the space.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
@@ -108,14 +108,14 @@ users               | `Array` | the user who created/owns the space (a space wil
 collaborators       | `Array` | a list of users that can also edit the space
 
 
-<a name="cards"></a>
+<a data-section="🎑" name="cards"></a>
 <h2 class="cards">Cards</h2>
 
 Cards are the building blocks of spaces. They have `x`, `y`, and `z` positions and a `name`.
 
 <h3 class="cards">Cards Routes</h3>
 
-Routes with Auth as `canViewSpace` or `canEditSpace` requires that Authorization apiKey belong to a user with the permission to view or edit the space.
+Routes with Auth `canViewCard` or `canEditCard` requires that your Authorization apiKey belongs to a user with the permission to view or edit the card.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
@@ -138,3 +138,32 @@ z         | `Integer` | z-axis position
 frameId   | `String`  | The id of type of frame applied to the card, if any
 isRemoved | `Boolean` | Sets whether the card has been soft-removed. (can be restored or permanently removed by space users)
 SpaceId   | `String`  | The space that the card belongs to
+
+
+<a data-section="🍆" name="connections"></a>
+<h2 class="connections">Connections</h2>
+
+Connections are the lines that connect cards together. Connections have a `connection-type` which assigns them a color and allows the user to thematically group cards together by connected type.
+
+<h3 class="connections">Connection Routes</h3>
+
+Routes with Auth `canViewConnection` or `canEditConnection` requires that your Authorization apiKey belongs to a user with the permission to view or edit the connection.
+
+Method | Path | Description | Auth
+--- | --- | --- | ---
+`GET`     | <code class="connections">/connection/<br/>:connectionId</code> | Get info on a connection                                                                                    | `canViewConnection`
+`POST`    | <code class="connections">/connection</code>                    | Create connection(s) from object in request body. Object must contain `id`, `spaceId`, `connectionTypeId`   | `canEditConnection`
+`PATCH`   | <code class="connections">/connection</code>                    | Update connection(s) from object in request body                                                            | `canEditConnection`
+`DELETE`  | <code class="connections">/connection</code>                    | Permenently remove connection(s) speced in req body                                                         | `canEditConnection`
+
+<h3 class="connections">Connection Attributes</h3>
+
+Name | Type | Description
+--- | --- | ---
+id                | `String` | The unique ID of the connection. Is not user updateable
+startCardId       | `String` | The card that the connection line starts from
+endCardId         | `String` | The card that the connection line ends at
+path              | `String` | SVG path that defines the connection line and it's curve
+ConnectionTypeId  | `String` | The connection-type that the connection belongs to
+SpaceId           | `String` | The space that the connection belongs to
+
