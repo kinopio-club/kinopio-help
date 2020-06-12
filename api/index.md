@@ -91,7 +91,7 @@ Method | Path | Description | Auth
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                             | `canEditSpace`
 `DELETE` | <code class="spaces">/space</code>                       | Remove space(s) specified in request body                                            | `canEditSpace`
 `DELETE` | <code class="spaces">/space/permanent</code>             | Permanently remove space(s) specified in request body                                | `canEditSpace`
-`DELETE` | <code class="spaces">/space/collaborator</code>          | Removes collaborator user from space. Request Body Keys: `spaceId`, `userId`                              | `canEditSpace`
+`DELETE` | <code class="spaces">/space/collaborator</code>          | Removes collaborator user from space. Request Body Keys: `spaceId`, `userId`         | `canEditSpace`
 
 <h3 class="spaces">Space Attributes</h3>
 
@@ -117,16 +117,16 @@ Cards are the building blocks of spaces. They have `x`, `y`, and `z` positions a
 
 <h3 class="cards">Cards Routes</h3>
 
-Routes with Auth `canViewCard` or `canEditCard` requires that your Authorization apiKey belongs to a user with the permission to view or edit the card.
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the card belongs to.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="cards">/card/:cardId</code>   | Get info on a card                                                                      | `canViewCard`
-`POST`    | <code class="cards">/card</code>           | Create card(s) from object(s) in request body. Object must contain id and spaceId       | `canEditCard`
-`PATCH`   | <code class="cards">/card</code>           | Update card(s) from object(s) in request body. card obj must contain id                 | `canEditCard`
-`PATCH`   | <code class="cards">/card/restore</code>   | Restore removed card specified in body                                                  | `canEditCard`
-`DELETE`  | <code class="cards">/card</code>           | Remove card specified in body                                                           | `canEditCard`
-`DELETE`  | <code class="cards">/card/permanent</code> | Permanently remove card specified in body                                               | `canEditCard`
+`GET`     | <code class="cards">/card/:cardId</code>   | Get info on a card                                                                      | None
+`POST`    | <code class="cards">/card</code>           | Create card(s) from object(s) in request body. Body object must contain `id` and `spaceId`       | `canEditSpace`
+`PATCH`   | <code class="cards">/card</code>           | Update card(s) from object(s) in request body. Body object must contain `id`                 | `canEditSpace`
+`PATCH`   | <code class="cards">/card/restore</code>   | Restore removed card specified in body                                                  | `canEditSpace`
+`DELETE`  | <code class="cards">/card</code>           | Remove card specified in body                                                           | `canEditSpace`
+`DELETE`  | <code class="cards">/card/permanent</code> | Permanently remove card specified in body                                               | `canEditSpace`
 
 <h3 class="cards">Card Attributes</h3>
 
@@ -149,14 +149,14 @@ Connections are the lines that connect cards together. Connections have a `conne
 
 <h3 class="connections">Connection Routes</h3>
 
-Routes with Auth `canViewConnection` or `canEditConnection` requires that your Authorization apiKey belongs to a user with the permission to view or edit the connection.
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the connection belongs to.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="connections">/connection/<br/>:connectionId</code> | Get info on a connection                                                                                    | `canViewConnection`
-`POST`    | <code class="connections">/connection</code>                    | Create connection(s) from object in request body. Object must contain `id`, `spaceId`, `connectionTypeId`   | `canEditConnection`
-`PATCH`   | <code class="connections">/connection</code>                    | Update connection(s) from object in request body                                                            | `canEditConnection`
-`DELETE`  | <code class="connections">/connection</code>                    | Permenently remove connection(s) speced in req body                                                         | `canEditConnection`
+`GET`     | <code class="connections">/connection/<br/>:connectionId</code> | Get info on a connection                                                                                    | None
+`POST`    | <code class="connections">/connection</code>                    | Create connection(s) from object in request body. Object must contain `id`, `spaceId`, `connectionTypeId`   | `canEditSpace`
+`PATCH`   | <code class="connections">/connection</code>                    | Update connection(s) from object in request body                                                            | `canEditSpace`
+`DELETE`  | <code class="connections">/connection</code>                    | Permenently remove connection(s) speced in req body                                                         | `canEditSpace`
 
 <h3 class="connections">Connection Attributes</h3>
 
@@ -177,14 +177,14 @@ Connection Types group connections together to allow the attributes of multiple 
 
 <h3 class="connection-types">Connection Type Routes</h3>
 
-Routes with Auth `canViewConnectionType` or `canEditConnectionType` requires that your Authorization apiKey belongs to a user with the permission to view or edit the connection type.
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the connection type belongs to.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="connection-types">/connection-type/:connectionTypeId</code>  | Get info on a connectionType                                                                         | `canViewConnectionType`
-`POST`    | <code class="connection-types">/connection-type</code>                    | Create connectionType(s) from object (or array) in request body. Object must contain `id`, `spaceId` | `canEditConnectionType`
-`PATCH`   | <code class="connection-types">/connection-type</code>                    | Update connectionType(s) from object in request body                                                 | `canEditConnectionType`
-`DELETE`  | <code class="connection-types">/connection-type</code>                    | Permenently remove connectionType                                                                    | `canEditConnectionType`
+`GET`     | <code class="connection-types">/connection-type/:connectionTypeId</code>  | Get info on a connectionType                                                                         | None
+`POST`    | <code class="connection-types">/connection-type</code>                    | Create connectionType(s) from object (or array) in request body. Object must contain `id`, `spaceId` | `canEditSpace`
+`PATCH`   | <code class="connection-types">/connection-type</code>                    | Update connectionType(s) from object in request body                                                 | `canEditSpace`
+`DELETE`  | <code class="connection-types">/connection-type</code>                    | Permenently remove connectionType                                                                    | `canEditSpace`
 
 <h3 class="connection-types">Connection Type Attributes</h3>
 
