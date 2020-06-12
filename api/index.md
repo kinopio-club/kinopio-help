@@ -7,6 +7,8 @@ layout: "layouts/api.pug"
 
 The Kinopio API is used to find, save, and update the spaces of signed up users. You can use it to make cool things too.
 
+Use of the API is subject to the [Use Restrictions Policy](/posts/use-restrictions-policy/).
+
 # Authentication
 
 Kinopio uses token-based authentication using your user `apiKey`. The easiest way to get your apiKey is by entering `JSON.parse(localStorage.user).apiKey` in your browser console on [kinopio.club](http://kinopio.club).
@@ -19,7 +21,7 @@ Use your apiKey in the `Authorization` header of each request.
 
 # Rate Limits
 
-The API is limited to 5 requests per second. If you exceed this rate, you will receive a 429 status code and will need to wait 30 seconds before subsequent requests will succeed.
+The API is limited to 5 requests per second. If you exceed this rate, you will receive a `429` response and will need to wait 30 seconds before subsequent requests will succeed.
 
 # Routes
 
@@ -30,7 +32,7 @@ The API is limited to 5 requests per second. If you exceed this rate, you will r
 
 Method | Name | Description | Auth
 --- | --- | --- | ---
-`GET` | <code class="all">/</code> | tells you if the api is online | None
+`GET` | <code class="all">/</code> | Confirm that the API server is online | None
 
 
 <a data-section="👯‍♀️" name="users"></a>
@@ -44,7 +46,7 @@ Routes with Auth as `apiKey` mean that the Authorization header apiKey must matc
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`   | <code class="users">/user/public/:userId</code>         | Get public info on a user JSON.parse(localStorage.user).id                              | None
+`GET`   | <code class="users">/user/public/:userId</code>         | Gets public info on a user                                                              | None
 `GET`   | <code class="users">/user</code>                        | Get all info on the authenticating user                                                 | `apiKey`
 `GET`   | <code class="users">/user/favorites</code>              | Gets all info, including user and space favorites, on the authenticating user           | `apiKey`
 `GET`   | <code class="users">/user/spaces</code>                 | Get a list of the user's spaces                                                         | `apiKey`
