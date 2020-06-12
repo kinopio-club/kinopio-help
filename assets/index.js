@@ -172,3 +172,26 @@ window.ontouchmove = throttle(10, function (event) {
   plots.push({x: cursorPosition.x, y: cursorPosition.y})
   drawOnCanvas()
 })
+
+let currentScrollPosition = {
+  x: window.scrollX,
+  y: window.scrollY
+}
+
+window.onscroll = function (event) {
+  const scrollDelta = {
+    x: currentScrollPosition.x - window.scrollX,
+    y: currentScrollPosition.y - window.scrollY
+  }
+  plots = plots.map(plot => {
+    return {
+      x: plot.x + (scrollDelta.x * 2),
+      y: plot.y + (scrollDelta.y * 2)
+    }
+  })
+  currentScrollPosition = {
+    x: window.scrollX,
+    y: window.scrollY
+  }
+  drawOnCanvas()
+}
