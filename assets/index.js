@@ -119,7 +119,7 @@ function randomColor() {
 
 function randomSize() {
   // lineWidth = 125
-  lineWidth = Math.floor(Math.random() * 100 + 25)
+  lineWidth = Math.floor(Math.random() * 100 + 50)
 }
 
 function throttle(ms, fn) {

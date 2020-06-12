@@ -68,13 +68,13 @@ lastSpaceId             | `String`  | The spaceId of the last space edited. Used
 color                   | `String`  | User color changes your paint stroke and default avatar color
 defaultConnectionTypeId | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new connections
 lastReadNewStuffId      | `String`  | The id of the last read article from the 'new stuff' newsfeed
-currentPublicSpaceId    | `String`  | The id of an space with privacy set to 'open' that the user is currently viewing or editing
+currentPublicSpaceId    | `String`  | The id of an space with privacy set to `open` that the user is currently viewing or editing
 
 
 <a data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
 
-Spaces are where you create cards and connections. You can edit and create spaces with the same abilities that a real human has.
+Spaces are where your cards and connections live.
 
 <h3 class="spaces">Space Routes</h3>
 
@@ -84,8 +84,8 @@ Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id                                                            | `canViewSpace`
 `GET`    | <code class="spaces">/space/new-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed | None
-`GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get cards removed in a space                                                         | `canEditSpace`
-`GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (name-id)                                    | `canViewSpace`
+`GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get cards removed in a space                                                     | `canEditSpace`
+`GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                            | `canViewSpace`
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   | `apiKey`
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                       | `canEditSpace`
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                             | `canEditSpace`
@@ -97,17 +97,17 @@ Method | Path | Description | Auth
 
 Name | Type | Description
 --- | --- | ---
-id                  | `String` | The unique ID of the space. Is not user updateable
-name                | `String` | The name of the space. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
-url                 | `String` | The url of a space is determined by it's `name` and `id`. For example, `kinopio.club/:space-name-:id`
-ownerUserId         | `String` | The userId of the user who created the space. Used to create url slugs. In the future ownership will be transferable
-Privacy             | `String` | Can be `open`, `closed`, `private`
+id                  | `String`  | The unique ID of the space. Is not user updateable
+name                | `String`  | The name of the space
+url                 | `String`  | The url of a space is determined by it's `name` and `id`. For example, `kinopio.club/:space-name-:id`
+ownerUserId         | `String`  | The userId of the user who created the space. Used to create url slugs
+Privacy             | `String`  | Can be `open`, `closed`, `private`
 isRemoved           | `Boolean` | Sets whether the space has been soft-removed. (can then be restored or permanently removed)
-removedByUserId     | `String` | "The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed"
-collaboratorKey     | `String` | "kinda like an apikey but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret"
-collaborators       | `Array` | List of users added to space as collaborators
-users               | `Array` | the user who created/owns the space (a space will always have only one user)
-collaborators       | `Array` | a list of users that can also edit the space
+removedByUserId     | `String`  | The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed
+collaboratorKey     | `String`  | Used like an apikey to allow editing, but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
+collaborators       | `Array`   | List of users added to space as collaborators
+users               | `Array`   | The user who created/owns the space (a space will always have only one user)
+collaborators       | `Array`   | A list of users that can also edit the space
 
 
 <a data-section="🎑" name="cards"></a>
