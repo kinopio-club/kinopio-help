@@ -8,7 +8,7 @@ Kinopio helps people understand themselves and be understood by sharing thoughts
 
 > This document defines the shady stuff you cannot use Kinopio for.
 
-- When I say “Company”, “we”, “our”, or “us” in this document, I'm referring to Kinopio, LLC.
+- When I say “Company”, “we”, “our”, or “us” in this document, I'm referring to Kinopio LLC.
 
 # **Restricted purposes**
 

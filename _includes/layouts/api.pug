@@ -1,0 +1,17 @@
+---
+layout: default.pug
+---
+
+// colors match api h2s in styles.styl
+- items = [ {name: 'All', link: '#all', color: 'khaki'}, {name: 'Users', link: '#users', color: '#b9a8ff'}, {name: 'Spaces', link: '#spaces', color: 'pink'}, {name: 'Cards', link: '#cards', color: 'violet'}, {name: 'Connections', link: '#connections', color: 'salmon'}, {name: 'Connection Types', link: '#connection-types', color: 'burlywood'} ]
+
+ul.api-contents
+  each item in items
+    li
+      a(href=item.link style=`background: ${item.color}`)
+        span #{item.name}
+
+article.api
+  h1 #{title}
+  span !{content}
+  script(src="/assets/api.js")

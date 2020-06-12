@@ -22,13 +22,16 @@
   // --hover-shadow 3px 3px 0 var(--heavy-shadow)
   // --active-shadow 5px 5px 0 var(--light-shadow)
   // --active-inset-shadow inset 0 2px 3px var(--light-shadow)
-  --button-hover-shadow 2px 2px 0 var(--heavy-shadow)
-  --button-active-inset-shadow inset 0 1px 2px var(--heavy-shadow)
+  --button-shadow 2px 2px 0 var(--light-shadow)
+  --button-hover-shadow inset 0 1px 2px var(--heavy-shadow)
+  --button-active-inset-shadow inset 2px 2px 2px var(--heavy-shadow)
 
   // help site vars
   --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
   --max-page-width 520px
   --page-margin 20px
+  --page-background #dbdbdb
+  --table-border #c5c5c5
 
 
 // Elements
@@ -66,7 +69,8 @@ body
 h1
   font-size 20px
 
-h2
+h2,
+h3
   font-size 16px
 
 h1,
@@ -74,6 +78,9 @@ h2,
 a,
 p
   max-width var(--max-page-width)
+
+p
+  line-height 1.2
 
 a
   color blue
@@ -107,6 +114,7 @@ ul
       background var(--info-background)
       padding 4px 5px
       border-radius 3px
+      box-shadow var(--button-shadow)
       &:hover,
       &:focus
         box-shadow var(--button-hover-shadow)
@@ -157,13 +165,33 @@ blockquote
 
 canvas#background
   position: fixed
-  background-color #dbdbdb
+  background-color var(--page-background)
   height 100%
   width 100%
   top 0
   left 0
   z-index -1
 
+.table-wrap
+  overflow-x auto
+  border-radius 3px
+  padding-left 8px
+
+table
+  border-collapse collapse
+  max-width 1000px
+  th,
+  td
+    padding 8px
+    padding-right 12px
+    text-align left
+    border-bottom 1px solid var(--table-border)
+    max-width 520px
+    &:first-child
+      padding-left 0
+  tr
+    &:hover
+      background rgba(255,255,255,.2)
 
 // Components
 
@@ -183,7 +211,7 @@ header
       .logo
         background-image url('/assets/logo-active.png')
 
-nav
+.search
   display flex
   margin-bottom 2rem
   img
@@ -196,10 +224,12 @@ footer
   margin-top 2rem
   margin-bottom 2rem
 
-button.kinopio
+nav
   position absolute
   right var(--page-margin)
   top var(--page-margin)
+  button
+    margin-left 6px
 
 article
   ul,
@@ -225,8 +255,68 @@ article
     &.no-shadow
       box-shadow none
 
+ul.api-contents
+  margin-top 2rem
+  padding 0
+  margin-left 0
+  margin-right 0
+  position sticky
+  top 20px
+  li
+    list-style none
+    display inline-block
+    margin-right 6px
+
+.api
+  h2,
+  h3
+    display inline-block
+    padding 4px 5px
+    border-radius 3px
+  code
+    line-height 1.2
+
+  // colors should match api.pug
+  .all,
+  .users,
+  .spaces,
+  .cards,
+  .connections,
+  .connection-types
+    color var(--primary)
+  .all
+    background khaki
+  .users
+    background #b9a8ff
+  .spaces
+    background pink
+  .cards
+    background violet
+  .connections
+    background salmon
+  .connection-types
+    background burlywood
+
+  .get-label,
+  .post-label,
+  .patch-label
+  .delete-label
+    color rgba(255,255,255,0.9)
+  .get-label
+    background forestgreen
+  .post-label
+    background blueviolet
+  .patch-label
+    background peru
+  .delete-label
+    background firebrick
+
+
 .froggo
   max-width 75px
+
+.cat
+  max-width 150px
 
 .remove
   transform rotate(45deg)

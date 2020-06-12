@@ -15,9 +15,12 @@ html(lang="en")
         img.hidden(src="/assets/logo-active.png")
         .logo
         h1 Help and Support
-    a(href="https://kinopio.club")
-      button.kinopio Kinopio →
     nav
+      a(href="/api")
+        button API Docs
+      a(href="https://kinopio.club")
+        button.kinopio Kinopio →
+    .search
       form
         img#search(src="/assets/search.svg")
         input(placeholder="Search")
@@ -31,4 +34,4 @@ html(lang="en")
 
   canvas#background
   script(src="/assets/fuzzy-min.js")
-  script(src="/assets/logic.js")
+  script(src="/assets/index.js")

@@ -4,10 +4,10 @@ console.log('🍍', fuzzy)
 
 let params = (new URL(document.location)).searchParams
 let search = params.get("search")
-const searchIcon = document.querySelector('nav #search')
-const removeIcon = document.querySelector('nav #remove')
-const searchForm = document.querySelector('nav form')
-const searchInput = document.querySelector('nav input')
+const searchIcon = document.querySelector('.search #search')
+const removeIcon = document.querySelector('.search #remove')
+const searchForm = document.querySelector('.search form')
+const searchInput = document.querySelector('.search input')
 const helloSection = document.querySelector('section#hello')
 const headers = document.querySelectorAll('section#index h2')
 const posts = document.querySelectorAll('section#index li')
@@ -106,16 +106,20 @@ function randomColor() {
   const colors = [
     '#fcd1c4', // light pink
     '#abfcec', // light blue
+    // '#c7f0e8', // light teal
     '#a3d9e1', // blue
     '#fbbfff', // purple
+    // '#f1d0f4', // purple
     '#99f6c6', // green
+    // '#c4ecd7', // green
     '#fff0b2', // yellow
   ]
   color = colors[Math.floor(Math.random() * colors.length)]
 }
 
 function randomSize() {
-  lineWidth = Math.floor(Math.random() * 100 + 25)
+  lineWidth = 125
+  // lineWidth = Math.floor(Math.random() * 100 + 50)
 }
 
 function throttle(ms, fn) {
@@ -168,3 +172,25 @@ window.ontouchmove = throttle(10, function (event) {
   plots.push({x: cursorPosition.x, y: cursorPosition.y})
   drawOnCanvas()
 })
+
+// let currentScrollPosition = {
+//   x: window.scrollX,
+//   y: window.scrollY
+// }
+// window.onscroll = function (event) {
+//   const scrollDelta = {
+//     x: currentScrollPosition.x - window.scrollX,
+//     y: currentScrollPosition.y - window.scrollY
+//   }
+//   plots = plots.map(plot => {
+//     return {
+//       x: plot.x + (scrollDelta.x * 2),
+//       y: plot.y + (scrollDelta.y * 2)
+//     }
+//   })
+//   currentScrollPosition = {
+//     x: window.scrollX,
+//     y: window.scrollY
+//   }
+//   drawOnCanvas()
+// }
