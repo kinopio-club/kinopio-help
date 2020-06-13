@@ -25,7 +25,7 @@ The API is limited to 5 requests per second. If you exceed this rate, you will r
 
 # Routes
 
-<a name="all"></a>
+<a class="anchor" name="all"></a>
 <h2 class="all">All</h2>
 
 [https://api.kinopio.club](https://api.kinopio.club) is the base path for all routes
@@ -35,7 +35,7 @@ Method | Name | Description | Auth
 `GET` | <code class="all">/</code> | Confirm that the API server is online | None
 
 
-<a data-section="👯‍♀️" name="users"></a>
+<a class="anchor" data-section="👯‍♀️" name="users"></a>
 <h2 class="users">Users</h2>
 
 Users are representations of any account on Kinopio. Users are created by the server when they sign up.
@@ -71,7 +71,7 @@ lastReadNewStuffId      | `String`  | The id of the last read article from the '
 currentPublicSpaceId    | `String`  | The id of an space with privacy set to `open` that the user is currently viewing or editing
 
 
-<a data-section="🍓" name="spaces"></a>
+<a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
 
 Spaces are where your cards and connections live.
@@ -110,7 +110,7 @@ users               | `Array`   | The user who created/owns the space (a space w
 collaborators       | `Array`   | A list of users that can also edit the space
 
 
-<a data-section="🎑" name="cards"></a>
+<a class="anchor" data-section="🎑" name="cards"></a>
 <h2 class="cards">Cards</h2>
 
 Cards are the building blocks of spaces. They have `x`, `y`, and `z` positions and a `name`.
@@ -142,7 +142,7 @@ isRemoved | `Boolean` | Sets whether the card has been soft-removed. (can be res
 SpaceId   | `String`  | The space that the card belongs to
 
 
-<a data-section="🍆" name="connections"></a>
+<a class="anchor" data-section="🍆" name="connections"></a>
 <h2 class="connections">Connections</h2>
 
 Connections are the lines that connect cards together. Connections have a `connection-type` which assigns them a color and allows the user to thematically group cards together by connected type.
@@ -170,7 +170,7 @@ ConnectionTypeId  | `String` | The connection-type that the connection belongs t
 SpaceId           | `String` | The space that the connection belongs to
 
 
-<a data-section="💐" name="connection-types"></a>
+<a class="anchor" data-section="💐" name="connection-types"></a>
 <h2 class="connection-types">Connection Types</h2>
 
 Connection Types group connections together to allow the attributes of multiple connection lines to be represented and edited together.
