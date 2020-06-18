@@ -4,11 +4,11 @@ tags: ['About Kinopio']
 color: '#bbd0ff'
 ---
 
-Currently Kinopio is totally free to use. Once all the basics are finished, a subscription payment system will be added.
+All features of Kinopio are free to use and collaborate with, up to a limit of 150 cards.
 
-> Eventually, Kinopio will cost 4$/month (USD) to create more than 150 cards.
+> Kinopio costs 4$/month (USD) for unlimited cards
 
- I want the pricing to feel simple, straightforward, and obvious.
+I want the pricing to feel simple, straightforward, and obvious.
 
 📈 Cards you add will increment the card count
 
