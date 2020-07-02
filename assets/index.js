@@ -89,15 +89,18 @@ let canvas, context, canvasImage, color, prevScroll
 let pageCanvas, pageContext
 const lineWidth = 30
 let currentStroke = []
+let allStrokes = []
 prevScroll = {
   x: window.scrollX,
   y: window.scrollY
 }
 let isDrawing = false
+let isTouch = false
 
 randomColor()
 initCanvas()
 initPageCanvas()
+console.log('🌸 drawing ready')
 
 function initCanvas () {
   canvas = document.getElementById('background')
@@ -105,6 +108,9 @@ function initCanvas () {
   canvas.height = window.innerHeight
   context = canvas.getContext('2d')
   context.scale(2,2)
+  context.strokeStyle = color
+  context.lineWidth = lineWidth
+  context.lineCap = context.lineJoin = 'round'
 }
 
 function initPageCanvas () {
@@ -117,6 +123,9 @@ function initPageCanvas () {
   pageCanvas.height = pageHeight
   pageContext = pageCanvas.getContext('2d')
   pageContext.scale(2,2)
+  pageContext.strokeStyle = color
+  pageContext.lineWidth = lineWidth
+  pageContext.lineCap = pageContext.lineJoin = 'round'
 }
 
 function randomColor () {
@@ -145,11 +154,8 @@ function throttle (ms, fn) {
   }
 }
 
-function drawStroke (stroke) {
+function drawCurrentStroke () {
   if (currentStroke.length === 0) { return }
-  context.strokeStyle = color
-  context.lineWidth = lineWidth
-  context.lineCap = context.lineJoin = 'round'
   context.beginPath()
   context.moveTo(currentStroke[0].x, currentStroke[0].y)
   currentStroke.forEach((point) => {
@@ -158,12 +164,29 @@ function drawStroke (stroke) {
   context.stroke()
 }
 
+function redrawAllStrokes () {
+  if (allStrokes.length === 0) { return }
+  allStrokes = allStrokes.filter(stroke => {
+    return stroke.length
+  })
+  allStrokes.forEach(stroke => {
+    pageContext.beginPath()
+    pageContext.moveTo(stroke[0].x + stroke[0].scrollX, stroke[0].y + stroke[0].scrollY)
+    stroke.forEach((point) => {
+      pageContext.lineTo(point.x + point.scrollX, point.y + point.scrollY)
+    })
+    pageContext.stroke()
+  })
+
+}
+
 function startStroke () {
   currentStroke = []
   isDrawing = true
 }
 
 function endStroke () {
+  allStrokes.push(currentStroke)
   pageCanvas.getContext('2d').drawImage(canvas, prevScroll.x / 2, prevScroll.y / 2, canvas.width / 2, canvas.height / 2)
   currentStroke = []
   isDrawing = false
@@ -178,12 +201,15 @@ function addPointToStroke ({ x, y }) {
     scrollX: prevScroll.x / 2,
     scrollY: prevScroll.y / 2
   })
-  drawStroke()
+  drawCurrentStroke()
 }
 
 // start
 window.onmousedown = function (event) { startStroke() }
-window.ontouchstart = function (event) { startStroke() }
+window.ontouchstart = function (event) {
+  isTouch = true
+  startStroke()
+}
 
 // stop
 window.onmouseup = function (event) { endStroke() }
@@ -198,12 +224,15 @@ window.ontouchmove = throttle(10, function (event) {
 })
 
 // resize
-window.onresize = throttle(100, function () {
+window.onresize = throttle(100, function (event) {
   prevScroll = {
     x: window.scrollX,
     y: window.scrollY
   }
-  context.clearRect(0,0, canvas.width, canvas.height)
+  if (isTouch) { return }
+  initCanvas()
+  initPageCanvas()
+  redrawAllStrokes()
 })
 
 // scroll
