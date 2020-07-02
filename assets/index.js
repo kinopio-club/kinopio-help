@@ -169,8 +169,8 @@ function drawStrokeOnPage (drawStroke) {
   pageContext.beginPath()
   drawStroke = drawStroke.map(stroke => {
     return {
-      x: stroke.x + (prevScroll.x / 2),
-      y: stroke.y + (prevScroll.y / 2)
+      x: stroke.x + stroke.scrollX,
+      y: stroke.y + stroke.scrollY
     }
   })
   pageContext.moveTo(drawStroke[0].x, drawStroke[0].y)
@@ -194,7 +194,12 @@ function endStroke () {
 
 function addPointToStroke ({ x, y }) {
   if (!isDrawing) { return }
-  currentStroke.push({ x, y })
+  currentStroke.push({
+    x,
+    y,
+    scrollX: prevScroll.x / 2,
+    scrollY: prevScroll.y / 2
+  })
   drawStroke()
 }
 
