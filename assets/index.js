@@ -86,15 +86,15 @@ function clearFilter () {
 // code adapted from https://k-komma.de/assets/js/main.js
 
 let canvas, context, canvasImage, color
-let plots = []
-let plotsHistory = []
+let currentStroke = []
+let allStrokes = []
 let cursorPosition = {
   x: undefined,
   y: undefined,
 }
 
 randomColor()
-randomSize()
+lineWidth = 125
 canvas = document.getElementById('background')
 canvas.width = window.innerWidth * 2
 canvas.height = window.innerHeight * 2
@@ -119,11 +119,6 @@ function randomColor() {
   color = colors[Math.floor(Math.random() * colors.length)]
 }
 
-function randomSize () {
-  lineWidth = 125
-  // lineWidth = Math.floor(Math.random() * 100 + 50)
-}
-
 function throttle (ms, fn) {
   let lastCallTime
   return function () {
@@ -135,92 +130,63 @@ function throttle (ms, fn) {
   }
 }
 
-// -> drawStrokeOnCanvas
-function drawPlotsOnCanvas (stroke) {
-  const points = stroke || plots
-
+function drawStroke (stroke) {
+  const points = stroke || currentStroke
   if (points.length === 0) { return }
-  // context.clearRect(0, 0, canvas.width, canvas.height)
-
   context.strokeStyle = color
   context.lineWidth = lineWidth
   context.lineCap = context.lineJoin = 'round'
   context.beginPath()
   context.moveTo(points[0].x, points[0].y)
-  points.forEach((plot) => {
-    context.lineTo(plot.x, plot.y)
+  points.forEach((point) => {
+    context.lineTo(point.x, point.y)
   })
   context.stroke()
   canvasImage = context.getImageData(0, 0, canvas.width, canvas.height)
 }
 
-function redrawPlotsFromHistoryOnCanvas () {
-  if (plotsHistory.length === 0) { return }
+function redrawAllStrokes () {
+  if (allStrokes.length === 0) { return }
   context.clearRect(0, 0, canvas.width, canvas.height)
-  console.log('redrawPlotsFromHistoryOnCanvas')
-
-  plotsHistory.forEach(stroke => {
-    drawPlotsOnCanvas(stroke)
+  allStrokes.forEach(stroke => {
+    drawStroke(stroke)
   })
 }
 
-
-// function drawStrokesOnCanvas () {
-  // let strokesToDraw
-  // const strokesIsEmpty = strokes.length === 0
-  // const plotsIsEmpty = plots.length === 0
-  // if (strokesIsEmpty && plotsIsEmpty) {
-  //   { return }
-  // } else if (strokesIsEmpty) {
-  //   strokesToDraw = [plots]
-  // } else {
-  //   strokesToDraw = strokes
-  // }
-  // if (strokes.length === 0) { return }
-  // context.clearRect(0, 0, canvas.width, canvas.height)
-  // console.log('🍄 strokes #',strokes.length)
-  // strokes.forEach(stroke => {
-  //   context.strokeStyle = color
-  //   context.lineWidth = lineWidth
-  //   context.lineCap = context.lineJoin = 'round'
-  //   context.beginPath()
-  //   console.log('🥬',stroke)
-  //   context.moveTo(stroke[0].x, stroke[0].y)
-  //   stroke.forEach(plot => {
-      // console.log(plot)
-      // plot.forEach((point) => {
-      // context.lineTo(plot.x, plot.y)
-      // })
-//       context.stroke()
-//     })
-//   })
-
-//   canvasImage = context.getImageData(0, 0, canvas.width, canvas.height)
-// }
-
-
 function startStroke () {
-  plots = []
+  currentStroke = []
   isDrawing = true
-    console.log('🍄startStroke')
-
 }
 
 function endStroke () {
-  plotsHistory.push(plots)
-  plots = []
+  allStrokes.push(currentStroke)
+  currentStroke = []
   isDrawing = false
-  console.log('🍆 endStroke', plotsHistory.length)
 }
 
-function addPlot ({ x, y }) {
+function addPointToStroke ({ x, y }) {
   if (!isDrawing) { return }
-  plots.push({ x, y })
-  drawPlotsOnCanvas ()
+  currentStroke.push({ x, y })
+  drawStroke ()
 }
 
+// start
+window.onmousedown = function (event) { startStroke() }
+window.ontouchstart = function (event) { startStroke() }
 
+// stop
+window.onmouseup = function (event) { endStroke() }
+window.ontouchend = function (event) { endStroke() }
 
+// draw
+window.onmousemove = throttle(10, function (event) {
+  addPointToStroke({ x: event.clientX * 2, y: event.clientY * 2 })
+})
+window.ontouchmove = throttle(10, function (event) {
+  addPointToStroke({ x: event.touches[0].clientX * 2, y: event.touches[0].clientY * 2 })
+})
+
+// resize
 window.onresize = throttle(100, function () {
   canvas.width = window.innerWidth * 2
   canvas.height = window.innerHeight * 2
@@ -228,30 +194,7 @@ window.onresize = throttle(100, function () {
   canvasImage && context.putImageData(canvasImage, 0, 0)
 })
 
-
-
-window.onmousedown = function (event) { startStroke() }
-// todo touch start
-
-
-
-window.onmouseup = function (event) { endStroke() }
-// todo touch end
-
-
-
-
-
-window.onmousemove = throttle(10, function (event) {
-  addPlot({ x: event.clientX * 2, y: event.clientY * 2 })
-})
-window.ontouchmove = throttle(10, function (event) {
-  addPlot({ x: event.touches[0].clientX * 2, y: event.touches[0].clientY * 2 })
-})
-
-
-// scroll canvas
-
+// scroll
 let currentScrollPosition = {
   x: window.scrollX,
   y: window.scrollY
@@ -261,11 +204,11 @@ window.onscroll = function (event) {
     x: currentScrollPosition.x - window.scrollX,
     y: currentScrollPosition.y - window.scrollY
   }
-  plotsHistory = plotsHistory.map(strokes => {
-    return strokes.map(plot => {
+  allStrokes = allStrokes.map(strokes => {
+    return strokes.map(point => {
       return {
-        x: plot.x + (scrollDelta.x * 2),
-        y: plot.y + (scrollDelta.y * 2)
+        x: point.x + (scrollDelta.x * 2),
+        y: point.y + (scrollDelta.y * 2)
       }
     })
   })
@@ -273,7 +216,5 @@ window.onscroll = function (event) {
     x: window.scrollX,
     y: window.scrollY
   }
-  // context.clearRect(0, 0, canvas.width, canvas.height)
-  // drawPlotsOnCanvas()
-  redrawPlotsFromHistoryOnCanvas()
+  redrawAllStrokes()
 }
