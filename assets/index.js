@@ -17,15 +17,15 @@ if (search) {
   filterPage(search)
 }
 
-searchIcon.addEventListener ('click', () => {
+searchIcon.addEventListener('click', () => {
   searchInput.focus()
 })
 
-removeIcon.addEventListener ('click', () => {
+removeIcon.addEventListener('click', () => {
   clearFilter()
 })
 
-searchInput.addEventListener ('input', (event) => {
+searchInput.addEventListener('input', (event) => {
   const value = searchInput.value
   if (value) {
     filterPage(value)
@@ -34,21 +34,21 @@ searchInput.addEventListener ('input', (event) => {
   }
 })
 
-searchForm.addEventListener ('submit', (event) => {
+searchForm.addEventListener('submit', (event) => {
   event.preventDefault()
   const value = searchInput.value
   const searchUrl = `${window.location.origin}?search=${value}`
   window.location.href = searchUrl
 })
 
-function filterPage (value) {
+function filterPage(value) {
   if (!helloSection) { return }
   helloSection.classList.add('hidden')
   filterHeaders(value)
   filterPosts(value)
 }
 
-function filterHeaders (value) {
+function filterHeaders(value) {
   headers.forEach(header => {
     let postsList = header.dataset.posts
     postsList = postsList.split(',').filter(Boolean)
@@ -61,7 +61,7 @@ function filterHeaders (value) {
   })
 }
 
-function filterPosts (value) {
+function filterPosts(value) {
   posts.forEach(post => {
     let postTitle = post.dataset.title
     const results = fuzzy.filter(value, [postTitle])
@@ -73,7 +73,7 @@ function filterPosts (value) {
   })
 }
 
-function clearFilter () {
+function clearFilter() {
   searchInput.value = ""
   if (!helloSection) { return }
   headers.forEach(header => header.classList.remove('hidden'))
@@ -85,42 +85,24 @@ function clearFilter () {
 // Drawing
 // code adapted from https://k-komma.de/assets/js/main.js
 
-let canvas, context, canvasImage, color, prevScroll
-let pageCanvas, pageContext
-const lineWidth = 30
-let currentStroke = []
-let allStrokes = []
-prevScroll = {
-  x: window.scrollX,
-  y: window.scrollY
+let canvas, context, canvasImage, color
+let plots = []
+let cursorPosition = {
+  x: undefined,
+  y: undefined,
 }
-let isDrawing = false
 
 randomColor()
-initCanvas()
-initPageCanvas()
+randomSize()
+canvas = document.getElementById('background')
+canvas.width = window.innerWidth * 2
+canvas.height = window.innerHeight * 2
+context = canvas.getContext('2d')
+context.strokeStyle = color
+context.lineWidth = lineWidth
+context.lineCap = context.lineJoin = 'round'
 
-function initCanvas () {
-  canvas = document.getElementById('background')
-  canvas.width = window.innerWidth
-  canvas.height = window.innerHeight
-  context = canvas.getContext('2d')
-  context.scale(2,2)
-}
-
-function initPageCanvas () {
-  const body = document.body
-  const html = document.documentElement
-  const pageWidth = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth)
-  const pageHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
-  pageCanvas = document.getElementById('page-background')
-  pageCanvas.width = pageWidth
-  pageCanvas.height = pageHeight
-  pageContext = pageCanvas.getContext('2d')
-  pageContext.scale(2,2)
-}
-
-function randomColor () {
+function randomColor() {
   const colors = [
     '#fcd1c4', // light pink
     '#abfcec', // light blue
@@ -135,7 +117,12 @@ function randomColor () {
   color = colors[Math.floor(Math.random() * colors.length)]
 }
 
-function throttle (ms, fn) {
+function randomSize() {
+  lineWidth = 125
+  // lineWidth = Math.floor(Math.random() * 100 + 50)
+}
+
+function throttle(ms, fn) {
   let lastCallTime
   return function () {
     const now = Date.now()
@@ -146,99 +133,64 @@ function throttle (ms, fn) {
   }
 }
 
-function drawStroke (stroke) {
-  if (currentStroke.length === 0) { return }
+function drawOnCanvas() {
+  context.clearRect(0, 0, canvas.width, canvas.height)
+  if (plots.length === 0) { return }
   context.strokeStyle = color
   context.lineWidth = lineWidth
   context.lineCap = context.lineJoin = 'round'
   context.beginPath()
-  context.moveTo(currentStroke[0].x, currentStroke[0].y)
-  currentStroke.forEach((point) => {
-    context.lineTo(point.x, point.y)
+  context.moveTo(plots[0].x, plots[0].y)
+  plots.forEach((plot) => {
+    context.lineTo(plot.x, plot.y)
   })
   context.stroke()
   canvasImage = context.getImageData(0, 0, canvas.width, canvas.height)
 }
 
-function drawStrokeOnPage (drawStroke) {
-  drawStroke = drawStroke || currentStroke
-  if (drawStroke.length === 0) { return }
-  pageContext.strokeStyle = color
-  pageContext.lineWidth = lineWidth
-  pageContext.lineCap = pageContext.lineJoin = 'round'
-  pageContext.beginPath()
-  drawStroke = drawStroke.map(stroke => {
-    return {
-      x: stroke.x + stroke.scrollX,
-      y: stroke.y + stroke.scrollY
-    }
-  })
-  pageContext.moveTo(drawStroke[0].x, drawStroke[0].y)
-  drawStroke.forEach((point) => {
-    pageContext.lineTo(point.x, point.y)
-  })
-  pageContext.stroke()
-}
-
-function startStroke () {
-  currentStroke = []
-  isDrawing = true
-}
-
-function endStroke () {
-  drawStrokeOnPage()
-  allStrokes.push(currentStroke)
-  currentStroke = []
-  isDrawing = false
-  context.clearRect(0,0, canvas.width, canvas.height)
-}
-
-function addPointToStroke ({ x, y }) {
-  if (!isDrawing) { return }
-  currentStroke.push({
-    x,
-    y,
-    scrollX: prevScroll.x / 2,
-    scrollY: prevScroll.y / 2
-  })
-  drawStroke()
-}
-
-// start
-window.onmousedown = function (event) { startStroke() }
-window.ontouchstart = function (event) { startStroke() }
-
-// stop
-window.onmouseup = function (event) { endStroke() }
-window.ontouchend = function (event) { endStroke() }
-
-// draw
-window.onmousemove = throttle(10, function (event) {
-  addPointToStroke({ x: event.clientX / 2, y: event.clientY / 2 })
-})
-window.ontouchmove = throttle(10, function (event) {
-  addPointToStroke({ x: event.touches[0].clientX / 2, y: event.touches[0].clientY / 2 })
-})
-
-// resize
 window.onresize = throttle(100, function () {
-  prevScroll = {
-    x: window.scrollX,
-    y: window.scrollY
-  }
+  canvas.width = window.innerWidth * 2
+  canvas.height = window.innerHeight * 2
   context.clearRect(0,0, canvas.width, canvas.height)
-  initPageCanvas()
-  allStrokes.forEach(drawStroke => {
-    drawStrokeOnPage(drawStroke)
-  })
-  initCanvas()
+  canvasImage && context.putImageData(canvasImage, 0, 0)
 })
 
-// scroll
-window.onscroll = function (event) {
-  context.clearRect(0,0, canvas.width, canvas.height)
-  prevScroll = {
-    x: window.scrollX,
-    y: window.scrollY
+window.onmousemove = throttle(10, function (event) {
+  cursorPosition = {
+    x: event.clientX * 2,
+    y: event.clientY * 2,
   }
-}
+  plots.push({x: cursorPosition.x, y: cursorPosition.y})
+  drawOnCanvas()
+})
+
+window.ontouchmove = throttle(10, function (event) {
+  cursorPosition = {
+    x: event.touches[0].clientX * 2,
+    y: event.touches[0].clientY * 2,
+  }
+  plots.push({x: cursorPosition.x, y: cursorPosition.y})
+  drawOnCanvas()
+})
+
+// let currentScrollPosition = {
+//   x: window.scrollX,
+//   y: window.scrollY
+// }
+// window.onscroll = function (event) {
+//   const scrollDelta = {
+//     x: currentScrollPosition.x - window.scrollX,
+//     y: currentScrollPosition.y - window.scrollY
+//   }
+//   plots = plots.map(plot => {
+//     return {
+//       x: plot.x + (scrollDelta.x * 2),
+//       y: plot.y + (scrollDelta.y * 2)
+//     }
+//   })
+//   currentScrollPosition = {
+//     x: window.scrollX,
+//     y: window.scrollY
+//   }
+//   drawOnCanvas()
+// }
