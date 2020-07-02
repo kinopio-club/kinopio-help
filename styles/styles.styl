@@ -52,6 +52,7 @@ body
   margin var(--page-margin)
   color var(--primary)
   font-family var(--sans-serif)
+  background-color var(--page-background)
 
 .logo
   background-image url('/assets/logo-base.png')
@@ -165,12 +166,16 @@ blockquote
 
 canvas#background
   position: fixed
-  background-color var(--page-background)
-  height 100%
-  width 100%
+  background-color transparent
   top 0
   left 0
   z-index -1
+canvas#page-background
+  position: absolute
+  background-color transparent
+  top 0
+  left 0
+  z-index -2
 
 .table-wrap
   overflow-x auto
