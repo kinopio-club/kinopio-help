@@ -17,15 +17,15 @@ if (search) {
   filterPage(search)
 }
 
-searchIcon.addEventListener ('click', () => {
+searchIcon.addEventListener('click', () => {
   searchInput.focus()
 })
 
-removeIcon.addEventListener ('click', () => {
+removeIcon.addEventListener('click', () => {
   clearFilter()
 })
 
-searchInput.addEventListener ('input', (event) => {
+searchInput.addEventListener('input', (event) => {
   const value = searchInput.value
   if (value) {
     filterPage(value)
@@ -34,21 +34,21 @@ searchInput.addEventListener ('input', (event) => {
   }
 })
 
-searchForm.addEventListener ('submit', (event) => {
+searchForm.addEventListener('submit', (event) => {
   event.preventDefault()
   const value = searchInput.value
   const searchUrl = `${window.location.origin}?search=${value}`
   window.location.href = searchUrl
 })
 
-function filterPage (value) {
+function filterPage(value) {
   if (!helloSection) { return }
   helloSection.classList.add('hidden')
   filterHeaders(value)
   filterPosts(value)
 }
 
-function filterHeaders (value) {
+function filterHeaders(value) {
   headers.forEach(header => {
     let postsList = header.dataset.posts
     postsList = postsList.split(',').filter(Boolean)
@@ -61,7 +61,7 @@ function filterHeaders (value) {
   })
 }
 
-function filterPosts (value) {
+function filterPosts(value) {
   posts.forEach(post => {
     let postTitle = post.dataset.title
     const results = fuzzy.filter(value, [postTitle])
@@ -73,7 +73,7 @@ function filterPosts (value) {
   })
 }
 
-function clearFilter () {
+function clearFilter() {
   searchInput.value = ""
   if (!helloSection) { return }
   headers.forEach(header => header.classList.remove('hidden'))
@@ -85,14 +85,11 @@ function clearFilter () {
 // Drawing
 // code adapted from https://k-komma.de/assets/js/main.js
 
-let canvas, context, canvasImage, color, prevScroll
-let pageCanvas, pageContext
-const lineWidth = 30
-let currentStroke = []
-let allStrokes = []
-prevScroll = {
-  x: window.scrollX,
-  y: window.scrollY
+let canvas, context, canvasImage, color
+let plots = []
+let cursorPosition = {
+  x: undefined,
+  y: undefined,
 }
 let isDrawing = false
 let isTouch = false
@@ -143,7 +140,12 @@ function randomColor () {
   color = colors[Math.floor(Math.random() * colors.length)]
 }
 
-function throttle (ms, fn) {
+function randomSize() {
+  lineWidth = 125
+  // lineWidth = Math.floor(Math.random() * 100 + 50)
+}
+
+function throttle(ms, fn) {
   let lastCallTime
   return function () {
     const now = Date.now()
@@ -157,9 +159,9 @@ function throttle (ms, fn) {
 function drawCurrentStroke () {
   if (currentStroke.length === 0) { return }
   context.beginPath()
-  context.moveTo(currentStroke[0].x, currentStroke[0].y)
-  currentStroke.forEach((point) => {
-    context.lineTo(point.x, point.y)
+  context.moveTo(plots[0].x, plots[0].y)
+  plots.forEach((plot) => {
+    context.lineTo(plot.x, plot.y)
   })
   context.stroke()
 }
@@ -215,12 +217,13 @@ window.ontouchstart = function (event) {
 window.onmouseup = function (event) { endStroke() }
 window.ontouchend = function (event) { endStroke() }
 
-// draw
 window.onmousemove = throttle(10, function (event) {
-  addPointToStroke({ x: event.clientX / 2, y: event.clientY / 2 })
-})
-window.ontouchmove = throttle(10, function (event) {
-  addPointToStroke({ x: event.touches[0].clientX / 2, y: event.touches[0].clientY / 2 })
+  cursorPosition = {
+    x: event.clientX * 2,
+    y: event.clientY * 2,
+  }
+  plots.push({x: cursorPosition.x, y: cursorPosition.y})
+  drawOnCanvas()
 })
 
 // resize
