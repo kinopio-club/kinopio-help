@@ -89,7 +89,6 @@ let canvas, context, canvasImage, color, prevScroll
 let pageCanvas, pageContext
 const lineWidth = 30
 let currentStroke = []
-let allStrokes = []
 prevScroll = {
   x: window.scrollX,
   y: window.scrollY
@@ -157,27 +156,6 @@ function drawStroke (stroke) {
     context.lineTo(point.x, point.y)
   })
   context.stroke()
-  canvasImage = context.getImageData(0, 0, canvas.width, canvas.height)
-}
-
-function drawStrokeOnPage (drawStroke) {
-  drawStroke = drawStroke || currentStroke
-  if (drawStroke.length === 0) { return }
-  pageContext.strokeStyle = color
-  pageContext.lineWidth = lineWidth
-  pageContext.lineCap = pageContext.lineJoin = 'round'
-  pageContext.beginPath()
-  drawStroke = drawStroke.map(stroke => {
-    return {
-      x: stroke.x + stroke.scrollX,
-      y: stroke.y + stroke.scrollY
-    }
-  })
-  pageContext.moveTo(drawStroke[0].x, drawStroke[0].y)
-  drawStroke.forEach((point) => {
-    pageContext.lineTo(point.x, point.y)
-  })
-  pageContext.stroke()
 }
 
 function startStroke () {
@@ -186,8 +164,7 @@ function startStroke () {
 }
 
 function endStroke () {
-  drawStrokeOnPage()
-  allStrokes.push(currentStroke)
+  pageCanvas.getContext('2d').drawImage(canvas, prevScroll.x / 2, prevScroll.y / 2, canvas.width / 2, canvas.height / 2)
   currentStroke = []
   isDrawing = false
   context.clearRect(0,0, canvas.width, canvas.height)
@@ -227,16 +204,10 @@ window.onresize = throttle(100, function () {
     y: window.scrollY
   }
   context.clearRect(0,0, canvas.width, canvas.height)
-  initPageCanvas()
-  allStrokes.forEach(drawStroke => {
-    drawStrokeOnPage(drawStroke)
-  })
-  initCanvas()
 })
 
 // scroll
 window.onscroll = function (event) {
-  context.clearRect(0,0, canvas.width, canvas.height)
   prevScroll = {
     x: window.scrollX,
     y: window.scrollY
