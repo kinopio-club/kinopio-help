@@ -17,15 +17,15 @@ if (search) {
   filterPage(search)
 }
 
-searchIcon.addEventListener('click', () => {
+searchIcon.addEventListener ('click', () => {
   searchInput.focus()
 })
 
-removeIcon.addEventListener('click', () => {
+removeIcon.addEventListener ('click', () => {
   clearFilter()
 })
 
-searchInput.addEventListener('input', (event) => {
+searchInput.addEventListener ('input', (event) => {
   const value = searchInput.value
   if (value) {
     filterPage(value)
@@ -34,21 +34,21 @@ searchInput.addEventListener('input', (event) => {
   }
 })
 
-searchForm.addEventListener('submit', (event) => {
+searchForm.addEventListener ('submit', (event) => {
   event.preventDefault()
   const value = searchInput.value
   const searchUrl = `${window.location.origin}?search=${value}`
   window.location.href = searchUrl
 })
 
-function filterPage(value) {
+function filterPage (value) {
   if (!helloSection) { return }
   helloSection.classList.add('hidden')
   filterHeaders(value)
   filterPosts(value)
 }
 
-function filterHeaders(value) {
+function filterHeaders (value) {
   headers.forEach(header => {
     let postsList = header.dataset.posts
     postsList = postsList.split(',').filter(Boolean)
@@ -61,7 +61,7 @@ function filterHeaders(value) {
   })
 }
 
-function filterPosts(value) {
+function filterPosts (value) {
   posts.forEach(post => {
     let postTitle = post.dataset.title
     const results = fuzzy.filter(value, [postTitle])
@@ -73,7 +73,7 @@ function filterPosts(value) {
   })
 }
 
-function clearFilter() {
+function clearFilter () {
   searchInput.value = ""
   if (!helloSection) { return }
   headers.forEach(header => header.classList.remove('hidden'))
@@ -87,6 +87,7 @@ function clearFilter() {
 
 let canvas, context, canvasImage, color
 let plots = []
+let plotsHistory = []
 let cursorPosition = {
   x: undefined,
   y: undefined,
@@ -101,6 +102,7 @@ context = canvas.getContext('2d')
 context.strokeStyle = color
 context.lineWidth = lineWidth
 context.lineCap = context.lineJoin = 'round'
+let isDrawing = false
 
 function randomColor() {
   const colors = [
@@ -117,12 +119,12 @@ function randomColor() {
   color = colors[Math.floor(Math.random() * colors.length)]
 }
 
-function randomSize() {
+function randomSize () {
   lineWidth = 125
   // lineWidth = Math.floor(Math.random() * 100 + 50)
 }
 
-function throttle(ms, fn) {
+function throttle (ms, fn) {
   let lastCallTime
   return function () {
     const now = Date.now()
@@ -133,20 +135,91 @@ function throttle(ms, fn) {
   }
 }
 
-function drawOnCanvas() {
-  context.clearRect(0, 0, canvas.width, canvas.height)
-  if (plots.length === 0) { return }
+// -> drawStrokeOnCanvas
+function drawPlotsOnCanvas (stroke) {
+  const points = stroke || plots
+
+  if (points.length === 0) { return }
+  // context.clearRect(0, 0, canvas.width, canvas.height)
+
   context.strokeStyle = color
   context.lineWidth = lineWidth
   context.lineCap = context.lineJoin = 'round'
   context.beginPath()
-  context.moveTo(plots[0].x, plots[0].y)
-  plots.forEach((plot) => {
+  context.moveTo(points[0].x, points[0].y)
+  points.forEach((plot) => {
     context.lineTo(plot.x, plot.y)
   })
   context.stroke()
   canvasImage = context.getImageData(0, 0, canvas.width, canvas.height)
 }
+
+function redrawPlotsFromHistoryOnCanvas () {
+  if (plotsHistory.length === 0) { return }
+  context.clearRect(0, 0, canvas.width, canvas.height)
+  console.log('redrawPlotsFromHistoryOnCanvas')
+
+  plotsHistory.forEach(stroke => {
+    drawPlotsOnCanvas(stroke)
+  })
+}
+
+
+// function drawStrokesOnCanvas () {
+  // let strokesToDraw
+  // const strokesIsEmpty = strokes.length === 0
+  // const plotsIsEmpty = plots.length === 0
+  // if (strokesIsEmpty && plotsIsEmpty) {
+  //   { return }
+  // } else if (strokesIsEmpty) {
+  //   strokesToDraw = [plots]
+  // } else {
+  //   strokesToDraw = strokes
+  // }
+  // if (strokes.length === 0) { return }
+  // context.clearRect(0, 0, canvas.width, canvas.height)
+  // console.log('🍄 strokes #',strokes.length)
+  // strokes.forEach(stroke => {
+  //   context.strokeStyle = color
+  //   context.lineWidth = lineWidth
+  //   context.lineCap = context.lineJoin = 'round'
+  //   context.beginPath()
+  //   console.log('🥬',stroke)
+  //   context.moveTo(stroke[0].x, stroke[0].y)
+  //   stroke.forEach(plot => {
+      // console.log(plot)
+      // plot.forEach((point) => {
+      // context.lineTo(plot.x, plot.y)
+      // })
+//       context.stroke()
+//     })
+//   })
+
+//   canvasImage = context.getImageData(0, 0, canvas.width, canvas.height)
+// }
+
+
+function startStroke () {
+  plots = []
+  isDrawing = true
+    console.log('🍄startStroke')
+
+}
+
+function endStroke () {
+  plotsHistory.push(plots)
+  plots = []
+  isDrawing = false
+  console.log('🍆 endStroke', plotsHistory.length)
+}
+
+function addPlot ({ x, y }) {
+  if (!isDrawing) { return }
+  plots.push({ x, y })
+  drawPlotsOnCanvas ()
+}
+
+
 
 window.onresize = throttle(100, function () {
   canvas.width = window.innerWidth * 2
@@ -155,42 +228,52 @@ window.onresize = throttle(100, function () {
   canvasImage && context.putImageData(canvasImage, 0, 0)
 })
 
+
+
+window.onmousedown = function (event) { startStroke() }
+// todo touch start
+
+
+
+window.onmouseup = function (event) { endStroke() }
+// todo touch end
+
+
+
+
+
 window.onmousemove = throttle(10, function (event) {
-  cursorPosition = {
-    x: event.clientX * 2,
-    y: event.clientY * 2,
-  }
-  plots.push({x: cursorPosition.x, y: cursorPosition.y})
-  drawOnCanvas()
+  addPlot({ x: event.clientX * 2, y: event.clientY * 2 })
 })
-
 window.ontouchmove = throttle(10, function (event) {
-  cursorPosition = {
-    x: event.touches[0].clientX * 2,
-    y: event.touches[0].clientY * 2,
-  }
-  plots.push({x: cursorPosition.x, y: cursorPosition.y})
-  drawOnCanvas()
+  addPlot({ x: event.touches[0].clientX * 2, y: event.touches[0].clientY * 2 })
 })
 
-// let currentScrollPosition = {
-//   x: window.scrollX,
-//   y: window.scrollY
-// }
-// window.onscroll = function (event) {
-//   const scrollDelta = {
-//     x: currentScrollPosition.x - window.scrollX,
-//     y: currentScrollPosition.y - window.scrollY
-//   }
-//   plots = plots.map(plot => {
-//     return {
-//       x: plot.x + (scrollDelta.x * 2),
-//       y: plot.y + (scrollDelta.y * 2)
-//     }
-//   })
-//   currentScrollPosition = {
-//     x: window.scrollX,
-//     y: window.scrollY
-//   }
-//   drawOnCanvas()
-// }
+
+// scroll canvas
+
+let currentScrollPosition = {
+  x: window.scrollX,
+  y: window.scrollY
+}
+window.onscroll = function (event) {
+  const scrollDelta = {
+    x: currentScrollPosition.x - window.scrollX,
+    y: currentScrollPosition.y - window.scrollY
+  }
+  plotsHistory = plotsHistory.map(strokes => {
+    return strokes.map(plot => {
+      return {
+        x: plot.x + (scrollDelta.x * 2),
+        y: plot.y + (scrollDelta.y * 2)
+      }
+    })
+  })
+  currentScrollPosition = {
+    x: window.scrollX,
+    y: window.scrollY
+  }
+  // context.clearRect(0, 0, canvas.width, canvas.height)
+  // drawPlotsOnCanvas()
+  redrawPlotsFromHistoryOnCanvas()
+}
