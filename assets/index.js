@@ -106,9 +106,6 @@ function initCanvas () {
   canvas.height = window.innerHeight
   context = canvas.getContext('2d')
   context.scale(2,2)
-  context.strokeStyle = color
-  context.lineWidth = lineWidth
-  context.lineCap = context.lineJoin = 'round'
 }
 
 function initPageCanvas () {
@@ -121,9 +118,6 @@ function initPageCanvas () {
   pageCanvas.height = pageHeight
   pageContext = pageCanvas.getContext('2d')
   pageContext.scale(2,2)
-  pageContext.strokeStyle = color
-  pageContext.lineWidth = lineWidth
-  pageContext.lineCap = pageContext.lineJoin = 'round'
 }
 
 function randomColor () {
@@ -173,14 +167,14 @@ function drawStrokeOnPage (drawStroke) {
   pageContext.lineWidth = lineWidth
   pageContext.lineCap = pageContext.lineJoin = 'round'
   pageContext.beginPath()
-  const strokes = drawStroke.map(stroke => {
+  drawStroke = drawStroke.map(stroke => {
     return {
       x: stroke.x + (prevScroll.x / 2),
       y: stroke.y + (prevScroll.y / 2)
     }
   })
-  pageContext.moveTo(strokes[0].x, strokes[0].y)
-  strokes.forEach((point) => {
+  pageContext.moveTo(drawStroke[0].x, drawStroke[0].y)
+  drawStroke.forEach((point) => {
     pageContext.lineTo(point.x, point.y)
   })
   pageContext.stroke()
