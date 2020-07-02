@@ -190,6 +190,7 @@ function endStroke () {
   allStrokes.push(currentStroke)
   currentStroke = []
   isDrawing = false
+  context.clearRect(0,0, canvas.width, canvas.height)
 }
 
 function addPointToStroke ({ x, y }) {
@@ -221,15 +222,16 @@ window.ontouchmove = throttle(10, function (event) {
 
 // resize
 window.onresize = throttle(100, function () {
-  initCanvas()
-  initPageCanvas()
   prevScroll = {
     x: window.scrollX,
     y: window.scrollY
   }
+  context.clearRect(0,0, canvas.width, canvas.height)
+  initPageCanvas()
   allStrokes.forEach(drawStroke => {
     drawStrokeOnPage(drawStroke)
   })
+  initCanvas()
 })
 
 // scroll
