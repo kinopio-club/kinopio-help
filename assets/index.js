@@ -85,16 +85,16 @@ function clearFilter () {
 // Drawing
 // code adapted from https://k-komma.de/assets/js/main.js
 
-let canvas, context, canvasImage, color
+let canvas, context, canvasImage, color, prevScroll
 let pageCanvas, pageContext
+const lineWidth = 30
 let currentStroke = []
 let allStrokes = []
-let cursorPosition = {
-  x: undefined,
-  y: undefined,
+prevScroll = {
+  x: window.scrollX,
+  y: window.scrollY
 }
 let isDrawing = false
-lineWidth = 125
 
 randomColor()
 initCanvas()
@@ -102,9 +102,10 @@ initPageCanvas()
 
 function initCanvas () {
   canvas = document.getElementById('background')
-  canvas.width = window.innerWidth * 2
-  canvas.height = window.innerHeight * 2
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
   context = canvas.getContext('2d')
+  context.scale(2,2)
   context.strokeStyle = color
   context.lineWidth = lineWidth
   context.lineCap = context.lineJoin = 'round'
@@ -116,10 +117,10 @@ function initPageCanvas () {
   const pageWidth = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth)
   const pageHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
   pageCanvas = document.getElementById('page-background')
-  pageCanvas.width = pageWidth * 2
-  pageCanvas.height = pageHeight * 2
-  console.log(pageCanvas.height)
+  pageCanvas.width = pageWidth
+  pageCanvas.height = pageHeight
   pageContext = pageCanvas.getContext('2d')
+  pageContext.scale(2,2)
   pageContext.strokeStyle = color
   pageContext.lineWidth = lineWidth
   pageContext.lineCap = pageContext.lineJoin = 'round'
@@ -152,27 +153,38 @@ function throttle (ms, fn) {
 }
 
 function drawStroke (stroke) {
-  const points = stroke || currentStroke
-  if (points.length === 0) { return }
+  if (currentStroke.length === 0) { return }
   context.strokeStyle = color
   context.lineWidth = lineWidth
   context.lineCap = context.lineJoin = 'round'
   context.beginPath()
-  context.moveTo(points[0].x, points[0].y)
-  points.forEach((point) => {
+  context.moveTo(currentStroke[0].x, currentStroke[0].y)
+  currentStroke.forEach((point) => {
     context.lineTo(point.x, point.y)
   })
   context.stroke()
   canvasImage = context.getImageData(0, 0, canvas.width, canvas.height)
 }
 
-// function redrawAllStrokes () {
-//   if (allStrokes.length === 0) { return }
-//   context.clearRect(0, 0, canvas.width, canvas.height)
-//   allStrokes.forEach(stroke => {
-//     drawStroke(stroke)
-//   })
-// }
+function drawStrokeOnPage (drawStroke) {
+  drawStroke = drawStroke || currentStroke
+  if (drawStroke.length === 0) { return }
+  pageContext.strokeStyle = color
+  pageContext.lineWidth = lineWidth
+  pageContext.lineCap = pageContext.lineJoin = 'round'
+  pageContext.beginPath()
+  const strokes = drawStroke.map(stroke => {
+    return {
+      x: stroke.x + (prevScroll.x / 2),
+      y: stroke.y + (prevScroll.y / 2)
+    }
+  })
+  pageContext.moveTo(strokes[0].x, strokes[0].y)
+  strokes.forEach((point) => {
+    pageContext.lineTo(point.x, point.y)
+  })
+  pageContext.stroke()
+}
 
 function startStroke () {
   currentStroke = []
@@ -180,6 +192,7 @@ function startStroke () {
 }
 
 function endStroke () {
+  drawStrokeOnPage()
   allStrokes.push(currentStroke)
   currentStroke = []
   isDrawing = false
@@ -188,7 +201,7 @@ function endStroke () {
 function addPointToStroke ({ x, y }) {
   if (!isDrawing) { return }
   currentStroke.push({ x, y })
-  drawStroke ()
+  drawStroke()
 }
 
 // start
@@ -201,44 +214,30 @@ window.ontouchend = function (event) { endStroke() }
 
 // draw
 window.onmousemove = throttle(10, function (event) {
-  addPointToStroke({ x: event.clientX * 2, y: event.clientY * 2 })
+  addPointToStroke({ x: event.clientX / 2, y: event.clientY / 2 })
 })
 window.ontouchmove = throttle(10, function (event) {
-  addPointToStroke({ x: event.touches[0].clientX * 2, y: event.touches[0].clientY * 2 })
+  addPointToStroke({ x: event.touches[0].clientX / 2, y: event.touches[0].clientY / 2 })
 })
 
 // resize
 window.onresize = throttle(100, function () {
-  canvas.width = window.innerWidth * 2
-  canvas.height = window.innerHeight * 2
-  context.clearRect(0,0, canvas.width, canvas.height)
-  canvasImage && context.putImageData(canvasImage, 0, 0)
-  // TODO should change size of page canvas and redraw it
-})
-
-// scroll
-let currentScrollPosition = {
-  x: window.scrollX,
-  y: window.scrollY
-}
-window.onscroll = function (event) {
-  const scrollDelta = {
-    x: currentScrollPosition.x - window.scrollX,
-    y: currentScrollPosition.y - window.scrollY
-  }
-  // TODO replace remapping on scroll w saving canvas image data to pagecanvas, then clearing canvas
-
-  // allStrokes = allStrokes.map(strokes => {
-  //   return strokes.map(point => {
-  //     return {
-  //       x: point.x + (scrollDelta.x * 2),
-  //       y: point.y + (scrollDelta.y * 2)
-  //     }
-  //   })
-  // })
-  currentScrollPosition = {
+  initCanvas()
+  initPageCanvas()
+  prevScroll = {
     x: window.scrollX,
     y: window.scrollY
   }
-  // redrawAllStrokes()
+  allStrokes.forEach(drawStroke => {
+    drawStrokeOnPage(drawStroke)
+  })
+})
+
+// scroll
+window.onscroll = function (event) {
+  context.clearRect(0,0, canvas.width, canvas.height)
+  prevScroll = {
+    x: window.scrollX,
+    y: window.scrollY
+  }
 }
