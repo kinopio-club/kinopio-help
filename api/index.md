@@ -69,7 +69,8 @@ color                   | `String`  | User color changes your paint stroke and d
 defaultConnectionTypeId | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new connections
 lastReadNewStuffId      | `String`  | The id of the last read article from the 'new stuff' newsfeed
 currentPublicSpaceId    | `String`  | The id of an space with privacy set to `open` that the user is currently viewing or editing
-
+cardsCreatedCount       | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
+isUpgraded              | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
