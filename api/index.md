@@ -123,7 +123,7 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="cards">/card/:cardId</code>   | Get info on a card                                                                      | None
-`POST`    | <code class="cards">/card</code>           | Create card(s) from object(s) in request body. Body object must contain `id` and `spaceId`       | `canEditSpace`
+`POST`    | <code class="cards">/card</code>           | Create card(s) from object(s) in request body. Body object must contain `spaceId`       | `canEditSpace`
 `PATCH`   | <code class="cards">/card</code>           | Update card(s) from object(s) in request body. Body object must contain `id`                 | `canEditSpace`
 `PATCH`   | <code class="cards">/card/restore</code>   | Restore removed card specified in body                                                  | `canEditSpace`
 `DELETE`  | <code class="cards">/card</code>           | Remove card specified in body                                                           | `canEditSpace`
