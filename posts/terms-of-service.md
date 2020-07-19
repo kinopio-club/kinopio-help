@@ -75,10 +75,10 @@ If you violate of any of the terms, we may terminate your account. That’s a br
 5. We use third party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run the Services. The subprocessors are:
 
     - [Heroku](https://devcenter.heroku.com/articles/security-privacy-compliance) Cloud hosting and database.
-    - [Amazon Web Services](https://aws.amazon.com/compliance/gdpr-center/) Service provider used by Heroku.
+    - [Amazon Web Services](https://aws.amazon.com/compliance/gdpr-center) Service provider used by Heroku.
     - [PostMark](https://postmarkapp.com/eu-privacy) Email sending.
     - [Stripe](https://stripe.com/privacy) Payment processing.
-    - [Timber](https://timber.io/privacy/) Server log storage.
+    - [Linode](https://www.linode.com/legal-privacy) Object Storage for user uploads and server log storage.
 
 <a name="copyrightAndContentOwnership"></a>
 ## Copyright and Content Ownership
