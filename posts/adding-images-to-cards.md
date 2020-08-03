@@ -5,6 +5,18 @@ color: '#90ffff'
 date: 2020-02-01
 ---
 
+## Uploading files
+
+You can drag and drop your own images and files onto spaces or cards. You can also use the file picker with `images → upload` (Handy on mobile).
+
+<video class="wide" autoplay loop muted playsinline>
+  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/upload-file-small.mp4">
+</video>
+
+Uploads use the server, so you'll need to be signed in to use them.
+
+To keep costs sustainable, free users can upload files up to 5mb, upgraded users have no limits
+
 ## Paste in an image URL
 
 In desktop browsers you can get the URL of an image by right clicking and selecting `Copy Image Address`. On mobile, you can usually get an image URL by long pressing it and selecting the copy URL command.
