@@ -35,11 +35,11 @@ The `→` will link to [folklore.org](folklore.org)
 
 There are times when you might not want to display the link URL on a card, but still have a `→` button that links to it.
 
-You can hide links by appending a querystring param `?kinopio=hide` to it.
+You can hide links by appending a queryString param `?kinopio=hide` to it.
 
-Note that the way URL querystrings work is a little inelegant:
+Note that the way URL queryStrings work is a little inelegant:
 
-If the url doesn't have any querystrings, like [folklore.org](folklore.org) then append `?kinopio=hide`
+If the url doesn't have any queryStrings, like [folklore.org](folklore.org) then append `?kinopio=hide`
 
-However, if the url already has a querystring like the `?v=` in [https://www.youtube.com/watch?v=QRMBKd-4OIg](https://www.youtube.com/watch?v=QRMBKd-4OIg), then you'll need to append `&kinopio=hide` (with `&` instead of `?`)
+However, if the url already has a queryString like the `?v=` in [https://www.youtube.com/watch?v=QRMBKd-4OIg](https://www.youtube.com/watch?v=QRMBKd-4OIg), then you'll need to append `&kinopio=hide` (with `&` instead of `?`)
 
