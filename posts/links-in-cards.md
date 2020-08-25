@@ -30,16 +30,9 @@ The `→` will link to [folklore.org](folklore.org)
 ## Hiding Links
 
 <video class="wide" autoplay loop muted playsinline>
-  <source src="/assets/posts/hide-links.mp4">
+  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/hide-links-button.mp4">
 </video>
 
-There are times when you might not want to display the link URL on a card, but still have a `→` button that links to it.
+There are times when you might not want to display the link URL on a card, but still have a `→` button for a clickable link.
 
-You can hide links by appending a queryString param `?kinopio=hide` to it.
-
-Note that the way URL queryStrings work is a little inelegant:
-
-If the url doesn't have any queryStrings, like [folklore.org](folklore.org) then append `?kinopio=hide`
-
-However, if the url already has a queryString like the `?v=` in [https://www.youtube.com/watch?v=QRMBKd-4OIg](https://www.youtube.com/watch?v=QRMBKd-4OIg), then you'll need to append `&kinopio=hide` (with `&` instead of `?`)
-
+You can toggle hiding links in a card by clicking the `👀 Link` button
