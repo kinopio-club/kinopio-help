@@ -8,7 +8,7 @@ color: '#90ffff'
 
 To quickly access spaces you can type to filter them by name
 
-<video autoplay loop muted playsinline>
+<video class="narrow" autoplay loop muted playsinline>
   <source src="https://kinopio-updates.us-east-1.linodeobjects.com/type-to-filter-spaces.mp4">
 </video>
 
