@@ -71,6 +71,8 @@ lastReadNewStuffId      | `String`  | The id of the last read article from the '
 currentPublicSpaceId    | `String`  | The id of an space with privacy set to `open` that the user is currently viewing or editing
 cardsCreatedCount       | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 isUpgraded              | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
+filterShowUsers         | `Boolean` | Whether the user has has toggled the card user filter
+filterShowDateUpdated   | `Boolean` | Whether the user has has toggled the card date filter
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
@@ -133,15 +135,16 @@ Method | Path | Description | Auth
 
 Name | Type | Description
 --- | --- | ---
-id        | `String`  | The unique ID of the card. Is not user updateable
-name      | `String`  | The name of the card is it's main text
-x         | `Integer` | x-axis position
-y         | `Integer` | y-axis position
-z         | `Integer` | z-axis position
-frameId   | `String`  | The id of type of frame applied to the card, if any
-isRemoved | `Boolean` | Sets whether the card has been soft-removed. (can be restored or permanently removed by space users)
-SpaceId   | `String`  | The space that the card belongs to
-
+id                    | `String`  | The unique ID of the card. Is not user updateable
+name                  | `String`  | The name of the card is it's main text
+x                     | `Integer` | x-axis position
+y                     | `Integer` | y-axis position
+z                     | `Integer` | z-axis position
+frameId               | `String`  | The id of type of frame applied to the card, if any
+isRemoved             | `Boolean` | Sets whether the card has been soft-removed. (can be restored or permanently removed by space users)
+SpaceId               | `String`  | The space that the card belongs to
+nameUpdatedByUserId   | `String`  | The user id that last updated the name of the card
+nameUpdatedAt         | `String`  | The updated at date for the card name
 
 <a class="anchor" data-section="🍆" name="connections"></a>
 <h2 class="connections">Connections</h2>
