@@ -73,6 +73,7 @@ cardsCreatedCount       | `Integer` | The number of cards the user has created i
 isUpgraded              | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 filterShowUsers         | `Boolean` | Whether the user has has toggled the card user filter
 filterShowDateUpdated   | `Boolean` | Whether the user has has toggled the card date filter
+filterShowAbsoluteDates | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
