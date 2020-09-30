@@ -109,7 +109,6 @@ Privacy             | `String`  | Can be `open`, `closed`, `private`
 isRemoved           | `Boolean` | Sets whether the space has been soft-removed. (can then be restored or permanently removed)
 removedByUserId     | `String`  | The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed
 collaboratorKey     | `String`  | Used like an apikey to allow editing, but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
-collaborators       | `Array`   | List of users added to space as collaborators
 users               | `Array`   | The user who created/owns the space (a space will always have only one user)
 cards               | `Array`   | A list of <a href="#cards" class="badge cards">Cards</a> in the space
 connections         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
