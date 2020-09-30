@@ -161,7 +161,7 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="connections">/connection/<br/>:connectionId</code> | Get info on a connection                                                                                    | None
-`POST`    | <code class="connections">/connection</code>                    | Create connection(s) from object in request body. Object must contain `id`, `spaceId`, `connectionTypeId`   | `canEditSpace`
+`POST`    | <code class="connections">/connection</code>                    | Create connection(s) from object in request body. Object must contain `spaceId`, `connectionTypeId`   | `canEditSpace`
 `PATCH`   | <code class="connections">/connection</code>                    | Update connection(s) from object in request body                                                            | `canEditSpace`
 `DELETE`  | <code class="connections">/connection</code>                    | Permenently remove connection(s) speced in req body                                                         | `canEditSpace`
 
@@ -189,7 +189,7 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="connection-types">/connection-type/:connectionTypeId</code>  | Get info on a connectionType                                                                         | None
-`POST`    | <code class="connection-types">/connection-type</code>                    | Create connectionType(s) from object (or array) in request body. Object must contain `id`, `spaceId` | `canEditSpace`
+`POST`    | <code class="connection-types">/connection-type</code>                    | Create connectionType(s) from object (or array) in request body. Object must contain `spaceId`       | `canEditSpace`
 `PATCH`   | <code class="connection-types">/connection-type</code>                    | Update connectionType(s) from object in request body                                                 | `canEditSpace`
 `DELETE`  | <code class="connection-types">/connection-type</code>                    | Permenently remove connectionType                                                                    | `canEditSpace`
 
