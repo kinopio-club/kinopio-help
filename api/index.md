@@ -105,15 +105,16 @@ id                  | `String`  | The unique ID of the space. Is not user update
 name                | `String`  | The name of the space
 url                 | `String`  | The url of a space is determined by it's `name` and `id`. For example, `kinopio.club/:space-name-:id`
 ownerUserId         | `String`  | The userId of the user who created the space. Used to create url slugs
-Privacy             | `String`  | Can be `open`, `closed`, `private`
+privacy             | `String`  | Can be `open`, `closed`, `private`
 isRemoved           | `Boolean` | Sets whether the space has been soft-removed. (can then be restored or permanently removed)
 removedByUserId     | `String`  | The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed
 collaboratorKey     | `String`  | Used like an apikey to allow editing, but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
 users               | `Array`   | The user who created/owns the space (a space will always have only one user)
+collaborators       | `Array`   | A list of users that can also edit the space
 cards               | `Array`   | A list of <a href="#cards" class="badge cards">Cards</a> in the space
 connections         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
 connectionTypes     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
-collaborators       | `Array`   | A list of users that can also edit the space
+tags                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
 
 
 <a class="anchor" data-section="🎑" name="cards"></a>
@@ -145,7 +146,7 @@ y                     | `Integer` | y-axis position
 z                     | `Integer` | z-axis position
 frameId               | `String`  | The id of type of frame applied to the card, if any
 isRemoved             | `Boolean` | Sets whether the card has been soft-removed. (can be restored or permanently removed by space users)
-SpaceId               | `String`  | The space that the card belongs to
+spaceId               | `String`  | The space that the card belongs to
 nameUpdatedByUserId   | `String`  | The user id that last updated the name of the card
 nameUpdatedAt         | `String`  | The updated at date for the card name
 
@@ -173,8 +174,8 @@ id                | `String` | The unique ID of the connection. Is not user upda
 startCardId       | `String` | The card that the connection line starts from
 endCardId         | `String` | The card that the connection line ends at
 path              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and it's curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
-ConnectionTypeId  | `String` | The connection-type that the connection belongs to
-SpaceId           | `String` | The space that the connection belongs to
+connectionTypeId  | `String` | The connection-type that the connection belongs to
+spaceId           | `String` | The space that the connection belongs to
 
 
 <a class="anchor" data-section="💐" name="connection-types"></a>
@@ -200,4 +201,29 @@ Name | Type | Description
 id      | `String` | The unique ID of the connection. Is not user updateable
 name    | `String` | The name of the connection-type
 color   | `String` | User color changes your paint stroke and default avatar color
-SpaceId | `String` | The space that the connection-type belongs to
+spaceId | `String` | The space that the connection-type belongs to
+
+
+<a class="anchor" data-section="🦚" name="tags"></a>
+<h2 class="tags">Tags</h2>
+
+Each tag you add to a card is considered a seperate entity. So if you have two cards which both have the tag [[balloon]], this is two tag entities both named 'balloon', with different cardIds.
+
+<h3 class="tags">Tags Routes</h3>
+
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the connection type belongs to.
+
+Method | Path | Description | Auth
+--- | --- | --- | ---
+`GET`     | <code class="tags">/tags/:tagName</code>  | Get all tags with tagName in your spaces                                                                      | `canEditSpace`
+`PATCH`   | <code class="tags">/tags/color</code>     | Change the color of all tags with the name specified in request body. Object must contain `name`, `color`  | `canEditSpace`
+
+<h3 class="tags">Tags Attributes</h3>
+
+Name | Type | Description
+--- | --- | ---
+id      | `String` | The unique ID of the tag. Is not user updateable
+name    | `String` | The name of the tag
+color   | `String` | Tag color, displayed on a card
+cardId  | `String` | The card that the tag belongs to
+spaceId | `String` | The space that the tag belongs to
