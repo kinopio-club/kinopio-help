@@ -172,7 +172,7 @@ Name | Type | Description
 id                | `String` | The unique ID of the connection. Is not user updateable
 startCardId       | `String` | The card that the connection line starts from
 endCardId         | `String` | The card that the connection line ends at
-path              | `String` | SVG path that defines the connection line and it's curve
+path              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and it's curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
 ConnectionTypeId  | `String` | The connection-type that the connection belongs to
 SpaceId           | `String` | The space that the connection belongs to
 
