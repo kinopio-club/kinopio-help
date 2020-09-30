@@ -111,6 +111,9 @@ removedByUserId     | `String`  | The user who soft-removed the space. All space
 collaboratorKey     | `String`  | Used like an apikey to allow editing, but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
 collaborators       | `Array`   | List of users added to space as collaborators
 users               | `Array`   | The user who created/owns the space (a space will always have only one user)
+cards               | `Array`   | A list of <a href="#cards">cards</a> in the space
+connections         | `Array`   | A list of <a href="#connections">connections</a>
+connectionTypes     | `Array`   | A list of <a href="#connection-types">connection types</a>
 collaborators       | `Array`   | A list of users that can also edit the space
 
 
