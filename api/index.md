@@ -46,13 +46,14 @@ Routes with Auth as `apiKey` mean that the Authorization header apiKey must matc
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`   | <code class="users">/user/public/:userId</code>         | Gets public info on a user                                                              | None
-`GET`   | <code class="users">/user</code>                        | Get all info on the authenticating user                                                 | `apiKey`
-`GET`   | <code class="users">/user/favorites</code>              | Gets all info, including user and space favorites, on the authenticating user           | `apiKey`
-`GET`   | <code class="users">/user/spaces</code>                 | Get a list of the user's spaces                                                         | `apiKey`
-`GET`   | <code class="users">/user/removed-spaces</code>         | Get spaces removed by the authenticating user                                           | `apiKey`
-`GET`   | <code class="users">/user/current-public-spaces</code>  | Get a list of all users currently viewing or editing spaces with privacy set to `open`  | None
-`PATCH` | <code class="users">/user</code>                        | Update the authenticating user(s) based on an object body with user attributes. You can't patch `apiKey`, `password`, `emailIsVerified`, or `email` | `apiKey`
+`GET`   | <code class="users">/user/public/:userId</code>         | Gets public info on a user                                                                                                                                | None
+`GET`   | <code class="users">/user</code>                        | Get all info on the authenticating user                                                                                                                   | `apiKey`
+`GET`   | <code class="users">/user/favorites</code>              | Gets all info, including user and space favorites, on the authenticating user                                                                             | `apiKey`
+`GET`   | <code class="users">/user/spaces</code>                 | Get a list of the user's <a href="#spaces" class="badge spaces">Spaces</a>                                                                                | `apiKey`
+`GET`   | <code class="users">/user/removed-spaces</code>         | Get <a href="#spaces" class="badge spaces">Spaces</a> removed by the authenticating user                                                                  | `apiKey`
+`GET`   | <code class="users">/user/current-public-spaces</code>  | Get a list of all users currently viewing or editing <a href="#spaces" class="badge spaces">Spaces</a> with privacy set to `open`                         | None
+`GET`   | <code class="users">/user/tags?limit=5</code>           | Get a list of the last edited <a href="#tags" class="badge tags">Tags</a> in your spaces. Defaults to 5 tags, override with `limit` query string          | `apiKey`
+`PATCH` | <code class="users">/user</code>                        | Update the authenticating user(s) based on an object body with user attributes. You can't patch `apiKey`, `password`, `emailIsVerified`, or `email`       | `apiKey`
 `PATCH` | <code class="users">/user/favorites</code>              | Add or remove favorite users or spaces. Acts like a toggle, if the user is already liked it then removes the like. If not already liked it adds the like. request body should be in the format. | `apiKey`
 
 <h3 class="users">User Attributes</h3>
@@ -66,7 +67,7 @@ emailIsVerified         | `Boolean` | Whether the user has verified their email 
 apiKey                  | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
 lastSpaceId             | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
 color                   | `String`  | User color changes your paint stroke and default avatar color
-defaultConnectionTypeId | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new connections
+defaultConnectionTypeId | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new <a href="#connections" class="badge connections">Connections</a>
 lastReadNewStuffId      | `String`  | The id of the last read article from the 'new stuff' newsfeed
 currentPublicSpaceId    | `String`  | The id of an space with privacy set to `open` that the user is currently viewing or editing
 cardsCreatedCount       | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
@@ -78,7 +79,7 @@ filterShowAbsoluteDates | `Boolean` | Whether card dates are displayed as absolu
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
 
-Spaces are where your cards and connections live.
+Spaces are where your <a href="#cards" class="badge cards">Cards</a> and <a href="#connections" class="badge connections">Connections</a> live.
 
 <h3 class="spaces">Space Routes</h3>
 
@@ -86,16 +87,16 @@ Routes with Auth `canViewSpace` or `canEditSpace` requires that your Authorizati
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id                                                            | `canViewSpace`
-`GET`    | <code class="spaces">/space/new-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed | None
-`GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get cards removed in a space                                                     | `canEditSpace`
-`GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                            | `canViewSpace`
+`GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id                                                                 | `canViewSpace`
+`GET`    | <code class="spaces">/space/new-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      | None
+`GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 | `canEditSpace`
+`GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                                 | `canViewSpace`
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   | `apiKey`
-`PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                       | `canEditSpace`
-`PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                             | `canEditSpace`
-`DELETE` | <code class="spaces">/space</code>                       | Remove space(s) specified in request body                                            | `canEditSpace`
-`DELETE` | <code class="spaces">/space/permanent</code>             | Permanently remove space(s) specified in request body                                | `canEditSpace`
-`DELETE` | <code class="spaces">/space/collaborator</code>          | Removes collaborator user from space. Request Body Keys: `spaceId`, `userId`         | `canEditSpace`
+`PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            | `canEditSpace`
+`PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  | `canEditSpace`
+`DELETE` | <code class="spaces">/space</code>                       | Remove space(s) specified in request body                                                 | `canEditSpace`
+`DELETE` | <code class="spaces">/space/permanent</code>             | Permanently remove space(s) specified in request body                                     | `canEditSpace`
+`DELETE` | <code class="spaces">/space/collaborator</code>          | Removes collaborator user from space. Request Body Keys: `spaceId`, `userId`              | `canEditSpace`
 
 <h3 class="spaces">Space Attributes</h3>
 
@@ -120,7 +121,7 @@ tags                | `Array`   | A list of <a href="#tags" class="badge tags">T
 <a class="anchor" data-section="🎑" name="cards"></a>
 <h2 class="cards">Cards</h2>
 
-Cards are the building blocks of spaces. They have `x`, `y`, and `z` positions and a `name`.
+Cards are the building blocks of <a href="#spaces" class="badge spaces">Spaces</a>. They have `x`, `y`, and `z` positions and a `name`.
 
 <h3 class="cards">Cards Routes</h3>
 
@@ -128,12 +129,13 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="cards">/card/:cardId</code>   | Get info on a card                                                                      | None
-`POST`    | <code class="cards">/card</code>           | Create card(s) from object(s) in request body. Body object must contain `spaceId` and `name`. If not included, `x`, `y`, `z` will be near the last updated card in the space        | `canEditSpace`
-`PATCH`   | <code class="cards">/card</code>           | Update card(s) from object(s) in request body. Body object must contain `id`            | `canEditSpace`
-`PATCH`   | <code class="cards">/card/restore</code>   | Restore removed card specified in body                                                  | `canEditSpace`
-`DELETE`  | <code class="cards">/card</code>           | Remove card specified in body                                                           | `canEditSpace`
-`DELETE`  | <code class="cards">/card/permanent</code> | Permanently remove card specified in body                                               | `canEditSpace`
+`GET`     | <code class="cards">/card/:cardId</code>                | Get info on a card                                                                                                                                                                  | None
+`GET`     | <code class="cards">/card/by-tag-name/:tagName</code>   | get all cards with tag matching tagName in your <a href="#spaces" class="badge spaces">Spaces</a>                                                                                                                              | `apiKey`
+`POST`    | <code class="cards">/card</code>                        | Create card(s) from object(s) in request body. Body object must contain `spaceId` and `name`. If not included, `x`, `y`, `z` will be near the last updated card in the space        | `canEditSpace`
+`PATCH`   | <code class="cards">/card</code>                        | Update card(s) from object(s) in request body. Body object must contain `id`                                                                                                        | `canEditSpace`
+`PATCH`   | <code class="cards">/card/restore</code>                | Restore removed card specified in body                                                                                                                                              | `canEditSpace`
+`DELETE`  | <code class="cards">/card</code>                        | Remove card specified in body                                                                                                                                                       | `canEditSpace`
+`DELETE`  | <code class="cards">/card/permanent</code>              | Permanently remove card specified in body                                                                                                                                           | `canEditSpace`
 
 <h3 class="cards">Card Attributes</h3>
 
@@ -181,7 +183,7 @@ spaceId           | `String` | The space that the connection belongs to
 <a class="anchor" data-section="💐" name="connection-types"></a>
 <h2 class="connection-types">Connection Types</h2>
 
-Connection Types group connections together to allow the attributes of multiple connection lines to be represented and edited together.
+Connection Types group <a href="#connections" class="badge connections">Connections</a> together to allow the attributes of multiple connection lines to be represented and edited together.
 
 <h3 class="connection-types">Connection Type Routes</h3>
 
@@ -215,8 +217,9 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="tags">/tags/:tagName</code>  | Get all tags with tagName in your spaces                                                                      | `canEditSpace`
-`PATCH`   | <code class="tags">/tags/color</code>     | Change the color of all tags with the name specified in request body. Object must contain `name`, `color`  | `canEditSpace`
+`GET`     | <code class="tags">/tags/:tagName</code>          | Get all tags with tagName in your <a href="#spaces" class="badge spaces">Spaces</a>                                                                      | `apiKey`
+`GET`     | <code class="tags">/tags/by-card/:cardId</code>   | Get all tags in a <a href="#cards" class="badge cards">Cards</a>                                                                                        | `apiKey`
+`PATCH`   | <code class="tags">/tags/color</code>             | Change the color of all tags with the name specified in request body. Object must contain `name`, `color`     | `apiKey`
 
 <h3 class="tags">Tags Attributes</h3>
 
