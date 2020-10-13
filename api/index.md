@@ -75,6 +75,7 @@ isUpgraded              | `Boolean` | Whether the user currently has a paid subs
 filterShowUsers         | `Boolean` | Whether the user has has toggled the card user filter
 filterShowDateUpdated   | `Boolean` | Whether the user has has toggled the card date filter
 filterShowAbsoluteDates | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
+journalPrompts          | `Array`   | id, name, and packId for each user journal prompt. Private user info.
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
@@ -116,6 +117,7 @@ cards               | `Array`   | A list of <a href="#cards" class="badge cards"
 connections         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
 connectionTypes     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
 tags                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
+moonPhase           | `String`  | Name of the moonPhase icon used by Journal spaces
 
 
 <a class="anchor" data-section="🎑" name="cards"></a>
