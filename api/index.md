@@ -52,7 +52,7 @@ Method | Path | Description | Auth
 `GET`   | <code class="users">/user/spaces</code>                 | Get a list of the user's <a href="#spaces" class="badge spaces">Spaces</a>                                                                                | `apiKey`
 `GET`   | <code class="users">/user/removed-spaces</code>         | Get <a href="#spaces" class="badge spaces">Spaces</a> removed by the authenticating user                                                                  | `apiKey`
 `GET`   | <code class="users">/user/current-public-spaces</code>  | Get a list of all users currently viewing or editing <a href="#spaces" class="badge spaces">Spaces</a> with privacy set to `open`                         | None
-`GET`   | <code class="users">/user/tags?limit=5</code>           | Get a list of the last edited <a href="#tags" class="badge tags">Tags</a> in your spaces. Defaults to 5 tags, override with `limit` query string          | `apiKey`
+`GET`   | <code class="users">/user/tags</code>                   | Get a list of the last edited <a href="#tags" class="badge tags">Tags</a> in your spaces                                                                  | `apiKey`
 `PATCH` | <code class="users">/user</code>                        | Update the authenticating user(s) based on an object body with user attributes. You can't patch `apiKey`, `password`, `emailIsVerified`, or `email`       | `apiKey`
 `PATCH` | <code class="users">/user/favorites</code>              | Add or remove favorite users or spaces. Acts like a toggle, if the user is already liked it then removes the like. If not already liked it adds the like. request body should be in the format. | `apiKey`
 
