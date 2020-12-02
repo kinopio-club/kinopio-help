@@ -4,7 +4,7 @@ tags: ['About Kinopio']
 color: '#bbd0ff'
 ---
 
-All features of Kinopio are free to use and collaborate with, up to a limit of 150 cards and an upload file size limit of 5mb.
+All features of Kinopio are free to use and collaborate with, up to a limit of 100 cards and an upload file size limit of 5mb.
 
 > Kinopio costs 4$/month (USD) for unlimited cards and uploads
 
@@ -13,6 +13,10 @@ I want the pricing to feel simple, straightforward, and obvious.
 📈 Cards you add will increment the card count
 
 📉 Cards you remove will decrement the card count
+
+👯‍♀️ For easier collaboration, if you're editing a space that was created by an upgraded user, your card count won't change. You can check whether your card limit will change by clicking your user icon while in a space.
+
+<img src="https://kinopio-updates.us-east-1.linodeobjects.com/card-count-exempted.png" class="narrow" />
 
 ## Why a Subscription?
 
