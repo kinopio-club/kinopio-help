@@ -94,6 +94,7 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/best-of</code>               | A subset of `new-spaces` that have explicitly been curated by Kinopio                     | None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 | `canEditSpace`
 `GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                                 | `canViewSpace`
+`GET`    | <code class="spaces">/space/spaces?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                      | `canViewSpace`
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   | `apiKey`
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            | `canEditSpace`
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  | `canEditSpace`
@@ -158,6 +159,7 @@ isRemoved             | `Boolean` | Sets whether the card has been soft-removed.
 spaceId               | `String`  | The space that the card belongs to
 nameUpdatedByUserId   | `String`  | The user id that last updated the name of the card
 nameUpdatedAt         | `String`  | The updated at date for the card name
+linkToSpaceId         | `String`  | The spaceId linked to in the card name
 
 <a class="anchor" data-section="🍆" name="connections"></a>
 <h2 class="connections">Connections</h2>
