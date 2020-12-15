@@ -94,7 +94,7 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/best-of</code>               | A subset of `new-spaces` that have explicitly been curated by Kinopio                     | None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 | `canEditSpace`
 `GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                                 | `canViewSpace`
-`GET`    | <code class="spaces">/space/spaces?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                      | `canViewSpace`
+`GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                      | `canViewSpace`
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   | `apiKey`
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            | `canEditSpace`
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  | `canEditSpace`
@@ -138,7 +138,8 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="cards">/card/:cardId</code>                | Get info on a card                                                                                                                                                                  | None
-`GET`     | <code class="cards">/card/by-tag-name/:tagName</code>   | get all cards with tag matching tagName in your <a href="#spaces" class="badge spaces">Spaces</a>                                                                                                                              | `apiKey`
+`GET`     | <code class="cards">/card/by-tag-name/:tagName</code>   | get all cards with tag matching tagName in your <a href="#spaces" class="badge spaces">Spaces</a>                                                                                   | `apiKey`
+`GET`     | <code class="cards">/card/by-link-to-space/:spaceId</code>   | get the cards and <a href="#spaces" class="badge spaces">Spaces</a> where `linkToSpaceId` is `spaceId`. Will only return spaces that the user can view                            | `apiKey and canViewSpace`
 `POST`    | <code class="cards">/card</code>                        | Create card(s) from object(s) in request body. Body object must contain `spaceId` and `name`. If not included, `x`, `y`, `z` will be near the last updated card in the space        | `canEditSpace`
 `PATCH`   | <code class="cards">/card</code>                        | Update card(s) from object(s) in request body. Body object must contain `id`                                                                                                        | `canEditSpace`
 `PATCH`   | <code class="cards">/card/restore</code>                | Restore removed card specified in body                                                                                                                                              | `canEditSpace`
