@@ -77,6 +77,7 @@ filterShowDateUpdated   | `Boolean` | Whether the user has has toggled the card 
 filterShowAbsoluteDates | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
 journalPrompts          | `Array`   | id, name, and packId for each user journal prompt. Private user info.
 newSpacesAreBlank       | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
+shouldHideCardTips      | `Boolean` | Whether the user has chosen to hide the card editing tips button ('?')
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
