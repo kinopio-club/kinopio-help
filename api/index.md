@@ -163,6 +163,7 @@ spaceId               | `String`  | The space that the card belongs to
 nameUpdatedByUserId   | `String`  | The user id that last updated the name of the card
 nameUpdatedAt         | `String`  | The updated at date for the card name
 linkToSpaceId         | `String`  | The spaceId linked to in the card name
+commentIsVisible      | `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
 
 <a class="anchor" data-section="🍆" name="connections"></a>
 <h2 class="connections">Connections</h2>
