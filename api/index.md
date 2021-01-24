@@ -78,6 +78,8 @@ filterShowAbsoluteDates | `Boolean` | Whether card dates are displayed as absolu
 journalPrompts          | `Array`   | id, name, and packId for each user journal prompt. Private user info.
 newSpacesAreBlank       | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
 shouldHideCardTips      | `Boolean` | Whether the user has chosen to hide the card editing tips button ('?')
+shouldEmailNotifications| `Boolean` | Whether the user has chosen to allow notification emails (default to true)
+shouldEmailNewsletter   | `Boolean` | Whether the user has chosen to allow newsletter emails (default to true)
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
@@ -271,4 +273,4 @@ space   | `Object` | Basic information about the <a href="#spaces" class="badge 
 userId  | `String` | The user that created the notification
 user    | `Object` | Basic information about the <a href="#users" class="badge users">User</a> `id`, `name`, `color`
 isRead  | `Boolean` | Has the notification been read by the recipient in Kinopio
-isEmailed  | `Boolean` | Has the notification been emailed to the recipient
+isEmailed  | `Boolean` | Has the notification been emailed to the recipient. Emails are only sent if `user.shouldEmailNotifications = true`
