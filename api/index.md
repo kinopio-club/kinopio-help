@@ -243,3 +243,32 @@ name    | `String` | The name of the tag
 color   | `String` | Tag color, displayed on a card
 cardId  | `String` | The card that the tag belongs to
 spaceId | `String` | The space that the tag belongs to
+
+<a class="anchor" data-section="🛎" name="notifications"></a>
+<h2 class="notifications">Notifications</h2>
+
+Notifications are created when another user adds a card in a space that you're a member and not currently viewing. The notifying user can be either a space collaborator, or anyone viewing an open space.
+
+<h3 class="notifications">Notifications Routes</h3>
+
+Routes with Auth as `apiKey` mean that the Authorization header apiKey must match the requested user.
+
+Method | Path | Description | Auth
+--- | --- | --- | ---
+`GET`   | <code class="notifications">/notifications</code>  | Get the last 50 notifications for the current user | `apiKey`
+
+<h3 class="notifications">Notifications Attributes</h3>
+
+Name | Type | Description
+--- | --- | ---
+id      | `String` | The unique ID of the notification. Is not user updateable
+type    | `String` | The action that created the notification (e.g. `addCard`)
+recipientUserId   | `String` | The user that'll receive the notification
+cardId  | `String` | The card that the notification involves
+card    | `Object` | Basic information about the <a href="#cards" class="badge cards">Card</a> `id`, `name`
+spaceId | `String` | The space that the notification involves
+space   | `Object` | Basic information about the <a href="#spaces" class="badge spaces">Space</a> `id`, `name`, `privacy`, `background`
+userId  | `String` | The user that created the notification
+user    | `Object` | Basic information about the <a href="#users" class="badge users">User</a> `id`, `name`, `color`
+isRead  | `Boolean` | Has the notification been read by the recipient in Kinopio
+isEmailed  | `Boolean` | Has the notification been emailed to the recipient
