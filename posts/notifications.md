@@ -1,0 +1,21 @@
+---
+title: Notifications
+tags: ['Collaboration']
+color: '#f1ffc4'
+---
+
+By default, whenever a collaborator (or anyone in your open spaces) adds a card you will receive a notification about it.
+
+![](https://kinopio-updates.us-east-1.linodeobjects.com/notifications-dialog.png)
+
+## When Notifications are Emailed
+
+When you view your notifications in Kinopio, those notifications will be marked as read. Every 10 minutes, the system collects all the notifications that haven't been read and sends you an email about them.
+
+[pic email, i have a comment about this, this looks great!, I also think that x is y]
+
+## Notification Settings
+
+If you don't want to be emailed notifications, you can unsubscribe with the link at the bottom of the email, or in your `User → Settings`
+
+<img src="https://kinopio-updates.us-east-1.linodeobjects.com/notifications-email.png" class="no-shadow"/>
