@@ -79,7 +79,7 @@ journalPrompts          | `Array`   | id, name, and packId for each user journal
 newSpacesAreBlank       | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
 shouldHideCardTips      | `Boolean` | Whether the user has chosen to hide the card editing tips button ('?')
 shouldEmailNotifications| `Boolean` | Whether the user has chosen to allow notification emails (default to true)
-shouldEmailNewsletter   | `Boolean` | Whether the user has chosen to allow newsletter emails (default to true)
+shouldEmailBulletin   | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
