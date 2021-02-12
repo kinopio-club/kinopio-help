@@ -48,7 +48,7 @@ Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`   | <code class="users">/user/public/:userId</code>         | Gets public info on a user                                                                                                                                | None
 `GET`   | <code class="users">/user</code>                        | Get all info on the authenticating user                                                                                                                   | `apiKey`
-`GET`   | <code class="users">/user/favorites</code>              | Gets all info, including user and space favorites, on the authenticating user                                                                             | `apiKey`
+`GET`   | <code class="users">/user/favorites</code>              | Gets all info, including user and space favorites, on the authenticating user. Favorited spaces which have unread updates will have `isEdited: true`      | `apiKey`
 `GET`   | <code class="users">/user/spaces</code>                 | Get a list of the user's <a href="#spaces" class="badge spaces">Spaces</a>                                                                                | `apiKey`
 `GET`   | <code class="users">/user/removed-spaces</code>         | Get <a href="#spaces" class="badge spaces">Spaces</a> removed by the authenticating user                                                                  | `apiKey`
 `GET`   | <code class="users">/user/current-public-spaces</code>  | Get a list of all users currently viewing or editing <a href="#spaces" class="badge spaces">Spaces</a> with privacy set to `open`                         | None
@@ -79,7 +79,7 @@ journalPrompts          | `Array`   | id, name, and packId for each user journal
 newSpacesAreBlank       | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
 shouldHideCardTips      | `Boolean` | Whether the user has chosen to hide the card editing tips button ('?')
 shouldEmailNotifications| `Boolean` | Whether the user has chosen to allow notification emails (default to true)
-shouldEmailBulletin   | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
+shouldEmailBulletin     | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
