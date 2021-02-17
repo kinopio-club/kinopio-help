@@ -6,7 +6,7 @@ color: '#bbd0ff'
 
 All features of Kinopio are free to use and collaborate with, up to a limit of 100 cards and an upload file size limit of 5mb.
 
-> Kinopio costs 4$/month (USD) for unlimited cards and uploads
+> Kinopio costs $5/month or $55/year (USD) for unlimited cards and uploads
 
 I want the pricing to feel simple, straightforward, and obvious.
 
