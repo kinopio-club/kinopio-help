@@ -8,6 +8,7 @@ color: '#c4c4c4'
 
 <img src="/assets/posts/press-kit/logo-base.png" class="no-shadow"/>
 <br><br>
+
 <video autoplay loop muted playsinline class="wide">
   <source src="/assets/posts/press-kit/example-space.mp4">
 </video>
@@ -21,8 +22,22 @@ color: '#c4c4c4'
 <video autoplay loop muted playsinline class="wide">
   <source src="/assets/posts/press-kit/real-time-collaboration.mp4">
 </video>
+<br><br>
 
-<img src="/assets/posts/press-kit/screenshot1.png" class="wide no-shadow"/>
+<video autoplay loop muted playsinline class="wide">
+  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/animated-background.mp4">
+</video>
+<br><br>
+
+<video autoplay loop muted playsinline class="wide">
+  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/collaborative-tags.mp4">
+</video>
+<br><br>
+
+<video autoplay loop muted playsinline class="wide">
+  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/free-plants-in-brooklyn.mp4">
+</video>
+<br><br>
 
 ## Description
 
