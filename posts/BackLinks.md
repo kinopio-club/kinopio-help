@@ -1,0 +1,14 @@
+---
+title: Linking Spaces with Backlinks
+tags: ['How to Use']
+color: '#90ffff'
+---
+
+Use backlinks to connect your spaces together and weave your own web of knowledge
+
+- type `/` in a card to create a link to a space, or paste it's url
+- click `Links` to see all the spaces with links to your current space
+
+<video class="" autoplay loop muted playsinline>
+  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/backlinks.mp4">
+</video>
