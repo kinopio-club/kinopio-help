@@ -80,6 +80,7 @@ newSpacesAreBlank       | `Boolean` | Whether new spaces that the user creates a
 shouldHideCardTips      | `Boolean` | Whether the user has chosen to hide the card editing tips button ('?')
 shouldEmailNotifications| `Boolean` | Whether the user has chosen to allow notification emails (default to true)
 shouldEmailBulletin     | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
+shouldShowMoreAlignOptions | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
