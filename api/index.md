@@ -128,6 +128,9 @@ moonPhase           | `String`  | Name of the moonPhase icon used by Journal spa
 showInExplore       | `Boolean` | Whether the space is shown in explore
 bestOfExplore       | `Boolean` | Whether the space has been curated by Kinopio
 originSpaceId       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
+editedAt            | `String`  | The date when card contents in the space was last added or changed
+createdAt           | `String`  | The date when the space was created
+updatedAt           | `String`  | The date when any changes in the space were made including a member visiting it
 
 
 <a class="anchor" data-section="🎑" name="cards"></a>
