@@ -112,7 +112,7 @@ Name | Type | Description
 --- | --- | ---
 id                  | `String`  | The unique ID of the space. Is not user updateable
 name                | `String`  | The name of the space
-url                 | `String`  | The url of a space is determined by it's `name` and `id`. For example, `kinopio.club/:space-name-:id`
+url                 | `String`  | The url of a space is determined by its `name` and `id`. For example, `kinopio.club/:space-name-:id`
 ownerUserId         | `String`  | The userId of the user who created the space. Used to create url slugs
 privacy             | `String`  | Can be `open`, `closed`, `private`
 isRemoved           | `Boolean` | Sets whether the space has been soft-removed. (can then be restored or permanently removed)
@@ -128,6 +128,9 @@ moonPhase           | `String`  | Name of the moonPhase icon used by Journal spa
 showInExplore       | `Boolean` | Whether the space is shown in explore
 bestOfExplore       | `Boolean` | Whether the space has been curated by Kinopio
 originSpaceId       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
+editedAt            | `String`  | The date when card contents in the space was last added or changed
+createdAt           | `String`  | The date when the space was created
+updatedAt           | `String`  | The date when any changes in the space were made including a member visiting it
 
 
 <a class="anchor" data-section="🎑" name="cards"></a>
@@ -156,7 +159,7 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 id                    | `String`  | The unique ID of the card. Is not user updateable
-name                  | `String`  | The name of the card is it's main text
+name                  | `String`  | The name of the card is its main text
 x                     | `Integer` | x-axis position
 y                     | `Integer` | y-axis position
 z                     | `Integer` | z-axis position
@@ -191,7 +194,7 @@ Name | Type | Description
 id                | `String` | The unique ID of the connection. Is not user updateable
 startCardId       | `String` | The card that the connection line starts from
 endCardId         | `String` | The card that the connection line ends at
-path              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and it's curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
+path              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and its curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
 connectionTypeId  | `String` | The connection-type that the connection belongs to
 spaceId           | `String` | The space that the connection belongs to
 
