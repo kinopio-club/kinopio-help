@@ -81,6 +81,7 @@ shouldHideCardTips      | `Boolean` | Whether the user has chosen to hide the ca
 shouldEmailNotifications| `Boolean` | Whether the user has chosen to allow notification emails (default to true)
 shouldEmailBulletin     | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
 shouldShowMoreAlignOptions | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
+shouldInvertZoomDirection  | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>
