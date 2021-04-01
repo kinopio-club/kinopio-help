@@ -41,7 +41,7 @@ color: '#c4c4c4'
 
 ## Description
 
-[Kinopio](http://kinopio.club) is the visual thinking tool for new ideas and hard problems.
+[Kinopio](http://kinopio.club) is the spatial thinking tool for new ideas and hard problems.
 
 By making it easy to get your thoughts out and form connections organically, Kinopio works how our brains work.
 
