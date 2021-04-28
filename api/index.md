@@ -171,6 +171,13 @@ nameUpdatedByUserId   | `String`  | The user id that last updated the name of th
 nameUpdatedAt         | `String`  | The updated at date for the card name
 linkToSpaceId         | `String`  | The spaceId linked to in the card name
 commentIsVisible      | `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
+urlPreviewIsVisible   | `Boolean` | Whether the card will display a url preview (aka link unfurl)
+urlPreviewUrl         | `String`  | The url that the card url preview is based on
+urlPreviewImage       | `String`  | The url for the url preview image
+urlPreviewFavicon     | `String`  | The url for the url preview favicon image
+urlPreviewTitle       | `String`  | The title displayed in the url preview
+urlPreviewDescription | `String`  | The description displayed in the line of the url preview. Because most sites stuff their description tags with SEO gibberish, descriptions are only displayed for whitelisted domains. Contact support to add a domain to the whitelist.
+
 
 <a class="anchor" data-section="🍆" name="connections"></a>
 <h2 class="connections">Connections</h2>
