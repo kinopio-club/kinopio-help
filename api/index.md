@@ -177,6 +177,7 @@ urlPreviewImage       | `String`  | The url for the url preview image
 urlPreviewFavicon     | `String`  | The url for the url preview favicon image
 urlPreviewTitle       | `String`  | The title displayed in the url preview
 urlPreviewDescription | `String`  | The description displayed in the line of the url preview. Because most sites stuff their description tags with SEO gibberish, descriptions are only displayed for whitelisted domains. Contact support to add a domain to the whitelist.
+urlPreviewErrorUrl    | `String`  | The last url that the preview failed on (could be a private or broken url). If this matches `urlPreviewUrl`, the url preview won't be created
 
 
 <a class="anchor" data-section="🍆" name="connections"></a>
