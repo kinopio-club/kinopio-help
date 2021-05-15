@@ -77,7 +77,6 @@ filterShowDateUpdated   | `Boolean` | Whether the user has has toggled the card 
 filterShowAbsoluteDates | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
 journalPrompts          | `Array`   | id, name, and packId for each user journal prompt. Private user info.
 newSpacesAreBlank       | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
-shouldHideCardTips      | `Boolean` | Whether the user has chosen to hide the card editing tips button ('?')
 shouldEmailNotifications| `Boolean` | Whether the user has chosen to allow notification emails (default to true)
 shouldEmailBulletin     | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
 shouldShowMoreAlignOptions | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
