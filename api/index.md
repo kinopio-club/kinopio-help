@@ -131,7 +131,8 @@ originSpaceId       | `String`  | If the space was created by duplicating anothe
 editedAt            | `String`  | The date when card contents in the space was last added or changed
 createdAt           | `String`  | The date when the space was created
 updatedAt           | `String`  | The date when any changes in the space were made including a member visiting it
-
+background          | `String`  | The image url used by the space background
+backgroundTint      | `String`  | The background color used to tint the space background
 
 <a class="anchor" data-section="🎑" name="cards"></a>
 <h2 class="cards">Cards</h2>
