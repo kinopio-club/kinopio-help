@@ -17,29 +17,28 @@ if (search) {
   filterPage(search)
 }
 
-searchIcon.addEventListener ('click', () => {
-  searchInput.focus()
-})
-
-removeIcon.addEventListener ('click', () => {
-  clearFilter()
-})
-
-searchInput.addEventListener ('input', (event) => {
-  const value = searchInput.value
-  if (value) {
-    filterPage(value)
-  } else {
+if (searchInput) {
+  searchIcon.addEventListener ('click', () => {
+    searchInput.focus()
+  })
+  removeIcon.addEventListener ('click', () => {
     clearFilter()
-  }
-})
-
-searchForm.addEventListener ('submit', (event) => {
-  event.preventDefault()
-  const value = searchInput.value
-  const searchUrl = `${window.location.origin}?search=${value}`
-  window.location.href = searchUrl
-})
+  })
+  searchInput.addEventListener ('input', (event) => {
+    const value = searchInput.value
+    if (value) {
+      filterPage(value)
+    } else {
+      clearFilter()
+    }
+  })
+  searchForm.addEventListener ('submit', (event) => {
+    event.preventDefault()
+    const value = searchInput.value
+    const searchUrl = `${window.location.origin}?search=${value}`
+    window.location.href = searchUrl
+  })
+}
 
 function filterPage (value) {
   if (!helloSection) { return }
