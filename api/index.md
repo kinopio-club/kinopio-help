@@ -1,7 +1,11 @@
 ---
-title: API Docs
+# title: API Docs
 color: '#d3badf'
 layout: "layouts/api.pug"
+pageTitle: Kinopio API Docs
+pageSearchIsVisible: false
+currentPage: api
+
 ---
 <img src="/assets/cat.png" class="cat no-shadow"/>
 

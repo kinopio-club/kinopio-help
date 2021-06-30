@@ -1,4 +1,7 @@
 ---
+pageTitle: Kinopio Help and Support
+pageSearchIsVisible: true
+currentPage: help
 ---
 html(lang="en")
   head
@@ -10,21 +13,38 @@ html(lang="en")
     link(rel="canonical" href="https://kinopio.club")
   body
     header
-      a(href="/")
-        img.hidden(src="/assets/logo-hover.png")
-        img.hidden(src="/assets/logo-active.png")
-        .logo
-        h1 Kinopio Help and Support
+      .title
+        a(href='/')
+          img.hidden(src="/assets/logo-hover.png")
+          img.hidden(src="/assets/logo-active.png")
+          .logo
+          if pageTitle === 'Kinopio Help and Support'
+            h1 !{pageTitle}
+          else
+            h1 !{pageTitle}
+
     nav
-      a(href="/api")
-        button API Docs
+      .segmented-buttons
+        a(href="/")
+          button(class={active: currentPage === 'help'})
+            span Help
+        a(href="/api")
+          button(class={active: currentPage === 'api'})
+            span API
+        a(href="/about")
+          button(class={active: currentPage === 'about'})
+            span About
+
       a(href="https://kinopio.club")
         button.kinopio Kinopio →
-    .search
-      form
-        img#search(src="/assets/search.svg")
-        input(placeholder="Search")
-        img#remove.remove(src="/assets/add.svg")
+
+    if pageSearchIsVisible
+      .search
+        form
+          img#search(src="/assets/search.svg")
+          input(placeholder="Search")
+          img#remove.remove(src="/assets/add.svg")
+
     main !{content}
   footer
     img.froggo(src="/assets/froggo.png")

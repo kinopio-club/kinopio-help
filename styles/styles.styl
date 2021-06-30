@@ -24,7 +24,7 @@
   // --active-inset-shadow inset 0 2px 3px var(--light-shadow)
   --button-shadow 2px 2px 0 var(--light-shadow)
   // --button-hover-shadow inset 0 1px 2px var(--heavy-shadow)
-  --button-active-inset-shadow inset 2px 2px 2px var(--heavy-shadow)
+  --button-active-inset-shadow inset 0px 1px 2px var(--heavy-shadow)
 
   // help site vars
   --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
@@ -53,6 +53,9 @@ body
   color var(--primary)
   font-family var(--sans-serif)
   background-color var(--page-background)
+
+.title
+  display flex
 
 .logo
   background-image url('/assets/logo-base.png')
@@ -140,7 +143,8 @@ button
   &:focus
     box-shadow var(--hover-shadow)
     background var(--secondary-hover-background)
-  &:active
+  &:active,
+  &.active
     color var(--primary)
     box-shadow var(--button-active-inset-shadow)
     background var(--secondary-active-background)
@@ -230,6 +234,7 @@ footer
   margin-bottom 2rem
 
 nav
+  display flex
   position absolute
   right var(--page-margin)
   top var(--page-margin)
@@ -262,12 +267,15 @@ article
     &.no-shadow
       box-shadow none
 
+.overview
+  margin-bottom 2rem
+
 img + h2,
 video + h2
   margin-top 1.5rem
 
 ul.api-contents
-  margin-top 2rem
+  margin-top 1rem
   padding 0
   margin-left 0
   margin-right 0
@@ -360,3 +368,21 @@ a.badge
     box-shadow var(--hover-shadow)
   &:active
     box-shadow var(--button-active-inset-shadow)
+
+.segmented-buttons
+  button
+    margin 0
+    border-radius 0
+  a
+    button
+      margin-left -1px
+    &:first-child
+      button
+        border-top-left-radius 3px
+        border-bottom-left-radius 3px
+        margin-left 0
+    &:last-child
+      button
+        border-top-right-radius 3px
+        border-bottom-right-radius 3px
+
