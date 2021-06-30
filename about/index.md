@@ -1,6 +1,6 @@
 ---
 layout: "layouts/about.pug"
-pageTitle: ''
+pageTitle: 'About Kinopio'
 pageSearchIsVisible: false
 currentPage: about
 ---
