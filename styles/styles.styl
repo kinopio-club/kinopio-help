@@ -149,6 +149,23 @@ button
     box-shadow var(--button-active-inset-shadow)
     background var(--secondary-active-background)
 
+.segmented-buttons
+  button
+    margin 0
+    border-radius 0
+  a
+    button
+      margin-left -1px
+    &:first-child
+      button
+        border-top-left-radius 3px
+        border-bottom-left-radius 3px
+        margin-left 0
+    &:last-child
+      button
+        border-top-right-radius 3px
+        border-bottom-right-radius 3px
+
 code
   background var(--success-background)
   color var(--primary)
@@ -369,20 +386,4 @@ a.badge
   &:active
     box-shadow var(--button-active-inset-shadow)
 
-.segmented-buttons
-  button
-    margin 0
-    border-radius 0
-  a
-    button
-      margin-left -1px
-    &:first-child
-      button
-        border-top-left-radius 3px
-        border-bottom-left-radius 3px
-        margin-left 0
-    &:last-child
-      button
-        border-top-right-radius 3px
-        border-bottom-right-radius 3px
-
+// About
