@@ -1,0 +1,13 @@
+nav
+  .segmented-buttons
+    a(href="/")
+      button(class={active: currentPage === 'help'})
+        span Help
+    a(href="/api")
+      button(class={active: currentPage === 'api'})
+        span API
+    a(href="/about")
+      button(class={active: currentPage === 'about'})
+        span About
+  a(href="https://kinopio.club")
+    button.button-primary Kinopio →

@@ -2,6 +2,7 @@
 pageTitle: Kinopio Help and Support
 pageSearchIsVisible: true
 currentPage: help
+showFooter: true
 ---
 html(lang="en")
   head
@@ -23,20 +24,7 @@ html(lang="en")
           else if pageTitle
             h1 !{pageTitle}
 
-    nav
-      .segmented-buttons
-        a(href="/")
-          button(class={active: currentPage === 'help'})
-            span Help
-        a(href="/api")
-          button(class={active: currentPage === 'api'})
-            span API
-        a(href="/about")
-          button(class={active: currentPage === 'about'})
-            span About
-
-      a(href="https://kinopio.club")
-        button.button-primary Kinopio →
+    include nav.pug
 
     if pageSearchIsVisible
       .search
@@ -46,7 +34,8 @@ html(lang="en")
           img#remove.remove(src="/assets/add.svg")
 
     main !{content}
-  include footer.pug
+  if showFooter
+    include footer.pug
     // p
     //   a(href="https://github.com/kinopio-club/kinopio-help") View Source
 

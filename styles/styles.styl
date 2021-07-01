@@ -2,7 +2,7 @@
   --primary black
   // --primary-background white
 
-  // --secondary #818181
+  // --secondary #666
   // --secondary-background #e3e3e3
   --secondary-hover-background #d8d8d8
   --secondary-active-background #cdcdcd
@@ -17,15 +17,18 @@
   --info-background #90ffff
   --success-background #98f49f
   --code-background #c8c8c8
+  --cta-background #67ffbb
 
   // non-theme vars
   // --max-z 2147483647
   --hover-shadow 3px 3px 0 var(--heavy-shadow)
   // --active-shadow 5px 5px 0 var(--light-shadow)
   // --active-inset-shadow inset 0 2px 3px var(--light-shadow)
-  --button-shadow 2px 2px 0 var(--light-shadow)
-  --button-hover-shadow inset 0 1px 2px var(--heavy-shadow)
+  // --button-hover-shadow inset 0 1px 2px var(--heavy-shadow)
   --button-active-inset-shadow inset 0px 1px 2px var(--heavy-shadow)
+
+  --badge-shadow 2px 2px 0 var(--light-shadow)
+  --button-primary-hover-shadow 5px 5px 0 var(--heavy-shadow)
 
   // help site vars
   --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
@@ -119,7 +122,7 @@ ul
       background var(--info-background)
       padding 4px 5px
       border-radius 3px
-      box-shadow var(--button-shadow)
+      box-shadow var(--badge-shadow)
       &:hover,
       &:focus
         box-shadow var(--hover-shadow)
@@ -151,15 +154,15 @@ button
     background var(--secondary-active-background)
 
 .button-primary
-  background-color var(--info-background)
-  box-shadow var(--button-shadow)
+  background-color var(--cta-background)
+  box-shadow var(--hover-shadow)
   &:hover,
   &:focus
-    background-color var(--info-background)
+    background-color var(--cta-background)
+    box-shadow var(--button-primary-hover-shadow)
   &:active
-    background-color var(--info-background)
-    // box-shadow var(--button-hover-shadow)
-
+    background-color var(--cta-background)
+    box-shadow var(--button-active-inset-shadow)
 
 .segmented-buttons
   button
@@ -261,6 +264,11 @@ header
 footer
   margin-top 4rem
   margin-bottom 2rem
+  nav
+    margin-top 1rem
+    position static
+  // a
+  //   color var(--secondary)
 
 nav
   display flex
@@ -391,7 +399,7 @@ a.badge
   background var(--info-background)
   padding 4px 5px
   border-radius 3px
-  box-shadow var(--button-shadow)
+  box-shadow var(--badge-shadow)
   &:hover,
   &:focus
     box-shadow var(--hover-shadow)
@@ -401,5 +409,16 @@ a.badge
 // About
 
 .about
-  a + a
-    margin-left 6px
+
+  .uses
+    span
+      vertical-align middle
+      margin-right 6px
+    .badge
+      display inline-block
+      vertical-align middle
+      margin-right 6px
+
+  .actions
+    a + a
+      margin-left 6px
