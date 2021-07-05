@@ -3,12 +3,14 @@ layout: default.pug
 ---
 
 article.about
-  h1 Spatial Thinking for New Ideas and Hard Problems
+  section.what-is-kinopio
+    h1 Spatial Thinking for New Ideas and Hard Problems
+    p [bk vid, or static img]
+    p
+      span Get your thoughts out and visually connect them together. Kinopio works how our brains work.
 
-  p
-    span Get your thoughts out and visually connect them together. Kinopio works how our brains work.
-
-  .uses
+  // todo color tags, based on template type
+  section.uses
     span Use Kinopio for
     a.badge(href="#") Mind Mapping
     a.badge(href="#") Brainstorming
@@ -16,18 +18,82 @@ article.about
     a.badge(href="#") Journaling
     a.badge(href="#") Retrospectives
     a.badge(href="#") Meeting Notes
+    span and
+    // todo update templates page
+    a.badge(href="/posts/templates/") Lots More
 
   p Basically for figuring stuff out – by yourself or collaboratively.
   p No sign up required.
 
-  section.actions
-    a(href="#pricing")
-      button Pricing
-    a(href="https://kinopio.club")
-      button.button-primary
-        span Use Kinopio →
+  include /actions.pug
 
-  // script(src="/assets/about.js")
+  section.how-to-use
+    h2 How To Use Kinopio
+
+    p Kinopio is designed to
+    ol
+      li Get the chaotic messy thoughts and ideas out of your head
+      li Show you how they’re connected
+      li Help you figure out what they mean, and how to start working on them
+
+    p "Let me show you"
+
+    p Tap anywhere to make a new card. Put an idea, thought, or feeling in it. It doesn’t need to make sense right now. Make some more, wherever you want. Drag cards to move them with a jolly wiggle.
+
+    p [vid]
+    // figure
+    //   video(autoplay loop muted playsinline)
+    //     source(src="https://pketh.org/images/2019/basic-cards.mp4")
+    // figcaption Get your feelings out
+
+    p By now some of these ideas might be connected – so let’s connect them by dragging from one card connector to another.
+
+    p [vid]
+    // https://pketh.org/images/2019/connecting.mp4
+
+    p Connections can also be tapped on to edit their color and type, among other things.
+
+    p [vid]
+    // https://pketh.org/images/2019/connection-details.mp4
+
+    p You’ve got the gist!
 
 
-  // explore more spaces examples, real feed. add explore to api docs
+    p But here’s one more thing. You can paint over cards to move and edit them all together. It's pretty magical, although I am biased.
+    p [vid]
+
+
+    p Kinopio exists for people who have ideas, feelings, or thoughts they’re struggling to express, organize, and understand.
+    // Rather than replacing useful team/planning/productivity tools you may already be using like Notion or Trello [], Kinopio is for things that don't work super well in linear documents and tables.  [it's best for exploratory, collaborative, things]
+    // p Instead of neatly structured forms and linear lists like a traditional planning tool, Kinopio is a thinking tool for creating connections through spatial relationships.
+
+
+    // p fun/other uses: I recently used it to give away my plants before a big move: https://kinopio.club/free-plants...  , roadmap
+
+    p It also works great on phones and tablets.
+
+
+  include /actions.pug
+
+
+  section.more-features
+
+    h2 More Features
+    // p "for power users too" // for newbs and pros, scales,
+
+    p Kinopio is a tool that'll grow with you. Whether doing deep-work by yourself, or collaborating with your team, creating and connecting thoughts spatially feels like extension of your mind
+
+
+    p privacy, filtering, finding, inviting, keyboard shortcuts
+
+
+  // todo
+  section.pricing
+
+    h2 Pricing
+    p "how much does it cost?"
+    // blah
+    a.badge(href="#") More Pricing Details
+
+
+  //

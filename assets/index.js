@@ -41,7 +41,7 @@ if (searchInput) {
 }
 
 function filterPage (value) {
-  if (!helloSection) { return }
+  if (!helloSection) { return }
   helloSection.classList.add('hidden')
   filterHeaders(value)
   filterPosts(value)
@@ -74,7 +74,7 @@ function filterPosts (value) {
 
 function clearFilter () {
   searchInput.value = ""
-  if (!helloSection) { return }
+  if (!helloSection) { return }
   headers.forEach(header => header.classList.remove('hidden'))
   posts.forEach(post => post.classList.remove('hidden'))
   helloSection.classList.remove('hidden')
@@ -86,7 +86,7 @@ function clearFilter () {
 
 let canvas, context, canvasImage, color, prevScroll
 let pageCanvas, pageContext
-const lineWidth = 30
+const lineWidth = 22
 let currentStroke = []
 let allStrokes = []
 prevScroll = {
@@ -113,11 +113,12 @@ function initCanvas () {
 }
 
 function initPageCanvas () {
+  pageCanvas = document.getElementById('page-background')
+  pageCanvas.classList.add('hidden')
   const body = document.body
   const html = document.documentElement
   const pageWidth = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth)
   const pageHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
-  pageCanvas = document.getElementById('page-background')
   pageCanvas.width = pageWidth
   pageCanvas.height = pageHeight
   pageContext = pageCanvas.getContext('2d')
@@ -125,6 +126,7 @@ function initPageCanvas () {
   pageContext.strokeStyle = color
   pageContext.lineWidth = lineWidth
   pageContext.lineCap = pageContext.lineJoin = 'round'
+  pageCanvas.classList.remove('hidden')
 }
 
 function randomColor () {
@@ -132,7 +134,7 @@ function randomColor () {
     '#fcd1c4', // light pink
     '#abfcec', // light blue
     // '#c7f0e8', // light teal
-    '#a3d9e1', // blue
+    // '#a3d9e1', // blue
     '#fbbfff', // purple
     // '#f1d0f4', // purple
     '#99f6c6', // green
@@ -176,7 +178,6 @@ function redrawAllStrokes () {
     })
     pageContext.stroke()
   })
-
 }
 
 function startStroke () {
@@ -204,15 +205,15 @@ function addPointToStroke ({ x, y }) {
 }
 
 // start
-window.onmousedown = function (event) { startStroke() }
-window.ontouchstart = function (event) {
+window.onmousedown = function (event) { startStroke() }
+window.ontouchstart = function (event) {
   isTouch = true
   startStroke()
 }
 
 // stop
-window.onmouseup = function (event) { endStroke() }
-window.ontouchend = function (event) { endStroke() }
+window.onmouseup = function (event) { endStroke() }
+window.ontouchend = function (event) { endStroke() }
 
 // draw
 window.onmousemove = throttle(10, function (event) {

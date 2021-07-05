@@ -1,9 +1,9 @@
 :root
   --primary black
-  // --primary-background white
+  --primary-background white
 
   // --secondary #666
-  // --secondary-background #e3e3e3
+  --secondary-background #e3e3e3
   --secondary-hover-background #d8d8d8
   --secondary-active-background #cdcdcd
 
@@ -16,8 +16,6 @@
 
   --info-background #90ffff
   --success-background #98f49f
-  --code-background #c8c8c8
-  --cta-background #67ffbb
 
   // non-theme vars
   // --max-z 2147483647
@@ -34,17 +32,41 @@
   --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
   --max-page-width 520px
   --page-margin 20px
-  --page-background #dbdbdb
+  --page-background #e8eadf
+  --code-background #c8c8c8
   --table-border #c5c5c5
+  --table-hover-background rgba(0,0,0,0.05)
+  --cta-background #67ffbb
 
 
 // Elements
 
 @font-face
   font-family 'OsakaMono-Kinopio'
-  src url("/assets/OsakaMono-Kinopio.woff2") format("woff2")
+  src url("/assets/fonts/OsakaMono-Kinopio.woff2") format("woff2")
   font-weight normal
   font-style normal
+
+@font-face
+  font-family 'Mars'
+  src url("/assets/fonts/marsstandardweb-regular-TRIAL.woff") format("woff")
+  font-weight normal
+  font-style normal
+
+@font-face
+  font-family 'Mars-Extended'
+  src url("/assets/fonts/marsextendedweb-regular-TRIAL.woff") format("woff")
+  font-weight normal
+  font-style normal
+
+
+@font-face
+  font-family 'Recoleta'
+  src url("/assets/fonts/Recoleta-RegularDEMO.otf") format("opentype")
+  font-weight normal
+  font-style normal
+
+
 
 *
   -webkit-overflow-scrolling touch
@@ -53,10 +75,20 @@
   // font-family "OsakaMono-Kinopio", monospace
 
 body
-  margin var(--page-margin)
   color var(--primary)
   font-family var(--sans-serif)
-  background-color var(--page-background)
+  margin var(--page-margin)
+
+.content-wrap
+  margin-left auto
+  margin-right auto
+  max-width 800px
+  width 100%
+  position relative
+  // background-image url("https://kinopio.club/img/background.597f845c.svg")
+  // background-position top
+  padding 0
+
 
 .title
   display flex
@@ -75,10 +107,13 @@ body
   display none
 
 h1
-  font-size 20px
-
+  // font-family Mars
+  font-family Recoleta
+  font-size 46px
+  margin-bottom 1rem
 h2,
 h3
+  font-family Mars
   font-size 16px
 
 h1,
@@ -94,6 +129,14 @@ a
   color blue
   &:hover
     text-decoration none
+
+.icon
+  width 13px
+  display inline
+  vertical-align 1px
+  margin-right 4px
+  user-drag none
+  -webkit-user-drag none
 
 form
   margin 0
@@ -195,7 +238,7 @@ blockquote
   background var(--code-background)
   border-radius 3px
   padding 8px
-  max-width var(--max-page-width)
+  // max-width var(--max-page-width)
   display inline-block
   p
     margin 0
@@ -212,34 +255,46 @@ canvas#page-background
   top 0
   left 0
   z-index -2
+.tint-background
+  position fixed
+  width 100%
+  height 100%
+  mix-blend-mode multiply
+  background-color var(--page-background)
+  top 0
+  left 0
+  z-index -3
 
 .table-wrap
   overflow-x auto
   border-radius 3px
-  padding-left 8px
 
 table
   border-collapse collapse
   max-width 1000px
   th,
   td
-    padding 8px
-    padding-right 12px
+    padding 12px
+    // padding-right 12px
     text-align left
     border-bottom 1px solid var(--table-border)
-    max-width 520px
-    &:first-child
-      padding-left 0
+    // max-width 520px
+    // &:first-child
+    //   padding-left 0
   tr
     &:hover
-      background rgba(255,255,255,.2)
+      background var(--table-hover-background)
 
 // Components
 
 header
   h1
+    // color teal
+    // text-transform uppercase
+    font-family Recoleta
+    font-size 24px
     margin-top 0
-    padding-top 0.67em // h1 default margin
+    padding-top 10px
   a
     color var(--primary)
     text-decoration none
@@ -261,20 +316,27 @@ header
     cursor text
     margin-top 1px
 
+main
+  button
+    font-size 16px
+
+  section.index
+    margin-top 2rem
+
 footer
   margin-top 4rem
   margin-bottom 2rem
   nav
     margin-top 1rem
     position static
-  // a
-  //   color var(--secondary)
+  // h2
+  //   font-family Recoleta
 
 nav
   display flex
   position absolute
-  right var(--page-margin)
-  top var(--page-margin)
+  right 0
+  top 0
   button
     margin-left 6px
 
@@ -409,7 +471,6 @@ a.badge
 // About
 
 .about
-
   .uses
     span
       vertical-align middle
@@ -420,5 +481,9 @@ a.badge
       margin-right 6px
 
   .actions
+    margin-top 3rem
+    margin-bottom 3rem
     a + a
       margin-left 6px
+    button
+      font-size 16px

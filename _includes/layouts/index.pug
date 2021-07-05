@@ -3,15 +3,16 @@ layout: default.pug
 ---
 
 section#hello
-  h1 Hello
   p
     a(href="https://kinopio.club") Kinopio
     span &nbsp;is your spatial thinking tool for new ideas and hard problems.
   p Get your thoughts out and visually connect them together. Kinopio works how our brains work.
 
-  article.overview
-    video.wide(autoplay loop muted playsinline)
-      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/overview-basics-2.mp4")
+  a(href="/about")
+    button Learn More
+  // article.overview
+  //   video.wide(autoplay loop muted playsinline)
+  //     source(src="https://kinopio-updates.us-east-1.linodeobjects.com/overview-basics-2.mp4")
 
   // include /contact.pug
 
@@ -26,7 +27,7 @@ mixin posts(collection)
         a(href=post.url style={background: post.data.color})
           span #{post.data.title}
 
-section#index
+section#index.index
   - let collection
 
   - collection = 'How to Use'

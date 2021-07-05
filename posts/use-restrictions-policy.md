@@ -14,7 +14,7 @@ Kinopio helps people understand themselves and be understood by sharing thoughts
 
 - **Child exploitation, sexualization, or abuse**: We don’t tolerate any activities that create, disseminate, or otherwise cause child abuse. Keep away and stop. Just stop.
 - **Doxing**: If you are using Kinopio products to share other peoples’ private personal information for the purposes of harassment, we don’t want anything to do with you.
-- **Infringing on intellectual property**: You can’t use Kinopio to make or disseminate work that uses the intellectual property of others beyond the bounds of fair use.
+- **Infringing on intellectual property**: You can’t use Kinopio to make or disseminate work that uses the intellectual property of others beyond the bounds of fair use.
 - **Malware or spyware**: Code for good, not evil. If you are using our products to make or distribute anything that qualifies as malware or spyware, begone.
 - **Phishing or otherwise attempting fraud**: It is not okay to lie about who you are or who you affiliate with to steal from, extort, or otherwise harm others.
 - **Spamming**: No one wants unsolicited commercial emails. We don’t tolerate folks (including their bots) using Kinopio for spamming purposes.

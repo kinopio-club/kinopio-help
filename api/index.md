@@ -64,28 +64,28 @@ Method | Path | Description | Auth
 
 Name | Type | Description
 --- | --- | ---
-id                      | `String`  | The unique ID of the user. Is not user updateable
-name                    | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
-email                   | `String`  | The unique email address of the user required to create an account"
-emailIsVerified         | `Boolean` | Whether the user has verified their email address
-apiKey                  | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
-lastSpaceId             | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
-color                   | `String`  | User color changes your paint stroke and default avatar color
-defaultConnectionTypeId | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new <a href="#connections" class="badge connections">Connections</a>
-lastReadNewStuffId      | `String`  | The id of the last read article from the 'new stuff' newsfeed
-currentPublicSpaceId    | `String`  | The id of an space with privacy set to `open` that the user is currently viewing or editing
-cardsCreatedCount       | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
-isUpgraded              | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
-filterShowUsers         | `Boolean` | Whether the user has has toggled the card user filter
-filterShowDateUpdated   | `Boolean` | Whether the user has has toggled the card date filter
-filterShowAbsoluteDates | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
-journalPrompts          | `Array`   | id, name, and packId for each user journal prompt. Private user info.
-newSpacesAreBlank       | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
-shouldEmailNotifications| `Boolean` | Whether the user has chosen to allow notification emails (default to true)
-shouldEmailBulletin     | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
-shouldShowMoreAlignOptions | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
-shouldInvertZoomDirection  | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
-shouldUseLastConnectionType	| `Boolean` | Whether the user has chosen to use last connection type for new connections
+<code class="users">id</code>                      | `String`  | The unique ID of the user. Is not user updateable
+<code class="users">name</code>                    | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
+<code class="users">email</code>                   | `String`  | The unique email address of the user required to create an account"
+<code class="users">emailIsVerified</code>         | `Boolean` | Whether the user has verified their email address
+<code class="users">apiKey</code>                  | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
+<code class="users">lastSpaceId</code>             | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
+<code class="users">color</code>                   | `String`  | User color changes your paint stroke and default avatar color
+<code class="users">defaultConnectionTypeId</code> | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new <a href="#connections" class="badge connections">Connections</a>
+<code class="users">lastReadNewStuffId</code>      | `String`  | The id of the last read article from the 'new stuff' newsfeed
+<code class="users">currentPublicSpaceId</code>    | `String`  | The id of an space with privacy set to `open` that the user is currently viewing or editing
+<code class="users">cardsCreatedCount</code>       | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
+<code class="users">isUpgraded</code>              | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
+<code class="users">filterShowUsers</code>         | `Boolean` | Whether the user has has toggled the card user filter
+<code class="users">filterShowDateUpdated</code>   | `Boolean` | Whether the user has has toggled the card date filter
+<code class="users">filterShowAbsoluteDates</code> | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
+<code class="users">journalPrompts</code>          | `Array`   | id, name, and packId for each user journal prompt. Private user info.
+<code class="users">newSpacesAreBlank</code>       | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
+<code class="users">shouldEmailNotifications</code>| `Boolean` | Whether the user has chosen to allow notification emails (default to true)
+<code class="users">shouldEmailBulletin</code>     | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
+<code class="users">shouldShowMoreAlignOptions</code> | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
+<code class="users">shouldInvertZoomDirection</code>  | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
+<code class="users">shouldUseLastConnectionType</code>	| `Boolean` | Whether the user has chosen to use last connection type for new connections
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="spaces">Spaces</h2>

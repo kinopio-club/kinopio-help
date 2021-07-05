@@ -1,5 +1,5 @@
 ---
-pageTitle: Kinopio Help and Support
+pageTitle: Kinopio Help
 pageSearchIsVisible: true
 currentPage: help
 showFooter: true
@@ -13,33 +13,35 @@ html(lang="en")
     link(rel="stylesheet" href="/styles/styles.css")
     link(rel="canonical" href="https://kinopio.club")
   body
-    header
-      .title
-        a(href='/')
-          img.hidden(src="/assets/logo-hover.png")
-          img.hidden(src="/assets/logo-active.png")
-          .logo
-          if pageTitle === 'Kinopio Help and Support'
-            h1 !{pageTitle}
-          else if pageTitle
-            h1 !{pageTitle}
+    .content-wrap
+      header
+        .title
+          a(href='/')
+            img.hidden(src="/assets/logo-hover.png")
+            img.hidden(src="/assets/logo-active.png")
+            .logo
+            if pageTitle === 'Kinopio Help'
+              h1 !{pageTitle}
+            else if pageTitle
+              h1 !{pageTitle}
 
-    include nav.pug
+      include nav.pug
 
-    if pageSearchIsVisible
-      .search
-        form
-          img#search(src="/assets/search.svg")
-          input(placeholder="Search")
-          img#remove.remove(src="/assets/add.svg")
+      if pageSearchIsVisible
+        .search
+          form
+            img#search(src="/assets/search.svg")
+            input(placeholder="Search")
+            img#remove.remove(src="/assets/add.svg")
 
-    main !{content}
-  if showFooter
-    include footer.pug
+      main !{content}
+      if showFooter
+        include footer.pug
     // p
     //   a(href="https://github.com/kinopio-club/kinopio-help") View Source
 
-  canvas#background
-  canvas#page-background
+    canvas#background
+    canvas#page-background
+    .tint-background
   script(src="/assets/fuzzy-min.js")
   script(src="/assets/index.js")
