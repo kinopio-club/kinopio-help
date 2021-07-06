@@ -29,17 +29,30 @@
   --button-primary-hover-shadow 5px 5px 0 var(--heavy-shadow)
 
   // help site vars
-  --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
   --max-page-width 520px
   --page-margin 20px
-  --page-background #e8eadf
+  --page-background #dbdbdb // #e8eadf
   --code-background #c8c8c8
   --table-border #c5c5c5
   --table-hover-background rgba(0,0,0,0.05)
   --cta-background #67ffbb
+  --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
 
 
 // Elements
+
+// @font-face
+//   font-family 'Agrandir'
+//   src url("/assets/fonts/Agrandir-Regular.otf") format("opentype")
+//   font-weight normal
+//   font-style normal
+
+// @font-face
+//   font-family 'Agrandir'
+//   src url("/assets/fonts/Agrandir-TextBold.otf") format("opentype")
+//   font-weight bold
+//   font-style normal
+
 
 @font-face
   font-family 'OsakaMono-Kinopio'
@@ -47,25 +60,36 @@
   font-weight normal
   font-style normal
 
+
+@font-face
+  font-family 'JeanLuc'
+  src url("/assets/fonts/JeanLuc-Bold.otf") format("opentype")
+  font-weight bold
+  font-style normal
+
+
 @font-face
   font-family 'Mars'
   src url("/assets/fonts/marsstandardweb-regular-TRIAL.woff") format("woff")
   font-weight normal
   font-style normal
 
-@font-face
-  font-family 'Mars-Extended'
-  src url("/assets/fonts/marsextendedweb-regular-TRIAL.woff") format("woff")
-  font-weight normal
-  font-style normal
-
+// @font-face
+//   font-family 'Mars-Extended'
+//   src url("/assets/fonts/marsextendedweb-regular-TRIAL.woff") format("woff")
+//   font-weight normal
+//   font-style normal
 
 @font-face
   font-family 'Recoleta'
   src url("/assets/fonts/Recoleta-RegularDEMO.otf") format("opentype")
   font-weight normal
   font-style normal
-
+@font-face
+  font-family 'Recoleta'
+  src url("/assets/fonts/Recoleta-Bold.woff2") format("woff2")
+  font-weight bold
+  font-style normal
 
 
 *
@@ -90,9 +114,6 @@ body
   padding 0
 
 
-.title
-  display flex
-
 .logo
   background-image url('/assets/logo-base.png')
   background-size contain
@@ -109,12 +130,18 @@ body
 h1
   // font-family Mars
   font-family Recoleta
-  font-size 46px
-  margin-bottom 1rem
+  font-size 30px
+  font-weight normal
+  // margin-bottom 1rem
+  // font-family Agrandir
 h2,
 h3
-  font-family Mars
-  font-size 16px
+  margin-top 2rem
+  font-family Recoleta
+  // font-family Mars
+  font-size 22px
+  font-weight normal
+  // font-family Agrandir
 
 h1,
 h2,
@@ -224,8 +251,11 @@ button
         border-top-right-radius 3px
         border-bottom-right-radius 3px
 
-code
+code,
+blockquote
   background var(--code-background)
+
+code
   color var(--primary)
   padding 2px
   padding-left 6px
@@ -235,10 +265,8 @@ code
 
 blockquote
   margin 0
-  background var(--code-background)
   border-radius 3px
   padding 8px
-  // max-width var(--max-page-width)
   display inline-block
   p
     margin 0
@@ -275,12 +303,8 @@ table
   th,
   td
     padding 12px
-    // padding-right 12px
     text-align left
     border-bottom 1px solid var(--table-border)
-    // max-width 520px
-    // &:first-child
-    //   padding-left 0
   tr
     &:hover
       background var(--table-hover-background)
@@ -288,10 +312,10 @@ table
 // Components
 
 header
+  .title
+    display flex
   h1
-    // color teal
-    // text-transform uppercase
-    font-family Recoleta
+    font-family JeanLuc
     font-size 24px
     margin-top 0
     padding-top 10px
@@ -320,17 +344,12 @@ main
   button
     font-size 16px
 
-  section.index
-    margin-top 2rem
-
 footer
   margin-top 4rem
   margin-bottom 2rem
   nav
     margin-top 1rem
     position static
-  // h2
-  //   font-family Recoleta
 
 nav
   display flex
@@ -387,11 +406,22 @@ ul.api-contents
     margin-right 6px
 
 .api
+  h2
+    font-size 22px
+    font-weight bold
   h2,
   h3
-    display inline-block
-    padding 4px 5px
-    border-radius 3px
+    &.badge
+      display inline-block
+      padding 4px 5px
+      border-radius 3px
+      font-family sans-serif
+      font-size 16px
+      font-weight bold
+      margin-bottom 0
+  .badge.all
+    margin-top 0
+
   code
     line-height 1.2
 
@@ -471,6 +501,12 @@ a.badge
 // About
 
 .about
+  h1
+    font-size 36px
+    margin-top 1rem
+  h2
+    font-size 22px
+    font-weight bold
   .uses
     span
       vertical-align middle
@@ -481,9 +517,7 @@ a.badge
       margin-right 6px
 
   .actions
-    margin-top 3rem
+    margin-top 2rem
     margin-bottom 3rem
     a + a
       margin-left 6px
-    button
-      font-size 16px
