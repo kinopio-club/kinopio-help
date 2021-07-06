@@ -10,7 +10,7 @@ Kinopio helps people understand themselves and be understood by sharing thoughts
 
 - When I say “Company”, “we”, “our”, or “us” in this document, I'm referring to Kinopio LLC.
 
-# **Restricted purposes**
+## Restricted purposes
 
 - **Child exploitation, sexualization, or abuse**: We don’t tolerate any activities that create, disseminate, or otherwise cause child abuse. Keep away and stop. Just stop.
 - **Doxing**: If you are using Kinopio products to share other peoples’ private personal information for the purposes of harassment, we don’t want anything to do with you.

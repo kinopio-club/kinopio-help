@@ -54,6 +54,12 @@
 //   font-style normal
 
 
+// @font-face
+//   font-family 'Mad-Sans'
+//   src url("/assets/fonts/mad-sans-fill-bold.woff") format("woff")
+//   font-weight bold
+//   font-style normal
+
 @font-face
   font-family 'OsakaMono-Kinopio'
   src url("/assets/fonts/OsakaMono-Kinopio.woff2") format("woff2")
@@ -161,9 +167,12 @@ a
   width 13px
   display inline
   vertical-align 1px
-  margin-right 4px
+  margin-right 5px
   user-drag none
   -webkit-user-drag none
+
+.heart
+  margin-left 5px
 
 form
   margin 0
@@ -198,6 +207,20 @@ ul
         box-shadow var(--hover-shadow)
       &:active
         box-shadow var(--button-active-inset-shadow)
+
+.badge
+  color var(--primary)
+  text-decoration none
+  background var(--info-background)
+  padding 4px 5px
+  border-radius 3px
+  box-shadow var(--badge-shadow)
+  &:hover,
+  &:focus
+    box-shadow var(--hover-shadow)
+  &:active,
+  &.active
+    box-shadow var(--button-active-inset-shadow)
 
 button
   touch-action manipulation
@@ -346,10 +369,20 @@ main
 
 footer
   margin-top 4rem
-  margin-bottom 2rem
+  margin-bottom 4rem
+  .sections
+    display flex
+    section + section
+      margin-left 2rem
+    h3
+      font-size 20px
+      margin-top 1rem
   nav
     margin-top 1rem
     position static
+  li
+    a
+      background-color #c4c4c4
 
 nav
   display flex
@@ -376,17 +409,14 @@ article
   video
     width 420px
     max-width 100%
-    border-radius 3px
-    box-shadow 4px 4px 0 var(--light-shadow)
+    border-radius 10px
+    margin-bottom 1rem
     &.wide
       width 700px
     &.narrow
       width 250px
     &.no-shadow
       box-shadow none
-
-.overview
-  margin-bottom 2rem
 
 img + h2,
 video + h2
@@ -407,6 +437,7 @@ ul.api-contents
 
 .api
   h2
+    font-family sans-serif
     font-size 22px
     font-weight bold
   h2,
@@ -485,19 +516,6 @@ ul.api-contents
   cursor pointer
   padding 5px
 
-a.badge
-  color var(--primary)
-  text-decoration none
-  background var(--info-background)
-  padding 4px 5px
-  border-radius 3px
-  box-shadow var(--badge-shadow)
-  &:hover,
-  &:focus
-    box-shadow var(--hover-shadow)
-  &:active
-    box-shadow var(--button-active-inset-shadow)
-
 // About
 
 .about
@@ -507,6 +525,12 @@ a.badge
   h2
     font-size 22px
     font-weight bold
+  img
+    width 100%
+  .overview
+    width 560px // temp, adjust to real size, test on mobile
+    height 289px // temp, adjust to real size
+    background-color #38693e
   .uses
     span
       vertical-align middle
@@ -515,6 +539,15 @@ a.badge
       display inline-block
       vertical-align middle
       margin-right 6px
+      cursor pointer
+    // .learning
+    //   background #f0e68c
+    // .life
+    //   background #b9a8ff
+    // .planning
+    //   background #ffbfcb
+    // .product
+    //   background #ee83ee
 
   .actions
     margin-top 2rem
