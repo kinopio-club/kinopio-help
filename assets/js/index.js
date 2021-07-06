@@ -1,4 +1,4 @@
-console.log('🍍', fuzzy)
+console.log('🍍 search ready')
 
 // Search
 
