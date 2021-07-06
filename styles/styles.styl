@@ -131,7 +131,7 @@ body
   display inline-block
 
 .hidden
-  display none
+  display none !important
 
 h1
   // font-family Mars
@@ -170,6 +170,12 @@ a
   margin-right 5px
   user-drag none
   -webkit-user-drag none
+
+// .down-arrow
+//   width 10px
+//   margin 0
+//   margin-left 5px
+//   vertical-align middle
 
 .heart
   margin-left 5px
@@ -525,12 +531,19 @@ ul.api-contents
   h2
     font-size 22px
     font-weight bold
-  img
+  img,
+  video
     width 100%
   .overview
-    width 560px // temp, adjust to real size, test on mobile
-    height 289px // temp, adjust to real size
+    max-width 560px // temp, adjust to real size, test on mobile
     background-color #38693e
+  .arena
+    width 20px
+    margin 0
+    margin-right 5px
+    vertical-align 0
+
+
   .uses
     span
       vertical-align middle
@@ -548,6 +561,23 @@ ul.api-contents
     //   background #ffbfcb
     // .product
     //   background #ee83ee
+
+    .example
+      background var(--code-background)
+      border-radius 10px
+      padding 1rem
+      display flex
+      margin-top 1rem
+      figure
+        margin 0
+        max-width 60%
+        video,
+        img
+          margin 0
+      div
+        margin-left 1rem
+        p:first-child
+          margin-top 0
 
   .actions
     margin-top 2rem

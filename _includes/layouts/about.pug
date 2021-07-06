@@ -15,18 +15,55 @@ article.about
       span Get your thoughts out and visually connect them together. Kinopio works how our brains work.
 
   section.uses
+    //- replace 'brainstorming' w better example? more personal
     span For
     .badge.learning Mind Mapping
-    .badge.planning Brainstorming
+    .badge.planning#brainstorming Brainstorming
     .badge.product Meetings
-    .badge.planning Mood Boards
+    .badge.planning.active Mood Boards
     .badge.life Journaling
     .badge.learning Note Taking
     span and
     // todo update templates page
     a.badge(href="/posts/templates/") Lots More
 
-  p Basically for figuring stuff out – by yourself or collaboratively.
+    // examples toggled with js
+    // .example.mind-mapping
+    //   video(autoplay loop muted playsinline)
+    //     source(src="/assets/about/futureland-moodboard-example.mp4")
+    //   // img(src="/assets/about/test.png")
+    //   div
+    //     p Run productive, engaging online remote meetings and workshops with your team.
+    //     a.badge(href="#") Template →
+
+
+    .example.mood-boards
+      figure
+        video(autoplay loop muted playsinline)
+          source(src="https://kinopio-updates.us-east-1.linodeobjects.com/inspiration-space.mp4")
+          // source(src="/assets/about/futureland-moodboard-example.mp4")
+        // img(src="/assets/about/futureland-mood-board.jpeg")
+      div
+        p Collect visual inspiration to evoke a vibe or a direction for your next big project
+        p
+          img.icon.arena(src="/assets/arena.svg")
+          span You can also import Are.na Channels
+        a.badge(href="#") Mood Board Template →
+
+
+    .example.brainstorming.hidden
+      figure
+        // video(autoplay loop muted playsinline)
+        //   source(src="https://kinopio-updates.us-east-1.linodeobjects.com/inspiration-space.mp4")
+        img(src="/assets/about/test.png")
+      div
+        p Run productive, engaging online remote meetings and workshops with your team.
+        a.badge(href="#") Open Template →
+
+
+
+
+  p It's basically for figuring stuff out – by yourself or collaboratively.
   p No sign up required.
 
   include /actions.pug
@@ -53,6 +90,9 @@ article.about
     p By now some of these ideas might be connected – so let’s connect them by dragging from one card connector to another.
 
     p [vid]
+    video(autoplay loop muted playsinline)
+      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/current-card-connections.mp4")
+
     // https://pketh.org/images/2019/connecting.mp4
 
     p Connections can also be tapped on to edit their color and type, among other things.
