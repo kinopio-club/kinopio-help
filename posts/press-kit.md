@@ -43,7 +43,7 @@ color: '#c4c4c4'
 
 [Kinopio](http://kinopio.club) is the spatial thinking tool for new ideas and hard problems.
 
-By making it easy to get your thoughts out and form connections organically, Kinopio works how our brains work.
+By making it easy to get your thoughts out and form connections organically, Kinopio works the way your mind works.
 
 [Uses of Kinopio](/posts/uses-of-kinopio/)
 

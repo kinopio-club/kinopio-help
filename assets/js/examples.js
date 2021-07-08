@@ -22,7 +22,7 @@ function showExample (type) {
 
 
 hideAll()
-showExample('brainstorming')
+showExample('mind-mapping')
 uses.forEach(use => {
   use.addEventListener('click', (event) => {
     hideAll()

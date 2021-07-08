@@ -8,49 +8,86 @@ article.about
 
     //- card icons img, comment
 
-    //- todo short, 560px x 300px 'overview' focused on core function: (add to multiple, connect, paint, move all)
+    //- TODO short, 560px x 300px 'overview' focused on core function: (add to multiple, connect, paint, move all)
     video.overview(autoplay loop muted playsinline)
       source(src="https://kinopio-updates.us-east-1.linodeobjects.com/comments.mp4")
     p
-      span Get your thoughts out and visually connect them together. Kinopio works how our brains work.
+      span Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
 
   section.uses
-    //- replace 'brainstorming' w better example? more personal
     span For
     .badge.use(data-type="mind-mapping") Mind Mapping
-    .badge.use(data-type="brainstorming") Brainstorming
+    .badge.use(data-type="brainstorming") Research
     .badge.use(data-type="meetings") Meetings
     .badge.use(data-type="mood-boards") Mood Boards
-    .badge.use Journaling
-    .badge.use Note Taking
+    .badge.use(data-type="journaling") Journaling
+    .badge.use(data-type="note-taking") Note Taking
     span and
-    // todo update templates page
+    // TODO update templates page
     a.badge(href="/posts/templates/") Lots More
 
-    // examples toggled with js
+    // Examples, toggled with js
 
-    .example.brainstorming(data-type="brainstorming")
+    // Mind Mapping ✅ 🖼?
+    .example.mind-mapping(data-type="mind-mapping")
       figure
         img(src="/assets/about/test.png")
-      div
-        p Run productive, engaging online remote meetings and workshops with your team.
+        // static map
+      caption
+        p Brainstorm and map your ideas out without having to worry about order and structure. Connect related thoughts together to help you express, organize, and understand them
+        a.badge(href="#") Mind Mapping Template →
+
+    // Research ✅? 🖼?
+    .example.research(data-type="research")
+      figure
+        video
+          src(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
+      caption
+        p gather ideas, feedback, retrospectices. categorize with tags, move related ideas together,  
+        a.badge(href="#") Research Template →
+
+    // Meetings ✅? 🖼?
+    .example.meetings(data-type="meetings")
+      figure
+        video
+          source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
+      caption
+        p real-time collaboration. Run productive, engaging online remote meetings and workshops with your team. where in an office or remote team/ no matter where you are. retrospectices
+        p .. meeting that leads to clarity and actionable next steps. design that .. encourages everyone to participate/removes barriers for participation. 
+        p .. no matter what device you're on, or where you are, everyone can work together as equals
+
         a.badge(href="#") Brainstorming Template →
 
-
+    // Mood Boards ✅? 🖼?
     .example.mood-boards(data-type="mood-boards")
       figure
         video(autoplay loop muted playsinline)
           source(src="/assets/about/futureland-moodboard-example.mp4")
         // img(src="/assets/about/futureland-mood-board.jpeg")
-      div
+      caption
         p Collect visual inspiration to evoke a vibe or a direction for your next big project
         p
           img.icon.arena(src="/assets/arena.svg")
           span You can also import Are.na Channels
         a.badge(href="#") Mood Board Template →
 
+    // Journaling ✅? 🖼?
+    .example.journaling(data-type="journaling")
+      figure
+        video(autoplay loop muted playsinline)
+          source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
+      caption
+        p moonphase, customizable prompts, every day ask yourself 'what do i want to do?', also random ones to get instrospective, mental health
+        a.badge(href="#") How to Use Daily Journals →
 
-
+    // Note Taking ✅? 🖼?
+    .example.note-taking(data-type="note-taking")
+      figure
+        video
+          source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
+      caption
+        p class notes, research notes
+        a.badge(href="#") Brainstorming Template →
 
   p It's basically for figuring stuff out – by yourself or collaboratively.
   p No sign up required.
@@ -90,20 +127,21 @@ article.about
     // https://pketh.org/images/2019/connection-details.mp4
 
     p You’ve got the gist!
+    p Kinopio is made for people who have ideas, feelings, or thoughts they’re struggling to express, organize, and understand.
+    p ..fragile ideas to plant and grow, or thorny problems to think through
+    p Rather than replacing useful team/planning/productivity tools you may already be using like Notion or Trello [], Kinopio is for things that don't work super well in linear documents and tables.  [it's best for exploratory, collaborative, things]
 
 
     p But here’s one more thing. You can paint over cards to move and edit them all together. It's pretty magical, although I am biased.
     p [vid]
 
 
-    p Kinopio exists for people who have ideas, feelings, or thoughts they’re struggling to express, organize, and understand.
-    // Rather than replacing useful team/planning/productivity tools you may already be using like Notion or Trello [], Kinopio is for things that don't work super well in linear documents and tables.  [it's best for exploratory, collaborative, things]
-    // p Instead of neatly structured forms and linear lists like a traditional planning tool, Kinopio is a thinking tool for creating connections through spatial relationships.
 
+    //- p fun/other uses: I recently used it to give away my plants before a big move: https://kinopio.club/free-plants...  , roadmap
 
-    // p fun/other uses: I recently used it to give away my plants before a big move: https://kinopio.club/free-plants...  , roadmap
-
-    p It also works great on phones and tablets.
+    p Oh ya, It also works great on phones and tablets
+    video
+      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/mobile-improvments-small.mp4")
 
 
   include /actions.pug
@@ -111,16 +149,20 @@ article.about
 
   section.more-features
 
-    h2 More Features
+    // h2 Advanced Features?
     // p "for power users too" // for newbs and pros, scales,
 
-    p Kinopio is a tool that'll grow with you. Whether doing deep-work by yourself, or collaborating with your team, creating and connecting thoughts spatially feels like extension of your mind
+    // p Kinopio is a tool that'll grow with you. Whether doing deep-work by yourself, or collaborating with your team, creating and connecting thoughts spatially feels like extension of your mind
+
+
+    //- p Instead of neatly structured forms and linear lists like a traditional planning tool, Kinopio is a thinking tool for creating connections through spatial relationships.
+
 
 
     p privacy, filtering, finding, inviting, keyboard shortcuts
 
 
-  // todo
+  // TODO
   section.pricing
 
     h2 Pricing
