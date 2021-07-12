@@ -8,20 +8,24 @@ section#hello
     span &nbsp;is your spatial thinking tool for new ideas and hard problems.
   p Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
 
-  a(href="/about")
-    button About Kinopio
-
-  article.overview
-    video.wide(autoplay loop muted playsinline)
-      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/overview-basics-2.mp4")
-
-  // include /contact.pug
+  .row
+    a(href="/about")
+      button About Kinopio
+    a(href="#footer")
+      button Contact Support
 
 mixin posts(collection)
   - let titles = ''
   each post in collections[collection]
     - titles = titles + ',' + post.data.title
+  // Title
   h2(data-posts=titles) #{collection}
+  //- Video
+  if collection === 'How to Use'
+    article
+      video.wide(autoplay loop muted playsinline)
+        source(src="https://kinopio-updates.us-east-1.linodeobjects.com/overview-basics-2.mp4")
+  //- Posts
   ul
     each post in collections[collection]
       li(data-title=post.data.title)
