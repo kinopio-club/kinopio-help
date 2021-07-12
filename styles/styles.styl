@@ -524,19 +524,33 @@ ul.api-contents
       vertical-align middle
       margin-right 6px
       cursor pointer
+    .triangle
+      width 0
+      height 0
+      border-width 0 8px 12px 8px
+      border-color transparent transparent var(--code-background) transparent
+      border-style solid
+      position absolute
+      left 72px
+      top -11px
+
     .example
       background var(--code-background)
       border-radius 10px
       padding 1rem
-      display flex
+      display inline-block
       margin-top 1rem
+      position relative
       figure
+        display inline-flex
         margin 0
-        max-width 60%
+        align-items flex-start
         video,
         img
+          max-width 60%
           margin 0
-      caption
+      figcaption
+        max-width calc(40% - 1rem)
         margin-left 1rem
         p:first-child
           margin-top 0
@@ -545,6 +559,7 @@ ul.api-contents
       margin 0
       margin-right 5px
       vertical-align 0
+
 
   .actions
     margin-top 2rem

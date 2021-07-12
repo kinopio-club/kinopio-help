@@ -11,13 +11,12 @@ article.about
     //- TODO short, 560px x 300px 'overview' focused on core function: (add to multiple, connect, paint, move all)
     video.overview(autoplay loop muted playsinline)
       source(src="https://kinopio-updates.us-east-1.linodeobjects.com/comments.mp4")
-    p
-      span Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
+    p Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
 
   section.uses
     span For
     .badge.use(data-type="mind-mapping") Mind Mapping
-    .badge.use(data-type="brainstorming") Research
+    .badge.use(data-type="research") Research
     .badge.use(data-type="meetings") Meetings
     .badge.use(data-type="mood-boards") Mood Boards
     .badge.use(data-type="journaling") Journaling
@@ -28,66 +27,75 @@ article.about
 
     // Examples, toggled with js
 
-    // Mind Mapping ✅ 🖼?
+    // Mind Mapping - ✅ art🖼? space🌌?
     .example.mind-mapping(data-type="mind-mapping")
+      .triangle
       figure
         img(src="/assets/about/test.png")
         // static map
-      caption
-        p Brainstorm and map your ideas out without having to worry about order and structure. Connect related thoughts together to help you express, organize, and understand them
-        a.badge(href="#") Mind Mapping Template →
+        figcaption
+          p Express, organize, and make sense of your thoughts and feelings by capturing and visually connecting related ideas together.
+          a.badge(href="#") Mind Mapping Template →
 
-    // Research ✅? 🖼?
+    // Research - copy? art? space?
     .example.research(data-type="research")
+      .triangle
       figure
         video
           src(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
-      caption
-        p gather ideas, feedback, retrospectices. categorize with tags, move related ideas together,  
-        a.badge(href="#") Research Template →
+        figcaption
+          p gather ideas, feedback, retrospectices. categorize with tags, move related ideas together,
+          a.badge(href="#") Research Template →
 
-    // Meetings ✅? 🖼?
+    // Meetings - copy? art? space?
     .example.meetings(data-type="meetings")
+      .triangle
       figure
         video
           source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
-      caption
-        p real-time collaboration. Run productive, engaging online remote meetings and workshops with your team. where in an office or remote team/ no matter where you are. retrospectices
-        p .. meeting that leads to clarity and actionable next steps. design that .. encourages everyone to participate/removes barriers for participation. 
-        p .. no matter what device you're on, or where you are, everyone can work together as equals
+        figcaption
+          p real-time collaboration. Run productive, engaging online remote meetings and workshops with your team. where in an office or remote team/ no matter where you are. retrospectices
+          p .. meeting that leads to clarity and actionable next steps. design that .. encourages everyone to participate/removes barriers for participation.
+          p .. no matter what device you're on, or where you are, everyone can work together as equals
+          a.badge(href="#") Brainstorming Template →
 
-        a.badge(href="#") Brainstorming Template →
-
-    // Mood Boards ✅? 🖼?
+    // Mood Boards - copy? art? space?
     .example.mood-boards(data-type="mood-boards")
+      .triangle
       figure
         video(autoplay loop muted playsinline)
           source(src="/assets/about/futureland-moodboard-example.mp4")
         // img(src="/assets/about/futureland-mood-board.jpeg")
-      caption
-        p Collect visual inspiration to evoke a vibe or a direction for your next big project
-        p
-          img.icon.arena(src="/assets/arena.svg")
-          span You can also import Are.na Channels
-        a.badge(href="#") Mood Board Template →
+        figcaption
+          p Collect visual inspiration to evoke a vibe or a direction for your next big project
+          p
+            img.icon.arena(src="/assets/arena.svg")
+            span You can also import Are.na Channels
+          a.badge(href="#") Mood Board Template →
 
-    // Journaling ✅? 🖼?
+    // Journaling - copy? art? space?
     .example.journaling(data-type="journaling")
+      .triangle
       figure
         video(autoplay loop muted playsinline)
           source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
-      caption
-        p moonphase, customizable prompts, every day ask yourself 'what do i want to do?', also random ones to get instrospective, mental health
-        a.badge(href="#") How to Use Daily Journals →
+        figcaption
+          p moonphase, customizable prompts, every day ask yourself 'what do i want to do?', also random ones to get instrospective, mental health
+          a.badge(href="#") How to Use Daily Journals →
 
-    // Note Taking ✅? 🖼?
+    // Note Taking - copy? art? space?
+    //- linear, you dont think left to right bottom to top. isolated
+    //- take notes like you learn
+    //- more time effeccient
+    //- don't have to re-record and review your notes as much because they're (the knowledge) inherently more sticky and meaningful to you
     .example.note-taking(data-type="note-taking")
+      .triangle
       figure
         video
           source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
-      caption
-        p class notes, research notes
-        a.badge(href="#") Brainstorming Template →
+        figcaption
+          p class notes, research notes
+          a.badge(href="#") Brainstorming Template →
 
   p It's basically for figuring stuff out – by yourself or collaboratively.
   p No sign up required.
@@ -102,6 +110,8 @@ article.about
       li Get the chaotic messy thoughts and ideas out of your head
       li Show you how they’re connected
       li Help you figure out what they mean, and how to start working on them
+
+    // Instead of neatly structured forms and lists like a traditional planning tool .. notino bit here?
 
     p "Let me show you"
 
