@@ -6,9 +6,7 @@ article.about
   section.what-is-kinopio
     h1 Spatial Thinking for New Ideas and Hard Problems
 
-    //- card icons img, comment
-
-    //- TODO short, 560px x 300px 'overview' focused on core function: (add to multiple, connect, paint, move all)
+    //- TODO vid short, 560px x 300px 'overview' focused on core function: (add to multiple, connect, paint, move all)
     video.overview(autoplay loop muted playsinline)
       source(src="https://kinopio-updates.us-east-1.linodeobjects.com/comments.mp4")
     p Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
@@ -26,7 +24,7 @@ article.about
 
     // Examples, toggled with js
 
-    // Mind Mapping - ✅, art? space?
+    // Mind Mapping - 🖋, art? space?
     .example.mind-mapping(data-type="mind-mapping")
       .triangle
       figure
@@ -34,161 +32,159 @@ article.about
         // todo static map
         figcaption
           p Express, organize, and make sense of your thoughts and feelings by capturing and visually connecting related ideas together.
-          a.badge(href="#") Mind Mapping Template →
+          a(href="#")
+            button Use Mind Mapping →
 
-    // Research - copy? art? space?
+    // Research - 🖋, art? space?
     .example.research(data-type="research")
       .triangle
       figure
         video(autoplay loop muted playsinline)
           source(src="http://localhost:8081/assets/posts/favorites.mp4")
         figcaption
-          p gather ideas, feedback, retrospectices. categorize with tags, move related ideas together,
-          a.badge(href="#") Research Template →
+          p Gather notes, and connect them to their source URLs. Drag in files, like PDFs, to keep everything together. Categorize and label similar concepts with [[tags]].
+          p Spatially organized information that’s easy to retrieve helps you get over writing and planning anxiety.
+          // a.badge.to-kinopio(href="#") Use Research Space →
+          a(href="#")
+            button Use Research →
 
-    // Meetings - copy? art? space?
+    // Meetings - 🖋, art? space?
     .example.meetings(data-type="meetings")
       .triangle
       figure
+        // todo vid MUST show real time collab
         video(autoplay loop muted playsinline)
           source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
         figcaption
-          p real-time collaboration. Run productive, engaging online remote meetings and workshops with your team. where in an office or remote team/ no matter where you are. retrospectices
-          p .. meeting that leads to clarity and actionable next steps. design that .. encourages everyone to participate/removes barriers for participation.
-          p .. no matter what device you're on, or where you are, everyone can work together as equals
-          a.badge(href="#") Brainstorming Template →
+          p Run productive meetings and retrospectives that lead to clarity and actionable next steps.
+          p Every feature of Kinopio works on mobile or desktop – so no matter what device you're on, or where you are, everyone can work together as equals.
+          //- todo replace old meeting agenda template
+          a(href="#")
+            button Use Meeting →
 
-    // Mood Boards - copy? art? space?
+
+    // Mood Boards - 🖋, 🌷, space?
     .example.mood-boards(data-type="mood-boards")
       .triangle
       figure
         video(autoplay loop muted playsinline)
           source(src="/assets/about/futureland-moodboard-example.mp4")
-        // img(src="/assets/about/futureland-mood-board.jpeg")
         figcaption
-          p Collect visual inspiration to evoke a vibe or a direction for your next big project
+          p Collect visual inspiration to evoke a vibe and a direction for your next big project.
           p
             img.icon.arena(src="/assets/arena.svg")
             span You can also import Are.na Channels
-          a.badge(href="#") Mood Board Template →
+          // a.badge.to-kinopio(href="#") Use Mood Board →
+          a(href="#")
+            button Use Mood Board →
 
-    // Journaling - copy? art? space?
+
+    // Journaling - 🖋, art? space?
     .example.journaling(data-type="journaling")
+      .triangle
+      figure
+        //- todo video configuring and filling out daily journal
+        video(autoplay loop muted playsinline)
+          source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
+        figcaption
+          p Create daily journal spaces to reflect on your life and moments,
+          p Personalize your journal to fit your goals with custom prompts and themed prompt packs which present something new each time.
+          a(href="#")
+            button Use Daily Journal →
+
+    // Note Taking - 🖋, art? space?
+    .example.note-taking(data-type="note-taking")
       .triangle
       figure
         video(autoplay loop muted playsinline)
           source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
         figcaption
-          p moonphase, customizable prompts, every day ask yourself 'what do i want to do?', also random ones to get instrospective, mental health
-          a.badge(href="#") How to Use Daily Journals →
+          p Making beautiful notes isn’t just fun – taking notes by mapping and grouping related concepts spatially makes knowledge inherently more meaningful and memorable.
+          p Organizing information non-linearly, like our brains do, reduces the amount of effort needed learn and remember  knowledge.
+          a(href="#")
+            button Use Note Taking →
 
-    // Note Taking - copy? art? space?
-    //- linear, you dont think left to right bottom to top. isolated
-    //- take notes like you learn
-    //- more time effeccient
-    //- don't have to re-record and review your notes as much because they're (the knowledge) inherently more sticky and meaningful to you
-    .example.note-taking(data-type="note-taking")
-      .triangle
-      figure
-        video
-          source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
-        figcaption
-          p class notes, research notes
-          a.badge(href="#") Brainstorming Template →
-
-    // Templates - copy? art? space?
+    // Templates - 🖋, art? space?
     .example.templates(data-type="templates")
       .triangle
       figure
-        img(src="http://localhost:8081/assets/posts/templates.png")
+        video(autoplay loop muted playsinline)
+          source(src="https://kinopio-updates.s3.us-east-1.amazonaws.com/best-of.mp4")
         figcaption
-          p more Templates can be found in asdf
-          p more always being added,
-          p explore spaces discover new community stuff/submissions
-          a.badge(href="/posts/templates/") More Info
+          p Of course, you can use Kinopio for so much more. Like project planning, database modelling, to-dos, outlining, group chats, and grocery lists…
+          p
+            img.icon.sunglasses(src="/assets/sunglasses.svg")
+            span Use Explore to find more templates and cool spaces created by the community
+          // p
+          //   a.badge(href="/posts/templates/") Using Explore →
+          // p
+          //   a.badge(href="#") About Templates →
 
   p It's basically for figuring stuff out – by yourself or collaboratively.
   p No sign up required.
 
   include /actions.pug
 
-  section.how-to-use
-    h2 How To Use Kinopio
+    // section.how-to-use
 
-    p Kinopio is designed to
-    ol
-      li Get the chaotic messy thoughts and ideas out of your head
-      li Show you how they’re connected
-      li Help you figure out what they mean, and how to start working on them
+    //- h2 How To Use
+
+
+    //- p Kinopio is designed to
+    //- ol
+    //-   li Get the chaotic messy thoughts and ideas out of your head
+    //-   li Show you how they’re connected
+    //-   li Help you figure out what they mean, and how to start working on them
+
+  p Rather than replacing useful productivity and wiki tools you may already be using like Notion, Trello, or Roam [], Kinopio is for exploratory, collaborative, and creative thinking that doesn't work so well in linear documents and structured tables.
+
+  // p [it's best for exploratory, collaborative, things]
 
     // Instead of neatly structured forms and lists like a traditional planning tool .. notino bit here?
 
-    p "Let me show you"
-
-    p Tap anywhere to make a new card. Put an idea, thought, or feeling in it. It doesn’t need to make sense right now. Make some more, wherever you want. Drag cards to move them with a jolly wiggle.
-
-    p [vid]
-    // figure
-    //   video(autoplay loop muted playsinline)
-    //     source(src="https://pketh.org/images/2019/basic-cards.mp4")
-    // figcaption Get your feelings out
-
-    p By now some of these ideas might be connected – so let’s connect them by dragging from one card connector to another.
-
-    p [vid]
-    video(autoplay loop muted playsinline)
-      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/current-card-connections.mp4")
-
-    // https://pketh.org/images/2019/connecting.mp4
-
-    p Connections can also be tapped on to edit their color and type, among other things.
-
-    p [vid]
-    // https://pketh.org/images/2019/connection-details.mp4
-
-    p You’ve got the gist!
-    p Kinopio is made for people who have ideas, feelings, or thoughts they’re struggling to express, organize, and understand.
-    p ..fragile ideas to plant and grow, or thorny problems to think through
-    p Rather than replacing useful team/planning/productivity tools you may already be using like Notion or Trello [], Kinopio is for things that don't work super well in linear documents and tables.  [it's best for exploratory, collaborative, things]
+    // p Kinopio is a tool that'll grow with you. Whether doing deep-work by yourself, or collaborating with your team, creating and connecting thoughts spatially feels like extension of your mind
+  //- include /actions.pug
 
 
-    p But here’s one more thing. You can paint over cards to move and edit them all together. It's pretty magical, although I am biased.
-    p [vid]
+  section.pro-tips
 
+    //- h2 Works Like a Dream, Grows With You
+      //- img.icon.updated(src="/assets/updated.gif")
+    h2 Create Spaces for Reflection, or for Parties
 
+    //- h2 As Social and as Powerful as You Want
+    //- everything you want and nothing you don't
+    //- p go beyond the basics with
 
-    //- p fun/other uses: I recently used it to give away my plants before a big move: https://kinopio.club/free-plants...  , roadmap
+    p real time collab
 
-    p Oh ya, It also works great on phones and tablets
-    video(autoplay loop muted playsinline)
+    p image, videos, and audio cards
+
+    p tags [Using Tags]
+    video.medium(autoplay loop muted playsinline)
+      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/tags-closeup.mp4")
+
+    p comments [Using Comments]
+    video.medium(autoplay loop muted playsinline)
+      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/comments.mp4")
+
+    p [privacy], [filtering], [keyboard shortcuts], [export your data at anytime]
+
+    //- p privacy settings and invite links
+    //- p export your data at any time
+
+    p And finally, Kinopio works great on phones and tablets [desktop and mobile apps]
+    video.small(autoplay loop muted playsinline)
       source(src="https://kinopio-updates.us-east-1.linodeobjects.com/mobile-improvments-small.mp4")
 
 
   include /actions.pug
 
-
-  section.more-features
-
-    // h2 Advanced Features?
-    // p "for power users too" // for newbs and pros, scales,
-
-    // p Kinopio is a tool that'll grow with you. Whether doing deep-work by yourself, or collaborating with your team, creating and connecting thoughts spatially feels like extension of your mind
-
-
     //- p Instead of neatly structured forms and linear lists like a traditional planning tool, Kinopio is a thinking tool for creating connections through spatial relationships.
 
 
 
-    p privacy, filtering, finding, inviting, keyboard shortcuts
 
-
-  // TODO
-  section.pricing
-
-    h2 Pricing
-    p "how much does it cost?"
-    // blah
-    a.badge(href="#") More Pricing Details
 
 
 script(src="/assets/js/examples.js")
