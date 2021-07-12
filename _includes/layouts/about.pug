@@ -26,12 +26,12 @@ article.about
 
     // Examples, toggled with js
 
-    // Mind Mapping - ✅ art🖼? space🌌?
+    // Mind Mapping - ✅, art? space?
     .example.mind-mapping(data-type="mind-mapping")
       .triangle
       figure
         img(src="/assets/about/test.png")
-        // static map
+        // todo static map
         figcaption
           p Express, organize, and make sense of your thoughts and feelings by capturing and visually connecting related ideas together.
           a.badge(href="#") Mind Mapping Template →
@@ -40,8 +40,8 @@ article.about
     .example.research(data-type="research")
       .triangle
       figure
-        video
-          src(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
+        video(autoplay loop muted playsinline)
+          source(src="http://localhost:8081/assets/posts/favorites.mp4")
         figcaption
           p gather ideas, feedback, retrospectices. categorize with tags, move related ideas together,
           a.badge(href="#") Research Template →
@@ -50,7 +50,7 @@ article.about
     .example.meetings(data-type="meetings")
       .triangle
       figure
-        video
+        video(autoplay loop muted playsinline)
           source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
         figcaption
           p real-time collaboration. Run productive, engaging online remote meetings and workshops with your team. where in an office or remote team/ no matter where you are. retrospectices
@@ -160,7 +160,7 @@ article.about
     //- p fun/other uses: I recently used it to give away my plants before a big move: https://kinopio.club/free-plants...  , roadmap
 
     p Oh ya, It also works great on phones and tablets
-    video
+    video(autoplay loop muted playsinline)
       source(src="https://kinopio-updates.us-east-1.linodeobjects.com/mobile-improvments-small.mp4")
 
 

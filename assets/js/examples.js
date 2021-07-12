@@ -13,7 +13,7 @@ function hideAll () {
 }
 
 function updateTrianglePosition(use, example) {
-  const triangleWidth = 12
+  const triangleWidth = 16
   const useRect = use.getBoundingClientRect()
   const exampleRect = example.getBoundingClientRect()
   const triangle = example.querySelector('.triangle')
