@@ -22,8 +22,7 @@ article.about
     .badge.use(data-type="journaling") Journaling
     .badge.use(data-type="note-taking") Note Taking
     span and
-    // TODO update templates page
-    a.badge(href="/posts/templates/") Lots More
+    a.badge.use(data-type="templates") Lots More
 
     // Examples, toggled with js
 
@@ -96,6 +95,17 @@ article.about
         figcaption
           p class notes, research notes
           a.badge(href="#") Brainstorming Template →
+
+    // Templates - copy? art? space?
+    .example.templates(data-type="templates")
+      .triangle
+      figure
+        img(src="http://localhost:8081/assets/posts/templates.png")
+        figcaption
+          p more Templates can be found in asdf
+          p more always being added,
+          p explore spaces discover new community stuff/submissions
+          a.badge(href="/posts/templates/") More Info
 
   p It's basically for figuring stuff out – by yourself or collaboratively.
   p No sign up required.
