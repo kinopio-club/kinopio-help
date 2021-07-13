@@ -212,7 +212,10 @@ function updateCanvas() {
 }
 
 // start
-window.onmousedown = function (event) { startStroke() }
+window.onmousedown = function (event) {
+  if (event.button !== 0) { return }
+  startStroke()
+}
 window.ontouchstart = function (event) {
   isTouch = true
   startStroke()
