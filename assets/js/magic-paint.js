@@ -1,8 +1,13 @@
 // code adapted from https://k-komma.de/assets/js/main.js
 
+const isRecording = true
+let lineWidth = 22
+if (isRecording) {
+  lineWidth = 12
+}
+
 let canvas, context, canvasImage, color, prevScroll
 let pageCanvas, pageContext
-const lineWidth = 22
 let currentStroke = []
 let allStrokes = []
 prevScroll = {
