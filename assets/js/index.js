@@ -204,6 +204,13 @@ function addPointToStroke ({ x, y }) {
   drawCurrentStroke()
 }
 
+function updateCanvas() {
+  if (isTouch) { return }
+  initCanvas()
+  initPageCanvas()
+  redrawAllStrokes()
+}
+
 // start
 window.onmousedown = function (event) { startStroke() }
 window.ontouchstart = function (event) {
@@ -229,10 +236,7 @@ window.onresize = throttle(100, function (event) {
     x: window.scrollX,
     y: window.scrollY
   }
-  if (isTouch) { return }
-  initCanvas()
-  initPageCanvas()
-  redrawAllStrokes()
+  updateCanvas()
 })
 
 // scroll
@@ -242,3 +246,10 @@ window.onscroll = function (event) {
     y: window.scrollY
   }
 }
+
+// re-update canvas size onload
+window.addEventListener('load',
+  function() {
+    updateCanvas()
+  },
+false)
