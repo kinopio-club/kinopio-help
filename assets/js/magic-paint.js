@@ -121,7 +121,9 @@ let recordStartTime
 function startStroke () {
   currentStroke = []
   isDrawing = true
-  recordStartTime = Date.now()
+  if (!recordStartTime) {
+    recordStartTime = Date.now()
+  }
 }
 
 function endStroke () {
@@ -133,7 +135,6 @@ function endStroke () {
   currentStroke = []
   isDrawing = false
   context.clearRect(0,0, canvas.width, canvas.height)
-  recordStartTime = undefined
 }
 
 function addPointToStroke ({ x, y }) {
@@ -202,64 +203,53 @@ const resizeObserver = new ResizeObserver(entries => {
 resizeObserver.observe(document.body)
 
 
-// playback
+// ▶️ Playback
 
-
-// ?fixed delay between strokes?
-let recordedStrokes = [
+let overviewStrokes = [
   [
-    // stroke 1
-    {x: 329, y: 177.5, scrollX: 0, scrollY: 0, elapsedTime: 7},
-    {x: 329.5, y: 174, scrollX: 0, scrollY: 0, elapsedTime: 25},
-    {x: 331, y: 168.5, scrollX: 0, scrollY: 0, elapsedTime: 41},
-    {x: 333, y: 163, scrollX: 0, scrollY: 0, elapsedTime: 53},
-    {x: 335, y: 156.5, scrollX: 0, scrollY: 0, elapsedTime: 69},
-    {x: 338, y: 151.5, scrollX: 0, scrollY: 0, elapsedTime: 85},
-    {x: 340, y: 148.5, scrollX: 0, scrollY: 0, elapsedTime: 101},
-    {x: 340.5, y: 147, scrollX: 0, scrollY: 0, elapsedTime: 117},
-    {x: 341, y: 147, scrollX: 0, scrollY: 0, elapsedTime: 134},
-    {x: 341.5, y: 147.5, scrollX: 0, scrollY: 0, elapsedTime: 199},
-    {x: 343, y: 149.5, scrollX: 0, scrollY: 0, elapsedTime: 213},
-    {x: 345.5, y: 153, scrollX: 0, scrollY: 0, elapsedTime: 230},
-    {x: 347.5, y: 156, scrollX: 0, scrollY: 0, elapsedTime: 245},
-    {x: 349, y: 158.5, scrollX: 0, scrollY: 0, elapsedTime: 261},
-    {x: 350, y: 161.5, scrollX: 0, scrollY: 0, elapsedTime: 277},
-    {x: 350.5, y: 163.5, scrollX: 0, scrollY: 0, elapsedTime: 294},
-    {x: 351, y: 165, scrollX: 0, scrollY: 0, elapsedTime: 310},
-    {x: 351, y: 165, scrollX: 0, scrollY: 0, elapsedTime: 321},
-    {x: 351.5, y: 165.5, scrollX: 0, scrollY: 0, elapsedTime: 333},
-    {x: 351.5, y: 165.5, scrollX: 0, scrollY: 0, elapsedTime: 398},
-    {x: 356, y: 163, scrollX: 0, scrollY: 0, elapsedTime: 414},
-    {x: 360.5, y: 158.5, scrollX: 0, scrollY: 0, elapsedTime: 430},
-    {x: 366.5, y: 153.5, scrollX: 0, scrollY: 0, elapsedTime: 445},
-    {x: 371, y: 149.5, scrollX: 0, scrollY: 0, elapsedTime: 461},
-    {x: 373, y: 147, scrollX: 0, scrollY: 0, elapsedTime: 477},
+    {x: 319.5, y: 163, scrollX: 0, scrollY: 0, elapsedTime: 8}, {x: 323, y: 160, scrollX: 0, scrollY: 0, elapsedTime: 19}, {x: 325.5, y: 157.5, scrollX: 0, scrollY: 0, elapsedTime: 30}, {x: 332, y: 151.5, scrollX: 0, scrollY: 0, elapsedTime: 43}, {x: 337.5, y: 147.5, scrollX: 0, scrollY: 0, elapsedTime: 59}, {x: 341, y: 144.5, scrollX: 0, scrollY: 0, elapsedTime: 81}, {x: 343.5, y: 143, scrollX: 0, scrollY: 0, elapsedTime: 99}, {x: 344, y: 142.5, scrollX: 0, scrollY: 0, elapsedTime: 126}, {x: 344.5, y: 144, scrollX: 0, scrollY: 0, elapsedTime: 140}, {x: 346.5, y: 148, scrollX: 0, scrollY: 0, elapsedTime: 157}, {x: 349, y: 151.5, scrollX: 0, scrollY: 0, elapsedTime: 176}, {x: 353, y: 154.5, scrollX: 0, scrollY: 0, elapsedTime: 190}, {x: 357, y: 156, scrollX: 0, scrollY: 0, elapsedTime: 208}, {x: 361.5, y: 156, scrollX: 0, scrollY: 0, elapsedTime: 219}, {x: 366, y: 154.5, scrollX: 0, scrollY: 0, elapsedTime: 235}, {x: 371.5, y: 151, scrollX: 0, scrollY: 0, elapsedTime: 252}, {x: 376, y: 146.5, scrollX: 0, scrollY: 0, elapsedTime: 267}, {x: 380.5, y: 141.5, scrollX: 0, scrollY: 0, elapsedTime: 283}, {x: 383, y: 137, scrollX: 0, scrollY: 0, elapsedTime: 299}
+  ],
+  [
+    {x: 334.5, y: 200, scrollX: 0, scrollY: 0, elapsedTime: 608}, {x: 339.5, y: 198.5, scrollX: 0, scrollY: 0, elapsedTime: 619}, {x: 345, y: 196, scrollX: 0, scrollY: 0, elapsedTime: 635}, {x: 351.5, y: 194.5, scrollX: 0, scrollY: 0, elapsedTime: 651}, {x: 354, y: 194, scrollX: 0, scrollY: 0, elapsedTime: 667}, {x: 354.5, y: 194, scrollX: 0, scrollY: 0, elapsedTime: 683}, {x: 354.5, y: 194, scrollX: 0, scrollY: 0, elapsedTime: 699}, {x: 355, y: 194.5, scrollX: 0, scrollY: 0, elapsedTime: 710}, {x: 355.5, y: 198.5, scrollX: 0, scrollY: 0, elapsedTime: 723}, {x: 355.5, y: 202.5, scrollX: 0, scrollY: 0, elapsedTime: 740}, {x: 357.5, y: 205.5, scrollX: 0, scrollY: 0, elapsedTime: 759}, {x: 359, y: 208, scrollX: 0, scrollY: 0, elapsedTime: 773}, {x: 361.5, y: 209, scrollX: 0, scrollY: 0, elapsedTime: 792}, {x: 364, y: 209.5, scrollX: 0, scrollY: 0, elapsedTime: 805}, {x: 367, y: 209.5, scrollX: 0, scrollY: 0, elapsedTime: 819}, {x: 368.5, y: 209.5, scrollX: 0, scrollY: 0, elapsedTime: 835}, {x: 369, y: 209.5, scrollX: 0, scrollY: 0, elapsedTime: 852}
+  ],
+  [
+    {x: 342.5, y: 232.5, scrollX: 0, scrollY: 0, elapsedTime: 1107}, {x: 345.5, y: 234.5, scrollX: 0, scrollY: 0, elapsedTime: 1126}, {x: 350.5, y: 238.5, scrollX: 0, scrollY: 0, elapsedTime: 1140}, {x: 358.5, y: 243.5, scrollX: 0, scrollY: 0, elapsedTime: 1157}, {x: 367, y: 249, scrollX: 0, scrollY: 0, elapsedTime: 1176}, {x: 374, y: 253.5, scrollX: 0, scrollY: 0, elapsedTime: 1190}, {x: 377, y: 255.5, scrollX: 0, scrollY: 0, elapsedTime: 1208}
   ]
 ]
 
 function playbackStrokes(timestamp) {
   console.log('💐',timestamp)
-  window.requestAnimationFrame(playbackStrokes)
+
+// in first array
+// take out strokes where timestamp > elapsedTime
+// draw those strokes onto #playback-background canvas
+
+  // TODO if more strokes
+
+  // window.requestAnimationFrame(playbackStrokes)
+
+  // TODO else cancel requestAnimationFrame
+
+// remove first array if empty (boolean .length)
 }
 
-const videoLoadTimeStart = Date.now()
-const aboutPageVideo = document.getElementById('about-page-video')
-
-console.log(aboutPageVideo)
-
-aboutPageVideo.oncanplay = function() {
-  const playbackDelay = 500
-  const videoLoadTime = Date.now() - videoLoadTimeStart
-  console.log('🌸')
-  recordedStrokes = recordedStrokes.map(stroke => {
+function addDelayToOverviewStrokes(delay) {
+  let lastStrokeElapsedTime, applyToIndex
+  overviewStrokes = overviewStrokes.map(stroke => {
     return stroke.map(point => {
-      point.elapsedTime = point.elapsedTime + videoLoadTime + playbackDelay
+      point.elapsedTime = point.elapsedTime + delay
       return point
     })
   })
+  console.log('▶️', overviewStrokes)
+}
 
-  console.log('vid can play now', videoLoadTime, recordedStrokes)
-
+const loadDelayStart = Date.now()
+const aboutPageVideo = document.getElementById('about-page-video')
+aboutPageVideo.oncanplay = function() {
+  const playbackDelay = 500
+  const delay = Date.now() - loadDelayStart + playbackDelay
+  addDelayToOverviewStrokes(delay)
   window.requestAnimationFrame(playbackStrokes)
 }
 
