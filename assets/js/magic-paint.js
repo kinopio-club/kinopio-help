@@ -1,6 +1,6 @@
 // code adapted from https://k-komma.de/assets/js/main.js
 
-const isRecording = true
+const isRecording = true // false in prod
 let lineWidth = 22
 if (isRecording) {
   lineWidth = 10
@@ -200,3 +200,66 @@ const resizeObserver = new ResizeObserver(entries => {
   updateCanvas()
 })
 resizeObserver.observe(document.body)
+
+
+// playback
+
+
+// ?fixed delay between strokes?
+let recordedStrokes = [
+  [
+    // stroke 1
+    {x: 329, y: 177.5, scrollX: 0, scrollY: 0, elapsedTime: 7},
+    {x: 329.5, y: 174, scrollX: 0, scrollY: 0, elapsedTime: 25},
+    {x: 331, y: 168.5, scrollX: 0, scrollY: 0, elapsedTime: 41},
+    {x: 333, y: 163, scrollX: 0, scrollY: 0, elapsedTime: 53},
+    {x: 335, y: 156.5, scrollX: 0, scrollY: 0, elapsedTime: 69},
+    {x: 338, y: 151.5, scrollX: 0, scrollY: 0, elapsedTime: 85},
+    {x: 340, y: 148.5, scrollX: 0, scrollY: 0, elapsedTime: 101},
+    {x: 340.5, y: 147, scrollX: 0, scrollY: 0, elapsedTime: 117},
+    {x: 341, y: 147, scrollX: 0, scrollY: 0, elapsedTime: 134},
+    {x: 341.5, y: 147.5, scrollX: 0, scrollY: 0, elapsedTime: 199},
+    {x: 343, y: 149.5, scrollX: 0, scrollY: 0, elapsedTime: 213},
+    {x: 345.5, y: 153, scrollX: 0, scrollY: 0, elapsedTime: 230},
+    {x: 347.5, y: 156, scrollX: 0, scrollY: 0, elapsedTime: 245},
+    {x: 349, y: 158.5, scrollX: 0, scrollY: 0, elapsedTime: 261},
+    {x: 350, y: 161.5, scrollX: 0, scrollY: 0, elapsedTime: 277},
+    {x: 350.5, y: 163.5, scrollX: 0, scrollY: 0, elapsedTime: 294},
+    {x: 351, y: 165, scrollX: 0, scrollY: 0, elapsedTime: 310},
+    {x: 351, y: 165, scrollX: 0, scrollY: 0, elapsedTime: 321},
+    {x: 351.5, y: 165.5, scrollX: 0, scrollY: 0, elapsedTime: 333},
+    {x: 351.5, y: 165.5, scrollX: 0, scrollY: 0, elapsedTime: 398},
+    {x: 356, y: 163, scrollX: 0, scrollY: 0, elapsedTime: 414},
+    {x: 360.5, y: 158.5, scrollX: 0, scrollY: 0, elapsedTime: 430},
+    {x: 366.5, y: 153.5, scrollX: 0, scrollY: 0, elapsedTime: 445},
+    {x: 371, y: 149.5, scrollX: 0, scrollY: 0, elapsedTime: 461},
+    {x: 373, y: 147, scrollX: 0, scrollY: 0, elapsedTime: 477},
+  ]
+]
+
+function playbackStrokes(timestamp) {
+  console.log('💐',timestamp)
+  window.requestAnimationFrame(playbackStrokes)
+}
+
+const videoLoadTimeStart = Date.now()
+const aboutPageVideo = document.getElementById('about-page-video')
+
+console.log(aboutPageVideo)
+
+aboutPageVideo.oncanplay = function() {
+  const playbackDelay = 500
+  const videoLoadTime = Date.now() - videoLoadTimeStart
+  console.log('🌸')
+  recordedStrokes = recordedStrokes.map(stroke => {
+    return stroke.map(point => {
+      point.elapsedTime = point.elapsedTime + videoLoadTime + playbackDelay
+      return point
+    })
+  })
+
+  console.log('vid can play now', videoLoadTime, recordedStrokes)
+
+  window.requestAnimationFrame(playbackStrokes)
+}
+
