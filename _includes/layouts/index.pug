@@ -22,7 +22,7 @@ mixin posts(collection)
   h2(data-posts=titles) #{collection}
   //- Video
   if collection === 'How to Use'
-    article
+    article.overview
       video.wide(autoplay loop muted playsinline)
         source(src="https://kinopio-updates.us-east-1.linodeobjects.com/overview-basics-2.mp4")
   //- Posts
