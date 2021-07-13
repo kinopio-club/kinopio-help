@@ -247,9 +247,8 @@ window.onscroll = function (event) {
   }
 }
 
-// re-update canvas size onload
-window.addEventListener('load',
-  function() {
-    updateCanvas()
-  },
-false)
+const resizeObserver = new ResizeObserver(entries => {
+  console.log('Body height changed', entries[0].target.clientHeight)
+  updateCanvas()
+})
+resizeObserver.observe(document.body)
