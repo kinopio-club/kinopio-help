@@ -3,11 +3,12 @@
 const isRecording = true
 let lineWidth = 22
 if (isRecording) {
-  lineWidth = 12
+  lineWidth = 10
 }
 
 let canvas, context, canvasImage, color, prevScroll
 let pageCanvas, pageContext
+let playbackCanvas, playbackContext
 let currentStroke = []
 let allStrokes = []
 prevScroll = {
@@ -33,6 +34,19 @@ function initCanvas () {
   context.lineCap = context.lineJoin = 'round'
 }
 
+function initPlaybackCanvas (width, height) {
+  playbackCanvas = document.getElementById('playback-background')
+  playbackCanvas.classList.add('hidden')
+  playbackCanvas.width = width
+  playbackCanvas.height = height
+  playbackContext = playbackCanvas.getContext('2d')
+  playbackContext.scale(2,2)
+  playbackContext.strokeStyle = color
+  playbackContext.lineWidth = lineWidth
+  playbackContext.lineCap = playbackContext.lineJoin = 'round'
+  playbackCanvas.classList.remove('hidden')
+}
+
 function initPageCanvas () {
   pageCanvas = document.getElementById('page-background')
   pageCanvas.classList.add('hidden')
@@ -48,6 +62,7 @@ function initPageCanvas () {
   pageContext.lineWidth = lineWidth
   pageContext.lineCap = pageContext.lineJoin = 'round'
   pageCanvas.classList.remove('hidden')
+  initPlaybackCanvas(pageWidth, pageHeight)
 }
 
 function randomColor () {
@@ -101,17 +116,24 @@ function redrawAllStrokes () {
   })
 }
 
+let recordStartTime
+
 function startStroke () {
   currentStroke = []
   isDrawing = true
+  recordStartTime = Date.now()
 }
 
 function endStroke () {
   allStrokes.push(currentStroke)
+  if (isRecording) {
+    console.log('⏺', allStrokes)
+  }
   pageCanvas.getContext('2d').drawImage(canvas, prevScroll.x / 2, prevScroll.y / 2, canvas.width / 2, canvas.height / 2)
   currentStroke = []
   isDrawing = false
   context.clearRect(0,0, canvas.width, canvas.height)
+  recordStartTime = undefined
 }
 
 function addPointToStroke ({ x, y }) {
@@ -120,7 +142,8 @@ function addPointToStroke ({ x, y }) {
     x,
     y,
     scrollX: prevScroll.x / 2,
-    scrollY: prevScroll.y / 2
+    scrollY: prevScroll.y / 2,
+    elapsedTime: Date.now() - recordStartTime
   })
   drawCurrentStroke()
 }
