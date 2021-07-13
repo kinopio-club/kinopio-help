@@ -11,6 +11,11 @@ article.about
       source(src="https://kinopio-updates.us-east-1.linodeobjects.com/comments.mp4")
     p Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
 
+  section.top-cta
+    p No sign up required.
+    include /cta.pug
+
+
   section.uses
     span For
     .badge.use(data-type="mind-mapping") Mind Mapping
@@ -54,7 +59,7 @@ article.about
         video(autoplay loop muted playsinline)
           source(src="https://kinopio-updates.us-east-1.linodeobjects.com/card-tags.mp4")
         figcaption
-          p Run productive meetings and retrospectives that lead to clarity and actionable next steps.
+          p Run engaging meetings and retrospectives that lead to clarity and actionable next steps.
           p Every feature of Kinopio works on mobile or desktop – so no matter what device you're on, or where you are, everyone can work together as equals.
           //- todo replace old meeting agenda template
           a(href="#")
@@ -101,57 +106,48 @@ article.about
       .triangle
       figure
         video(autoplay loop muted playsinline)
-          source(src="https://kinopio-updates.s3.us-east-1.amazonaws.com/best-of.mp4")
+          source(src="https://kinopio-updates.us-east-1.linodeobjects.com/best-of.mp4")
         figcaption
-          p Of course, you can use Kinopio for so much more. Like project planning, database modelling, to-dos, outlining, roadmaps, and grocery lists…
           p
             img.icon.sunglasses(src="/assets/sunglasses.svg")
-            span Use Explore to find more templates and cool spaces created by the community
-          p
-            a.badge(href="/posts/templates/") Using Explore →
+            span Explore more templates and cool spaces created by the community.
 
-  p It's basically for figuring stuff out – by yourself or collaboratively.
-  p No sign up required.
+          p Including, spaces for project planning, database modelling, to-dos, outlining, roadmaps, grocery lists, and more…
 
-  include /actions.pug
+    p Basically, for figuring stuff out – by yourself or collaboratively.
 
-  p Rather than replacing productivity and wiki tools you may already be using, Kinopio is for exploratory, collaborative, creative thinking in lively non-linear, freeform spaces.
+
 
   section.features
+    h2 Create Lively Freeform Spaces
 
-    //- h2 Works Like a Dream, Grows With You
-      //- img.icon.updated(src="/assets/updated.gif")
-    h2 Create Spaces for Reflection, or for Parties
+    .grid-container
+      .grid-item
+        p Real-Time Collaboration
+        video(autoplay loop muted playsinline)
+          source(src="https://kinopio-updates.us-east-1.linodeobjects.com/real-time-collaboration.mp4")
+      .grid-item
+          p Images and Links
+          p [vid]
+      .grid-item
+        p [[Tags]]
+        video(autoplay loop muted playsinline)
+          source(src="https://kinopio-updates.us-east-1.linodeobjects.com/tags-closeup.mp4")
+      .grid-item
+          p ((Comments))
+          video(autoplay loop muted playsinline)
+            source(src="https://kinopio-updates.us-east-1.linodeobjects.com/comments.mp4")
 
-    //- h2 As Social and as Powerful as You Want
-    //- everything you want and nothing you don't
-    //- p go beyond the basics with
-
-    p real time collab
-    video.medium(autoplay loop muted playsinline)
-      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/real-time-collaboration.mp4")
-
-    p add images, videos, music and URLs
-    p [vid]
-    // (url preview)
-    // muse: Pull in relevant information from the web, email, Twitter, Slack, your files, notes or photos from your phone. Then arrange as you see fit.
-
-    p tags, label
-    video.medium(autoplay loop muted playsinline)
-      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/tags-closeup.mp4")
-
-    p comments
-    video.medium(autoplay loop muted playsinline)
-      source(src="https://kinopio-updates.us-east-1.linodeobjects.com/comments.mp4")
-
-
-    p Oh ya, and Kinopio works great on phones and tablets
-    video.small(autoplay loop muted playsinline)
+    p Desktop and Mobile Apps
+    video.mobile-video(autoplay loop muted playsinline)
       source(src="https://kinopio-updates.us-east-1.linodeobjects.com/mobile-improvments-small.mp4")
 
-  p No sign up required. Export your data at any time.
+  section.bottom-cta
+    // p Rather than replacing the traditional productivity tools you may already be using, Kinopio is for exploratory, collaborative, creative thinking in lively non-linear, freeform spaces.
 
-  include /actions.pug
+    p No sign up required. Export your data at any time.
+
+    include /cta.pug
 
     //- p Instead of neatly structured forms and linear lists like a traditional planning tool, Kinopio is a thinking tool for creating connections through spatial relationships.
 
