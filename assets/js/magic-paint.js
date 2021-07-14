@@ -8,7 +8,7 @@ if (isRecording) {
 
 let canvas, context, canvasImage, color, prevScroll
 let pageCanvas, pageContext
-let playbackCanvas, playbackContext
+let playbackCanvas, playbackContext, playbackColor
 let currentStroke = []
 let allStrokes = []
 prevScroll = {
@@ -41,7 +41,7 @@ function initPlaybackCanvas (width, height) {
   playbackCanvas.height = height
   playbackContext = playbackCanvas.getContext('2d')
   playbackContext.scale(2,2)
-  playbackContext.strokeStyle = color
+  playbackContext.strokeStyle = playbackColor
   playbackContext.lineWidth = lineWidth
   playbackContext.lineCap = playbackContext.lineJoin = 'round'
   playbackCanvas.classList.remove('hidden')
@@ -66,7 +66,7 @@ function initPageCanvas () {
 }
 
 function randomColor () {
-  const colors = [
+  let colors = [
     '#fcd1c4', // light pink
     '#abfcec', // light blue
     // '#c7f0e8', // light teal
@@ -78,6 +78,8 @@ function randomColor () {
     '#fff0b2', // yellow
   ]
   color = colors[Math.floor(Math.random() * colors.length)]
+  colors = colors.filter(item => color !== item)
+  playbackColor = colors[Math.floor(Math.random() * colors.length)]
 }
 
 function throttle (ms, fn) {
@@ -203,8 +205,14 @@ const resizeObserver = new ResizeObserver(entries => {
 resizeObserver.observe(document.body)
 
 
-// ▶️ Playback
 
+//
+// ▶️ Playback
+//
+
+
+let playbackOverviewStrokesRequestId
+let playbackStroke = []
 let overviewStrokes = [
   [
     {x: 319.5, y: 163, scrollX: 0, scrollY: 0, elapsedTime: 8}, {x: 323, y: 160, scrollX: 0, scrollY: 0, elapsedTime: 19}, {x: 325.5, y: 157.5, scrollX: 0, scrollY: 0, elapsedTime: 30}, {x: 332, y: 151.5, scrollX: 0, scrollY: 0, elapsedTime: 43}, {x: 337.5, y: 147.5, scrollX: 0, scrollY: 0, elapsedTime: 59}, {x: 341, y: 144.5, scrollX: 0, scrollY: 0, elapsedTime: 81}, {x: 343.5, y: 143, scrollX: 0, scrollY: 0, elapsedTime: 99}, {x: 344, y: 142.5, scrollX: 0, scrollY: 0, elapsedTime: 126}, {x: 344.5, y: 144, scrollX: 0, scrollY: 0, elapsedTime: 140}, {x: 346.5, y: 148, scrollX: 0, scrollY: 0, elapsedTime: 157}, {x: 349, y: 151.5, scrollX: 0, scrollY: 0, elapsedTime: 176}, {x: 353, y: 154.5, scrollX: 0, scrollY: 0, elapsedTime: 190}, {x: 357, y: 156, scrollX: 0, scrollY: 0, elapsedTime: 208}, {x: 361.5, y: 156, scrollX: 0, scrollY: 0, elapsedTime: 219}, {x: 366, y: 154.5, scrollX: 0, scrollY: 0, elapsedTime: 235}, {x: 371.5, y: 151, scrollX: 0, scrollY: 0, elapsedTime: 252}, {x: 376, y: 146.5, scrollX: 0, scrollY: 0, elapsedTime: 267}, {x: 380.5, y: 141.5, scrollX: 0, scrollY: 0, elapsedTime: 283}, {x: 383, y: 137, scrollX: 0, scrollY: 0, elapsedTime: 299}
@@ -217,23 +225,46 @@ let overviewStrokes = [
   ]
 ]
 
-function playbackStrokes(timestamp) {
-  console.log('💐',timestamp)
-
-// in first array
-// take out strokes where timestamp > elapsedTime
-// draw those strokes onto #playback-background canvas
-
-  // TODO if more strokes
-
-  // window.requestAnimationFrame(playbackStrokes)
-
-  // TODO else cancel requestAnimationFrame
-
-// remove first array if empty (boolean .length)
+function drawPlaybackStroke() {
+  if (playbackStroke.length < 2) { return }
+  playbackContext.beginPath()
+  playbackContext.moveTo(playbackStroke[0].x + playbackStroke[0].scrollX, playbackStroke[0].y + playbackStroke[0].scrollY)
+  playbackStroke.forEach((point) => {
+    playbackContext.lineTo(point.x + point.scrollX, point.y + point.scrollY)
+  })
+  playbackContext.stroke()
 }
 
-function addDelayToOverviewStrokes(delay) {
+function checkIfShouldStartNewStroke() {
+  const prevStrokesLength = overviewStrokes.length
+  overviewStrokes = overviewStrokes.filter(stroke => Boolean(stroke.length))
+  const newStrokesLength = overviewStrokes.length
+  if (prevStrokesLength > newStrokesLength) {
+    playbackStroke = []
+  }
+}
+
+function playbackOverviewStrokes(timestamp) {
+  let stroke = overviewStrokes[0]
+  stroke = stroke.filter(point => {
+    if (point.elapsedTime <= timestamp) {
+      playbackStroke.push(point)
+      return false
+    } else {
+      return true
+    }
+  })
+  overviewStrokes[0] = stroke
+  checkIfShouldStartNewStroke()
+  drawPlaybackStroke()
+  if (overviewStrokes.length) {
+    playbackOverviewStrokesRequestId = window.requestAnimationFrame(playbackOverviewStrokes)
+  } else {
+    window.cancelAnimationFrame(playbackOverviewStrokesRequestId)
+  }
+}
+
+function normalizeOverviewStrokes(delay) {
   let lastStrokeElapsedTime, applyToIndex
   overviewStrokes = overviewStrokes.map(stroke => {
     return stroke.map(point => {
@@ -249,7 +280,7 @@ const aboutPageVideo = document.getElementById('about-page-video')
 aboutPageVideo.oncanplay = function() {
   const playbackDelay = 500
   const delay = Date.now() - loadDelayStart + playbackDelay
-  addDelayToOverviewStrokes(delay)
-  window.requestAnimationFrame(playbackStrokes)
+  normalizeOverviewStrokes(delay)
+  playbackOverviewStrokesRequestId = window.requestAnimationFrame(playbackOverviewStrokes)
 }
 
