@@ -262,33 +262,41 @@ function playbackOverviewStrokes(timestamp) {
   }
 }
 
-
-// todo split into seperate functions, position() takes direction
-function normalizeOverviewStrokes(delay) {
-  const element = document.getElementById('about-page-video')
-  const rect = element.getBoundingClientRect()
-  const rectSide = {
-    x: Math.round(rect.x + rect.width) / 2,
-    y: Math.round(rect.y) / 2
-  }
+function delayOverviewStrokes(delayStart) {
+  const playbackDelay = 500
+  const delay = Date.now() - delayStart + playbackDelay
   overviewStrokes = overviewStrokes.map(stroke => {
     return stroke.map(point => {
       point.elapsedTime = point.elapsedTime + delay
-      console.log(rectSide.x)
-      point.x = point.x + rectSide.x
-      point.y = point.y + rectSide.y
       return point
     })
   })
-  console.log('▶️', overviewStrokes)
 }
 
-const loadDelayStart = Date.now()
+function positionOverlayStrokes() {
+  const element = document.getElementById('about-page-video')
+  const rect = element.getBoundingClientRect()
+  const rectSide = {
+    right: {
+      x: Math.round(rect.x + rect.width) / 2,
+      y: Math.round(rect.y) / 2
+    }
+  }
+  overviewStrokes = overviewStrokes.map(stroke => {
+    return stroke.map(point => {
+      point.x = point.x + rectSide['right'].x
+      point.y = point.y + rectSide['right'].y
+      return point
+    })
+  })
+}
+
+const delayStart = Date.now()
 const aboutPageVideo = document.getElementById('about-page-video')
 aboutPageVideo.oncanplay = function() {
-  const playbackDelay = 500
-  const delay = Date.now() - loadDelayStart + playbackDelay
-  normalizeOverviewStrokes(delay)
+  delayOverviewStrokes(delayStart)
+  positionOverlayStrokes()
+  console.log('▶️', overviewStrokes)
   playbackOverviewStrokesRequestId = window.requestAnimationFrame(playbackOverviewStrokes)
 }
 
