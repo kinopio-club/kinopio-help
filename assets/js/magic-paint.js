@@ -52,7 +52,7 @@ function initPageCanvas () {
 
 function randomColor () {
   let colors = [
-    '#FFD0C1', // salmon
+    '#abfcec', // cyan
     '#fbbfff', // pink
     '#99f6c6', // green
     '#fff0b2', // yellow
