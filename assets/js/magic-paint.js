@@ -52,15 +52,11 @@ function initPageCanvas () {
 
 function randomColor () {
   let colors = [
-    '#fcd1c4', // light pink
-    '#abfcec', // light blue
-    // '#c7f0e8', // light teal
-    // '#a3d9e1', // blue
-    '#fbbfff', // purple
-    // '#f1d0f4', // purple
+    '#FFD0C1', // salmon
+    '#fbbfff', // pink
     '#99f6c6', // green
-    // '#c4ecd7', // green
     '#fff0b2', // yellow
+    '#CCBAFF', // purple
   ]
   color = colors[Math.floor(Math.random() * colors.length)]
 }

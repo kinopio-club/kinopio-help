@@ -13,7 +13,7 @@ function initPlaybackCanvas () {
   playbackCanvas.height = pageHeight
   playbackContext = playbackCanvas.getContext('2d')
   playbackContext.scale(2,2)
-  playbackContext.strokeStyle = 'blue' // TODO special color, from moodboard
+  playbackContext.strokeStyle = '#abfcec' // cyan
   playbackContext.lineWidth = 10
   playbackContext.lineCap = playbackContext.lineJoin = 'round'
   playbackCanvas.classList.remove('hidden')
