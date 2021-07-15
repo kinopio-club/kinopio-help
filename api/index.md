@@ -5,7 +5,7 @@ layout: "layouts/api.pug"
 pageTitle: Kinopio API Docs
 pageSearchIsVisible: false
 currentPage: api
-
+title: Kinopio API
 ---
 <img src="/assets/cat.png" class="cat no-shadow"/>
 
