@@ -94,7 +94,6 @@ function normalizeElapsedTimeIntroStrokes() {
 function positionIntroStrokes() {
   const element = document.getElementById('about-page-video')
   const rect = element.getBoundingClientRect()
-
   let strokesWidth = 0
   let strokesHeight = 0
   introStrokes.forEach(stroke => {
@@ -109,7 +108,6 @@ function positionIntroStrokes() {
       }
     })
   })
-  console.log('🍉', strokesWidth, strokesHeight) // todo hardcode?
   const rectSide = {
     right: {
       x: Math.round(rect.x + rect.width) / 2,
@@ -127,18 +125,8 @@ function positionIntroStrokes() {
   introStrokes = introStrokes.map(stroke => {
     return stroke.map(point => {
       const side = point.side
-      console.log(side)
       point.x = point.x + rectSide[side].x
       point.y = point.y + rectSide[side].y
-
-      // if (point.side = 'left') {
-      //   point.x = point.x + rectSide['left'].x
-      //   point.y = point.y + rectSide['left'].y
-
-      // } else {
-      //   point.x = point.x + rectSide['right'].x
-      //   point.y = point.y + rectSide['right'].y
-      // }
       return point
     })
   })
