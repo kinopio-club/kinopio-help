@@ -1,8 +1,16 @@
-let autoPaintCanvas, autoPaintContext, autoPaintColor
+const autoPaintStrokeColor = '#FFD0C1' // salmon
 
-initPlaybackCanvas()
+let autoPaintCanvas, autoPaintContext
+let autoPaintContexts = {}
 
-function initPlaybackCanvas () {
+
+let currentAutoStroke = {
+  intro: []
+}
+
+initAutoPaintCanvas()
+
+function initAutoPaintCanvas () {
   autoPaintCanvas = document.getElementById('auto-paint-background')
   autoPaintCanvas.classList.add('hidden')
   const body = document.body
@@ -11,16 +19,21 @@ function initPlaybackCanvas () {
   const pageHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
   autoPaintCanvas.width = pageWidth
   autoPaintCanvas.height = pageHeight
-  autoPaintContext = autoPaintCanvas.getContext('2d')
-  autoPaintContext.scale(2,2)
-  autoPaintContext.strokeStyle = '#FFD0C1' // salmon
-  autoPaintContext.lineWidth = 10
-  autoPaintContext.lineCap = autoPaintContext.lineJoin = 'round'
   autoPaintCanvas.classList.remove('hidden')
   console.log('💐 auto paint ready')
 }
 
+function initContext (contextName) {
+  autoPaintContexts[contextName] = autoPaintCanvas.getContext('2d')
+  autoPaintContexts[contextName].scale(2,2)
+  autoPaintContexts[contextName].strokeStyle = autoPaintStrokeColor
+  autoPaintContexts[contextName].lineWidth = 10
+  autoPaintContexts[contextName].lineCap = autoPaintContexts[contextName].lineJoin = 'round'
+}
+
+
 function shouldStartNewStroke(strokes, currentStroke) {
+  // new stroke if current stroke is empty
   const prevStrokesLength = strokes.length
   strokes = strokes.filter(stroke => Boolean(stroke.length))
   const newStrokesLength = strokes.length
@@ -30,37 +43,37 @@ function shouldStartNewStroke(strokes, currentStroke) {
   return { strokes, currentStroke }
 }
 
+function paintStroke(contextName) {
+  if (currentAutoStroke[contextName].length < 2) { return }
+  autoPaintContexts[contextName].beginPath()
+  autoPaintContexts[contextName].moveTo(currentAutoStroke[contextName][0].x, currentAutoStroke[contextName][0].y)
+  currentAutoStroke[contextName].forEach((point) => {
+    autoPaintContexts[contextName].lineTo(point.x, point.y)
+  })
+  autoPaintContexts[contextName].stroke()
+}
+
 
 // Intro
 
 let autoPaintIntroRequestId
-let currentIntroStroke = []
 
-function paintIntroStroke() {
-  if (currentIntroStroke.length < 2) { return }
-  autoPaintContext.beginPath()
-  autoPaintContext.moveTo(currentIntroStroke[0].x + currentIntroStroke[0].scrollX, currentIntroStroke[0].y + currentIntroStroke[0].scrollY)
-  currentIntroStroke.forEach((point) => {
-    autoPaintContext.lineTo(point.x + point.scrollX, point.y + point.scrollY)
-  })
-  autoPaintContext.stroke()
-}
 
 function autoPaintIntro(timestamp) {
   let stroke = introStrokes[0]
   stroke = stroke.filter(point => {
     if (point.elapsedTime <= timestamp) {
-      currentIntroStroke.push(point)
+      currentAutoStroke.intro.push(point)
       return false
     } else {
       return true
     }
   })
   introStrokes[0] = stroke
-  const newStrokes = shouldStartNewStroke(introStrokes, currentIntroStroke)
+  const newStrokes = shouldStartNewStroke(introStrokes, currentAutoStroke.intro)
   introStrokes = newStrokes.strokes
-  currentIntroStroke = newStrokes.currentStroke
-  paintIntroStroke()
+  currentAutoStroke.intro = newStrokes.currentStroke
+  paintStroke('intro', currentAutoStroke.intro)
   if (introStrokes.length) {
     autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
   } else {
@@ -93,7 +106,6 @@ function normalizeElapsedTimeIntroStrokes() {
       return point
     })
   })
-
 }
 
 function positionIntroStrokes() {
@@ -103,11 +115,11 @@ function positionIntroStrokes() {
   let strokesHeight = 0
   introStrokes.forEach(stroke => {
     stroke.forEach(point => {
-      const x = point.x + autoPaintContext.lineWidth
+      const x = point.x + autoPaintContexts.intro.lineWidth
       if (x > strokesWidth && point.side === 'left') {
         strokesWidth = x
       }
-      const y = point.y + autoPaintContext.lineWidth
+      const y = point.y + autoPaintContexts.intro.lineWidth
       if (y > strokesHeight && point.side === 'top') {
         strokesHeight = y
       }
@@ -140,12 +152,28 @@ function positionIntroStrokes() {
 const delayStart = Date.now()
 const aboutPageVideo = document.getElementById('about-page-video')
 aboutPageVideo.oncanplay = function() {
+  initContext('intro')
   delayIntroStrokes(delayStart)
   normalizeElapsedTimeIntroStrokes()
   positionIntroStrokes()
   console.log('▶️ intro', introStrokes)
   autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Features
@@ -155,7 +183,8 @@ let autoPaintCollaborationRequestId, autoPaintImagesRequestId, autoPaintTagsRequ
 let currentCollaborationStroke = []
 
 function updateElapsedTime(strokes) {
-  let time = Date.now()
+  let time = Date.now() // total time from epoch, not ms from page load
+  console.log(time)
   return strokes.map(stroke => {
     return stroke.map(point => {
       point.elapsedTime = point.elapsedTime + time
@@ -163,6 +192,21 @@ function updateElapsedTime(strokes) {
     })
   })
 }
+
+
+// temp? globalize
+function paintCollaborationStroke() {
+  if (currentCollaborationStroke.length < 2) { return }
+            console.log('👋')
+
+  autoPaintContext.beginPath()
+  autoPaintContext.moveTo(currentCollaborationStroke[0].x, currentCollaborationStroke[0].y)
+  currentCollaborationStroke.forEach((point) => {
+    autoPaintContext.lineTo(point.x + point.scrollX, point.y + point.scrollY)
+  })
+  autoPaintContext.stroke()
+}
+
 
 function autoPaintCollaboration(timestamp) {
   let stroke = collaborationStrokes[0]
@@ -174,6 +218,17 @@ function autoPaintCollaboration(timestamp) {
       return true
     }
   })
+  collaborationStrokes[0] = stroke
+  const newStrokes = shouldStartNewStroke(collaborationStrokes, currentCollaborationStroke)
+  collaborationStrokes = newStrokes.strokes
+  currentCollaborationStroke = newStrokes.currentStroke
+  paintCollaborationStroke()
+  if (collaborationStrokes.length) {
+    autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
+  } else {
+    window.cancelAnimationFrame(autoPaintCollaborationRequestId)
+  }
+
   // collaborationStrokes[0] = stroke
   // shouldStartNewStroke(collaborationStrokes, currentCollaborationStroke)
   // paintIntroStroke()
@@ -192,7 +247,7 @@ let handleIntersect = (entries, observer) => {
         console.log('🚁', section)
         isAutoPaintingSections[section] = true
         if (section === 'collaboration') {
-          collaborationStrokes = updateElapsedTime(collaborationStrokes)
+          // collaborationStrokes = updateElapsedTime(collaborationStrokes)
           console.log('▶️ collaboration', collaborationStrokes)
           autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
         } else if (section === 'images') {

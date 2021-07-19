@@ -8,7 +8,7 @@ if (isRecording) {
 
 let canvas, context, canvasImage, color, prevScroll
 let pageCanvas, pageContext
-let currentStroke = []
+let currentPaintStroke = []
 let allStrokes = []
 prevScroll = {
   x: window.scrollX,
@@ -73,10 +73,10 @@ function throttle (ms, fn) {
 }
 
 function drawCurrentStroke () {
-  if (currentStroke.length === 0) { return }
+  if (currentPaintStroke.length === 0) { return }
   context.beginPath()
-  context.moveTo(currentStroke[0].x, currentStroke[0].y)
-  currentStroke.forEach((point) => {
+  context.moveTo(currentPaintStroke[0].x, currentPaintStroke[0].y)
+  currentPaintStroke.forEach((point) => {
     context.lineTo(point.x, point.y)
   })
   context.stroke()
@@ -100,7 +100,7 @@ function redrawAllStrokes () {
 let recordStartTime
 
 function startStroke () {
-  currentStroke = []
+  currentPaintStroke = []
   isDrawing = true
   if (!recordStartTime) {
     recordStartTime = Date.now()
@@ -108,19 +108,19 @@ function startStroke () {
 }
 
 function endStroke () {
-  allStrokes.push(currentStroke)
+  allStrokes.push(currentPaintStroke)
   if (isRecording) {
     console.log('⏺', allStrokes)
   }
   pageCanvas.getContext('2d').drawImage(canvas, prevScroll.x / 2, prevScroll.y / 2, canvas.width / 2, canvas.height / 2)
-  currentStroke = []
+  currentPaintStroke = []
   isDrawing = false
   context.clearRect(0,0, canvas.width, canvas.height)
 }
 
 function addPointToStroke ({ x, y }) {
   if (!isDrawing) { return }
-  currentStroke.push({
+  currentPaintStroke.push({
     x,
     y,
     scrollX: prevScroll.x / 2,
