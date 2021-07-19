@@ -4,9 +4,7 @@ let autoPaintCanvas, autoPaintContext
 let autoPaintContexts = {}
 
 
-let currentAutoStroke = {
-  intro: []
-}
+let currentAutoStroke = {}
 
 initAutoPaintCanvas()
 
@@ -29,11 +27,11 @@ function initContext (contextName) {
   autoPaintContexts[contextName].strokeStyle = autoPaintStrokeColor
   autoPaintContexts[contextName].lineWidth = 10
   autoPaintContexts[contextName].lineCap = autoPaintContexts[contextName].lineJoin = 'round'
+  currentAutoStroke[contextName] = []
 }
 
 
-function shouldStartNewStroke(strokes, currentStroke) {
-  // new stroke if current stroke is empty
+function shouldStartNewStrokeIfCurrentStrokeIsEmpty(strokes, currentStroke) {
   const prevStrokesLength = strokes.length
   strokes = strokes.filter(stroke => Boolean(stroke.length))
   const newStrokesLength = strokes.length
@@ -70,7 +68,7 @@ function autoPaintIntro(timestamp) {
     }
   })
   introStrokes[0] = stroke
-  const newStrokes = shouldStartNewStroke(introStrokes, currentAutoStroke.intro)
+  const newStrokes = shouldStartNewStrokeIfCurrentStrokeIsEmpty(introStrokes, currentAutoStroke.intro)
   introStrokes = newStrokes.strokes
   currentAutoStroke.intro = newStrokes.currentStroke
   paintStroke('intro', currentAutoStroke.intro)
@@ -179,64 +177,46 @@ aboutPageVideo.oncanplay = function() {
 // Features
 
 let isAutoPaintingSections = {}
+let isElapsedTimeUpdated = {}
 let autoPaintCollaborationRequestId, autoPaintImagesRequestId, autoPaintTagsRequestId, autoPaintCommentsRequestId, autoPaintMobileRequestId, autoPaintCtaRequestId
 let currentCollaborationStroke = []
 
-function updateElapsedTime(strokes) {
-  let time = Date.now() // total time from epoch, not ms from page load
-  console.log(time)
+function updateElapsedTime(strokes, timestamp) {
   return strokes.map(stroke => {
     return stroke.map(point => {
-      point.elapsedTime = point.elapsedTime + time
+      point.elapsedTime = point.elapsedTime + timestamp
       return point
     })
   })
 }
 
 
-// temp? globalize
-function paintCollaborationStroke() {
-  if (currentCollaborationStroke.length < 2) { return }
-            console.log('👋')
-
-  autoPaintContext.beginPath()
-  autoPaintContext.moveTo(currentCollaborationStroke[0].x, currentCollaborationStroke[0].y)
-  currentCollaborationStroke.forEach((point) => {
-    autoPaintContext.lineTo(point.x + point.scrollX, point.y + point.scrollY)
-  })
-  autoPaintContext.stroke()
-}
-
 
 function autoPaintCollaboration(timestamp) {
+  if (!isElapsedTimeUpdated.collaboration) {
+    collaborationStrokes = updateElapsedTime(collaborationStrokes, timestamp)
+    isElapsedTimeUpdated.collaboration = true
+    console.log('▶️ collaboration', collaborationStrokes)
+  }
   let stroke = collaborationStrokes[0]
   stroke = stroke.filter(point => {
     if (point.elapsedTime <= timestamp) {
-      currentCollaborationStroke.push(point)
+      currentAutoStroke.collaboration.push(point)
       return false
     } else {
       return true
     }
   })
   collaborationStrokes[0] = stroke
-  const newStrokes = shouldStartNewStroke(collaborationStrokes, currentCollaborationStroke)
+  const newStrokes = shouldStartNewStrokeIfCurrentStrokeIsEmpty(collaborationStrokes, currentAutoStroke.collaboration)
   collaborationStrokes = newStrokes.strokes
-  currentCollaborationStroke = newStrokes.currentStroke
-  paintCollaborationStroke()
+  currentAutoStroke.collaboration = newStrokes.currentStroke
+  paintStroke('collaboration', currentAutoStroke.collaboration)
   if (collaborationStrokes.length) {
     autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
   } else {
     window.cancelAnimationFrame(autoPaintCollaborationRequestId)
   }
-
-  // collaborationStrokes[0] = stroke
-  // shouldStartNewStroke(collaborationStrokes, currentCollaborationStroke)
-  // paintIntroStroke()
-  // if (collaborationStrokes.length) {
-  //   autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
-  // } else {
-  //   window.cancelAnimationFrame(autoPaintCollaborationRequestId)
-  // }
 }
 
 let handleIntersect = (entries, observer) => {
@@ -247,8 +227,8 @@ let handleIntersect = (entries, observer) => {
         console.log('🚁', section)
         isAutoPaintingSections[section] = true
         if (section === 'collaboration') {
-          // collaborationStrokes = updateElapsedTime(collaborationStrokes)
-          console.log('▶️ collaboration', collaborationStrokes)
+          // cannot create more than 1 context per canvas, so have to create a new canvas for each
+          initContext('collaboration')
           autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
         } else if (section === 'images') {
 
