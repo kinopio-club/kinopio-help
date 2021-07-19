@@ -1,7 +1,6 @@
 // code adapted from https://k-komma.de/assets/js/main.js
 
 const isRecording = true // false in prod
-const recordingSide = 'right'
 let lineWidth = 22
 if (isRecording) {
   lineWidth = 10
@@ -127,7 +126,6 @@ function addPointToStroke ({ x, y }) {
     scrollX: prevScroll.x / 2,
     scrollY: prevScroll.y / 2,
     elapsedTime: Date.now() - recordStartTime,
-    side: recordingSide
   })
   drawCurrentStroke()
 }

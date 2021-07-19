@@ -20,7 +20,7 @@ function initPlaybackCanvas () {
   console.log('💐 auto paint ready')
 }
 
-let autoPaintIntroStrokesRequestId
+let autoPaintIntroRequestId
 let autoPaintStroke = []
 
 
@@ -43,7 +43,9 @@ function checkIfShouldStartNewStroke() {
   }
 }
 
-function autoPaintIntroStrokes(timestamp) {
+// Intro
+
+function autoPaintIntro(timestamp) {
   let stroke = introStrokes[0]
   stroke = stroke.filter(point => {
     if (point.elapsedTime <= timestamp) {
@@ -57,9 +59,9 @@ function autoPaintIntroStrokes(timestamp) {
   checkIfShouldStartNewStroke()
   drawPlaybackStroke()
   if (introStrokes.length) {
-    autoPaintIntroStrokesRequestId = window.requestAnimationFrame(autoPaintIntroStrokes)
+    autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
   } else {
-    window.cancelAnimationFrame(autoPaintIntroStrokesRequestId)
+    window.cancelAnimationFrame(autoPaintIntroRequestId)
   }
 }
 
@@ -138,6 +140,97 @@ aboutPageVideo.oncanplay = function() {
   delayIntroStrokes(delayStart)
   normalizeElapsedTimeIntroStrokes()
   positionIntroStrokes()
-  console.log('▶️', introStrokes)
-  autoPaintIntroStrokesRequestId = window.requestAnimationFrame(autoPaintIntroStrokes)
+  console.log('▶️ intro', introStrokes)
+  autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
 }
+
+
+// Features
+
+let isAutoPaintingSections = {}
+let autoPaintCollaborationRequestId, autoPaintImagesRequestId, autoPaintTagsRequestId, autoPaintCommentsRequestId, autoPaintMobileRequestId, autoPaintCtaRequestId
+let autoPaintCollaborationStroke = []
+
+function updateElapsedTime(strokes) {
+  let time = Date.now()
+  return strokes.map(stroke => {
+    return stroke.map(point => {
+      point.elapsedTime = point.elapsedTime + time
+      return point
+    })
+  })
+}
+
+function autoPaintCollaboration(timestamp) {
+  let stroke = collaborationStrokes[0]
+  stroke = stroke.filter(point => {
+    if (point.elapsedTime <= timestamp) {
+      autoPaintStroke.push(point)
+      return false
+    } else {
+      return true
+    }
+  })
+  introStrokes[0] = stroke
+  checkIfShouldStartNewStroke()
+  drawPlaybackStroke()
+  if (introStrokes.length) {
+    autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
+  } else {
+    window.cancelAnimationFrame(autoPaintCollaborationRequestId)
+  }
+}
+
+let handleIntersect = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const section = entry.target.dataset.section
+      if (!isAutoPaintingSections[section]) {
+        console.log('🚁', section)
+        isAutoPaintingSections[section] = true
+        if (section === 'collaboration') {
+          collaborationStrokes = updateElapsedTime(collaborationStrokes)
+          console.log('▶️ collaboration', collaborationStrokes)
+          autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
+        } else if (section === 'images') {
+
+        } else if (section === 'tags') {
+
+        } else if (section === 'comments') {
+
+        } else if (section === 'mobile') {
+
+        } else if (section === 'cta') {
+
+        }
+
+
+        // autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
+
+        //   autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
+        // } else {
+        //   window.cancelAnimationFrame(autoPaintIntroRequestId)
+
+      }
+    }
+  })
+}
+
+const sectionCollaborationElement = document.getElementById('feature-collaboration')
+const sectionImagesElement = document.getElementById('feature-images')
+const sectionTagsElement = document.getElementById('feature-tags')
+const sectionCommentsElement = document.getElementById('feature-comments')
+const sectionMobileElement = document.getElementById('feature-mobile')
+const sectionCtaElement = document.getElementById('bottom-cta')
+
+let observer = new IntersectionObserver(handleIntersect, {
+  threshold: 1
+})
+observer.observe(sectionCollaborationElement)
+observer.observe(sectionImagesElement)
+observer.observe(sectionTagsElement)
+observer.observe(sectionCommentsElement)
+observer.observe(sectionMobileElement)
+observer.observe(sectionCtaElement)
+
+

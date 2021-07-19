@@ -5,9 +5,7 @@
 // expand console logs, save, reformat, and copy to array, add { side }
 
 let introStrokes = [
-
   // top
-
   [
     {x: 23, y: 24, scrollX: 0, scrollY: 0, elapsedTime: 1, side: 'top'},
     {x: 23, y: 23.5, scrollX: 0, scrollY: 0, elapsedTime: 24, side: 'top'},
@@ -104,9 +102,7 @@ let introStrokes = [
     {x: 304.5, y: 6.5, scrollX: 0, scrollY: 0, elapsedTime: 3733, side: 'top'},
     {x: 305, y: 6, scrollX: 0, scrollY: 0, elapsedTime: 3749, side: 'top'},
   ],
-
   // right
-
   [
     {x: 10.5, y: 46, scrollX: 0, scrollY: 0, elapsedTime: 15, side: 'right'},
     {x: 10.5, y: 46, scrollX: 0, scrollY: 0, elapsedTime: 31, side: 'right'},
@@ -139,6 +135,65 @@ let introStrokes = [
     {x: 34, y: 109, scrollX: 0, scrollY: 0, elapsedTime: 1167, side: 'right'},
     {x: 34.5, y: 109, scrollX: 0, scrollY: 0, elapsedTime: 1207, side: 'right'},
   ],
-
 ]
 
+let collaborationStrokes = [
+
+
+[
+{x: 30.5, y: 39.5, scrollX: 0, scrollY: 0, elapsedTime: 7},
+{x: 28, y: 38, scrollX: 0, scrollY: 0, elapsedTime: 23},
+{x: 25.5, y: 37, scrollX: 0, scrollY: 0, elapsedTime: 39},
+{x: 23.5, y: 35.5, scrollX: 0, scrollY: 0, elapsedTime: 56},
+{x: 22, y: 34.5, scrollX: 0, scrollY: 0, elapsedTime: 72},
+{x: 20.5, y: 34, scrollX: 0, scrollY: 0, elapsedTime: 88},
+{x: 19.5, y: 33.5, scrollX: 0, scrollY: 0, elapsedTime: 105},
+{x: 19, y: 32.5, scrollX: 0, scrollY: 0, elapsedTime: 122},
+{x: 18.5, y: 32.5, scrollX: 0, scrollY: 0, elapsedTime: 138},
+{x: 18, y: 32.5, scrollX: 0, scrollY: 0, elapsedTime: 200},
+{x: 18, y: 32, scrollX: 0, scrollY: 0, elapsedTime: 224},
+
+],
+[
+{x: 24.5, y: 80.5, scrollX: 0, scrollY: 0, elapsedTime: 866},
+{x: 24, y: 80.5, scrollX: 0, scrollY: 0, elapsedTime: 880},
+{x: 23.5, y: 80.5, scrollX: 0, scrollY: 0, elapsedTime: 896},
+{x: 22, y: 80.5, scrollX: 0, scrollY: 0, elapsedTime: 912},
+{x: 20.5, y: 80.5, scrollX: 0, scrollY: 0, elapsedTime: 928},
+{x: 18.5, y: 80.5, scrollX: 0, scrollY: 0, elapsedTime: 944},
+{x: 17.5, y: 80.5, scrollX: 0, scrollY: 0, elapsedTime: 955},
+{x: 16.5, y: 80, scrollX: 0, scrollY: 0, elapsedTime: 971},
+{x: 16, y: 80, scrollX: 0, scrollY: 0, elapsedTime: 992},
+{x: 15.5, y: 80, scrollX: 0, scrollY: 0, elapsedTime: 1065},
+{x: 15, y: 79.5, scrollX: 0, scrollY: 0, elapsedTime: 1080},
+{x: 14.5, y: 79.5, scrollX: 0, scrollY: 0, elapsedTime: 1096},
+{x: 14, y: 79.5, scrollX: 0, scrollY: 0, elapsedTime: 1112},
+
+],
+[
+{x: 32.5, y: 119.5, scrollX: 0, scrollY: 0, elapsedTime: 1728},
+{x: 31.5, y: 119.5, scrollX: 0, scrollY: 0, elapsedTime: 1745},
+{x: 30.5, y: 119.5, scrollX: 0, scrollY: 0, elapsedTime: 1757},
+{x: 29.5, y: 119.5, scrollX: 0, scrollY: 0, elapsedTime: 1768},
+{x: 29, y: 120, scrollX: 0, scrollY: 0, elapsedTime: 1784},
+{x: 28, y: 120, scrollX: 0, scrollY: 0, elapsedTime: 1800},
+{x: 26.5, y: 120.5, scrollX: 0, scrollY: 0, elapsedTime: 1816},
+{x: 24.5, y: 121, scrollX: 0, scrollY: 0, elapsedTime: 1832},
+{x: 23.5, y: 121, scrollX: 0, scrollY: 0, elapsedTime: 1848},
+{x: 22.5, y: 122, scrollX: 0, scrollY: 0, elapsedTime: 1864},
+{x: 21.5, y: 122.5, scrollX: 0, scrollY: 0, elapsedTime: 1880},
+{x: 21, y: 123, scrollX: 0, scrollY: 0, elapsedTime: 1896},
+{x: 20, y: 123.5, scrollX: 0, scrollY: 0, elapsedTime: 1912},
+{x: 19.5, y: 123.5, scrollX: 0, scrollY: 0, elapsedTime: 1928},
+{x: 19, y: 124, scrollX: 0, scrollY: 0, elapsedTime: 1939},
+{x: 18.5, y: 124, scrollX: 0, scrollY: 0, elapsedTime: 1956},
+{x: 18, y: 124.5, scrollX: 0, scrollY: 0, elapsedTime: 1968},
+{x: 17, y: 124.5, scrollX: 0, scrollY: 0, elapsedTime: 1983},
+{x: 16, y: 124.5, scrollX: 0, scrollY: 0, elapsedTime: 1998},
+{x: 15, y: 124.5, scrollX: 0, scrollY: 0, elapsedTime: 2015},
+{x: 14.5, y: 124.5, scrollX: 0, scrollY: 0, elapsedTime: 2035},
+{x: 14, y: 124, scrollX: 0, scrollY: 0, elapsedTime: 2048},
+{x: 13.5, y: 123.5, scrollX: 0, scrollY: 0, elapsedTime: 2064},
+]
+
+]
