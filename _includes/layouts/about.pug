@@ -7,13 +7,16 @@ article.about
   section.what-is-kinopio
     h1 Spatial Thinking for New Ideas and Hard Problems
 
+    // TODO width=560 height=290
     video.overview#about-page-video(autoplay loop muted playsinline)
       source(src="/assets/about/overview.mp4")
     p Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
 
+
   section.top-cta
     p No sign up required.
     include /cta.pug
+
 
   section.uses
     span For
@@ -106,29 +109,36 @@ article.about
 
     p Basically, for figuring stuff out – by yourself or collaboratively.
 
+
   section.features
     h2 Create Lively Freeform Spaces
 
     .grid-container
+
+      // TODO width=392 height=275 in css
       .grid-item
         p Real-Time Collaboration
+        // ?
         video(autoplay loop muted playsinline)
           source(src="/assets/about/real-time-collaboration.mp4")
       .grid-item
-          p Images and Links
-          p [vid]
+        p Images and Links
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/feature-images-and-links.mp4")
       .grid-item
         p [[Tags]]
         video(autoplay loop muted playsinline)
-          source(src="/assets/about/tags-closeup.mp4")
+          source(src="/assets/about/feature-tags.mp4")
       .grid-item
-          p ((Comments))
-          video(autoplay loop muted playsinline)
-            source(src="/assets/about/comments.mp4")
+        p ((Comments))
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/feature-comments.mp4")
 
     p Desktop and Mobile Apps
+    // TODO width=300 height=519
     video.mobile-video(autoplay loop muted playsinline)
       source(src="/assets/about/mobile-improvments-small.mp4")
+
 
   section.bottom-cta
     p No sign up required. Export your data at any time.
