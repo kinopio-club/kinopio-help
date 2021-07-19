@@ -20,44 +20,47 @@ function initPlaybackCanvas () {
   console.log('💐 auto paint ready')
 }
 
+function shouldStartNewStroke(strokes, currentStroke) {
+  const prevStrokesLength = strokes.length
+  strokes = strokes.filter(stroke => Boolean(stroke.length))
+  const newStrokesLength = strokes.length
+  if (prevStrokesLength > newStrokesLength) {
+    currentStroke = []
+  }
+  return { strokes, currentStroke }
+}
+
+
+// Intro
+
 let autoPaintIntroRequestId
-let autoPaintStroke = []
+let currentIntroStroke = []
 
-
-function drawPlaybackStroke() {
-  if (autoPaintStroke.length < 2) { return }
+function paintIntroStroke() {
+  if (currentIntroStroke.length < 2) { return }
   autoPaintContext.beginPath()
-  autoPaintContext.moveTo(autoPaintStroke[0].x + autoPaintStroke[0].scrollX, autoPaintStroke[0].y + autoPaintStroke[0].scrollY)
-  autoPaintStroke.forEach((point) => {
+  autoPaintContext.moveTo(currentIntroStroke[0].x + currentIntroStroke[0].scrollX, currentIntroStroke[0].y + currentIntroStroke[0].scrollY)
+  currentIntroStroke.forEach((point) => {
     autoPaintContext.lineTo(point.x + point.scrollX, point.y + point.scrollY)
   })
   autoPaintContext.stroke()
 }
 
-function checkIfShouldStartNewStroke() {
-  const prevStrokesLength = introStrokes.length
-  introStrokes = introStrokes.filter(stroke => Boolean(stroke.length))
-  const newStrokesLength = introStrokes.length
-  if (prevStrokesLength > newStrokesLength) {
-    autoPaintStroke = []
-  }
-}
-
-// Intro
-
 function autoPaintIntro(timestamp) {
   let stroke = introStrokes[0]
   stroke = stroke.filter(point => {
     if (point.elapsedTime <= timestamp) {
-      autoPaintStroke.push(point)
+      currentIntroStroke.push(point)
       return false
     } else {
       return true
     }
   })
   introStrokes[0] = stroke
-  checkIfShouldStartNewStroke()
-  drawPlaybackStroke()
+  const newStrokes = shouldStartNewStroke(introStrokes, currentIntroStroke)
+  introStrokes = newStrokes.strokes
+  currentIntroStroke = newStrokes.currentStroke
+  paintIntroStroke()
   if (introStrokes.length) {
     autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
   } else {
@@ -149,7 +152,7 @@ aboutPageVideo.oncanplay = function() {
 
 let isAutoPaintingSections = {}
 let autoPaintCollaborationRequestId, autoPaintImagesRequestId, autoPaintTagsRequestId, autoPaintCommentsRequestId, autoPaintMobileRequestId, autoPaintCtaRequestId
-let autoPaintCollaborationStroke = []
+let currentCollaborationStroke = []
 
 function updateElapsedTime(strokes) {
   let time = Date.now()
@@ -165,20 +168,20 @@ function autoPaintCollaboration(timestamp) {
   let stroke = collaborationStrokes[0]
   stroke = stroke.filter(point => {
     if (point.elapsedTime <= timestamp) {
-      autoPaintStroke.push(point)
+      currentCollaborationStroke.push(point)
       return false
     } else {
       return true
     }
   })
-  introStrokes[0] = stroke
-  checkIfShouldStartNewStroke()
-  drawPlaybackStroke()
-  if (introStrokes.length) {
-    autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
-  } else {
-    window.cancelAnimationFrame(autoPaintCollaborationRequestId)
-  }
+  // collaborationStrokes[0] = stroke
+  // shouldStartNewStroke(collaborationStrokes, currentCollaborationStroke)
+  // paintIntroStroke()
+  // if (collaborationStrokes.length) {
+  //   autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
+  // } else {
+  //   window.cancelAnimationFrame(autoPaintCollaborationRequestId)
+  // }
 }
 
 let handleIntersect = (entries, observer) => {
