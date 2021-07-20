@@ -93,31 +93,35 @@ function positionStrokes({ element, side, sectionName }) {
 }
 
 
-// Intro
-
-let autoPaintIntroRequestId
-
-function autoPaintIntro(timestamp) {
-  let stroke = recordedStrokes.intro[0]
+function autoPaint(timestamp, sectionName, skipDelay) {
+  if (!isElapsedTimeUpdated[sectionName] || skipDelay) {
+    recordedStrokes[sectionName] = updateElapsedTime(recordedStrokes[sectionName], timestamp)
+    isElapsedTimeUpdated[sectionName] = true
+    console.log('▶️', sectionName, recordedStrokes[sectionName])
+  }
+  let stroke = recordedStrokes[sectionName][0]
   stroke = stroke.filter(point => {
     if (point.elapsedTime <= timestamp) {
-      currentAutoStroke.intro.push(point)
+      currentAutoStroke[sectionName].push(point)
       return false
     } else {
       return true
     }
   })
-  recordedStrokes.intro[0] = stroke
-  const newStrokes = shouldStartNewStrokeIfCurrentStrokeIsEmpty(recordedStrokes.intro, currentAutoStroke.intro)
-  recordedStrokes.intro = newStrokes.strokes
-  currentAutoStroke.intro = newStrokes.currentStroke
-  paintStroke('intro', currentAutoStroke.intro)
-  if (recordedStrokes.intro.length) {
-    autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
+  recordedStrokes[sectionName][0] = stroke
+  const newStrokes = shouldStartNewStrokeIfCurrentStrokeIsEmpty(recordedStrokes[sectionName], currentAutoStroke[sectionName])
+  recordedStrokes[sectionName] = newStrokes.strokes
+  currentAutoStroke[sectionName] = newStrokes.currentStroke
+  paintStroke(sectionName, currentAutoStroke[sectionName])
+  if (recordedStrokes[sectionName].length) {
+    sectionRequestIds[sectionName] = window.requestAnimationFrame(function(timestamp) { autoPaint(timestamp, sectionName) })
   } else {
-    window.cancelAnimationFrame(autoPaintIntroRequestId)
+    window.cancelAnimationFrame(sectionRequestIds[sectionName])
   }
 }
+
+
+// Intro
 
 function delayIntroStrokes(delayStart) {
   const autoPaintDelay = 500
@@ -147,23 +151,20 @@ function normalizeElapsedTimeIntroStrokes() {
 }
 
 const delayStart = Date.now()
-const aboutPageVideo = document.getElementById('about-page-video')
-aboutPageVideo.oncanplay = function() {
-  initAutoPaintCanvas('intro')
-  initContext('intro')
+const aboutVideoElement = document.getElementById('about-page-video')
+aboutVideoElement.oncanplay = function() {
   delayIntroStrokes(delayStart)
   normalizeElapsedTimeIntroStrokes()
-  positionStrokes({
-    element: document.getElementById('about-page-video'),
-    sectionName: 'intro'
+  startPaintingSection({
+    sectionName: 'intro',
+    side: 'left',
+    element: aboutVideoElement,
+    skipDelay: true
   })
-  console.log('▶️ intro', recordedStrokes.intro)
-  autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
 }
 
 
-// Collaboration
-
+// Trigger Features
 
 function updateElapsedTime(strokes, timestamp) {
   return strokes.map(stroke => {
@@ -174,36 +175,12 @@ function updateElapsedTime(strokes, timestamp) {
   })
 }
 
-function autoPaintCollaboration(timestamp) {
-  if (!isElapsedTimeUpdated.collaboration) {
-    recordedStrokes.collaboration = updateElapsedTime(recordedStrokes.collaboration, timestamp)
-    isElapsedTimeUpdated.collaboration = true
-    console.log('▶️ collaboration', recordedStrokes.collaboration)
-  }
-  let stroke = recordedStrokes.collaboration[0]
-  stroke = stroke.filter(point => {
-    if (point.elapsedTime <= timestamp) {
-      currentAutoStroke.collaboration.push(point)
-      return false
-    } else {
-      return true
-    }
-  })
-  recordedStrokes.collaboration[0] = stroke
-  const newStrokes = shouldStartNewStrokeIfCurrentStrokeIsEmpty(recordedStrokes.collaboration, currentAutoStroke.collaboration)
-  recordedStrokes.collaboration = newStrokes.strokes
-  currentAutoStroke.collaboration = newStrokes.currentStroke
-  paintStroke('collaboration', currentAutoStroke.collaboration)
-  if (recordedStrokes.collaboration.length) {
-    sectionRequestIds.collaboration = window.requestAnimationFrame(autoPaintCollaboration)
-  } else {
-    window.cancelAnimationFrame(sectionRequestIds.collaboration)
-  }
+function startPaintingSection({ sectionName, side, element, skipDelay }) {
+  initAutoPaintCanvas(sectionName)
+  initContext(sectionName)
+  positionStrokes({ element, side, sectionName })
+  sectionRequestIds.tags = window.requestAnimationFrame(function(timestamp) { autoPaint(timestamp, sectionName, skipDelay) })
 }
-
-
-// Trigger Features
-
 
 let handleIntersect = (entries, observer) => {
   entries.forEach(entry => {
@@ -213,21 +190,28 @@ let handleIntersect = (entries, observer) => {
         console.log('🚁', section)
         isAutoPaintingSections[section] = true
         if (section === 'collaboration') {
-          initAutoPaintCanvas('collaboration')
-          initContext('collaboration')
-          positionStrokes({
-            element: sectionCollaborationElement,
+          startPaintingSection({
+            sectionName: 'collaboration',
             side: 'left',
-            sectionName: 'collaboration'
+            element: sectionCollaborationElement
           })
-          sectionRequestIds.collaboration = window.requestAnimationFrame(autoPaintCollaboration)
         } else if (section === 'images') {
-
+          startPaintingSection({
+            sectionName: 'images',
+            side: 'right',
+            element: sectionImagesElement
+          })
         } else if (section === 'tags') {
-
+          startPaintingSection({
+            sectionName: 'tags',
+            side: 'left',
+            element: sectionTagsElement
+          })
         } else if (section === 'comments') {
 
         } else if (section === 'mobile') {
+
+          // 2 parallel sectionnames, and sides, mobile-left, mobile-right
 
         } else if (section === 'cta') {
 
