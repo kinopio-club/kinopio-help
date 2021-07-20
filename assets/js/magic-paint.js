@@ -110,6 +110,13 @@ function startStroke () {
 function endStroke () {
   allStrokes.push(currentPaintStroke)
   if (isRecording) {
+    const recordedStrokes = allStrokes.map(stroke => {
+      return stroke.map(point => {
+        delete point.scrollX
+        delete point.scrollY
+        return point
+      })
+    })
     console.log('⏺', allStrokes)
   }
   pageCanvas.getContext('2d').drawImage(canvas, prevScroll.x / 2, prevScroll.y / 2, canvas.width / 2, canvas.height / 2)
