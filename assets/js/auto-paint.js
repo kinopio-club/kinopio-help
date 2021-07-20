@@ -19,7 +19,7 @@ function initAutoPaintCanvas (canvasName) {
   autoPaintCanvases[canvasName].width = pageWidth
   autoPaintCanvases[canvasName].height = pageHeight
   autoPaintCanvases[canvasName].classList.remove('hidden')
-  console.log('💐 auto paint ready')
+  console.log('💐 auto paint ready', canvasName)
 }
 
 function initContext (contextName) {
@@ -86,7 +86,7 @@ function positionStrokes({ element, side, sectionName }) {
     return stroke.map(point => {
       const pointSide = point.side || side
       point.x = point.x + rectSide[pointSide].x
-      point.y = point.y + rectSide[pointSide].y
+      point.y = point.y + rectSide[pointSide].y + (window.scrollY / 2)
       return point
     })
   })
