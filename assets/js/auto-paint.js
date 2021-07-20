@@ -51,8 +51,8 @@ function paintStroke(contextName) {
   autoPaintContexts[contextName].stroke()
 }
 
-function positionStrokes({ element, side, sectionName, overlapOffset }) {
-  overlapOffset = overlapOffset || { x: 0, y: 0 }
+function positionStrokes({ element, side, sectionName, offset }) {
+  offset = offset || { x: 0, y: 0 }
   const rect = element.getBoundingClientRect()
   let strokesWidth = 0
   let strokesHeight = 0
@@ -71,24 +71,24 @@ function positionStrokes({ element, side, sectionName, overlapOffset }) {
   })
   const rectSide = {
     right: {
-      x: Math.round(rect.x + rect.width) / 2,
-      y: Math.round(rect.y) / 2
+      x: Math.round(rect.x + rect.width) / 2  + offset.x,
+      y: Math.round(rect.y) / 2 + offset.y
     },
     left: {
-      x: rect.x / 2 - strokesWidth,
-      y: rect.y / 2
+      x: rect.x / 2 - strokesWidth + offset.x,
+      y: rect.y / 2 + offset.y
     },
     top: {
-      x: rect.x / 2,
-      y: rect.y / 2 - strokesHeight
+      x: rect.x / 2 + offset.x,
+      y: rect.y / 2 - strokesHeight + offset.y
     },
     bottom: {
-      x: rect.x / 2,
-      y: Math.round(rect.y + rect.height) / 2
+      x: rect.x / 2 + offset.x,
+      y: Math.round(rect.y + rect.height) / 2 + offset.y
     },
     overlap: {
-      x: rect.x / 2 + overlapOffset.x,
-      y: rect.y / 2 + overlapOffset.y
+      x: rect.x / 2 + offset.x,
+      y: rect.y / 2 + offset.y
     }
   }
   recordedStrokes[sectionName] = recordedStrokes[sectionName].map(stroke => {
@@ -156,7 +156,6 @@ aboutVideoElement.oncanplay = function() {
     sectionName: 'intro',
     side: 'left',
     element: aboutVideoElement,
-    skipDelay: true
   })
 }
 
@@ -172,10 +171,10 @@ function updateElapsedTime(strokes, timestamp) {
   })
 }
 
-function startPaintingSection({ sectionName, side, element, skipDelay, overlapOffset }) {
+function startPaintingSection({ sectionName, side, element, skipDelay, offset }) {
   initAutoPaintCanvas(sectionName)
   initContext(sectionName)
-  positionStrokes({ element, side, sectionName, overlapOffset })
+  positionStrokes({ element, side, sectionName, offset })
   sectionRequestIds.tags = window.requestAnimationFrame(function(timestamp) { autoPaint(timestamp, sectionName, skipDelay) })
 }
 
@@ -227,7 +226,7 @@ let handleIntersect = (entries, observer) => {
             sectionName: 'cta-bottom',
             side: 'overlap',
             element: ctaButtonElement,
-            overlapOffset: {
+            offset: {
               x: -10,
               y: -10
             }
@@ -246,12 +245,16 @@ const sectionMobileElement = document.getElementById('feature-mobile')
 const sectionCtaElement = document.getElementById('cta-bottom')
 
 let observer = new IntersectionObserver(handleIntersect, {
-  threshold: 0.5
+  threshold: 0.7
 })
 observer.observe(sectionCollaborationElement)
 observer.observe(sectionImagesElement)
 observer.observe(sectionTagsElement)
 observer.observe(sectionCommentsElement)
+
+observer = new IntersectionObserver(handleIntersect, {
+  threshold: 0.5
+})
 observer.observe(sectionMobileElement)
 
 observer = new IntersectionObserver(handleIntersect, {
