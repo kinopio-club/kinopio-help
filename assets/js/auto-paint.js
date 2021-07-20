@@ -228,10 +228,10 @@ let handleIntersect = (entries, observer) => {
             side: 'right',
             element: sectionMobileElement
           })
-        } else if (section === 'bottom-cta') {
-          const ctaButtonElement = document.querySelector('#bottom-cta .button-to-kinopio')
+        } else if (section === 'cta-bottom') {
+          const ctaButtonElement = document.querySelector('#cta-bottom .button-to-kinopio')
           startPaintingSection({
-            sectionName: 'bottom-cta',
+            sectionName: 'cta-bottom',
             side: 'bottom',
             element: ctaButtonElement
           })
@@ -246,7 +246,7 @@ const sectionImagesElement = document.getElementById('feature-images')
 const sectionTagsElement = document.getElementById('feature-tags')
 const sectionCommentsElement = document.getElementById('feature-comments')
 const sectionMobileElement = document.getElementById('feature-mobile')
-const sectionCtaElement = document.getElementById('bottom-cta')
+const sectionCtaElement = document.getElementById('cta-bottom')
 
 let observer = new IntersectionObserver(handleIntersect, {
   threshold: 1

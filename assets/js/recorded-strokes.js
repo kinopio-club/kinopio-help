@@ -732,7 +732,7 @@ let recordedStrokes = {
     ]
   ],
 
-  'bottom-cta': [
+  'cta-bottom': [
     [
       {x: 15, y: 16.5, scrollX: 0, scrollY: 0, elapsedTime: 63},
       {x: 16, y: 15.5, scrollX: 0, scrollY: 0, elapsedTime: 78},
