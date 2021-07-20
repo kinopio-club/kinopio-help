@@ -1,28 +1,36 @@
 const autoPaintStrokeColor = '#FFD0C1' // salmon
 
-let autoPaintCanvas, autoPaintContext
+let autoPaintCanvases = {}
 let autoPaintContexts = {}
-
 
 let currentAutoStroke = {}
 
-initAutoPaintCanvas()
 
-function initAutoPaintCanvas () {
-  autoPaintCanvas = document.getElementById('auto-paint-background')
-  autoPaintCanvas.classList.add('hidden')
+// init
+
+initAutoPaintCanvas('intro')
+initContext('intro')
+initAutoPaintCanvas('collaboration')
+initContext('collaboration')
+
+
+// utils
+
+function initAutoPaintCanvas (canvasName) {
+  autoPaintCanvases[canvasName] = document.getElementById(`canvas-${canvasName}`)
+  autoPaintCanvases[canvasName].classList.add('hidden')
   const body = document.body
   const html = document.documentElement
   const pageWidth = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth)
   const pageHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
-  autoPaintCanvas.width = pageWidth
-  autoPaintCanvas.height = pageHeight
-  autoPaintCanvas.classList.remove('hidden')
+  autoPaintCanvases[canvasName].width = pageWidth
+  autoPaintCanvases[canvasName].height = pageHeight
+  autoPaintCanvases[canvasName].classList.remove('hidden')
   console.log('💐 auto paint ready')
 }
 
 function initContext (contextName) {
-  autoPaintContexts[contextName] = autoPaintCanvas.getContext('2d')
+  autoPaintContexts[contextName] = autoPaintCanvases[contextName].getContext('2d')
   autoPaintContexts[contextName].scale(2,2)
   autoPaintContexts[contextName].strokeStyle = autoPaintStrokeColor
   autoPaintContexts[contextName].lineWidth = 10
@@ -56,9 +64,8 @@ function paintStroke(contextName) {
 
 let autoPaintIntroRequestId
 
-
 function autoPaintIntro(timestamp) {
-  let stroke = introStrokes[0]
+  let stroke = recordedStrokes.intro[0]
   stroke = stroke.filter(point => {
     if (point.elapsedTime <= timestamp) {
       currentAutoStroke.intro.push(point)
@@ -67,12 +74,12 @@ function autoPaintIntro(timestamp) {
       return true
     }
   })
-  introStrokes[0] = stroke
-  const newStrokes = shouldStartNewStrokeIfCurrentStrokeIsEmpty(introStrokes, currentAutoStroke.intro)
-  introStrokes = newStrokes.strokes
+  recordedStrokes.intro[0] = stroke
+  const newStrokes = shouldStartNewStrokeIfCurrentStrokeIsEmpty(recordedStrokes.intro, currentAutoStroke.intro)
+  recordedStrokes.intro = newStrokes.strokes
   currentAutoStroke.intro = newStrokes.currentStroke
   paintStroke('intro', currentAutoStroke.intro)
-  if (introStrokes.length) {
+  if (recordedStrokes.intro.length) {
     autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
   } else {
     window.cancelAnimationFrame(autoPaintIntroRequestId)
@@ -82,7 +89,7 @@ function autoPaintIntro(timestamp) {
 function delayIntroStrokes(delayStart) {
   const autoPaintDelay = 500
   const delay = Date.now() - delayStart + autoPaintDelay
-  introStrokes = introStrokes.map(stroke => {
+  recordedStrokes.intro = recordedStrokes.intro.map(stroke => {
     return stroke.map(point => {
       point.elapsedTime = point.elapsedTime + delay
       return point
@@ -93,7 +100,7 @@ function delayIntroStrokes(delayStart) {
 function normalizeElapsedTimeIntroStrokes() {
   let lastTime
   let delta = 0
-  introStrokes = introStrokes.map(stroke => {
+  recordedStrokes.intro = recordedStrokes.intro.map(stroke => {
     return stroke.map((point, index) => {
       point.elapsedTime = point.elapsedTime + delta
       if (point.elapsedTime < lastTime) {
@@ -111,7 +118,7 @@ function positionIntroStrokes() {
   const rect = element.getBoundingClientRect()
   let strokesWidth = 0
   let strokesHeight = 0
-  introStrokes.forEach(stroke => {
+  recordedStrokes.intro.forEach(stroke => {
     stroke.forEach(point => {
       const x = point.x + autoPaintContexts.intro.lineWidth
       if (x > strokesWidth && point.side === 'left') {
@@ -137,7 +144,7 @@ function positionIntroStrokes() {
       y: rect.y / 2 - strokesHeight
     },
   }
-  introStrokes = introStrokes.map(stroke => {
+  recordedStrokes.intro = recordedStrokes.intro.map(stroke => {
     return stroke.map(point => {
       const side = point.side
       point.x = point.x + rectSide[side].x
@@ -150,31 +157,19 @@ function positionIntroStrokes() {
 const delayStart = Date.now()
 const aboutPageVideo = document.getElementById('about-page-video')
 aboutPageVideo.oncanplay = function() {
-  initContext('intro')
   delayIntroStrokes(delayStart)
   normalizeElapsedTimeIntroStrokes()
   positionIntroStrokes()
-  console.log('▶️ intro', introStrokes)
+  console.log('▶️ intro', recordedStrokes.intro)
   autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Features
+
+
+// Collaboration
+
 
 let isAutoPaintingSections = {}
 let isElapsedTimeUpdated = {}
@@ -190,15 +185,13 @@ function updateElapsedTime(strokes, timestamp) {
   })
 }
 
-
-
 function autoPaintCollaboration(timestamp) {
   if (!isElapsedTimeUpdated.collaboration) {
-    collaborationStrokes = updateElapsedTime(collaborationStrokes, timestamp)
+    recordedStrokes.collaboration = updateElapsedTime(recordedStrokes.collaboration, timestamp)
     isElapsedTimeUpdated.collaboration = true
-    console.log('▶️ collaboration', collaborationStrokes)
+    console.log('▶️ collaboration', recordedStrokes.collaboration)
   }
-  let stroke = collaborationStrokes[0]
+  let stroke = recordedStrokes.collaboration[0]
   stroke = stroke.filter(point => {
     if (point.elapsedTime <= timestamp) {
       currentAutoStroke.collaboration.push(point)
@@ -207,12 +200,12 @@ function autoPaintCollaboration(timestamp) {
       return true
     }
   })
-  collaborationStrokes[0] = stroke
-  const newStrokes = shouldStartNewStrokeIfCurrentStrokeIsEmpty(collaborationStrokes, currentAutoStroke.collaboration)
-  collaborationStrokes = newStrokes.strokes
+  recordedStrokes.collaboration[0] = stroke
+  const newStrokes = shouldStartNewStrokeIfCurrentStrokeIsEmpty(recordedStrokes.collaboration, currentAutoStroke.collaboration)
+  recordedStrokes.collaboration = newStrokes.strokes
   currentAutoStroke.collaboration = newStrokes.currentStroke
   paintStroke('collaboration', currentAutoStroke.collaboration)
-  if (collaborationStrokes.length) {
+  if (recordedStrokes.collaboration.length) {
     autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
   } else {
     window.cancelAnimationFrame(autoPaintCollaborationRequestId)
@@ -227,8 +220,6 @@ let handleIntersect = (entries, observer) => {
         console.log('🚁', section)
         isAutoPaintingSections[section] = true
         if (section === 'collaboration') {
-          // cannot create more than 1 context per canvas, so have to create a new canvas for each
-          initContext('collaboration')
           autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
         } else if (section === 'images') {
 
@@ -241,14 +232,6 @@ let handleIntersect = (entries, observer) => {
         } else if (section === 'cta') {
 
         }
-
-
-        // autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
-
-        //   autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
-        // } else {
-        //   window.cancelAnimationFrame(autoPaintIntroRequestId)
-
       }
     }
   })
