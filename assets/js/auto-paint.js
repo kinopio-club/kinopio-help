@@ -149,15 +149,14 @@ function normalizeElapsedTimeIntroStrokes() {
 const delayStart = Date.now()
 const aboutPageVideo = document.getElementById('about-page-video')
 aboutPageVideo.oncanplay = function() {
-  const positionOptions = {
-    element: document.getElementById('about-page-video'),
-    sectionName: 'intro'
-  }
   initAutoPaintCanvas('intro')
   initContext('intro')
   delayIntroStrokes(delayStart)
   normalizeElapsedTimeIntroStrokes()
-  positionStrokes(positionOptions)
+  positionStrokes({
+    element: document.getElementById('about-page-video'),
+    sectionName: 'intro'
+  })
   console.log('▶️ intro', recordedStrokes.intro)
   autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
 }
@@ -214,14 +213,13 @@ let handleIntersect = (entries, observer) => {
         console.log('🚁', section)
         isAutoPaintingSections[section] = true
         if (section === 'collaboration') {
-          const positionOptions = {
+          initAutoPaintCanvas('collaboration')
+          initContext('collaboration')
+          positionStrokes({
             element: sectionCollaborationElement,
             side: 'left',
             sectionName: 'collaboration'
-          }
-          initAutoPaintCanvas('collaboration')
-          initContext('collaboration')
-          positionStrokes(positionOptions)
+          })
           sectionRequestIds.collaboration = window.requestAnimationFrame(autoPaintCollaboration)
         } else if (section === 'images') {
 
