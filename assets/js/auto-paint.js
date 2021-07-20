@@ -208,7 +208,11 @@ let handleIntersect = (entries, observer) => {
             element: sectionTagsElement
           })
         } else if (section === 'comments') {
-
+          startPaintingSection({
+            sectionName: 'comments',
+            side: 'right',
+            element: sectionCommentsElement
+          })
         } else if (section === 'mobile') {
 
           // 2 parallel sectionnames, and sides, mobile-left, mobile-right
