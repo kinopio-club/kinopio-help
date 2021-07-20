@@ -1,4 +1,4 @@
-const autoPaintStrokeColor = '#FFD0C1' // salmon
+const autoPaintStrokeColor = '#abfcec' // cyan
 let autoPaintCanvases = {}
 let autoPaintContexts = {}
 let currentAutoStroke = {}
@@ -51,7 +51,8 @@ function paintStroke(contextName) {
   autoPaintContexts[contextName].stroke()
 }
 
-function positionStrokes({ element, side, sectionName }) {
+function positionStrokes({ element, side, sectionName, overlapOffset }) {
+  overlapOffset = overlapOffset || { x: 0, y: 0 }
   const rect = element.getBoundingClientRect()
   let strokesWidth = 0
   let strokesHeight = 0
@@ -84,6 +85,10 @@ function positionStrokes({ element, side, sectionName }) {
     bottom: {
       x: rect.x / 2,
       y: Math.round(rect.y + rect.height) / 2
+    },
+    overlap: {
+      x: rect.x / 2 + overlapOffset.x,
+      y: rect.y / 2 + overlapOffset.y
     }
   }
   recordedStrokes[sectionName] = recordedStrokes[sectionName].map(stroke => {
@@ -127,17 +132,6 @@ function autoPaint(timestamp, sectionName, skipDelay) {
 
 // Intro
 
-function delayIntroStrokes(delayStart) {
-  const autoPaintDelay = 500
-  const delay = Date.now() - delayStart + autoPaintDelay
-  recordedStrokes.intro = recordedStrokes.intro.map(stroke => {
-    return stroke.map(point => {
-      point.elapsedTime = point.elapsedTime + delay
-      return point
-    })
-  })
-}
-
 function normalizeElapsedTimeIntroStrokes() {
   let lastTime
   let delta = 0
@@ -157,7 +151,6 @@ function normalizeElapsedTimeIntroStrokes() {
 const delayStart = Date.now()
 const aboutVideoElement = document.getElementById('about-page-video')
 aboutVideoElement.oncanplay = function() {
-  delayIntroStrokes(delayStart)
   normalizeElapsedTimeIntroStrokes()
   startPaintingSection({
     sectionName: 'intro',
@@ -179,10 +172,10 @@ function updateElapsedTime(strokes, timestamp) {
   })
 }
 
-function startPaintingSection({ sectionName, side, element, skipDelay }) {
+function startPaintingSection({ sectionName, side, element, skipDelay, overlapOffset }) {
   initAutoPaintCanvas(sectionName)
   initContext(sectionName)
-  positionStrokes({ element, side, sectionName })
+  positionStrokes({ element, side, sectionName, overlapOffset })
   sectionRequestIds.tags = window.requestAnimationFrame(function(timestamp) { autoPaint(timestamp, sectionName, skipDelay) })
 }
 
@@ -232,8 +225,12 @@ let handleIntersect = (entries, observer) => {
           const ctaButtonElement = document.querySelector('#cta-bottom .button-to-kinopio')
           startPaintingSection({
             sectionName: 'cta-bottom',
-            side: 'bottom',
-            element: ctaButtonElement
+            side: 'overlap',
+            element: ctaButtonElement,
+            overlapOffset: {
+              x: -10,
+              y: -10
+            }
           })
         }
       }
@@ -249,13 +246,16 @@ const sectionMobileElement = document.getElementById('feature-mobile')
 const sectionCtaElement = document.getElementById('cta-bottom')
 
 let observer = new IntersectionObserver(handleIntersect, {
-  threshold: 1
+  threshold: 0.5
 })
 observer.observe(sectionCollaborationElement)
 observer.observe(sectionImagesElement)
 observer.observe(sectionTagsElement)
 observer.observe(sectionCommentsElement)
 observer.observe(sectionMobileElement)
-observer.observe(sectionCtaElement)
 
+observer = new IntersectionObserver(handleIntersect, {
+  threshold: 1
+})
+observer.observe(sectionCtaElement)
 
