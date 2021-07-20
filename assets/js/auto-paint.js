@@ -36,7 +36,6 @@ function initContext (contextName) {
   currentAutoStroke[contextName] = []
 }
 
-
 function shouldStartNewStrokeIfCurrentStrokeIsEmpty(strokes, currentStroke) {
   const prevStrokesLength = strokes.length
   strokes = strokes.filter(stroke => Boolean(stroke.length))
@@ -55,6 +54,47 @@ function paintStroke(contextName) {
     autoPaintContexts[contextName].lineTo(point.x, point.y)
   })
   autoPaintContexts[contextName].stroke()
+}
+
+function positionStrokes({ element, side, sectionName }) {
+  const rect = element.getBoundingClientRect()
+  let strokesWidth = 0
+  let strokesHeight = 0
+  recordedStrokes[sectionName].forEach(stroke => {
+    stroke.forEach(point => {
+      const pointSide = point.side || side
+      const x = point.x + autoPaintContexts[sectionName].lineWidth
+      if (x > strokesWidth && pointSide === 'left') {
+        strokesWidth = x
+      }
+      const y = point.y + autoPaintContexts[sectionName].lineWidth
+      if (y > strokesHeight && pointSide === 'top') {
+        strokesHeight = y
+      }
+    })
+  })
+  const rectSide = {
+    right: {
+      x: Math.round(rect.x + rect.width) / 2,
+      y: Math.round(rect.y) / 2
+    },
+    left: {
+      x: rect.x / 2 - strokesWidth,
+      y: rect.y / 2
+    },
+    top: {
+      x: rect.x / 2,
+      y: rect.y / 2 - strokesHeight
+    },
+  }
+  recordedStrokes[sectionName] = recordedStrokes[sectionName].map(stroke => {
+    return stroke.map(point => {
+      const pointSide = point.side || side
+      point.x = point.x + rectSide[pointSide].x
+      point.y = point.y + rectSide[pointSide].y
+      return point
+    })
+  })
 }
 
 
@@ -111,53 +151,16 @@ function normalizeElapsedTimeIntroStrokes() {
   })
 }
 
-function positionIntroStrokes() {
-  const element = document.getElementById('about-page-video')
-  const rect = element.getBoundingClientRect()
-  let strokesWidth = 0
-  let strokesHeight = 0
-  recordedStrokes.intro.forEach(stroke => {
-    stroke.forEach(point => {
-      const x = point.x + autoPaintContexts.intro.lineWidth
-      if (x > strokesWidth && point.side === 'left') {
-        strokesWidth = x
-      }
-      const y = point.y + autoPaintContexts.intro.lineWidth
-      if (y > strokesHeight && point.side === 'top') {
-        strokesHeight = y
-      }
-    })
-  })
-  const rectSide = {
-    right: {
-      x: Math.round(rect.x + rect.width) / 2,
-      y: Math.round(rect.y) / 2
-    },
-    left: {
-      x: rect.x / 2 - strokesWidth,
-      y: rect.y / 2
-    },
-    top: {
-      x: rect.x / 2,
-      y: rect.y / 2 - strokesHeight
-    },
-  }
-  recordedStrokes.intro = recordedStrokes.intro.map(stroke => {
-    return stroke.map(point => {
-      const side = point.side
-      point.x = point.x + rectSide[side].x
-      point.y = point.y + rectSide[side].y
-      return point
-    })
-  })
-}
-
 const delayStart = Date.now()
 const aboutPageVideo = document.getElementById('about-page-video')
 aboutPageVideo.oncanplay = function() {
+  const positionOptions = {
+    element: document.getElementById('about-page-video'),
+    sectionName: 'intro'
+  }
   delayIntroStrokes(delayStart)
   normalizeElapsedTimeIntroStrokes()
-  positionIntroStrokes()
+  positionStrokes(positionOptions)
   console.log('▶️ intro', recordedStrokes.intro)
   autoPaintIntroRequestId = window.requestAnimationFrame(autoPaintIntro)
 }
@@ -214,6 +217,12 @@ let handleIntersect = (entries, observer) => {
         console.log('🚁', section)
         isAutoPaintingSections[section] = true
         if (section === 'collaboration') {
+          const positionOptions = {
+            element: sectionCollaborationElement,
+            side: 'left',
+            sectionName: 'collaboration'
+          }
+          positionStrokes(positionOptions)
           sectionRequestIds.collaboration = window.requestAnimationFrame(autoPaintCollaboration)
         } else if (section === 'images') {
 
