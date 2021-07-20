@@ -6,11 +6,6 @@ let isAutoPaintingSections = {}
 let isElapsedTimeUpdated = {}
 let sectionRequestIds = {}
 
-initAutoPaintCanvas('intro')
-initContext('intro')
-initAutoPaintCanvas('collaboration')
-initContext('collaboration')
-
 
 // utils
 
@@ -158,6 +153,8 @@ aboutPageVideo.oncanplay = function() {
     element: document.getElementById('about-page-video'),
     sectionName: 'intro'
   }
+  initAutoPaintCanvas('intro')
+  initContext('intro')
   delayIntroStrokes(delayStart)
   normalizeElapsedTimeIntroStrokes()
   positionStrokes(positionOptions)
@@ -222,6 +219,8 @@ let handleIntersect = (entries, observer) => {
             side: 'left',
             sectionName: 'collaboration'
           }
+          initAutoPaintCanvas('collaboration')
+          initContext('collaboration')
           positionStrokes(positionOptions)
           sectionRequestIds.collaboration = window.requestAnimationFrame(autoPaintCollaboration)
         } else if (section === 'images') {
