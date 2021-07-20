@@ -1,12 +1,10 @@
 const autoPaintStrokeColor = '#FFD0C1' // salmon
-
 let autoPaintCanvases = {}
 let autoPaintContexts = {}
-
 let currentAutoStroke = {}
-
-
-// init
+let isAutoPaintingSections = {}
+let isElapsedTimeUpdated = {}
+let sectionRequestIds = {}
 
 initAutoPaintCanvas('intro')
 initContext('intro')
@@ -165,16 +163,8 @@ aboutPageVideo.oncanplay = function() {
 }
 
 
-// Features
-
-
 // Collaboration
 
-
-let isAutoPaintingSections = {}
-let isElapsedTimeUpdated = {}
-let autoPaintCollaborationRequestId, autoPaintImagesRequestId, autoPaintTagsRequestId, autoPaintCommentsRequestId, autoPaintMobileRequestId, autoPaintCtaRequestId
-let currentCollaborationStroke = []
 
 function updateElapsedTime(strokes, timestamp) {
   return strokes.map(stroke => {
@@ -206,11 +196,15 @@ function autoPaintCollaboration(timestamp) {
   currentAutoStroke.collaboration = newStrokes.currentStroke
   paintStroke('collaboration', currentAutoStroke.collaboration)
   if (recordedStrokes.collaboration.length) {
-    autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
+    sectionRequestIds.collaboration = window.requestAnimationFrame(autoPaintCollaboration)
   } else {
-    window.cancelAnimationFrame(autoPaintCollaborationRequestId)
+    window.cancelAnimationFrame(sectionRequestIds.collaboration)
   }
 }
+
+
+// Trigger Features
+
 
 let handleIntersect = (entries, observer) => {
   entries.forEach(entry => {
@@ -220,7 +214,7 @@ let handleIntersect = (entries, observer) => {
         console.log('🚁', section)
         isAutoPaintingSections[section] = true
         if (section === 'collaboration') {
-          autoPaintCollaborationRequestId = window.requestAnimationFrame(autoPaintCollaboration)
+          sectionRequestIds.collaboration = window.requestAnimationFrame(autoPaintCollaboration)
         } else if (section === 'images') {
 
         } else if (section === 'tags') {
