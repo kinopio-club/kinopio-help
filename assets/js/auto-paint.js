@@ -81,6 +81,10 @@ function positionStrokes({ element, side, sectionName }) {
       x: rect.x / 2,
       y: rect.y / 2 - strokesHeight
     },
+    bottom: {
+      x: rect.x / 2,
+      y: Math.round(rect.y + rect.height) / 2
+    }
   }
   recordedStrokes[sectionName] = recordedStrokes[sectionName].map(stroke => {
     return stroke.map(point => {
@@ -214,10 +218,18 @@ let handleIntersect = (entries, observer) => {
             element: sectionCommentsElement
           })
         } else if (section === 'mobile') {
-
-          // 2 parallel sectionnames, and sides, mobile-left, mobile-right
-
-        } else if (section === 'cta') {
+          startPaintingSection({
+            sectionName: 'mobile-left',
+            side: 'left',
+            element: sectionMobileElement
+          })
+          startPaintingSection({
+            sectionName: 'mobile-right',
+            side: 'right',
+            element: sectionMobileElement
+          })
+        } else if (section === 'bottom-cta') {
+          // relative to bottom of cta button
 
         }
       }
