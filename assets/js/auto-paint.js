@@ -229,8 +229,12 @@ let handleIntersect = (entries, observer) => {
             element: sectionMobileElement
           })
         } else if (section === 'bottom-cta') {
-          // relative to bottom of cta button
-
+          const ctaButtonElement = document.querySelector('#bottom-cta .button-to-kinopio')
+          startPaintingSection({
+            sectionName: 'bottom-cta',
+            side: 'bottom',
+            element: ctaButtonElement
+          })
         }
       }
     }

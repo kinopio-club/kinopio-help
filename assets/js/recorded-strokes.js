@@ -137,6 +137,7 @@ let recordedStrokes = {
       {x: 34.5, y: 109, scrollX: 0, scrollY: 0, elapsedTime: 1207, side: 'right'},
     ],
   ],
+
   collaboration: [
     [
       {x: 7.5, y: 22, scrollX: 0, scrollY: 0, elapsedTime: 31},
@@ -204,6 +205,7 @@ let recordedStrokes = {
       {x: 24.5, y: 43, scrollX: 0, scrollY: 0, elapsedTime: 1448},
     ]
   ],
+
   images: [
     [
       {x: 45, y: 109, scrollX: 0, scrollY: 0, elapsedTime: 43},
@@ -237,7 +239,6 @@ let recordedStrokes = {
       {x: 15.5, y: 76.5, scrollX: 0, scrollY: 0, elapsedTime: 596},
       {x: 15, y: 76.5, scrollX: 0, scrollY: 0, elapsedTime: 611},
     ],
-
     [
       {x: 11, y: 75, scrollX: 0, scrollY: 0, elapsedTime: 846},
       {x: 11, y: 75.5, scrollX: 0, scrollY: 0, elapsedTime: 859},
@@ -271,6 +272,7 @@ let recordedStrokes = {
       {x: 23.5, y: 72, scrollX: 0, scrollY: 0, elapsedTime: 1766},
     ]
   ],
+
   tags: [
     [
       {x: 11.5, y: 60.5, scrollX: 0, scrollY: 0, elapsedTime: 2},
@@ -326,6 +328,7 @@ let recordedStrokes = {
       {x: 40.5, y: 56.5, scrollX: 0, scrollY: 0, elapsedTime: 1248},
     ]
   ],
+
   comments: [
     [
       {x: 50.5, y: 71, scrollX: 0, scrollY: 0, elapsedTime: 2},
@@ -412,6 +415,7 @@ let recordedStrokes = {
       {x: 29, y: 100.5, scrollX: 0, scrollY: 0, elapsedTime: 1998},
     ]
   ],
+
   'mobile-left': [
     [
       {x: 33.5, y: 10.5, scrollX: 0, scrollY: 0, elapsedTime: 51},
@@ -545,6 +549,7 @@ let recordedStrokes = {
       {x: 22, y: 244.5, scrollX: 0, scrollY: 0, elapsedTime: 2099},
     ]
   ],
+
   'mobile-right': [
     [
       {x: 12, y: 12, scrollX: 0, scrollY: 0, elapsedTime: 1},
@@ -726,7 +731,97 @@ let recordedStrokes = {
       {x: 15.5, y: 246, scrollX: 0, scrollY: 0, elapsedTime: 2764},
     ]
   ],
-  'bottom-cta': [
 
+  'bottom-cta': [
+    [
+      {x: 15, y: 16.5, scrollX: 0, scrollY: 0, elapsedTime: 63},
+      {x: 16, y: 15.5, scrollX: 0, scrollY: 0, elapsedTime: 78},
+      {x: 16.5, y: 15, scrollX: 0, scrollY: 0, elapsedTime: 94},
+      {x: 18, y: 14, scrollX: 0, scrollY: 0, elapsedTime: 110},
+      {x: 19.5, y: 13, scrollX: 0, scrollY: 0, elapsedTime: 126},
+      {x: 20.5, y: 12, scrollX: 0, scrollY: 0, elapsedTime: 142},
+      {x: 21.5, y: 11, scrollX: 0, scrollY: 0, elapsedTime: 158},
+      {x: 22, y: 11, scrollX: 0, scrollY: 0, elapsedTime: 174},
+      {x: 22.5, y: 10.5, scrollX: 0, scrollY: 0, elapsedTime: 191},
+      {x: 22.5, y: 10.5, scrollX: 0, scrollY: 0, elapsedTime: 207},
+      {x: 23, y: 10, scrollX: 0, scrollY: 0, elapsedTime: 231},
+      {x: 23.5, y: 10, scrollX: 0, scrollY: 0, elapsedTime: 246},
+      {x: 23.5, y: 9.5, scrollX: 0, scrollY: 0, elapsedTime: 257},
+      {x: 24, y: 9.5, scrollX: 0, scrollY: 0, elapsedTime: 300},
+      {x: 25.5, y: 8.5, scrollX: 0, scrollY: 0, elapsedTime: 318},
+      {x: 26, y: 8, scrollX: 0, scrollY: 0, elapsedTime: 334},
+      {x: 26.5, y: 7.5, scrollX: 0, scrollY: 0, elapsedTime: 350},
+      {x: 27, y: 7.5, scrollX: 0, scrollY: 0, elapsedTime: 366},
+      {x: 27, y: 7.5, scrollX: 0, scrollY: 0, elapsedTime: 382},
+      {x: 27.5, y: 7, scrollX: 0, scrollY: 0, elapsedTime: 398},
+      {x: 27.5, y: 7, scrollX: 0, scrollY: 0, elapsedTime: 414},
+      {x: 28, y: 7, scrollX: 0, scrollY: 0, elapsedTime: 430},
+      {x: 28.5, y: 7, scrollX: 0, scrollY: 0, elapsedTime: 446},
+      {x: 28.5, y: 6.5, scrollX: 0, scrollY: 0, elapsedTime: 489},
+      {x: 29, y: 6.5, scrollX: 0, scrollY: 0, elapsedTime: 590},
+      {x: 30, y: 7, scrollX: 0, scrollY: 0, elapsedTime: 607},
+      {x: 31, y: 7.5, scrollX: 0, scrollY: 0, elapsedTime: 624},
+      {x: 32, y: 8, scrollX: 0, scrollY: 0, elapsedTime: 639},
+      {x: 32.5, y: 8.5, scrollX: 0, scrollY: 0, elapsedTime: 656},
+      {x: 33, y: 9, scrollX: 0, scrollY: 0, elapsedTime: 673},
+      {x: 33.5, y: 9.5, scrollX: 0, scrollY: 0, elapsedTime: 686},
+      {x: 34, y: 10, scrollX: 0, scrollY: 0, elapsedTime: 702},
+      {x: 34.5, y: 10, scrollX: 0, scrollY: 0, elapsedTime: 714},
+      {x: 35, y: 11, scrollX: 0, scrollY: 0, elapsedTime: 726},
+      {x: 35.5, y: 11.5, scrollX: 0, scrollY: 0, elapsedTime: 742},
+      {x: 36, y: 12, scrollX: 0, scrollY: 0, elapsedTime: 758},
+      {x: 37, y: 12.5, scrollX: 0, scrollY: 0, elapsedTime: 774},
+      {x: 37.5, y: 13, scrollX: 0, scrollY: 0, elapsedTime: 790},
+      {x: 37.5, y: 13.5, scrollX: 0, scrollY: 0, elapsedTime: 806},
+      {x: 38, y: 14, scrollX: 0, scrollY: 0, elapsedTime: 823},
+      {x: 38.5, y: 14.5, scrollX: 0, scrollY: 0, elapsedTime: 839},
+      {x: 39, y: 14.5, scrollX: 0, scrollY: 0, elapsedTime: 856},
+      {x: 39, y: 14.5, scrollX: 0, scrollY: 0, elapsedTime: 877},
+      {x: 39, y: 15, scrollX: 0, scrollY: 0, elapsedTime: 890},
+      {x: 39.5, y: 15, scrollX: 0, scrollY: 0, elapsedTime: 902},
+      {x: 40, y: 15.5, scrollX: 0, scrollY: 0, elapsedTime: 918},
+      {x: 40, y: 15.5, scrollX: 0, scrollY: 0, elapsedTime: 934},
+      {x: 40.5, y: 16, scrollX: 0, scrollY: 0, elapsedTime: 950},
+      {x: 40.5, y: 16.5, scrollX: 0, scrollY: 0, elapsedTime: 966},
+      {x: 41, y: 16.5, scrollX: 0, scrollY: 0, elapsedTime: 983},
+      {x: 41, y: 17, scrollX: 0, scrollY: 0, elapsedTime: 999},
+      {x: 41, y: 17, scrollX: 0, scrollY: 0, elapsedTime: 1041},
+      {x: 41, y: 17.5, scrollX: 0, scrollY: 0, elapsedTime: 1057},
+      {x: 41, y: 17.5, scrollX: 0, scrollY: 0, elapsedTime: 1079},
+    ],
+    [
+      {x: 28, y: 7, scrollX: 0, scrollY: 0, elapsedTime: 1640},
+      {x: 28, y: 8.5, scrollX: 0, scrollY: 0, elapsedTime: 1658},
+      {x: 27.5, y: 10, scrollX: 0, scrollY: 0, elapsedTime: 1674},
+      {x: 27.5, y: 12, scrollX: 0, scrollY: 0, elapsedTime: 1686},
+      {x: 27, y: 14, scrollX: 0, scrollY: 0, elapsedTime: 1702},
+      {x: 27, y: 16, scrollX: 0, scrollY: 0, elapsedTime: 1718},
+      {x: 27, y: 18, scrollX: 0, scrollY: 0, elapsedTime: 1734},
+      {x: 27, y: 19, scrollX: 0, scrollY: 0, elapsedTime: 1750},
+      {x: 27, y: 20.5, scrollX: 0, scrollY: 0, elapsedTime: 1766},
+      {x: 27, y: 21.5, scrollX: 0, scrollY: 0, elapsedTime: 1782},
+      {x: 27, y: 22, scrollX: 0, scrollY: 0, elapsedTime: 1798},
+      {x: 27, y: 23, scrollX: 0, scrollY: 0, elapsedTime: 1814},
+      {x: 27, y: 24, scrollX: 0, scrollY: 0, elapsedTime: 1830},
+      {x: 27, y: 24.5, scrollX: 0, scrollY: 0, elapsedTime: 1847},
+      {x: 27, y: 25, scrollX: 0, scrollY: 0, elapsedTime: 1864},
+      {x: 27, y: 25.5, scrollX: 0, scrollY: 0, elapsedTime: 1875},
+      {x: 27, y: 26, scrollX: 0, scrollY: 0, elapsedTime: 1889},
+      {x: 27, y: 27, scrollX: 0, scrollY: 0, elapsedTime: 1902},
+      {x: 27, y: 27.5, scrollX: 0, scrollY: 0, elapsedTime: 1918},
+      {x: 27, y: 28.5, scrollX: 0, scrollY: 0, elapsedTime: 1934},
+      {x: 27.5, y: 29.5, scrollX: 0, scrollY: 0, elapsedTime: 1950},
+      {x: 27.5, y: 30.5, scrollX: 0, scrollY: 0, elapsedTime: 1966},
+      {x: 27.5, y: 31.5, scrollX: 0, scrollY: 0, elapsedTime: 1982},
+      {x: 27.5, y: 32.5, scrollX: 0, scrollY: 0, elapsedTime: 1998},
+      {x: 27.5, y: 33, scrollX: 0, scrollY: 0, elapsedTime: 2014},
+      {x: 27.5, y: 33, scrollX: 0, scrollY: 0, elapsedTime: 2030},
+      {x: 27.5, y: 33.5, scrollX: 0, scrollY: 0, elapsedTime: 2042},
+      {x: 27.5, y: 33.5, scrollX: 0, scrollY: 0, elapsedTime: 2058},
+      {x: 27.5, y: 34, scrollX: 0, scrollY: 0, elapsedTime: 2074},
+      {x: 27.5, y: 34, scrollX: 0, scrollY: 0, elapsedTime: 2095},
+      {x: 27.5, y: 34.5, scrollX: 0, scrollY: 0, elapsedTime: 2119},
+      {x: 27.5, y: 34.5, scrollX: 0, scrollY: 0, elapsedTime: 2135},
+    ]
   ]
 }
