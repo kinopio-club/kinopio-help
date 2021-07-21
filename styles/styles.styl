@@ -560,6 +560,17 @@ ul.api-contents
         margin-left 1rem
         p:first-child
           margin-top 0
+      @media(max-width 500px)
+        figure
+          display block
+          video,
+          img
+            width 100%
+            margin-bottom 1rem
+          figcaption
+            max-width initial
+            margin-left 0
+
 
   section.uses,
   section.features
@@ -580,6 +591,10 @@ ul.api-contents
       max-height 275px
     p
       margin-top 0
+    @media(max-width 392px)
+      display block
+      video
+        margin-bottom 2rem
 
   .mobile-video
     max-width 300px
