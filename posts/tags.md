@@ -17,6 +17,6 @@ Click on a tag to edit colors, and jump to other tagged cards *ﾟ:｡
 
 ## Ways to Use Tags
 
-- Group cards by [[project]]
-- Connect [[related]] cards across spaces
-- [[Label]] important cards that you want to stand out in your space
+- Group cards by `[[project]]` or `[[team]]`
+- Connect `[[related]]` cards across spaces
+- `[[Label]]` important cards that you want to stand out in your space

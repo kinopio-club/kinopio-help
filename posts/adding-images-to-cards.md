@@ -5,7 +5,7 @@ color: '#90ffff'
 date: 2020-02-01
 ---
 
-## Uploading files
+## Uploading Files
 
 You can drag and drop your own images and files onto spaces or cards. You can also use the file picker with `images → upload` (Handy on mobile).
 

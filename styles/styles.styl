@@ -1,9 +1,9 @@
 :root
   --primary black
-  // --primary-background white
+  --primary-background white
 
-  // --secondary #818181
-  // --secondary-background #e3e3e3
+  // --secondary #666
+  --secondary-background #e3e3e3
   --secondary-hover-background #d8d8d8
   --secondary-active-background #cdcdcd
 
@@ -22,25 +22,49 @@
   --hover-shadow 3px 3px 0 var(--heavy-shadow)
   // --active-shadow 5px 5px 0 var(--light-shadow)
   // --active-inset-shadow inset 0 2px 3px var(--light-shadow)
-  --button-shadow 2px 2px 0 var(--light-shadow)
   // --button-hover-shadow inset 0 1px 2px var(--heavy-shadow)
-  --button-active-inset-shadow inset 2px 2px 2px var(--heavy-shadow)
+  --button-active-inset-shadow inset 0px 1px 2px var(--heavy-shadow)
+
+  --badge-shadow 2px 2px 0 var(--light-shadow)
+  --button-to-kinopio-hover-shadow 5px 5px 0 var(--heavy-shadow)
 
   // help site vars
-  --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
   --max-page-width 520px
   --page-margin 20px
-  --page-background #dbdbdb
+  --page-background #dbdbdb // #e8eadf
+  --code-background #c8c8c8
   --table-border #c5c5c5
+  --table-hover-background rgba(0,0,0,0.05)
+  --cta-background #67ffbb
+  --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
 
 
 // Elements
 
 @font-face
   font-family 'OsakaMono-Kinopio'
-  src url("/assets/OsakaMono-Kinopio.woff2") format("woff2")
+  src url("/assets/fonts/OsakaMono-Kinopio.woff2") format("woff2")
   font-weight normal
   font-style normal
+
+@font-face
+  font-family 'JeanLuc'
+  src url("/assets/fonts/JeanLuc-Bold.woff2") format("woff2")
+  font-weight bold
+  font-style normal
+
+@font-face
+  font-family 'Recoleta'
+  src url("/assets/fonts/Recoleta-Regular.woff2") format("woff2")
+  font-weight normal
+  font-style normal
+
+@font-face
+  font-family 'Recoleta'
+  src url("/assets/fonts/Recoleta-Bold.woff2") format("woff2")
+  font-weight bold
+  font-style normal
+
 
 *
   -webkit-overflow-scrolling touch
@@ -49,10 +73,20 @@
   // font-family "OsakaMono-Kinopio", monospace
 
 body
-  margin var(--page-margin)
   color var(--primary)
   font-family var(--sans-serif)
+  margin var(--page-margin)
   background-color var(--page-background)
+
+.content-wrap
+  margin-left auto
+  margin-right auto
+  max-width 800px
+  width 100%
+  position relative
+  // background-image url("https://kinopio.club/img/background.597f845c.svg")
+  // background-position top
+  padding 0
 
 .logo
   background-image url('/assets/logo-base.png')
@@ -65,14 +99,23 @@ body
   display inline-block
 
 .hidden
-  display none
+  display none !important
 
 h1
-  font-size 20px
-
+  // font-family Mars
+  font-family Recoleta
+  font-size 30px
+  font-weight normal
+  // margin-bottom 1rem
+  // font-family Agrandir
 h2,
 h3
-  font-size 16px
+  margin-top 2rem
+  font-family Recoleta
+  // font-family Mars
+  font-size 22px
+  font-weight normal
+  // font-family Agrandir
 
 h1,
 h2,
@@ -87,6 +130,23 @@ a
   color blue
   &:hover
     text-decoration none
+
+.icon
+  width 13px
+  display inline
+  vertical-align 1px
+  margin-right 5px
+  user-drag none
+  -webkit-user-drag none
+
+// .down-arrow
+//   width 10px
+//   margin 0
+//   margin-left 5px
+//   vertical-align middle
+
+.heart
+  margin-left 5px
 
 form
   margin 0
@@ -115,12 +175,26 @@ ul
       background var(--info-background)
       padding 4px 5px
       border-radius 3px
-      box-shadow var(--button-shadow)
+      box-shadow var(--badge-shadow)
       &:hover,
       &:focus
         box-shadow var(--hover-shadow)
       &:active
         box-shadow var(--button-active-inset-shadow)
+
+.badge
+  color var(--primary)
+  text-decoration none
+  background var(--info-background)
+  padding 4px 5px
+  border-radius 3px
+  box-shadow var(--badge-shadow)
+  &:hover,
+  &:focus
+    box-shadow var(--hover-shadow)
+  &:active,
+  &.active
+    box-shadow var(--button-active-inset-shadow)
 
 button
   touch-action manipulation
@@ -140,13 +214,45 @@ button
   &:focus
     box-shadow var(--hover-shadow)
     background var(--secondary-hover-background)
-  &:active
+  &:active,
+  &.active
     color var(--primary)
     box-shadow var(--button-active-inset-shadow)
     background var(--secondary-active-background)
 
+.button-to-kinopio
+  background-color var(--cta-background)
+  box-shadow var(--hover-shadow)
+  &:hover,
+  &:focus
+    background-color var(--cta-background)
+    box-shadow var(--button-to-kinopio-hover-shadow)
+  &:active
+    background-color var(--cta-background)
+    box-shadow var(--button-active-inset-shadow)
+
+.segmented-buttons
+  button
+    margin 0
+    border-radius 0
+  a
+    button
+      margin-left -1px
+    &:first-child
+      button
+        border-top-left-radius 3px
+        border-bottom-left-radius 3px
+        margin-left 0
+    &:last-child
+      button
+        border-top-right-radius 3px
+        border-bottom-right-radius 3px
+
+code,
+blockquote
+  background var(--code-background)
+
 code
-  background var(--success-background)
   color var(--primary)
   padding 2px
   padding-left 6px
@@ -156,10 +262,8 @@ code
 
 blockquote
   margin 0
-  background var(--success-background)
   border-radius 3px
   padding 8px
-  max-width var(--max-page-width)
   display inline-block
   p
     margin 0
@@ -170,40 +274,42 @@ canvas#background
   top 0
   left 0
   z-index -1
-canvas#page-background
+canvas#page-background,
+canvas.auto-paint
   position: absolute
   background-color transparent
   top 0
   left 0
   z-index -2
+canvas.auto-paint
+  z-index -3
 
 .table-wrap
   overflow-x auto
   border-radius 3px
-  padding-left 8px
 
 table
   border-collapse collapse
   max-width 1000px
   th,
   td
-    padding 8px
-    padding-right 12px
+    padding 12px
     text-align left
     border-bottom 1px solid var(--table-border)
-    max-width 520px
-    &:first-child
-      padding-left 0
   tr
     &:hover
-      background rgba(255,255,255,.2)
+      background var(--table-hover-background)
 
 // Components
 
 header
+  .title
+    display flex
   h1
+    font-family JeanLuc
+    font-size 24px
     margin-top 0
-    padding-top 0.67em // h1 default margin
+    padding-top 10px
   a
     color var(--primary)
     text-decoration none
@@ -222,17 +328,38 @@ header
   img
     width 18px
     padding-right 4px
-    cursor text
+    cursor pointer
     margin-top 1px
 
+main
+  button
+    font-size 16px
+
 footer
-  margin-top 2rem
-  margin-bottom 2rem
+  margin-top 4rem
+  margin-bottom 4rem
+  .sections
+    display flex
+    section + section
+      margin-left 2rem
+    h3
+      font-size 20px
+      margin-top 1rem
+  nav
+    margin-top 1rem
+    position static
+  li
+    a
+      background-color #c4c4c4
+  @media(max-width 420px)
+    .extended-text
+      display none
 
 nav
+  display flex
   position absolute
-  right var(--page-margin)
-  top var(--page-margin)
+  right 0
+  top 0
   button
     margin-left 6px
 
@@ -253,8 +380,8 @@ article
   video
     width 420px
     max-width 100%
-    border-radius 3px
-    box-shadow 4px 4px 0 var(--light-shadow)
+    border-radius 10px
+    margin-bottom 1rem
     &.wide
       width 700px
     &.narrow
@@ -267,7 +394,7 @@ video + h2
   margin-top 1.5rem
 
 ul.api-contents
-  margin-top 2rem
+  margin-top 1rem
   padding 0
   margin-left 0
   margin-right 0
@@ -280,11 +407,23 @@ ul.api-contents
     margin-right 6px
 
 .api
+  h2
+    font-family sans-serif
+    font-size 22px
+    font-weight bold
   h2,
   h3
-    display inline-block
-    padding 4px 5px
-    border-radius 3px
+    &.badge
+      display inline-block
+      padding 4px 5px
+      border-radius 3px
+      font-family sans-serif
+      font-size 16px
+      font-weight bold
+      margin-bottom 0
+  .badge.all
+    margin-top 0
+
   code
     line-height 1.2
 
@@ -345,18 +484,133 @@ ul.api-contents
 .remove
   transform rotate(45deg)
   width 20px
-  cursor pointer
   padding 5px
 
-a.badge
-  color var(--primary)
-  text-decoration none
-  background var(--info-background)
-  padding 4px 5px
-  border-radius 3px
-  box-shadow var(--button-shadow)
-  &:hover,
-  &:focus
-    box-shadow var(--hover-shadow)
-  &:active
-    box-shadow var(--button-active-inset-shadow)
+.row
+  display flex
+  button
+    margin-right 10px
+  margin-bottom 2rem
+
+// About
+
+.about
+  h1
+    font-size 36px
+    margin-top 1rem
+  h2
+    font-size 26px
+    font-weight bold
+  img,
+  video
+    width 100%
+    max-width 560px
+    margin-bottom 0
+    position relative
+  .intro-video
+    background-color #38693e
+    max-width 560px
+    max-height 290px
+  .uses
+    span
+      vertical-align middle
+      margin-right 6px
+    .badge
+      display inline-block
+      vertical-align middle
+      margin-right 6px
+      cursor pointer
+    .triangle
+      width 0
+      height 0
+      border-width 0 10px 11px 10px // matches triangleWidth in examples.js
+      border-color transparent transparent var(--code-background) transparent
+      border-style solid
+      position absolute
+      left 72px
+      top -11px
+    .example
+      width 100%
+      background var(--code-background)
+      border-radius 10px
+      padding 1rem
+      display inline-block
+      margin-top 1rem
+      position relative
+      figure
+        display inline-flex
+        margin 0
+        align-items flex-start
+        video,
+        img
+          width 60%
+          margin 0
+          max-width 461px
+          max-height 280px
+          background var(--page-background)
+        img.arena
+          width 20px
+          vertical-align 0
+          margin 0
+          margin-right 5px
+        img.sunglasses
+          width 25px
+          vertical-align -2px
+          margin 0
+          margin-right 5px
+      figcaption
+        max-width calc(40% - 1rem)
+        margin-left 1rem
+        p:first-child
+          margin-top 0
+      @media(max-width 500px)
+        figure
+          display block
+          video,
+          img
+            width 100%
+            margin-bottom 1rem
+          figcaption
+            max-width initial
+            margin-left 0
+
+
+  section.uses,
+  section.features
+    margin-top 4rem
+
+  .grid-container
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em 1em;
+    grid-template-areas:
+      ". ."
+      ". .";
+    video
+      background var(--code-background)
+      max-width 392px
+      max-height 275px
+    p
+      margin-top 0
+    @media(max-width 392px)
+      display block
+      video
+        margin-bottom 2rem
+
+  .mobile-video
+    max-width 300px
+    max-height 519px
+
+  .cta-bottom
+    margin-top 2rem
+
+  .cta
+    a + a
+      margin-left 6px
+
+  .producthunt-badge
+    margin-top 4rem
+    width 250px
+    height 54px

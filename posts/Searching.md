@@ -4,7 +4,7 @@ tags: ['How to Use']
 color: '#90ffff'
 ---
 
-# Spaces
+## Spaces
 
 To quickly access spaces you can type to filter them by name
 
@@ -13,7 +13,7 @@ To quickly access spaces you can type to filter them by name
 </video>
 
 
-# Cards
+## Cards
 
 Currently there is no full-text search for cards, but it's on the roadmap. In the meantime you can search by pasting this script into your browser console
 

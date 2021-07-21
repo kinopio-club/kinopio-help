@@ -1,0 +1,148 @@
+---
+layout: default.pug
+title: About Kinopio
+---
+
+article.about
+  section.what-is-kinopio
+    h1 Spatial Thinking for New Ideas and Hard Problems
+
+    video.intro-video#intro-video(autoplay loop muted playsinline)
+      source(src="/assets/about/intro.mp4")
+    p Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
+
+
+  section.cta-top
+    p No sign up required.
+    include /cta.pug
+
+
+  section.uses
+    span For
+    .badge.use(data-type="mind-mapping") Mind Mapping
+    .badge.use(data-type="research") Research
+    .badge.use(data-type="meetings") Meetings
+    .badge.use(data-type="mood-boards") Mood Boards
+    .badge.use(data-type="journaling") Journaling
+    .badge.use(data-type="note-taking") Note Taking
+    span and
+    a.badge.use(data-type="templates") Lots More
+
+    // Examples, toggled with js
+
+    // Mind Mapping
+    .example.mind-mapping(data-type="mind-mapping")
+      .triangle
+      figure
+        img(src="/assets/about/example-mind-map.png")
+        figcaption
+          p Express, organize, and make sense of your thoughts and feelings by capturing and visually connecting related ideas together.
+          a(href="https://kinopio.club/mind-map-u2Zc1bR0q7bRb16-K5o6X")
+            button Use Mind Mapping →
+    // Research
+    .example.research(data-type="research")
+      .triangle
+      figure
+        img(src="/assets/about/example-research.png")
+        figcaption
+          p Gather notes, and connect them to their source URLs. Drag in files, like PDFs, to keep everything together. Categorize and label similar concepts with [[tags]].
+          p Spatially organized information that’s easy to retrieve helps you get over anxiety and procrastination.
+          a(href="https://kinopio.club/research-ZHoXccPyfmTu7FMueXUEP")
+            button Use Research →
+    // Meetings
+    .example.meetings(data-type="meetings")
+      .triangle
+      figure
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/example-meeting.mp4")
+        figcaption
+          p Run engaging meetings and retrospectives that lead to clarity and actionable next steps.
+          p Kinopio makes thinking transparent, collaborative, and sharable – which leads to better decisions and better products.
+          a(href="https://kinopio.club/meeting-b87U9WETGvl17BrKNsqDH")
+            button Use Meeting →
+    // Mood Boards
+    .example.mood-boards(data-type="mood-boards")
+      .triangle
+      figure
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/example-mood-board.mp4")
+        figcaption
+          p Collect visual inspiration to evoke a vibe and a direction for your next big project.
+          p
+            img.icon.arena(src="/assets/arena.svg")
+            span You can also import Are.na Channels
+          a(href="https://kinopio.club/mood-board-GgDOqKvEEzTA93EYmAZrn")
+            button Use Mood Board →
+    // Journaling
+    .example.journaling(data-type="journaling")
+      .triangle
+      figure
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/example-journal.mp4")
+        figcaption
+          p Create daily journal spaces to reflect on your life and moments,
+          p Personalize your journal to fit your goals with custom prompts and themed prompt packs which present something new each time.
+          a(href="https://kinopio.club/journal-aKbPUalz4zHLqGwpDncDI")
+            button Use Journal →
+    // Note Taking
+    .example.note-taking(data-type="note-taking")
+      .triangle
+      figure
+        img(src="/assets/about/example-note-taking.png")
+        figcaption
+          p Making beautiful notes isn’t just fun – taking notes by mapping and grouping related concepts spatially makes knowledge inherently more meaningful and memorable.
+          p Organizing information non-linearly, like our brains do, reduces the amount of effort needed learn and remember  knowledge.
+          a(href="https://kinopio.club/note-taking-BXblLMDGVn-mmRG9IUMeb")
+            button Use Note Taking →
+    // Lots More (Templates)
+    .example.templates(data-type="templates")
+      .triangle
+      figure
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/best-of.mp4")
+        figcaption
+          p
+            img.icon.sunglasses(src="/assets/sunglasses.svg")
+            span Explore more templates and cool spaces created by the community.
+          p Including, spaces for project planning, database modelling, to-dos, outlining, roadmaps, grocery lists, and more…
+
+    p Basically, for figuring stuff out – by yourself or collaboratively.
+
+
+  section.features
+    h2 Create Lively Freeform Spaces
+
+    .grid-container
+
+      .grid-item#feature-collaboration(data-section="collaboration")
+        p Real-Time Collaboration
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/feature-collaboration.mp4")
+      .grid-item#feature-images(data-section="images")
+        p Images and Links
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/feature-images-and-links.mp4")
+      .grid-item#feature-tags(data-section="tags")
+        p [[Tags]]
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/feature-tags.mp4")
+      .grid-item#feature-comments(data-section="comments")
+        p ((Comments))
+        video(autoplay loop muted playsinline)
+          source(src="/assets/about/feature-comments.mp4")
+
+    p Desktop and Mobile Apps
+    video.mobile-video#feature-mobile(autoplay loop muted playsinline data-section="mobile")
+      source(src="/assets/about/mobile.mp4")
+
+
+  section.cta-bottom#cta-bottom(data-section="cta-bottom")
+    p No sign up required. Export your data at any time.
+    include /cta.pug
+
+
+
+  a(href="https://www.producthunt.com/posts/kinopio")
+    img.producthunt-badge(src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=276179&theme=dark&period=daily" alt="Kinopio on ProductHunt")
+
+script(src="/assets/js/examples.js")

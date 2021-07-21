@@ -1,4 +1,8 @@
 ---
+pageTitle: Kinopio Help
+pageSearchIsVisible: true
+currentPage: help
+showFooter: true
 ---
 html(lang="en")
   head
@@ -9,30 +13,48 @@ html(lang="en")
     link(rel="stylesheet" href="/styles/styles.css")
     link(rel="canonical" href="https://kinopio.club")
   body
-    header
-      a(href="/")
-        img.hidden(src="/assets/logo-hover.png")
-        img.hidden(src="/assets/logo-active.png")
-        .logo
-        h1 Kinopio Help and Support
-    nav
-      a(href="/api")
-        button API Docs
-      a(href="https://kinopio.club")
-        button.kinopio Kinopio →
-    .search
-      form
-        img#search(src="/assets/search.svg")
-        input(placeholder="Search")
-        img#remove.remove(src="/assets/add.svg")
-    main !{content}
-  footer
-    img.froggo(src="/assets/froggo.png")
-    include contact.pug
-    p
-      a(href="https://github.com/kinopio-club/kinopio-help") View Source
+    .content-wrap
+      header
+        .title
+          a(href='/')
+            img.hidden(src="/assets/logo-hover.png")
+            img.hidden(src="/assets/logo-active.png")
+            .logo
+            if pageTitle === 'Kinopio Help'
+              h1 !{pageTitle}
+            else if pageTitle
+              h1 !{pageTitle}
 
-  canvas#background
-  canvas#page-background
-  script(src="/assets/fuzzy-min.js")
-  script(src="/assets/index.js")
+      include nav.pug
+
+      if pageSearchIsVisible
+        .search
+          form
+            img#search(src="/assets/search.svg")
+            input(placeholder="Search")
+            img#remove.remove(src="/assets/add.svg")
+
+      main !{content}
+      if showFooter
+        include footer.pug
+    // p
+    //   a(href="https://github.com/kinopio-club/kinopio-help") View Source
+
+    canvas#background
+    canvas#page-background
+
+    canvas.auto-paint#canvas-intro
+    canvas.auto-paint#canvas-collaboration
+    canvas.auto-paint#canvas-images
+    canvas.auto-paint#canvas-tags
+    canvas.auto-paint#canvas-comments
+    canvas.auto-paint#canvas-mobile-left
+    canvas.auto-paint#canvas-mobile-right
+    canvas.auto-paint#canvas-cta-bottom
+
+  script(src="/assets/js/fuzzy-min.js")
+  script(src="/assets/js/search.js")
+  script(src="/assets/js/magic-paint.js")
+  if pageTitle === 'About Kinopio'
+    script(src="/assets/js/recorded-strokes.js")
+    script(src="/assets/js/auto-paint.js")

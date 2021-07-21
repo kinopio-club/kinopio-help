@@ -14,7 +14,7 @@ I want the pricing to feel simple, straightforward, and obvious.
 
 📉 Cards you remove will decrement the card count
 
-👯‍♀️ For easier collaboration, if you're editing a space that was created by an upgraded user, your card count won't change. You can check whether your card limit will change by clicking your user icon while in a space.
+👯‍♀️ For easier collaboration, if you're editing a space that was created by an upgraded user, your card count won't increase. You can check whether your card limit will change by clicking your user icon while in a space.
 
 <img src="https://kinopio-updates.us-east-1.linodeobjects.com/card-count-exempted.png" class="narrow" />
 
