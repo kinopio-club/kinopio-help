@@ -506,6 +506,8 @@ ul.api-contents
     position relative
   .intro-video
     background-color #38693e
+    max-width 560px
+    max-height 290px
   .uses
     span
       vertical-align middle
@@ -538,8 +540,11 @@ ul.api-contents
         align-items flex-start
         video,
         img
-          max-width 60%
+          width 60%
           margin 0
+          max-width 461px
+          max-height 280px
+          background var(--page-background)
         img.arena
           width 20px
           vertical-align 0
@@ -570,12 +575,15 @@ ul.api-contents
       ". ."
       ". .";
     video
-      background #c8c8c8
+      background var(--code-background)
+      max-width 392px
+      max-height 275px
     p
       margin-top 0
 
   .mobile-video
     max-width 300px
+    max-height 519px
 
   .cta-bottom
     margin-top 2rem
