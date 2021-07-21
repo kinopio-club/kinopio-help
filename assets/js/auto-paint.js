@@ -149,7 +149,7 @@ function normalizeElapsedTimeIntroStrokes() {
 }
 
 const delayStart = Date.now()
-const aboutVideoElement = document.getElementById('about-page-video')
+const aboutVideoElement = document.getElementById('intro-video')
 aboutVideoElement.oncanplay = function() {
   normalizeElapsedTimeIntroStrokes()
   startPaintingSection({
