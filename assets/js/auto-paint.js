@@ -7,7 +7,34 @@ let isElapsedTimeUpdated = {}
 let sectionRequestIds = {}
 
 
+const initialRecordedStrokes = JSON.stringify(recordedStrokes)
+startPaintingIntro()
+
+window.onresize = throttle(200, function (event) {
+  // cancel animations
+  const requestIds = Object.keys(sectionRequestIds)
+  requestIds.forEach(requestId => {
+    window.cancelAnimationFrame(requestId)
+  })
+  // clear canvases
+  const canvases = Object.keys(autoPaintCanvases)
+  canvases.forEach(canvasName => {
+    initAutoPaintCanvas(canvasName)
+  })
+  // reset state
+  recordedStrokes = JSON.parse(initialRecordedStrokes)
+  autoPaintCanvases = {}
+  autoPaintContexts = {}
+  isAutoPaintingSections = {}
+  isElapsedTimeUpdated = {}
+  sectionRequestIds = {}
+  currentAutoStroke = {}
+  startPaintingIntro()
+})
+
+
 // utils
+
 
 function initAutoPaintCanvas (canvasName) {
   autoPaintCanvases[canvasName] = document.getElementById(`canvas-${canvasName}`)
@@ -148,9 +175,11 @@ function normalizeElapsedTimeIntroStrokes() {
   })
 }
 
-const delayStart = Date.now()
-const aboutVideoElement = document.getElementById('intro-video')
-aboutVideoElement.oncanplay = function() {
+function startPaintingIntro() {
+  if (sectionRequestIds.intro) {
+    window.cancelAnimationFrame(sectionRequestIds.intro)
+  }
+  const aboutVideoElement = document.getElementById('intro-video')
   normalizeElapsedTimeIntroStrokes()
   startPaintingSection({
     sectionName: 'intro',
