@@ -98,7 +98,6 @@ Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id                                                                 | `canViewSpace`
 `GET`    | <code class="spaces">/space/new-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      | None
-`GET`    | <code class="spaces">/space/best-of</code>               | A subset of `new-spaces` that have explicitly been curated by Kinopio                     | None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 | `canEditSpace`
 `GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                                 | `canViewSpace`
 `GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                      | `canViewSpace`
@@ -129,7 +128,6 @@ Name | Type | Description
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
 <code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon used by Journal spaces
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
-<code class="spaces">bestOfExplore</code>       | `Boolean` | Whether the space has been curated by Kinopio
 <code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
 <code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
 <code class="spaces">createdAt</code>           | `String`  | The date when the space was created
