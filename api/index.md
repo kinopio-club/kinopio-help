@@ -55,7 +55,6 @@ Method | Path | Description | Auth
 `GET`   | <code class="users">/user/favorites</code>              | Gets all info, including user and space favorites, on the authenticating user. Favorited spaces which have unread updates will have `isEdited: true`      | `apiKey`
 `GET`   | <code class="users">/user/spaces</code>                 | Get a list of the user's <a href="#spaces" class="badge spaces">Spaces</a>                                                                                | `apiKey`
 `GET`   | <code class="users">/user/removed-spaces</code>         | Get <a href="#spaces" class="badge spaces">Spaces</a> removed by the authenticating user                                                                  | `apiKey`
-`GET`   | <code class="users">/user/current-public-spaces</code>  | Get a list of all users currently viewing or editing <a href="#spaces" class="badge spaces">Spaces</a> with privacy set to `open`                         | None
 `GET`   | <code class="users">/user/tags</code>                   | Get a list of the last edited <a href="#tags" class="badge tags">Tags</a> in your spaces                                                                  | `apiKey`
 `PATCH` | <code class="users">/user</code>                        | Update the authenticating user(s) based on an object body with user attributes. You can't patch `apiKey`, `password`, `emailIsVerified`, or `email`       | `apiKey`
 `PATCH` | <code class="users">/user/favorites</code>              | Add or remove favorite users or spaces. Acts like a toggle, if the user is already liked it then removes the like. If not already liked it adds the like. request body should be in the format. | `apiKey`
@@ -73,7 +72,6 @@ Name | Type | Description
 <code class="users">color</code>                   | `String`  | User color changes your paint stroke and default avatar color
 <code class="users">defaultConnectionTypeId</code> | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new <a href="#connections" class="badge connections">Connections</a>
 <code class="users">lastReadNewStuffId</code>      | `String`  | The id of the last read article from the 'new stuff' newsfeed
-<code class="users">currentPublicSpaceId</code>    | `String`  | The id of an space with privacy set to `open` that the user is currently viewing or editing
 <code class="users">cardsCreatedCount</code>       | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">isUpgraded</code>              | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 <code class="users">filterShowUsers</code>         | `Boolean` | Whether the user has has toggled the card user filter
