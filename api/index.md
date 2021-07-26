@@ -92,7 +92,9 @@ Spaces are where your <a href="#cards" class="badge cards">Cards</a> and <a href
 
 <h3 class="badge spaces">Space Routes</h3>
 
-Routes with Auth `canViewSpace` or `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to view or edit the space. The `closed` privacy state refers to `Public Read Only`.
+Routes with Auth `canViewSpace` or `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to view or edit the space.
+
+The `closed` privacy state refers to `Public Read Only`.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
