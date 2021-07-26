@@ -92,12 +92,13 @@ Spaces are where your <a href="#cards" class="badge cards">Cards</a> and <a href
 
 <h3 class="badge spaces">Space Routes</h3>
 
-Routes with Auth `canViewSpace` or `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to view or edit the space.
+Routes with Auth `canViewSpace` or `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to view or edit the space. The `closed` privacy state refers to `Public Read Only`.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id                                                                 | `canViewSpace`
 `GET`    | <code class="spaces">/space/new-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      | None
+`GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      | None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 | `canEditSpace`
 `GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                                 | `canViewSpace`
 `GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                      | `canViewSpace`
