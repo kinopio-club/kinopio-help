@@ -1,6 +1,6 @@
 ---
 title: Templates
-tags: ['Explore and Favorites']
+tags: ['Community']
 color: '#ffc1e7'
 ---
 

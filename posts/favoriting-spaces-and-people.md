@@ -1,6 +1,6 @@
 ---
 title: Favoriting Spaces and People
-tags: ['Explore and Favorites']
+tags: ['Community']
 color: '#ffc1e7'
 ---
 
