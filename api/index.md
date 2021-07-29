@@ -168,6 +168,8 @@ Name | Type | Description
 <code class="cards">x</code>                     | `Integer` | x-axis position
 <code class="cards">y</code>                     | `Integer` | y-axis position
 <code class="cards">z</code>                     | `Integer` | z-axis position
+<code class="cards">width</code>                 | `Integer` | card width
+<code class="cards">height</code>                | `Integer` | card height
 <code class="cards">frameId</code>               | `String`  | The id of type of frame applied to the card, if any
 <code class="cards">isRemoved</code>             | `Boolean` | Sets whether the card has been soft-removed. (can be restored or permanently removed by space users)
 <code class="cards">spaceId</code>               | `String`  | The space that the card belongs to
