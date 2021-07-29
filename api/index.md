@@ -65,11 +65,13 @@ Name | Type | Description
 --- | --- | ---
 <code class="users">id</code>                      | `String`  | The unique ID of the user. Is not user updateable
 <code class="users">name</code>                    | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
-<code class="users">email</code>                   | `String`  | The unique email address of the user required to create an account"
+<code class="users">email</code>                   | `String`  | The unique email address of the user required to create an account
 <code class="users">emailIsVerified</code>         | `Boolean` | Whether the user has verified their email address
 <code class="users">apiKey</code>                  | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
 <code class="users">lastSpaceId</code>             | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
 <code class="users">color</code>                   | `String`  | User color changes your paint stroke and default avatar color
+<code class="users">description</code>             | `String`  | A description of this particular user
+<code class="users">website</code>                 | `String`  | The user's website, url validity is not checked
 <code class="users">defaultConnectionTypeId</code> | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new <a href="#connections" class="badge connections">Connections</a>
 <code class="users">lastReadNewStuffId</code>      | `String`  | The id of the last read article from the 'new stuff' newsfeed
 <code class="users">cardsCreatedCount</code>       | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
