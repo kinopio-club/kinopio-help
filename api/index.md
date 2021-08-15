@@ -51,6 +51,7 @@ Routes with Auth as `apiKey` mean that the Authorization header apiKey must matc
 Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`   | <code class="users">/user/public/:userId</code>         | Gets public info on a user                                                                                                                                | None
+`GET`   | <code class="users">/user/public/multiple</code>        | Gets public info for multiple userIds specified in a comma seperated query string (`?userIds=userId_abc,userId_xyz`)                                      | None
 `GET`   | <code class="users">/user</code>                        | Get all info on the authenticating user                                                                                                                   | `apiKey`
 `GET`   | <code class="users">/user/favorites</code>              | Gets all info, including user and space favorites, on the authenticating user. Favorited spaces which have unread updates will have `isEdited: true`      | `apiKey`
 `GET`   | <code class="users">/user/spaces</code>                 | Get a list of the user's <a href="#spaces" class="badge spaces">Spaces</a>                                                                                | `apiKey`
