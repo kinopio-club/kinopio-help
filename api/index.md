@@ -73,7 +73,6 @@ Name | Type | Description
 <code class="users">color</code>                   | `String`  | User color changes your paint stroke and default avatar color
 <code class="users">description</code>             | `String`  | A description of this particular user
 <code class="users">website</code>                 | `String`  | The user's website, url validity is not checked
-<code class="users">defaultConnectionTypeId</code> | `String`  | The last connectionTypeId that the user marked as 'Default' to use for new <a href="#connections" class="badge connections">Connections</a>
 <code class="users">lastReadNewStuffId</code>      | `String`  | The id of the last read article from the 'new stuff' newsfeed
 <code class="users">cardsCreatedCount</code>       | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">isUpgraded</code>              | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
@@ -87,6 +86,7 @@ Name | Type | Description
 <code class="users">shouldShowMoreAlignOptions</code> | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
 <code class="users">shouldInvertZoomDirection</code>  | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
 <code class="users">shouldUseLastConnectionType</code>	| `Boolean` | Whether the user has chosen to use last connection type for new connections
+<code class="users">shouldShowCardCollaborationInfo</code>	| `Boolean` | Whether the user has chosen to show collaboration info (update date, users) inside cards
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="badge spaces">Spaces</h2>
