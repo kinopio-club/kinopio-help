@@ -661,8 +661,19 @@ ul.api-contents
       margin-left auto
       margin-right auto
       text-align center
+      position relative
       img
         border-radius 10px
+      // .background
+      //   position absolute
+      //   left 0
+      //   top 0
+      //   z-index -1
+      //   background-size 200%
+      //   opacity 0
+      //   transition opacity 0.2s
+      //   pointer-events none
+
       .badge
         display inline-block
       a
@@ -671,6 +682,7 @@ ul.api-contents
         border-radius 0
         box-shadow none
         background none
+        padding-bottom 1rem
       h1
         margin 0
         margin-top 0.5rem
@@ -682,3 +694,5 @@ ul.api-contents
       &:hover
         h1
           text-decoration underline
+        // .background
+        //   opacity 1

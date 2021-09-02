@@ -6,6 +6,7 @@ tags: ['Products']
 date: 2020-08-02
 totalMade: 30
 isSoldOut: false
+freeShipping: true
 permalink: /product-1/
 ---
 
