@@ -1,7 +1,6 @@
 :root
   --primary black
   --primary-background white
-  --text-link #143997
 
   // --secondary #666
   --secondary-background #e3e3e3
@@ -11,7 +10,7 @@
   --light-shadow rgba(0,0,0,0.20)
   --heavy-shadow rgba(0,0,0,0.25)
 
-  --danger-background #ffb8b3
+  // --danger-background #ffb8b3
   // --danger-hover-background #ffa49e
   // --danger-active-background #ff928b
 
@@ -196,12 +195,6 @@ ul
   &:active,
   &.active
     box-shadow var(--button-active-inset-shadow)
-  &.inline-badge
-    box-shadow none
-  &.danger
-    background-color var(--danger-background)
-  &.success
-    background-color var(--success-background)
 
 button
   touch-action manipulation
@@ -412,8 +405,6 @@ ul.api-contents
     list-style none
     display inline-block
     margin-right 6px
-
-// API Docs
 
 .api
   h2
@@ -626,45 +617,3 @@ ul.api-contents
     margin-top 4rem
     width 250px
     height 54px
-
-// Shop
-
-.shop-intro
-  margin-top 2rem
-  margin-bottom 3rem
-  display flex
-  align-items flex-start
-  max-width 400px
-  margin-left auto
-  margin-right auto
-  p
-    margin 0
-    margin-left 1rem
-  img
-    max-width 200px
-    border-radius 5px
-
-.shop
-  .products
-    li
-      max-width 50%
-      margin-left auto
-      margin-right auto
-      text-align center
-      img
-        border-radius 10px
-      .badge
-        display inline-block
-      a
-        background transparent
-        padding 0
-        border-radius 0
-        box-shadow none
-        background none
-      h2
-        margin 0
-        margin-top 1rem
-        display inline-block
-      &:hover
-        h2
-          text-decoration underline
