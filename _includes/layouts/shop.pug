@@ -1,0 +1,32 @@
+---
+layout: default.pug
+title: Kinopio Shop
+---
+
+section.shop-intro
+  img(src="/assets/house.jpeg")
+  p a description of the store, why it exists, why you should use it
+
+mixin posts(collection)
+  - let titles = ''
+  each post in collections[collection]
+    - titles = titles + ',' + post.data.title
+
+  ul.products
+    each post in collections[collection]
+      li(data-title=post.data.title)
+        a(href=post.url)
+          img(src=post.data.image)
+          h2 #{post.data.title}
+          p #{post.data.description}
+          if post.data.isSoldOut
+            .badge.inline-badge.danger Sold Out
+          else
+            .badge.inline-badge.info #{post.data.totalMade} Made
+
+section.shop
+
+  - let collection
+
+  - collection = 'Products'
+  +posts(collection)
