@@ -17,6 +17,7 @@
 
   --info-background #90ffff
   --success-background #98f49f
+  --secondary-badge-background #c4c4c4
 
   // non-theme vars
   // --max-z 2147483647
@@ -202,6 +203,8 @@ ul
     background-color var(--danger-background)
   &.success
     background-color var(--success-background)
+  &.secondary
+    background-color var(--secondary-badge-background)
 
 button
   touch-action manipulation
@@ -357,7 +360,7 @@ footer
     position static
   li
     a
-      background-color #c4c4c4
+      background-color var(--secondary-badge-background)
   @media(max-width 420px)
     .extended-text
       display none
@@ -634,6 +637,7 @@ ul.api-contents
   margin-bottom 3rem
   display flex
   align-items flex-start
+  width 100%
   max-width 400px
   margin-left auto
   margin-right auto
@@ -642,7 +646,13 @@ ul.api-contents
     margin-left 1rem
   img
     max-width 200px
+    width 50%
     border-radius 5px
+  .welcome
+    font-family Recoleta
+    font-weight bold
+    font-size 18px
+    margin-bottom 1rem
 
 .shop
   .products
@@ -661,10 +671,14 @@ ul.api-contents
         border-radius 0
         box-shadow none
         background none
-      h2
+      h1
         margin 0
-        margin-top 1rem
+        margin-top 0.5rem
         display inline-block
+        font-size 26px
+      p
+        margin-top 0.5rem
+        margin-bottom 0.5rem
       &:hover
-        h2
+        h1
           text-decoration underline

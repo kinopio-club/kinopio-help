@@ -5,7 +5,14 @@ title: Kinopio Shop
 
 section.shop-intro
   img(src="/assets/house.jpeg")
-  p a description of the store, why it exists, why you should use it
+  div
+    p.welcome Welcome
+    p Thanks for supporting Kinopio
+    // br
+    // br
+    // span (ｏ・_・)ノ
+    //- a description of the store, why it exists, why you should use it
+    // Thanks for stopping by. Every purchase supports kinopio
 
 mixin posts(collection)
   - let titles = ''
@@ -17,12 +24,12 @@ mixin posts(collection)
       li(data-title=post.data.title)
         a(href=post.url)
           img(src=post.data.image)
-          h2 #{post.data.title}
+          h1 #{post.data.title}
           p #{post.data.description}
           if post.data.isSoldOut
             .badge.inline-badge.danger Sold Out
           else
-            .badge.inline-badge.info #{post.data.totalMade} Made
+            .badge.inline-badge.secondary #{post.data.totalMade} Made
 
 section.shop
 
