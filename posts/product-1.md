@@ -7,7 +7,7 @@ date: 2020-08-02
 totalMade: 30
 isSoldOut: false
 freeShipping: true
-permalink: /product-1/
+permalink: /shop/product-1/
 ---
 
 test post1
