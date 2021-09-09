@@ -136,6 +136,7 @@ Name | Type | Description
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
 <code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
 <code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
+<code class="spaces">editedByUserId</code>      | `String`  | The user id of the last user who edited or created a card in the space
 <code class="spaces">createdAt</code>           | `String`  | The date when the space was created
 <code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
 <code class="spaces">background</code>          | `String`  | The image url used by the space background
