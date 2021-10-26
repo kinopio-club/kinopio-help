@@ -134,7 +134,7 @@ Name | Type | Description
 <code class="spaces">connections</code>         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
 <code class="spaces">connectionTypes</code>     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
-<code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon used by Journal spaces
+<code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon used by Journal spaces. Possible values are `new-moon`, `waxing-crescent`, `waxing-quarter`, `waxing-gibbous`, `full-moon`, `waning-gibbous`, `waning-quarter`, `waning-crescent`
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
 <code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
 <code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
