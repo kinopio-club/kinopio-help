@@ -159,7 +159,7 @@ Method | Path | Description | Auth
 `GET`     | <code class="cards">/card/by-tag-name/:tagName</code>   | get all cards with tag matching tagName in your <a href="#spaces" class="badge spaces">Spaces</a>                                                                                   | `apiKey`
 `GET`     | <code class="cards">/card/by-link-to-space/:spaceId</code>   | get the cards and <a href="#spaces" class="badge spaces">Spaces</a> where `linkToSpaceId` is `spaceId`. Will only return spaces that the user can view                         | `apiKey and canViewSpace`
 `POST`    | <code class="cards">/card</code>                        | Create card(s) from object(s) in request body. Body object must contain `spaceId` and `name`. If not included, `x`, `y`, `z` will be near the last updated card in the space        | `canEditSpace`
-`PATCH`   | <code class="cards">/card</code>                        | Update card(s) from object(s) in request body. Body object must contain `id`                                                                                                        | `canEditSpace`
+`PATCH`   | <code class="cards">/card</code>                        | Update card(s) from object(s) in request body. Body object must contain `id`. `spaceId` cannot be patched.                                                                          | `canEditSpace`
 `PATCH`   | <code class="cards">/card/restore</code>                | Restore removed card specified in body                                                                                                                                              | `canEditSpace`
 `DELETE`  | <code class="cards">/card</code>                        | Remove card specified in body                                                                                                                                                       | `canEditSpace`
 `DELETE`  | <code class="cards">/card/permanent</code>              | Permanently remove card specified in body                                                                                                                                           | `canEditSpace`
@@ -204,7 +204,7 @@ Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="connections">/connection/<br/>:connectionId</code> | Get info on a connection                                                                                    | None
 `POST`    | <code class="connections">/connection</code>                    | Create connection(s) from object in request body. Object must contain `spaceId`, `connectionTypeId`   | `canEditSpace`
-`PATCH`   | <code class="connections">/connection</code>                    | Update connection(s) from object in request body                                                            | `canEditSpace`
+`PATCH`   | <code class="connections">/connection</code>                    | Update connection(s) from object in request body. `spaceId` cannot be patched.                              | `canEditSpace`
 `DELETE`  | <code class="connections">/connection</code>                    | Permenently remove connection(s) speced in req body                                                         | `canEditSpace`
 
 <h3 class="badge connections">Connection Attributes</h3>
@@ -232,7 +232,7 @@ Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="connection-types">/connection-type/:connectionTypeId</code>  | Get info on a connectionType                                                                         | None
 `POST`    | <code class="connection-types">/connection-type</code>                    | Create connectionType(s) from object (or array) in request body. Object must contain `spaceId`       | `canEditSpace`
-`PATCH`   | <code class="connection-types">/connection-type</code>                    | Update connectionType(s) from object in request body                                                 | `canEditSpace`
+`PATCH`   | <code class="connection-types">/connection-type</code>                    | Update connectionType(s) from object in request body. `spaceId` cannot be patched.                   | `canEditSpace`
 `DELETE`  | <code class="connection-types">/connection-type</code>                    | Permenently remove connectionType                                                                    | `canEditSpace`
 
 <h3 class="badge connection-types">Connection Type Attributes</h3>
