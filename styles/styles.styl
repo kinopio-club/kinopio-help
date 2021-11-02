@@ -269,14 +269,14 @@ blockquote
     margin 0
 
 canvas#background
-  position: fixed
+  position fixed
   background-color transparent
   top 0
   left 0
   z-index -1
 canvas#page-background,
 canvas.auto-paint
-  position: absolute
+  position absolute
   background-color transparent
   top 0
   left 0
@@ -579,18 +579,19 @@ ul.api-contents
 
 
   section.uses,
-  section.features
+  section.features,
+  section.about-me
     margin-top 4rem
 
   .grid-container
-    display: grid;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1em 1em;
+    display grid
+    grid-auto-rows 1fr
+    grid-template-columns 1fr 1fr
+    grid-template-rows 1fr 1fr
+    gap 1em 1em
     grid-template-areas:
       ". ."
-      ". .";
+      ". ."
     video
       background var(--code-background)
       max-width 392px
@@ -614,6 +615,6 @@ ul.api-contents
       margin-left 6px
 
   .producthunt-badge
-    margin-top 4rem
+    margin-top 2rem
     width 250px
     height 54px
