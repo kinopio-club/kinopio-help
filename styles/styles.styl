@@ -37,7 +37,7 @@
   --table-hover-background rgba(0,0,0,0.05)
   --cta-background #67ffbb
   --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
-
+  --tertiary #c4c4c4
 
 // Elements
 
@@ -350,7 +350,7 @@ footer
     position static
   li
     a
-      background-color #c4c4c4
+      background-color var(--tertiary)
   @media(max-width 420px)
     .extended-text
       display none
@@ -618,3 +618,12 @@ ul.api-contents
     margin-top 2rem
     width 250px
     height 54px
+
+  section.about-me
+    .badge
+      background-color var(--tertiary)
+      display inline-flex
+      margin-bottom 6px
+      margin-right 6px
+    .user
+      margin-right 5px
