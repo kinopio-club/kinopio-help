@@ -15,11 +15,11 @@ Use of the API is subject to the [Use Restrictions Policy](/posts/use-restrictio
 
 ## Authentication
 
-Kinopio uses token-based authentication using your user `apiKey`. The easiest way to get your apiKey is by entering `JSON.parse(localStorage.user).apiKey` in your browser console on [kinopio.club](http://kinopio.club).
-
-Use your apiKey in the `Authorization` header of each request.
+Kinopio uses token-based authentication using your user `apiKey`. You can get your apiKey in the app through `User → Settings → Api Key`.
 
 > 🙈 Your API key carries the same privileges as your user account, so be sure to keep it secret!
+
+Use your apiKey in the `Authorization` header of each request.
 
 (For testing, you can also use a query string (`?apiKey=`) but this is less secure and not recommended)
 
