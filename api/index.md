@@ -157,7 +157,8 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="cards">/card/:cardId</code>                | Get info on a card                                                                                                                                                                  | None
+`GET`     | <code class="cards">/card/:cardId</code>                | Get info on a card                                                                                                                                                                  | `canViewSpace`
+`GET`     | <code class="cards">/card/multiple?cardIds=cardId1,cardId2</code> | Get info on multiple cards, up to 60 cardIds at a time                                                                                                                    | `canViewSpace`
 `GET`     | <code class="cards">/card/by-tag-name/:tagName</code>   | get all cards with tag matching tagName in your <a href="#spaces" class="badge spaces">Spaces</a>                                                                                   | `apiKey`
 `GET`     | <code class="cards">/card/by-link-to-space/:spaceId</code>   | get the cards and <a href="#spaces" class="badge spaces">Spaces</a> where `linkToSpaceId` is `spaceId`. Will only return spaces that the user can view                         | `apiKey and canViewSpace`
 `POST`    | <code class="cards">/card</code>                        | Create card(s) from object(s) in request body. Body object must contain `spaceId` and `name`. If not included, `x`, `y`, `z` will be near the last updated card in the space        | `canEditSpace`
