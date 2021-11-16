@@ -15,11 +15,11 @@ Use of the API is subject to the [Use Restrictions Policy](/posts/use-restrictio
 
 ## Authentication
 
-Kinopio uses token-based authentication using your user `apiKey`. The easiest way to get your apiKey is by entering `JSON.parse(localStorage.user).apiKey` in your browser console on [kinopio.club](http://kinopio.club).
-
-Use your apiKey in the `Authorization` header of each request.
+Kinopio uses token-based authentication using your user `apiKey`. You can get your apiKey in the app through `User → Settings → Api Key`.
 
 > 🙈 Your API key carries the same privileges as your user account, so be sure to keep it secret!
+
+Use your apiKey in the `Authorization` header of each request.
 
 (For testing, you can also use a query string (`?apiKey=`) but this is less secure and not recommended)
 
@@ -88,6 +88,8 @@ Name | Type | Description
 <code class="users">shouldInvertZoomDirection</code>  | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
 <code class="users">shouldUseLastConnectionType</code>	| `Boolean` | Whether the user has chosen to use last connection type for new connections
 <code class="users">shouldShowCardCollaborationInfo</code>	| `Boolean` | Whether the user has chosen to show collaboration info (update date, users) inside cards
+<code class="users">dialogFavoritesFilters</code>   | `String` | User perference for favorite spaces filter, is either `null`, `'currentUser'`, `'otherUsers'`
+<code class="users">dialogSpaceFilters</code>       | `String` | User perference for spaces filter, is either `null`, `'journals'`, `'spaces'`
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="badge spaces">Spaces</h2>
@@ -107,7 +109,9 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      | None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 | `canEditSpace`
 `GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                                 | `canViewSpace`
-`GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                      | `canViewSpace`
+`GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                    | `canViewSpace`
+`GET`    | <code class="spaces">/space/new-spaces/feed.json</code>  | `RSS feed` for new spaces added to Explore                                                  | None
+`GET`    | <code class="spaces">/space/:spaceId/feed.json</code>    | `RSS feed` for cards recently created or updated in a space. Use `?apiKey=` for private spaces  | `canViewSpace`
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   | `apiKey`
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            | `canEditSpace`
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  | `canEditSpace`
@@ -133,10 +137,11 @@ Name | Type | Description
 <code class="spaces">connections</code>         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
 <code class="spaces">connectionTypes</code>     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
-<code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon used by Journal spaces
+<code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon used by Journal spaces. Possible values are `new-moon`, `waxing-crescent`, `waxing-quarter`, `waxing-gibbous`, `full-moon`, `waning-gibbous`, `waning-quarter`, `waning-crescent`
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
 <code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
 <code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
+<code class="spaces">editedByUserId</code>      | `String`  | The user id of the last user who edited or created a card in the space
 <code class="spaces">createdAt</code>           | `String`  | The date when the space was created
 <code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
 <code class="spaces">background</code>          | `String`  | The image url used by the space background
@@ -153,11 +158,12 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="cards">/card/:cardId</code>                | Get info on a card                                                                                                                                                                  | None
+`GET`     | <code class="cards">/card/:cardId</code>                | Get info on a card                                                                                                                                                                  | `canViewSpace`
+`GET`     | <code class="cards">/card/multiple?cardIds=cardId1,cardId2</code> | Get info on multiple cards, up to 60 cardIds at a time                                                                                                                    | `canViewSpace`
 `GET`     | <code class="cards">/card/by-tag-name/:tagName</code>   | get all cards with tag matching tagName in your <a href="#spaces" class="badge spaces">Spaces</a>                                                                                   | `apiKey`
 `GET`     | <code class="cards">/card/by-link-to-space/:spaceId</code>   | get the cards and <a href="#spaces" class="badge spaces">Spaces</a> where `linkToSpaceId` is `spaceId`. Will only return spaces that the user can view                         | `apiKey and canViewSpace`
 `POST`    | <code class="cards">/card</code>                        | Create card(s) from object(s) in request body. Body object must contain `spaceId` and `name`. If not included, `x`, `y`, `z` will be near the last updated card in the space        | `canEditSpace`
-`PATCH`   | <code class="cards">/card</code>                        | Update card(s) from object(s) in request body. Body object must contain `id`                                                                                                        | `canEditSpace`
+`PATCH`   | <code class="cards">/card</code>                        | Update card(s) from object(s) in request body. Body object must contain `id`. `spaceId` cannot be patched.                                                                          | `canEditSpace`
 `PATCH`   | <code class="cards">/card/restore</code>                | Restore removed card specified in body                                                                                                                                              | `canEditSpace`
 `DELETE`  | <code class="cards">/card</code>                        | Remove card specified in body                                                                                                                                                       | `canEditSpace`
 `DELETE`  | <code class="cards">/card/permanent</code>              | Permanently remove card specified in body                                                                                                                                           | `canEditSpace`
@@ -202,7 +208,7 @@ Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="connections">/connection/<br/>:connectionId</code> | Get info on a connection                                                                                    | None
 `POST`    | <code class="connections">/connection</code>                    | Create connection(s) from object in request body. Object must contain `spaceId`, `connectionTypeId`   | `canEditSpace`
-`PATCH`   | <code class="connections">/connection</code>                    | Update connection(s) from object in request body                                                            | `canEditSpace`
+`PATCH`   | <code class="connections">/connection</code>                    | Update connection(s) from object in request body. `spaceId` cannot be patched.                              | `canEditSpace`
 `DELETE`  | <code class="connections">/connection</code>                    | Permenently remove connection(s) speced in req body                                                         | `canEditSpace`
 
 <h3 class="badge connections">Connection Attributes</h3>
@@ -230,7 +236,7 @@ Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="connection-types">/connection-type/:connectionTypeId</code>  | Get info on a connectionType                                                                         | None
 `POST`    | <code class="connection-types">/connection-type</code>                    | Create connectionType(s) from object (or array) in request body. Object must contain `spaceId`       | `canEditSpace`
-`PATCH`   | <code class="connection-types">/connection-type</code>                    | Update connectionType(s) from object in request body                                                 | `canEditSpace`
+`PATCH`   | <code class="connection-types">/connection-type</code>                    | Update connectionType(s) from object in request body. `spaceId` cannot be patched.                   | `canEditSpace`
 `DELETE`  | <code class="connection-types">/connection-type</code>                    | Permenently remove connectionType                                                                    | `canEditSpace`
 
 <h3 class="badge connection-types">Connection Type Attributes</h3>

@@ -37,7 +37,7 @@
   --table-hover-background rgba(0,0,0,0.05)
   --cta-background #67ffbb
   --sans-serif Helvetica Neue, Helvetica, Arial, sans-serif
-
+  --tertiary #c4c4c4
 
 // Elements
 
@@ -269,14 +269,14 @@ blockquote
     margin 0
 
 canvas#background
-  position: fixed
+  position fixed
   background-color transparent
   top 0
   left 0
   z-index -1
 canvas#page-background,
 canvas.auto-paint
-  position: absolute
+  position absolute
   background-color transparent
   top 0
   left 0
@@ -350,7 +350,7 @@ footer
     position static
   li
     a
-      background-color #c4c4c4
+      background-color var(--tertiary)
   @media(max-width 420px)
     .extended-text
       display none
@@ -556,11 +556,13 @@ ul.api-contents
           vertical-align 0
           margin 0
           margin-right 5px
+          background transparent
         img.sunglasses
           width 25px
           vertical-align -2px
           margin 0
           margin-right 5px
+          background transparent
       figcaption
         max-width calc(40% - 1rem)
         margin-left 1rem
@@ -579,18 +581,19 @@ ul.api-contents
 
 
   section.uses,
-  section.features
+  section.features,
+  section.about-me
     margin-top 4rem
 
   .grid-container
-    display: grid;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1em 1em;
+    display grid
+    grid-auto-rows 1fr
+    grid-template-columns 1fr 1fr
+    grid-template-rows 1fr 1fr
+    gap 1em 1em
     grid-template-areas:
       ". ."
-      ". .";
+      ". ."
     video
       background var(--code-background)
       max-width 392px
@@ -614,6 +617,34 @@ ul.api-contents
       margin-left 6px
 
   .producthunt-badge
-    margin-top 4rem
+    margin-top 2rem
     width 250px
     height 54px
+
+  section.about-me
+    .badge
+      background-color var(--tertiary)
+      display inline-flex
+      margin-bottom 6px
+      margin-right 6px
+    img.sunglasses
+      width 25px
+      vertical-align -2px
+      margin 0
+      margin-right 5px
+    .spaces
+      .user
+        margin-right 4px
+        background-image url("/assets/anon-avatar.svg")
+        background-repeat no-repeat
+        width 18px
+        height 18px
+        background-color #91ffff
+        border-radius 3px
+        background-position center
+        background-size 65%
+        vertical-align middle
+  .signature
+    width 85px
+    vertical-align middle
+    margin-left 5px
