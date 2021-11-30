@@ -84,6 +84,7 @@ Name | Type | Description
 <code class="users">newSpacesAreBlank</code>       | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
 <code class="users">shouldEmailNotifications</code>| `Boolean` | Whether the user has chosen to allow notification emails (default to true)
 <code class="users">shouldEmailBulletin</code>     | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
+<code class="users">shouldEmailWeeklyReview</code>     | `Boolean` | Whether the user has chosen to allow weekly review emails (default to true)
 <code class="users">shouldShowMoreAlignOptions</code> | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
 <code class="users">shouldInvertZoomDirection</code>  | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
 <code class="users">shouldUseLastConnectionType</code>	| `Boolean` | Whether the user has chosen to use last connection type for new connections
@@ -105,12 +106,12 @@ The `closed` privacy state refers to `Public Read Only`.
 Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id                                                                 | `canViewSpace`
-`GET`    | <code class="spaces">/space/new-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      | None
+`GET`    | <code class="spaces">/space/explore-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      | None
 `GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      | None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 | `canEditSpace`
 `GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                                 | `canViewSpace`
 `GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                    | `canViewSpace`
-`GET`    | <code class="spaces">/space/new-spaces/feed.json</code>  | `RSS feed` for new spaces added to Explore                                                  | None
+`GET`    | <code class="spaces">/space/explore-spaces/feed.json</code>  | `RSS feed` for new spaces added to Explore                                                  | None
 `GET`    | <code class="spaces">/space/:spaceId/feed.json</code>    | `RSS feed` for cards recently created or updated in a space. Use `?apiKey=` for private spaces  | `canViewSpace`
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   | `apiKey`
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            | `canEditSpace`
