@@ -89,10 +89,10 @@ Name | Type | Description
 <code class="users">shouldInvertZoomDirection</code>  | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
 <code class="users">shouldUseLastConnectionType</code>	| `Boolean` | Whether the user has chosen to use last connection type for new connections
 <code class="users">shouldShowCardCollaborationInfo</code>	| `Boolean` | Whether the user has chosen to show collaboration info (update date, users) inside cards
-<code class="users">dialogFavoritesFilters</code>   | `String` | User perference for favorite spaces filter, is either `null`, `'currentUser'`, `'otherUsers'`
-<code class="users">dialogSpaceFilters</code>       | `String` | User perference for spaces filter, is either `null`, `'journals'`, `'spaces'`
-<code class="users">defaultSpaceBackground</code>     | `String` | User perference for a default background url to use for new spaces
-<code class="users">defaultSpaceBackgroundTint</code> | `String` | User perference for a default background color used to tint new spaces
+<code class="users">dialogFavoritesFilters</code>   | `String` | User preference for favorite spaces filter, is either `null`, `'currentUser'`, `'otherUsers'`
+<code class="users">dialogSpaceFilters</code>       | `String` | User preference for spaces filter, is either `null`, `'journals'`, `'spaces'`
+<code class="users">defaultSpaceBackground</code>     | `String` | User preference for a default background url to use for new spaces
+<code class="users">defaultSpaceBackgroundTint</code> | `String` | User preference for a default background color used to tint new spaces
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="badge spaces">Spaces</h2>
