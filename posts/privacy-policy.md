@@ -13,7 +13,8 @@ color: 'pink'
 - To enable billing for paid plans, only the user information needed to process payments will be shared with Stripe.
 - No cookies are used at all. LocalStorage is used to save your info. Unlike cookies, other websites cannot access your Kinopio localStorage data.
 - The only analytics used are server-side [Netlify Analytics](https://www.netlify.com/products/analytics/). Netlify does not allow me to uniquely identify anyone.
-- You can permanently remove your spaces, or all of your data, at anytime.
+- Through the `Removed` dialog, you can permanently delete cards or spaces. When you do, all uploads associated with those cards are also deleted.
+- You can permanently delete all of your user data at anytime.
 
 ---
 
