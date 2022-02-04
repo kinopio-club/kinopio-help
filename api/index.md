@@ -89,6 +89,7 @@ Name | Type | Description
 <code class="users">shouldInvertZoomDirection</code>  | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
 <code class="users">shouldUseLastConnectionType</code>	| `Boolean` | Whether the user has chosen to use last connection type for new connections
 <code class="users">shouldShowCardCollaborationInfo</code>	| `Boolean` | Whether the user has chosen to show collaboration info (update date, users) inside cards
+<code class="users">shouldShowCurrentSpaceTags</code>  | `Boolean` | Whether the user has chosen should only tags in the current space in the Tags dialog
 <code class="users">shouldOpenLinksInNewTab</code>  | `Boolean` | Whether the user has chosen to open card urls in a new tab by default
 <code class="users">dialogFavoritesFilters</code>   | `String` | User preference for favorite spaces filter, is either `null`, `'currentUser'`, `'otherUsers'`
 <code class="users">dialogSpaceFilters</code>       | `String` | User preference for spaces filter, is either `null`, `'journals'`, `'spaces'`
