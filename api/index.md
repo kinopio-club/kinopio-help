@@ -200,6 +200,7 @@ Name | Type | Description
 <code class="cards">urlPreviewDescription</code> | `String`  | The description displayed in the line of the url preview. Because most sites stuff their description tags with SEO gibberish, descriptions are only displayed for whitelisted domains. Contact support to add a domain to the whitelist.
 <code class="cards">urlPreviewErrorUrl</code>    | `String`  | The last url that the preview failed on (could be a private or broken url). If this matches `urlPreviewUrl`, the url preview won't be created
 <code class="cards">backgroundColor</code>       | `String`  | Background color for the card to display in
+<code class="cards">isLocked</code>              | `Boolean`  | If the card is locked and cannot be selected or edited in the client unless unlocked
 
 <a class="anchor" data-section="🍆" name="connections"></a>
 <h2 class="badge connections">Connections</h2>
