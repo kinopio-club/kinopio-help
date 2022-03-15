@@ -95,6 +95,7 @@ Name | Type | Description
 <code class="users">dialogSpaceFilters</code>       | `String` | User preference for spaces filter, is either `null`, `'journals'`, `'spaces'`
 <code class="users">defaultSpaceBackground</code>     | `String` | User preference for a default background url to use for new spaces
 <code class="users">defaultSpaceBackgroundTint</code> | `String` | User preference for a default background color used to tint new spaces
+<code class="users">defaultAddSpaceId</code> | `String` | User preference for the default space used in [kinopio.club/add](https://kinopio.club/add), such as through browser extensions
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="badge spaces">Spaces</h2>
