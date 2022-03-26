@@ -10,7 +10,7 @@ Download for:
 
 - [Firefox →](https://addons.mozilla.org/en-US/firefox/addon/add-to-kinopio)
 - [Chrome, Vivaldi, Edge, Brave →](https://chrome.google.com/webstore/detail/kinopio/hodmmkfpchpgmaemlicohlkiigpejakn)
-- Safari `Coming Soon`
+- [Safari →](https://apps.apple.com/app/add-to-kinopio/id1614926102)
 
 <video class="narrow" autoplay loop muted playsinline>
   <source src="https://kinopio-updates.us-east-1.linodeobjects.com/safari-extension-beta-cropped.mp4">
