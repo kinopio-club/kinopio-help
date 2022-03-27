@@ -198,6 +198,7 @@ Name | Type | Description
 <code class="cards">commentIsVisible</code>      		| `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
 <code class="cards">urlPreviewIsVisible</code>   		| `Boolean` | Whether the card will display a url preview (aka link unfurl)
 <code class="cards">shouldHideUrlPreviewInfo</code>   	| `Boolean` | Whether the card will display it's url preview title and description
+<code class="cards">shouldHideUrlPreviewImage</code>   	| `Boolean` | Whether the card will display it's url preview image
 <code class="cards">urlPreviewUrl</code>         		| `String`  | The url that the card url preview is based on
 <code class="cards">urlPreviewImage</code>       		| `String`  | The url for the url preview image
 <code class="cards">urlPreviewFavicon</code>     		| `String`  | The url for the url preview favicon image
