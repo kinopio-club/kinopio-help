@@ -113,7 +113,7 @@ The `closed` privacy state refers to `Public Read Only`.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id                                                                 | `canViewSpace`
+`GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id. Use `?textOnly=true` for card names only          					| `canViewSpace`
 `GET`    | <code class="spaces">/space/explore-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      | None
 `GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      | None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 | `canEditSpace`
