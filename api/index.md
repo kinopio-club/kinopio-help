@@ -113,7 +113,7 @@ The `closed` privacy state refers to `Public Read Only`.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id                                                                 | `canViewSpace`
+`GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id. Use `?textOnly=true` for card names only          					| `canViewSpace`
 `GET`    | <code class="spaces">/space/explore-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      | None
 `GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      | None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 | `canEditSpace`
@@ -198,6 +198,7 @@ Name | Type | Description
 <code class="cards">commentIsVisible</code>      		| `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
 <code class="cards">urlPreviewIsVisible</code>   		| `Boolean` | Whether the card will display a url preview (aka link unfurl)
 <code class="cards">shouldHideUrlPreviewInfo</code>   	| `Boolean` | Whether the card will display it's url preview title and description
+<code class="cards">shouldHideUrlPreviewImage</code>   	| `Boolean` | Whether the card will display it's url preview image
 <code class="cards">urlPreviewUrl</code>         		| `String`  | The url that the card url preview is based on
 <code class="cards">urlPreviewImage</code>       		| `String`  | The url for the url preview image
 <code class="cards">urlPreviewFavicon</code>     		| `String`  | The url for the url preview favicon image
