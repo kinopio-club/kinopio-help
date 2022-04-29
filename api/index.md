@@ -157,6 +157,7 @@ Name | Type | Description
 <code class="spaces">background</code>          | `String`  | The image url used by the space background
 <code class="spaces">backgroundTint</code>      | `String`  | The background color used to tint the space background
 <code class="spaces">isTemplate</code>          | `Boolean` | Whether the space is a <a href="/posts/templates/">personal template</a>
+<code class="spaces">isHidden</code>            | `Boolean` | Whether the space is hidden from the users personal list of spaces
 
 <a class="anchor" data-section="🎑" name="cards"></a>
 <h2 class="badge cards">Cards</h2>
