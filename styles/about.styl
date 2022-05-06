@@ -1,0 +1,153 @@
+// About
+
+.about
+  h1
+    font-size 36px
+    margin-top 1rem
+  h2
+    font-size 26px
+    font-weight bold
+  img,
+  video
+    width 100%
+    max-width 560px
+    margin-bottom 0
+    position relative
+  .intro-video
+    background-color #38693e
+    max-width 560px
+    max-height 290px
+  .uses
+    span
+      vertical-align middle
+      margin-right 6px
+    .badge
+      display inline-block
+      vertical-align middle
+      margin-right 6px
+      cursor pointer
+    .triangle
+      width 0
+      height 0
+      border-width 0 10px 11px 10px // matches triangleWidth in examples.js
+      border-color transparent transparent var(--code-background) transparent
+      border-style solid
+      position absolute
+      left 72px
+      top -11px
+    .example
+      width 100%
+      background var(--code-background)
+      border-radius 10px
+      padding 1rem
+      display inline-block
+      margin-top 1rem
+      position relative
+      figure
+        display inline-flex
+        margin 0
+        align-items flex-start
+        video,
+        img
+          width 60%
+          margin 0
+          max-width 461px
+          max-height 280px
+          background var(--page-background)
+        img.arena
+          width 20px
+          vertical-align 0
+          margin 0
+          margin-right 5px
+          background transparent
+        img.sunglasses
+          width 25px
+          vertical-align -2px
+          margin 0
+          margin-right 5px
+          background transparent
+      figcaption
+        max-width calc(40% - 1rem)
+        margin-left 1rem
+        p:first-child
+          margin-top 0
+      @media(max-width 500px)
+        figure
+          display block
+          video,
+          img
+            width 100%
+            margin-bottom 1rem
+          figcaption
+            max-width initial
+            margin-left 0
+
+
+  section.uses,
+  section.features,
+  section.about-me
+    margin-top 4rem
+
+  .grid-container
+    display grid
+    grid-auto-rows 1fr
+    grid-template-columns 1fr 1fr
+    grid-template-rows 1fr 1fr
+    gap 1em 1em
+    grid-template-areas:
+      ". ."
+      ". ."
+    video
+      background var(--code-background)
+      max-width 392px
+      max-height 275px
+    p
+      margin-top 0
+    @media(max-width 392px)
+      display block
+      video
+        margin-bottom 2rem
+
+  .mobile-video
+    max-width 300px
+    max-height 519px
+
+  .cta-bottom
+    margin-top 2rem
+
+  .cta
+    a + a
+      margin-left 6px
+
+  .producthunt-badge
+    margin-top 2rem
+    width 250px
+    height 54px
+
+  section.about-me
+    .badge
+      background-color var(--tertiary)
+      display inline-flex
+      margin-bottom 6px
+      margin-right 6px
+    img.sunglasses
+      width 25px
+      vertical-align -2px
+      margin 0
+      margin-right 5px
+    .spaces
+      .user
+        margin-right 4px
+        background-image url("/assets/anon-avatar.svg")
+        background-repeat no-repeat
+        width 18px
+        height 18px
+        background-color #91ffff
+        border-radius 3px
+        background-position center
+        background-size 65%
+        vertical-align middle
+  .signature
+    width 85px
+    vertical-align middle
+    margin-left 5px

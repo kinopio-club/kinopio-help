@@ -1,0 +1,38 @@
+.guides
+  h1
+    font-family Aureum, serif
+    display inline-block
+    position relative
+  ul
+    li
+      margin 0
+      width max-content
+      &:hover
+        h1
+          text-decoration underline
+        img
+          transform rotate(3deg)
+
+      a
+        position relative
+        color var(--primary)
+        background none
+        padding initial
+        border-radius 0
+        box-shadow none
+        &:hover
+          box-shadow none
+
+      img
+        // opacity 0.5
+        max-width 100px
+        // transform translateX(20px) translateY(-40px)
+        border-radius 5px
+        // z-index -1
+        position absolute
+        right -120px
+        top -40px
+        transition all 0.1s
+        // top 0
+
+      // z-index 2
