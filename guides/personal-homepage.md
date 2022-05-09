@@ -2,7 +2,7 @@
 title: Make a Personal Homepage
 thumbnail: 'https://us-east-1.linodeobjects.com/kinopio-uploads/9rRtxhnVQIoB9DB4ARrzk/IMG-6842.JPG'
 
-tags: ['Life']
+tags: ['Guides', 'Life']
 tagClass: 'life'
 
 userName: Ana Luisa Figueiredo
@@ -10,7 +10,7 @@ userColor: '#1ce0e4'
 spaceName: PERSONAL PAGE 🥒
 spaceUrl: https://kinopio.club/personal-page--zo6_3wXV6ou5aKbiv_2j0
 
-# backgroundColor: '#fdba9d'
+# backgroundColor: '#e8efdd'
 # textColor: '#20401e'
 
 pageTitle: Kinopio Guides
@@ -20,7 +20,7 @@ currentPage: guides
 pageClass: 'guides'
 ---
 
-You can download Kinopio for macOS, Windows, or Linux – or add it to your iOS or Android phone homescreen – by following the instructions in `About → Apps`
+You can download Kinopio for macOS, Windows, or Linux – or add it to your iOS or Android phone homescreen – by following the instructi
 
 The desktop app makes Kinopio easier to open and create spaces without having to first open a web browser.
 

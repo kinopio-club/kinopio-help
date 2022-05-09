@@ -2,18 +2,6 @@
 layout: default.pug
 ---
 
-section#hello
-  p
-    a(href="https://kinopio.club") Kinopio
-    span &nbsp;is your spatial thinking tool for new ideas and hard problems.
-  p Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
-
-  .row
-    a(href="/about")
-      button About Kinopio
-    a(href="#footer")
-      button Contact Support
-
 mixin posts(collection)
   - let titles = ''
   each post in collections[collection]
@@ -31,6 +19,19 @@ mixin posts(collection)
       li(data-title=post.data.title)
         a(href=post.url style={background: post.data.color})
           span #{post.data.title}
+
+
+section#hello
+  p
+    a(href="https://kinopio.club") Kinopio
+    span &nbsp;is your spatial thinking tool for new ideas and hard problems.
+  p Get your thoughts out and visually connect them together. Kinopio works the way your mind works.
+
+  .row
+    a(href="/about")
+      button About Kinopio
+    a(href="#footer")
+      button Contact Support
 
 section#index.index
   - let collection
