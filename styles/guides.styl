@@ -3,6 +3,7 @@
     font-family Aureum, serif
     display inline-block
     position relative
+    margin-bottom 0
   ul
     li
       margin 0
@@ -24,15 +25,19 @@
           box-shadow none
 
       img
-        // opacity 0.5
         max-width 100px
-        // transform translateX(20px) translateY(-40px)
         border-radius 5px
-        // z-index -1
         position absolute
-        right -120px
+        right -115px
         top -40px
         transition all 0.1s
-        // top 0
 
-      // z-index 2
+      p
+        margin-bottom 0
+
+  .badge
+    &.life
+      background-color #b9a8ff
+    &.planning
+      background-color #ffbfcb
+
