@@ -1,18 +1,19 @@
 ---
 title: Make a Personal Homepage
-pageTitle: Kinopio Guides
+thumbnail: 'https://us-east-1.linodeobjects.com/kinopio-uploads/9rRtxhnVQIoB9DB4ARrzk/IMG-6842.JPG'
 
-category: 'Life'
-categoryclass: 'life'
+tags: ['Life']
+tagClass: 'life'
 
 userName: Ana Luisa Figueiredo
 userColor: '#1ce0e4'
 spaceName: PERSONAL PAGE 🥒
 spaceUrl: https://kinopio.club/personal-page--zo6_3wXV6ou5aKbiv_2j0
 
-backgroundColor: '#e8efdd'
-textColor: '#20401e'
+# backgroundColor: '#fdba9d'
+# textColor: '#20401e'
 
+pageTitle: Kinopio Guides
 layout: "layouts/guides-post.pug"
 pageSearchIsVisible: false
 currentPage: guides
