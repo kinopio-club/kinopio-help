@@ -1,0 +1,23 @@
+---
+layout: default.pug
+---
+article(style=`color: ${textColor}`)
+  a(href="/guides")
+    button
+      span Guides
+
+  .category
+    .badge(class=`${categoryclass}`) #{category}
+
+  h1 #{title}
+
+  aside.info
+    section.title
+      p
+        .user(style=`background-color: ${userColor}`)
+        span #{userName}
+    section
+      a(href=spaceUrl)
+        p #{spaceName}
+
+  span !{content}
