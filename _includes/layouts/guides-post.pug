@@ -7,7 +7,7 @@ article(style=`color: ${textColor}`)
       span Guides
 
   .category
-    .badge(class=`${tagClass}`) #{tags[0]}
+    .badge(class=`${tagClass}`) #{tags[1]}
 
   h1 #{title}
 
@@ -21,3 +21,10 @@ article(style=`color: ${textColor}`)
         p #{spaceName}
 
   span !{content}
+
+
+.kinopio-embed
+  .embed-title #{userShortName || userName}'s space
+    .badge Live Embed
+  iframe(src=`${spaceEmbedUrl}`)
+
