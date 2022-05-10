@@ -15,7 +15,11 @@ article(style=`color: ${textColor}`)
     section.title
       p
         .user(style=`background-color: ${userColor}`)
-        span #{userName}
+        if userUrl
+          a(href=`${userUrl}`)
+            span #{userName}
+        else
+          span #{userName}
     section
       a(href=spaceUrl)
         p #{spaceName}
