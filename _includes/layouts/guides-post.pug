@@ -1,0 +1,34 @@
+---
+layout: default.pug
+---
+article(style=`color: ${textColor}`)
+  a(href="/guides")
+    button
+      span Guides
+
+  .category
+    .badge(class=`${tagClass}`) #{tags[1]}
+
+  h1 #{title}
+
+  aside.info
+    section.title
+      p
+        .user(style=`background-color: ${userColor}`)
+        if userUrl
+          a(href=`${userUrl}`)
+            span #{userName}
+        else
+          span #{userName}
+    section
+      a(href=spaceUrl)
+        p #{spaceName}
+
+  span !{content}
+
+
+.kinopio-embed
+  .embed-title #{userShortName || userName}'s space
+    .badge Live Embed
+  iframe(src=`${spaceEmbedUrl}`)
+

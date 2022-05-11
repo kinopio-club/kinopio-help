@@ -1,0 +1,120 @@
+.guides
+  p.intro
+    margin-bottom 0
+
+  h1
+    font-family Aureum, serif
+    display inline-block
+    position relative
+    margin-bottom 0
+
+  ul
+    li
+      margin 0
+      width max-content
+      &:hover
+        h1
+          text-decoration underline
+        img
+          transform rotate(3deg)
+      a
+        position relative
+        color var(--primary)
+        background none
+        padding initial
+        border-radius 0
+        box-shadow none
+        &:hover
+          box-shadow none
+      img
+        max-width 100px
+        border-radius 5px
+        position absolute
+        right -115px
+        top -40px
+        transition all 0.1s
+      p
+        margin-bottom 0
+      .user
+        margin-right 6px
+
+  h2.badge
+    font-weight normal
+    margin 0
+    margin-top 2em
+
+  .badge
+    &.life
+      background-color #b9a8ff
+    &.work-school
+      background-color #ffbfcb
+
+  .user
+    margin-right 4px
+    background-image url("/assets/anon-avatar.svg")
+    background-repeat no-repeat
+    width 18px
+    height 18px
+    background-color #91ffff
+    border-radius 3px
+    background-position center
+    background-size 65%
+    vertical-align 2px
+    display inline-block
+
+  .kinopio-embed
+    height 420px
+    width 100%
+    margin-top 2em
+    margin-bottom 4em
+    border-radius 5px
+    .embed-title
+      border-radius 5px
+      border-bottom-left-radius 0
+      border-bottom-right-radius 0
+      background var(--code-background)
+      padding 8px 10px
+      .badge
+        display inline
+        box-shadow none
+        margin-left 5px
+    iframe
+      display block
+      border-radius 5px
+      border-top-left-radius 0
+      border-top-right-radius 0
+      height 100%
+      width 100%
+      border 0
+      background white
+
+  article
+    h1
+      font-size 48px
+      display block
+      margin-top 0
+      margin-bottom 1em
+    aside.info
+      border-radius 5px
+      width 200px
+      margin-bottom 3em
+      background-color var(--secondary-background)
+      border 1px solid var(--primary)
+      section
+        padding 8px
+        &.title
+          border-bottom 1px solid var(--primary)
+      p
+        margin 0
+      p + p
+        margin-top 8px
+    .user
+      vertical-align -3px
+    .category
+      display block
+      margin-top 3em
+      margin-bottom 1em
+      .badge
+        display inline-block
+        // margin-bottom 4em
+        box-shadow none

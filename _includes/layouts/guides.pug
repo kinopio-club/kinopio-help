@@ -1,0 +1,46 @@
+---
+layout: default.pug
+// backgroundColor: '#e8efdd'
+// textColor: '#20401e'
+
+---
+
+mixin posts(collection)
+  ul
+    each post in (collections['Guides'])
+      - if (post.data.tags.includes(collection))
+        li
+          a(href=`${post.url}`)
+            .user(style=`background-color: ${post.data.userColor}`)
+            h1(style=`color: ${textColor}`) #{post.data.title}
+            img(src=`${post.data.thumbnail}`)
+
+
+p.intro(style=`color: ${textColor}`) Some of the ways people use Kinopio
+
+h2.badge.life Life
+- collection = 'Life'
++posts(collection)
+
+// li
+//   a(href="")
+//     .user
+//     h1 Mind Mapping
+//     img(src="https://d2w9rnfcy7mm78.cloudfront.net/3618017/original_69ccaebeb107c1d5c9fab7f179067f62.png")
+
+// h2.badge.work-school Work & School
+
+// ul
+//   li
+//     a(href="")
+//       .user
+//       h1 Take Great Notes
+//       img(src="https://us-east-1.linodeobjects.com/kinopio-uploads/Am0jr_ltE6gZzxdBlNs4F/46DBE58B-1B96-43AB-9955-81151D5395A8.webp")
+
+//   li
+//     a(href="")
+//       .user
+//       h1 Have Productive Meetings
+//       img(src="https://us-east-1.linodeobjects.com/kinopio-uploads/Am0jr_ltE6gZzxdBlNs4F/46DBE58B-1B96-43AB-9955-81151D5395A8.webp")
+
+  // quotebook, inspiration, Figure out what to watch or play
