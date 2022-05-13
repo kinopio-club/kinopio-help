@@ -5,9 +5,9 @@ thumbnail: 'https://us-east-1.linodeobjects.com/kinopio-uploads/c_i7PmfhVwLnqf4T
 tags: ['Guides', 'Life']
 tagClass: 'life'
 
-userName: Hailey
+userName: Hailey Mah
 userShortName: Hailey
-userUrl: https://www.are.na/cucumber-salad
+# userUrl: https://www.are.na/cucumber-salad
 userColor: '#a6fce5'
 spaceName: 🧶 Crochet diary
 spaceUrl: https://kinopio.club/-crochet-diary-4h1bgB0tQ_S2QD7P0Iyp1
