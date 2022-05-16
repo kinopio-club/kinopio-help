@@ -22,6 +22,6 @@ I want the pricing to feel simple, straightforward, and obvious.
 
 To build and maintain a service with ongoing costs that increase over time (servers etc), subscription pricing is the only economically sustainable business model to ensure that Kinopio is supported for the long-term.
 
-## See also
+## Discount for Students and Those With Financial Need
 
-- [Roadmap](https://kinopio.club/-kinopio-roadmap-6TRE21gchHI7alHLuwzd5)
+I want everyone to be able to use Kinopio. If you're a student, or you can't afford the subscription because of where you live, or any other personal circumstances, please [email me](mailto:hi@kinopio.club).
