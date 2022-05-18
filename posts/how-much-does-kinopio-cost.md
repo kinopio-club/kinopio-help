@@ -24,4 +24,4 @@ To build and maintain a service with ongoing costs that increase over time (serv
 
 ## Discount for Students and Those With Financial Need
 
-I want everyone to be able to use Kinopio. If you're a student, or you can't afford the subscription because of where you live, or any other personal circumstances, please [email me](mailto:hi@kinopio.club).
+I want everyone to be able to use Kinopio. If you're a student, or you can't afford the subscription because of where you live, or any other personal circumstances, please [email me](mailto:hi@kinopio.club) for a 50% discount.
