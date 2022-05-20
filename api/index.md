@@ -90,7 +90,6 @@ Name | Type | Description
 <code class="users">shouldInvertZoomDirection</code>        | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
 <code class="users">shouldUseLastConnectionType</code>	    | `Boolean` | Whether the user has chosen to use last connection type for new connections
 <code class="users">shouldShowCardCollaborationInfo</code>	| `Boolean` | Whether the user has chosen to show collaboration info (update date, users) inside cards
-<code class="users">shouldShowMoreFooterControls</code>     | `Boolean` | Whether the user has chosen to show the second row of footer controls (links, tags, etc.)
 <code class="users">shouldShowCardStyleActions</code>       | `Boolean` | Whether the user has chosen to show card styling options in the card-details dialog
 <code class="users">shouldShowMultiCardStyleActions</code>  | `Boolean` | Whether the user has chosen to show card styling options in the multiple-actions dialog that appears when you paint select cards
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
