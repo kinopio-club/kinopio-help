@@ -77,6 +77,8 @@ Name | Type | Description
 <code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
 <code class="users">cardsCreatedCount</code>                | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
+<code class="users">isModerator</code>                      | `Boolean` | Whether the user is a moderator of the community forums or discord. Is not user updatable.
+<code class="users">isGuideMaker</code>                     | `Boolean` | Whether the user has written a guide for the help site. Is not user updatable.
 <code class="users">filterShowUsers</code>                  | `Boolean` | Whether the user has has toggled the card user filter
 <code class="users">filterShowDateUpdated</code>            | `Boolean` | Whether the user has has toggled the card date filter
 <code class="users">filterShowAbsoluteDates</code>          | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
