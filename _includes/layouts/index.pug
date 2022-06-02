@@ -8,18 +8,12 @@ mixin posts(collection)
     - titles = titles + ',' + post.data.title
   // Title
   h2(data-posts=titles) #{collection}
-  //- Video
-  if collection === 'How to Use'
-    article.overview
-      video.wide(autoplay loop muted playsinline)
-        source(src="https://kinopio-updates.us-east-1.linodeobjects.com/overview-basics-2.mp4")
   //- Posts
   ul
     each post in collections[collection]
       li(data-title=post.data.title)
         a(href=post.url style={background: post.data.color})
           span #{post.data.title}
-
 
 section#hello
   p
@@ -32,6 +26,41 @@ section#hello
       button About Kinopio
     a(href="#footer")
       button Contact Support
+
+section.overview
+  h2 Quick Start
+  .articles
+    article
+      video(autoplay loop muted playsinline width="300" height="200")
+        source(src="/assets/overview/1.mp4")
+      p
+        span.badge 1
+        span= ' '
+        span Click to add cards
+
+    article
+      video(autoplay loop muted playsinline width="300" height="200")
+        source(src="/assets/overview/2.mp4")
+      p
+        span.badge 2
+        span= ' '
+        span Drag cards to move them
+
+    article
+      video(autoplay loop muted playsinline width="300" height="200")
+        source(src="/assets/overview/3.mp4")
+      p
+        span.badge 3
+        span= ' '
+        span Drag to connect cards together
+
+    article
+      video(autoplay loop muted playsinline width="300" height="200")
+        source(src="/assets/overview/4.mp4")
+      p
+        span.badge 4
+        span= ' '
+        span Paint to edit items together
 
 section#index.index
   - let collection
