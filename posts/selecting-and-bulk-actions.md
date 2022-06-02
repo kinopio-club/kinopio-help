@@ -1,5 +1,5 @@
 ---
-title: Selecting and Bulk Actions
+title: Paint Selecting and Bulk Actions
 tags: ['How to Use']
 color: '#90ffff'
 date: 2020-04-01

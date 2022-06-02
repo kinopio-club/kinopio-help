@@ -1,5 +1,5 @@
 ---
-title: Track your Life Tasks
+title: Track To-dos and Tasks
 thumbnail: 'https://us-east-1.linodeobjects.com/kinopio-uploads/je8YRuTxdRCot6P3kdEEE/909B725B-B8D0-4372-B96C-92BB46D1C166.png'
 
 tags: ['Guides', 'Life']
