@@ -1,7 +1,7 @@
 ---
 title: Mobile Tips
-tags: ['How to Use']
-color: '#90ffff'
+tags: ['About Kinopio']
+color: '#bbd0ff'
 ---
 
 On a touch device, dragging your finger along the screen scrolls the page, and two-finger pinching zooms in and out, just like it does on a normal website.

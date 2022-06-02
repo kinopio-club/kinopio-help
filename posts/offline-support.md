@@ -1,7 +1,7 @@
 ---
 title: Offline Support
-tags: ['How to Use']
-color: '#90ffff'
+tags: ['About Kinopio']
+color: '#bbd0ff'
 ---
 
 Kinopio was designed to save even without a reliable connection.
