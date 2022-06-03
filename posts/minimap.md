@@ -8,7 +8,7 @@ The minimap gives you a birds eye view of a space and lets you click to scroll t
 
 Hold down the `space key` or click the button in the bottom right to toggle on the minimap. Drag the window around to adjust your view, or tap anywhere to scroll there.
 
-<video class="" autoplay loop muted playsinline>
+<video class="wide" autoplay loop muted playsinline>
   <source src="https://kinopio-updates.us-east-1.linodeobjects.com/minimap.mp4">
 </video>
 
