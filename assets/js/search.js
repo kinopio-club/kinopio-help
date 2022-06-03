@@ -8,10 +8,9 @@ const searchIcon = document.querySelector('.search #search')
 const removeIcon = document.querySelector('.search #remove')
 const searchForm = document.querySelector('.search form')
 const searchInput = document.querySelector('.search input')
-const helloSection = document.querySelector('section#hello')
+const quickStartSection = document.querySelector('section#quickStart')
 const headers = document.querySelectorAll('section#index h2')
 const posts = document.querySelectorAll('section#index li')
-const overviewVideo = document.querySelector('article.overview')
 
 if (search) {
   searchInput.value = search
@@ -42,9 +41,8 @@ if (searchInput) {
 }
 
 function filterPage (value) {
-  if (!helloSection) { return }
-  helloSection.classList.add('hidden')
-  overviewVideo.classList.add('hidden')
+  if (!quickStartSection) { return }
+  quickStartSection.classList.add('hidden')
   filterHeaders(value)
   filterPosts(value)
 }
@@ -76,9 +74,8 @@ function filterPosts (value) {
 
 function clearFilter () {
   searchInput.value = ""
-  if (!helloSection) { return }
+  if (!quickStartSection) { return }
   headers.forEach(header => header.classList.remove('hidden'))
   posts.forEach(post => post.classList.remove('hidden'))
-  helloSection.classList.remove('hidden')
-  overviewVideo.classList.remove('hidden')
+  quickStartSection.classList.remove('hidden')
 }
