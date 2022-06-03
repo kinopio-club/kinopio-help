@@ -11,7 +11,7 @@ mixin posts(collection)
       - if (post.data.tags.includes(collection))
         li
           a(href=`${post.url}`)
-            .user(style=`background-color: ${post.data.userColor}`)
+            // .user(style=`background-color: ${post.data.userColor}`)
             h1(style=`color: ${textColor}`) #{post.data.title}
             img(src=`${post.data.thumbnail}`)
     // li

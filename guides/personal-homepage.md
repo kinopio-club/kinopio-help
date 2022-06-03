@@ -8,7 +8,7 @@ tagClass: 'life'
 userName: Ana Luisa Figueiredo
 userShortName: Ana Luisa
 userUrl: https://www.are.na/cucumber-salad
-userColor: '#1ce0e4'
+userColor: '#9ab2f9'
 spaceName: PERSONAL PAGE 🥒
 spaceUrl: https://kinopio.club/personal-page--zo6_3wXV6ou5aKbiv_2j0
 spaceEmbedUrl: https://kinopio.club/embed/?spaceId=zo6_3wXV6ou5aKbiv_2j0&zoom=50
