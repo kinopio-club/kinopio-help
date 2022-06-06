@@ -53,7 +53,7 @@ Method | Path | Description | Auth
 `GET`   | <code class="users">/user/public/:userId</code>         | Gets public info on a user                                                                                                                                | None
 `GET`   | <code class="users">/user/public/multiple</code>        | Gets public info for multiple userIds specified in a comma seperated query string (`?userIds=userId_abc,userId_xyz`)                                      | None
 `GET`   | <code class="users">/user</code>                        | Get all info on the authenticating user                                                                                                                   | `apiKey`
-`GET`   | <code class="users">/user/favorites</code>              | Gets all info, including user and space favorites, on the authenticating user. Favorited spaces which have unread updates will have `isEdited: true`      | `apiKey`
+`GET`   | <code class="users">/user/favorites</code>              | Gets all info, including user, space, and color favorites, on the authenticating user. Favorited spaces which have unread updates will have `isEdited: true`      | `apiKey`
 `GET`   | <code class="users">/user/spaces</code>                 | Get a list of the user's <a href="#spaces" class="badge spaces">Spaces</a>                                                                                | `apiKey`
 `GET`   | <code class="users">/user/journal-spaces</code>         | Get a list of the user's <a href="#spaces" class="badge spaces">Journal Spaces</a> (i.e. spaces with `moonPhase`)                                         | `apiKey`
 `GET`   | <code class="users">/user/removed-spaces</code>         | Get <a href="#spaces" class="badge spaces">Spaces</a> removed by the authenticating user                                                                  | `apiKey`
@@ -79,6 +79,7 @@ Name | Type | Description
 <code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 <code class="users">isModerator</code>                      | `Boolean` | Whether the user is a moderator of the community forums or discord. Is not user updatable.
 <code class="users">isGuideMaker</code>                     | `Boolean` | Whether the user has written a guide for the help site. Is not user updatable.
+<code class="users">isDonor</code>                          | `Boolean` | Whether the user has donated to Kinopio. Is not user updatable.
 <code class="users">filterShowUsers</code>                  | `Boolean` | Whether the user has has toggled the card user filter
 <code class="users">filterShowDateUpdated</code>            | `Boolean` | Whether the user has has toggled the card date filter
 <code class="users">filterShowAbsoluteDates</code>          | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
