@@ -245,8 +245,8 @@ Name | Type | Description
 <code class="connections">connectionTypeId</code>  | `String` | The connection-type that the connection belongs to
 <code class="connections">spaceId</code>           | `String` | The space that the connection belongs to
 <code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection type label
-<code class="connections">directionIsLeft</code>   | `Boolean` | The connection has an arrow facing left
-<code class="connections">directionIsRight</code>  | `Boolean` | The connection has an arrow facing right
+<code class="connections">directionIsStart</code>   | `Boolean` | The connection has an arrow facing the start card
+<code class="connections">directionIsEnd</code>  | `Boolean` | The connection has an arrow facing end card
 
 <a class="anchor" data-section="💐" name="connection-types"></a>
 <h2 class="badge connection-types">Connection Types</h2>
