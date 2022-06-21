@@ -244,7 +244,9 @@ Name | Type | Description
 <code class="connections">path</code>              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and its curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
 <code class="connections">connectionTypeId</code>  | `String` | The connection-type that the connection belongs to
 <code class="connections">spaceId</code>           | `String` | The space that the connection belongs to
-
+<code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection type label
+<code class="connections">directionIsLeft</code>   | `Boolean` | The connection has an arrow facing left
+<code class="connections">directionIsRight</code>  | `Boolean` | The connection has an arrow facing right
 
 <a class="anchor" data-section="💐" name="connection-types"></a>
 <h2 class="badge connection-types">Connection Types</h2>
