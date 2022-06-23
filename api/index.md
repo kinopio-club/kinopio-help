@@ -192,18 +192,18 @@ Name | Type | Description
 --- | --- | ---
 <code class="cards">id</code>                    		| `String`  | The unique ID of the card. Is not user updateable
 <code class="cards">name</code>                  		| `String`  | The name of the card is its main text
-<code class="cards">x</code>                     		| `Integer` | x-axis position
-<code class="cards">y</code>                     		| `Integer` | y-axis position
-<code class="cards">z</code>                     		| `Integer` | z-axis position
-<code class="cards">width</code>                 		| `Integer` | card width
-<code class="cards">resizeWidth</code>           		| `Integer` | width of a card resized by the user. Only affects cards with images or videos
-<code class="cards">height</code>                		| `Integer` | card height
+<code class="cards">x</code>                     		| `Integer` | The x-axis position
+<code class="cards">y</code>                     		| `Integer` | The y-axis position
+<code class="cards">z</code>                     		| `Integer` | The z-axis position
+<code class="cards">width</code>                 		| `Integer` | The card width
+<code class="cards">resizeWidth</code>           		| `Integer` | The width of a card resized by the user. Only affects cards with images or videos
+<code class="cards">height</code>                		| `Integer` | The card height
 <code class="cards">frameId</code>               		| `String`  | The id of type of frame applied to the card, if any
-<code class="cards">isRemoved</code>             		| `Boolean` | Sets whether the card has been soft-removed. (can be restored or permanently removed by space users)
+<code class="cards">isRemoved</code>             		| `Boolean` | Whether the card has been soft-removed. (Can be restored or permanently removed by space users)
 <code class="cards">spaceId</code>               		| `String`  | The space that the card belongs to
 <code class="cards">nameUpdatedByUserId</code>   		| `String`  | The user id that last updated the name of the card
-<code class="cards">nameUpdatedAt</code>         		| `String`  | The updated at date for the card name
-<code class="cards">linkToSpaceId</code>         		| `String`  | The spaceId linked to in the card name
+<code class="cards">nameUpdatedAt</code>         		| `String`  | The date when the card name was last updated
+<code class="cards">linkToSpaceId</code>         		| `String`  | The `spaceId` linked to in the card name
 <code class="cards">commentIsVisible</code>      		| `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
 <code class="cards">urlPreviewIsVisible</code>   		| `Boolean` | Whether the card will display a url preview (aka link unfurl)
 <code class="cards">shouldHideUrlPreviewInfo</code>   	| `Boolean` | Whether the card will display it's url preview title and description
@@ -214,9 +214,9 @@ Name | Type | Description
 <code class="cards">urlPreviewTitle</code>       		| `String`  | The title displayed in the url preview
 <code class="cards">urlPreviewDescription</code> 		| `String`  | The description displayed in the line of the url preview. Because most sites stuff their description tags with SEO gibberish, descriptions are only displayed for whitelisted domains. Contact support to add a domain to the whitelist.
 <code class="cards">urlPreviewErrorUrl</code>    		| `String`  | The last url that the preview failed on (could be a private or broken url). If this matches `urlPreviewUrl`, the url preview won't be created
-<code class="cards">backgroundColor</code>       		| `String`  | Background color for the card to display in
-<code class="cards">isLocked</code>              		| `Boolean` | If the card is locked and cannot be selected or edited in the client unless unlocked
-<code class="cards">isComment</code>                | `Boolean` | If the card is a comment, an alternative to the `((comment))` name syntax
+<code class="cards">backgroundColor</code>       		| `String`  | The background color for the card
+<code class="cards">isLocked</code>              		| `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
+<code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
 
 <a class="anchor" data-section="🍆" name="connections"></a>
 <h2 class="badge connections">Connections</h2>
