@@ -201,6 +201,8 @@ Name | Type | Description
 <code class="cards">frameId</code>               		| `String`  | The id of type of frame applied to the card, if any
 <code class="cards">isRemoved</code>             		| `Boolean` | Sets whether the card has been soft-removed. (can be restored or permanently removed by space users)
 <code class="cards">spaceId</code>               		| `String`  | The space that the card belongs to
+<code class="cards">createdAt</code>                | `String`  | The date when the card was created
+<code class="cards">updatedAt</code>                | `String`  | The date when any changes to the space were made, including moving it
 <code class="cards">nameUpdatedByUserId</code>   		| `String`  | The user id that last updated the name of the card
 <code class="cards">nameUpdatedAt</code>         		| `String`  | The updated at date for the card name
 <code class="cards">linkToSpaceId</code>         		| `String`  | The spaceId linked to in the card name
