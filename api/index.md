@@ -204,7 +204,7 @@ Name | Type | Description
 <code class="cards">nameUpdatedByUserId</code>   		| `String`  | The user id that last updated the name of the card
 <code class="cards">nameUpdatedAt</code>         		| `String`  | The date when the card name was last updated
 <code class="cards">linkToSpaceId</code>         		| `String`  | The `spaceId` linked to in the card name
-<code class="cards">commentIsVisible</code>      		| `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
+<code class="cards">isCommentVisible</code>      		| `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
 <code class="cards">urlPreviewIsVisible</code>   		| `Boolean` | Whether the card will display a url preview (aka link unfurl)
 <code class="cards">shouldHideUrlPreviewInfo</code>   	| `Boolean` | Whether the card will display it's url preview title and description
 <code class="cards">shouldHideUrlPreviewImage</code>   	| `Boolean` | Whether the card will display it's url preview image
@@ -244,8 +244,8 @@ Name | Type | Description
 <code class="connections">path</code>              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and its curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
 <code class="connections">connectionTypeId</code>  | `String` | The connection-type that the connection belongs to
 <code class="connections">spaceId</code>           | `String` | The space that the connection belongs to
-<code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection type label
-<code class="connections">directionIsVisible</code>   | `Boolean` | The connection has a directional arrow, in the direction of start card to end card
+<code class="connections">isLabelVisible</code>    | `Boolean` | The connection has a connection type label
+<code class="connections">isDirectionVisible</code>   | `Boolean` | The connection has a directional arrow, in the direction of start card to end card
 
 <a class="anchor" data-section="💐" name="connection-types"></a>
 <h2 class="badge connection-types">Connection Types</h2>
