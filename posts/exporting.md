@@ -6,9 +6,9 @@ color: '#c1ffca'
 
 ## Export Space
 
-You can export your space in a plain text, JSON and PDF formats via `Spaces → Export`
+You can export your space in a plain text, JSON and PDF formats via `Share → Export`
 
-![export-space](https://kinopio-updates.us-east-1.linodeobjects.com/export-dialog.png)
+<img src="/assets/posts/export-space.png" class="narrow" />
 
 ## Export Selected Cards
 
