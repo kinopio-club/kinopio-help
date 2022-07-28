@@ -109,6 +109,7 @@ Name | Type | Description
 <code class="users">shouldNotifyUnlockedStickyCards</code>  | `Boolean` | Whether to eventually notify users that they've unlocked sticky cards (true for new users only, triggered after they create 20 cards)
 <code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
 <code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
+<code class="users">shouldHideMobileTips</code>             | `Boolean` | User pereference for whether the 'Mobile Tips' button in the footer is visible on mobile
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="badge spaces">Spaces</h2>
