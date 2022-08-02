@@ -29,6 +29,7 @@ The API is limited to 5 requests per second. If you exceed this rate, you will r
 
 ## Routes
 
+
 <a class="anchor" name="all"></a>
 <h2 class="badge all">All</h2>
 
@@ -37,6 +38,9 @@ The API is limited to 5 requests per second. If you exceed this rate, you will r
 Method | Name | Description | Auth
 --- | --- | --- | ---
 `GET` | <code class="all">/</code> | Confirm that the API server is online | None
+
+
+
 
 
 <a class="anchor" data-section="👯‍♀️" name="users"></a>
@@ -111,6 +115,9 @@ Name | Type | Description
 <code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
 <code class="users">shouldHideMobileTips</code>             | `Boolean` | User pereference for whether the 'Mobile Tips' button in the footer is visible on mobile
 
+
+
+
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="badge spaces">Spaces</h2>
 
@@ -169,6 +176,9 @@ Name | Type | Description
 <code class="spaces">isTemplate</code>          | `Boolean` | Whether the space is a <a href="/posts/templates/">personal template</a>
 <code class="spaces">isHidden</code>            | `Boolean` | Whether the space is hidden from the users personal list of spaces
 
+
+
+
 <a class="anchor" data-section="🎑" name="cards"></a>
 <h2 class="badge cards">Cards</h2>
 
@@ -222,6 +232,9 @@ Name | Type | Description
 <code class="cards">isLocked</code>              		| `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
 
+
+
+
 <a class="anchor" data-section="🍆" name="connections"></a>
 <h2 class="badge connections">Connections</h2>
 
@@ -251,6 +264,9 @@ Name | Type | Description
 <code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection type label
 <code class="connections">directionIsVisible</code>   | `Boolean` | The connection has a directional arrow, in the direction of start card to end card
 
+
+
+
 <a class="anchor" data-section="💐" name="connection-types"></a>
 <h2 class="badge connection-types">Connection Types</h2>
 
@@ -277,6 +293,39 @@ Name | Type | Description
 <code class="connection-types">spaceId</code> | `String` | The space that the connection-type belongs to
 
 
+
+
+<a class="anchor" data-section="🍱" name="boxes"></a>
+<h2 class="badge boxes">Boxes</h2>
+
+Boxes are items used by users to contain or organize cards in a space. They can be named, colored, and positioned
+
+<h3 class="badge boxes">Box Routes</h3>
+
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the connection type belongs to.
+
+Method | Path | Description | Auth
+--- | --- | --- | ---
+`GET`     | <code class="box">/box/:boxId</code>  | Get info on a box                                                         | None
+`POST`    | <code class="box">/box</code>         | Create a box from object in request body. Object must contain `spaceId`   | `canEditSpace`
+`PATCH`   | <code class="box">/box</code>         | Update box from object in request body                                    | `canEditSpace`
+`DELETE`  | <code class="box">/box</code>         | Permenently remove box                                                    | `canEditSpace`
+
+<h3 class="badge boxes">Box Attributes</h3>
+
+Name | Type | Description
+--- | --- | ---
+<code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
+<code class="box">name</code>           | `String` | The name of the box
+<code class="box">x</code>              | `String` | The x-axis position of the box origin (top-left point)
+<code class="box">y</code>              | `String` | The y-axis position of the box origin
+<code class="box">resizeWidth</code>    | `String` | The width of the box
+<code class="box">resizeHeight</code>   | `String` | The height of the box
+<code class="box">color</code>          | `String` | The color of the box
+<code class="box">fill</code>           | `String` | The color of the box
+<code class="box">userId</code>         | `String` | The user that created the box
+<code class="box">spaceId</code>        | `String` | The space that the box belongs to
+
 <a class="anchor" data-section="🦚" name="tags"></a>
 <h2 class="badge tags">Tags</h2>
 
@@ -301,6 +350,9 @@ Name | Type | Description
 <code class="tags">color</code>   | `String` | Tag color, displayed on a card
 <code class="tags">cardId</code>  | `String` | The card that the tag belongs to
 <code class="tags">spaceId</code> | `String` | The space that the tag belongs to
+
+
+
 
 <a class="anchor" data-section="🛎" name="notifications"></a>
 <h2 class="badge notifications">Notifications</h2>
