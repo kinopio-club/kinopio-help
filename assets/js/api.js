@@ -10,5 +10,15 @@ console.log('🌹 api script ready')
 
 const tables = document.querySelectorAll('table')
 tables.forEach(element => {
-  element.outerHTML = `<div class="table-wrap">${element.outerHTML}</div>`
+  let prevElement = element.previousElementSibling
+  let className = prevElement.classList[1]
+  if (!className) {
+    prevElement = element.previousElementSibling.previousElementSibling
+    className = prevElement.classList[1]
+  }
+  if (!className) {
+    prevElement = element.previousElementSibling.previousElementSibling.previousElementSibling
+    className = prevElement.classList[1]
+  }
+  element.outerHTML = `<div class="table-wrap ${className}">${element.outerHTML}</div>`
 })

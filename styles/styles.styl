@@ -291,7 +291,11 @@ canvas.auto-paint
 
 .table-wrap
   overflow-x auto
-  border-radius 3px
+  border-radius 5px
+  width fit-content
+  padding 0 !important
+.badge + .table-wrap
+  margin-top 1rem
 
 table
   border-collapse collapse
@@ -304,6 +308,10 @@ table
   tr
     &:hover
       background var(--table-hover-background)
+    &:last-child
+      td
+        border-bottom 0
+
 
 // Components
 
@@ -453,6 +461,7 @@ ul.api-contents
   .cards,
   .connections,
   .connection-types,
+  .boxes,
   .tags,
   .notifications
     color var(--primary)
@@ -469,10 +478,46 @@ ul.api-contents
     background salmon
   .connection-types
     background burlywood
+  .boxes
+    background lightskyblue
   .tags
     background mediumaquamarine
   .notifications
     background darkseagreen
+
+.table-wrap
+  &.all,
+  &.users,
+  &.spaces,
+  &.cards,
+  &.connections,
+  &.connection-types,
+  &.boxes,
+  &.tags,
+  &.notifications
+    background transparent
+    border-width 2px
+    border-style solid
+  &.all
+    border-color khaki
+  &.users
+    border-color #b9a8ff
+  &.spaces
+    border-color pink
+  &.cards
+    border-color violet
+  &.connections
+    border-color salmon
+  &.connection-types
+    border-color burlywood
+  &.boxes
+    border-color lightskyblue
+  &.tags
+    border-color mediumaquamarine
+  &.notifications
+    border-color darkseagreen
+
+
 
   .get-label,
   .post-label,
