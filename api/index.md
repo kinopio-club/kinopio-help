@@ -323,6 +323,7 @@ Name | Type | Description
 <code class="box">resizeHeight</code>   | `String` | The height of the box
 <code class="box">color</code>          | `String` | The color of the box
 <code class="box">fill</code>           | `String` | The color of the box
+<code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
 <code class="box">userId</code>         | `String` | The user that created the box
 <code class="box">spaceId</code>        | `String` | The space that the box belongs to
 
