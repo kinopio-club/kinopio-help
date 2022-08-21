@@ -61,6 +61,7 @@ Method | Path | Description | Auth
 `GET`   | <code class="users">/user/spaces</code>                 | Get a list of the user's <a href="#spaces" class="badge spaces">Spaces</a>                                                                                | `apiKey`
 `GET`   | <code class="users">/user/journal-spaces</code>         | Get a list of the user's <a href="#spaces" class="badge spaces">Journal Spaces</a> (i.e. spaces with `moonPhase`)                                         | `apiKey`
 `GET`   | <code class="users">/user/removed-spaces</code>         | Get <a href="#spaces" class="badge spaces">Spaces</a> removed by the authenticating user                                                                  | `apiKey`
+`GET`   | <code class="users">/user/inbox-space</code>            | Get info on the user's `Inbox` space. whether a space is an inbox or not is based on name only, so it's possible to have multiple `Inbox` spaces, but only one the most recently updated Inbox will be returned | `apiKey`
 `GET`   | <code class="users">/user/tags</code>                   | Get a list of the last edited <a href="#tags" class="badge tags">Tags</a> in your spaces                                                                  | `apiKey`
 `PATCH` | <code class="users">/user</code>                        | Update the authenticating user(s) based on an object body with user attributes. You can't patch `apiKey`, `password`, `emailIsVerified`, or `email`       | `apiKey`
 `PATCH` | <code class="users">/user/favorites</code>              | Add or remove favorite users or spaces. Acts like a toggle, if the user is already liked it then removes the like. If not already liked it adds the like. request body should be in the format. | `apiKey`
@@ -97,8 +98,7 @@ Name | Type | Description
 <code class="users">shouldInvertZoomDirection</code>        | `Boolean` | Whether the user has chosen to invert the direction of zooming with cmd/ctrl-scroll
 <code class="users">shouldUseLastConnectionType</code>	    | `Boolean` | Whether the user has chosen to use last connection type for new connections
 <code class="users">shouldShowCardCollaborationInfo</code>	| `Boolean` | Whether the user has chosen to show collaboration info (update date, users) inside cards
-<code class="users">shouldShowCardStyleActions</code>       | `Boolean` | Whether the user has chosen to show card styling options in the card-details dialog
-<code class="users">shouldShowMultiCardStyleActions</code>  | `Boolean` | Whether the user has chosen to show card styling options in the multiple-actions dialog that appears when you paint select cards
+<code class="users">shouldShowStyleActions</code>           | `Boolean` | Whether the user has chosen to show styling options in both the card-details and multiple-selected-actions dialog
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">shouldShowCurrentSpaceTags</code>       | `Boolean` | Whether the user has chosen should only tags in the current space in the Tags dialog
 <code class="users">shouldOpenLinksInNewTab</code>          | `Boolean` | Whether the user has chosen to open card urls in a new tab by default
@@ -106,7 +106,6 @@ Name | Type | Description
 <code class="users">dialogSpaceFilters</code>               | `String` | User preference for spaces filter, is either `null`, `'journals'`, `'spaces'`
 <code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
-<code class="users">defaultAddSpaceId</code>                | `String` | User preference for the default space used in [kinopio.club/add](https://kinopio.club/add), such as through browser extensions
 <code class="users">showWeather</code>                		| `Boolean` | Whether to add today's weather forecast to new journal spaces
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
@@ -323,6 +322,7 @@ Name | Type | Description
 <code class="box">resizeHeight</code>   | `String` | The height of the box
 <code class="box">color</code>          | `String` | The color of the box
 <code class="box">fill</code>           | `String` | The color of the box
+<code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
 <code class="box">userId</code>         | `String` | The user that created the box
 <code class="box">spaceId</code>        | `String` | The space that the box belongs to
 
