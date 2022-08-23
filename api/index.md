@@ -233,6 +233,7 @@ Name | Type | Description
 <code class="cards">backgroundColor</code>       		| `String`  | The background color for the card
 <code class="cards">isLocked</code>              		| `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
+<code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 
 
 
