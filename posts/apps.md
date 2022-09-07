@@ -6,7 +6,9 @@ color: '#bbd0ff'
 
 <img src="/assets/app-icon-mac.png" class="no-shadow" style="width: 100px"/>
 
-You can download Kinopio for macOS, Windows, or Linux – or add it to your iOS or Android phone homescreen – by following the instructions in `About → Apps`
+[Download desktop apps](https://dl.todesktop.com/201223j48l03cxi) for macOS, Windows, or Linux
+
+Or add it to your iOS or Android phone homescreen by following the instructions in `About → Apps`
 
 <video class="wide" autoplay loop muted playsinline>
   <source src="https://kinopio-updates.us-east-1.linodeobjects.com/kinopio-desktop-apps.mp4">
