@@ -6,10 +6,16 @@ color: '#bbd0ff'
 
 On a touch device, dragging your finger along the screen scrolls the page, and two-finger pinching zooms in and out, just like it does on a normal website.
 
-## Long-press to lock screen and paint
+## Tap and hold to paint select cards
 
-This will prevent the screen from scrolling, enabling you to precisely paint cards and connections.
-
-<video autoplay loop muted playsinline>
-  <source src="/assets/posts/long-press.mp4">
+<video autoplay loop muted playsinline class="narrow">
+  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/mobile-press-hold-paint.mp4" height="83">
 </video>
+
+## Tap and hold to drag cards
+
+<video autoplay loop muted playsinline class="narrow">
+  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/mobile-press-hold-drag.mp4" height="83">
+</video>
+
+## Two finger tap to undo, three finger tap to redo
