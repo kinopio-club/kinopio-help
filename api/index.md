@@ -229,6 +229,7 @@ Name | Type | Description
 <code class="cards">urlPreviewTitle</code>       		| `String`  | The title displayed in the url preview
 <code class="cards">urlPreviewDescription</code> 		| `String`  | The description displayed in the line of the url preview. Because most sites stuff their description tags with SEO gibberish, descriptions are only displayed for whitelisted domains. Contact support to add a domain to the whitelist.
 <code class="cards">urlPreviewErrorUrl</code>    		| `String`  | The last url that the preview failed on (could be a private or broken url). If this matches `urlPreviewUrl`, the url preview won't be created
+<code class="cards">shouldUpdateUrlPreview</code>       | `Boolean` | Whether the card should be checked for a url preview the next time it's space is loaded in the kinopio-client app. This attribute is automatically assigned to cards created by /card POSTs
 <code class="cards">backgroundColor</code>       		| `String`  | The background color for the card
 <code class="cards">isLocked</code>              		| `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
