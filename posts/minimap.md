@@ -1,7 +1,7 @@
 ---
 title: Navigate with Minimap
-tags: ['How to Use']
-color: '#90ffff'
+tags: ['Getting Around']
+color: '#8fbb8f'
 ---
 
 The minimap gives you a birds eye view of a space and lets you click to scroll to specific sections.

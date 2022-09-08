@@ -1,7 +1,7 @@
 ---
 title: Searching
-tags: ['How to Use']
-color: '#90ffff'
+tags: ['Getting Around']
+color: '#8fbb8f'
 ---
 
 ## Spaces

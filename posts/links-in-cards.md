@@ -1,5 +1,5 @@
 ---
-title: Links in Cards
+title: Links and Images in Cards
 tags: ['How to Use']
 color: '#90ffff'
 ---

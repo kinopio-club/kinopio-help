@@ -34,38 +34,41 @@ section.overview#quickStart
       video(autoplay loop muted playsinline width="300" height="200")
         source(src="/assets/overview/1.mp4")
       p
-        span.badge 1
-        span= ' '
+        // span.badge 1
+        // span= ' '
         span Click to add cards
 
     article
       video(autoplay loop muted playsinline width="300" height="200")
         source(src="/assets/overview/2.mp4")
       p
-        span.badge 2
-        span= ' '
+        // span.badge 2
+        // span= ' '
         span Drag cards to move them
 
     article
       video(autoplay loop muted playsinline width="300" height="200")
         source(src="/assets/overview/3.mp4")
       p
-        span.badge 3
-        span= ' '
+        // span.badge 3
+        // span= ' '
         span Drag to connect cards together
 
     article
       video(autoplay loop muted playsinline width="300" height="200")
         source(src="/assets/overview/4.mp4")
       p
-        span.badge 4
-        span= ' '
+        // span.badge 4
+        // span= ' '
         span Paint select to edit together
 
 section#index.index
   - let collection
 
   - collection = 'How to Use'
+  +posts(collection)
+
+  - collection = 'Getting Around'
   +posts(collection)
 
   - collection = 'About Kinopio'
