@@ -3,17 +3,22 @@ layout: default.pug
 ---
 
 mixin posts(collection)
+  // Search Attributes
   - let titles = ''
   each post in collections[collection]
     - titles = titles + ',' + post.data.title
-  // Title
+  // Section Title
   h2(data-posts=titles) #{collection}
   //- Posts
+  //- alphabeticallySorted defined in .eleventy.js
   ul
-    each post in collections[collection]
-      li(data-title=post.data.title)
-        a(href=post.url style={background: post.data.color})
-          span #{post.data.title}
+    each post in collections.alphabeticallySorted
+      if post.data.tags
+        if post.data.tags.includes(collection)
+          li(data-title=post.data.title)
+            a(href=post.url style={background: post.data.color})
+              span #{post.data.title}
+
 
 section#hello
   p
