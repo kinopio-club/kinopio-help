@@ -12,7 +12,6 @@ module.exports = function(config) {
     const collection = titles.map(title => {
       return posts.find(post => post.data.title === title)
     })
-    console.log(titles, collection[0].data.tags)
     return collection
   })
 
