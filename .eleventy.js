@@ -4,7 +4,7 @@ module.exports = function(config) {
 
   return {
     templateFormats: [
-	  "md",
+  	  "md",
       "css"
     ]
   }
