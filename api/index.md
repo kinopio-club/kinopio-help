@@ -171,6 +171,7 @@ Name | Type | Description
 <code class="spaces">backgroundTint</code>      | `String`  | The background color used to tint the space background
 <code class="spaces">isTemplate</code>          | `Boolean` | Whether the space is a <a href="/posts/templates/">personal template</a>
 <code class="spaces">isHidden</code>            | `Boolean` | Whether the space is hidden from the users personal list of spaces
+<code class="spaces">isFromTweet</code>         | `Boolean` | Whether the space was created by replying to a tweet with `@kinopioclub save`
 
 
 
