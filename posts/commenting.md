@@ -1,7 +1,7 @@
 ---
 title: Commenting
-tags: ['How to Use']
-color: '#90ffff'
+tags: ['Advanced Use']
+color: '#eee697'
 ---
 
 Type `((` to make a comment card. Comments are smaller than normal cards, letting you give feedback without feeling like you’re ‘intruding’ on the original space.

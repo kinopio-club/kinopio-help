@@ -1,7 +1,7 @@
 ---
 title: Locking Cards
-tags: ['How to Use']
-color: '#90ffff'
+tags: ['Advanced Use']
+color: '#eee697'
 ---
 
 Prevent cards from being accidentally moved, edited, or deleted by locking them.

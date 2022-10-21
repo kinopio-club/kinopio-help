@@ -1,7 +1,7 @@
 ---
 title: Tags
-tags: ['How to Use']
-color: '#90ffff'
+tags: ['Advanced Use']
+color: '#eee697'
 ---
 
 Add `[[tags]]` to your cards to make them stand out and connect ideas across spaces.
