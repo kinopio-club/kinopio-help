@@ -1,7 +1,7 @@
 ---
 title: Privacy Options
-tags: ['Sharing and Privacy']
-color: '#ebcb88'
+tags: ['Advanced Use']
+color: '#eee697'
 ---
 Who Can See What I Make?
 

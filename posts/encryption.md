@@ -1,7 +1,7 @@
 ---
 title: Encryption
-tags: ['Sharing and Privacy']
-color: '#ebcb88'
+tags: ['Policies and Privacy']
+color: 'pink'
 ---
 
 ## Encryption In-Flight

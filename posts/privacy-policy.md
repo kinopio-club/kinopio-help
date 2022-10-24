@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-tags: ['Policies']
+tags: ['Policies and Privacy']
 color: 'pink'
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Use Restrictions Policy
-tags: ['Policies']
+tags: ['Policies and Privacy']
 color: 'pink'
 ---
 

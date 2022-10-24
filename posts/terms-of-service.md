@@ -1,6 +1,6 @@
 ---
 title: Terms of Service
-tags: ['Policies']
+tags: ['Policies and Privacy']
 color: 'pink'
 ---
 
