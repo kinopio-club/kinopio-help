@@ -1,7 +1,7 @@
 ---
 title: Checkbox Cards
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 ---
 
 Differentiate thoughts from plans with checkbox cards,

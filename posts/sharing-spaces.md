@@ -1,7 +1,7 @@
 ---
 title: Sharing Spaces
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 ---
 
 Share your spaces with the world by copying the URL provided in the `Share` dialog.

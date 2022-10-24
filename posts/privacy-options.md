@@ -1,7 +1,7 @@
 ---
 title: Privacy Options
 tags: ['Advanced Use']
-color: '#eee697'
+color: '#b9a8ff'
 ---
 Who Can See What I Make?
 

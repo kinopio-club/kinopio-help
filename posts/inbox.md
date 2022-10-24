@@ -1,7 +1,7 @@
 ---
 title: Collecting Ideas in the Inbox
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 ---
 
 Use an Inbox space to collect thoughts, todos, and ideas that don't have a place to go yet. Your Inbox will appear above all your other spaces and favourites so it's always close at hand

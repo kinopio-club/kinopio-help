@@ -1,7 +1,7 @@
 ---
 title: How Your Data is Stored?
 tags: ['About Kinopio']
-color: '#bbd0ff'
+color: 'mediumaquamarine'
 ---
 
 ## Without an Account

@@ -1,7 +1,7 @@
 ---
 title: Importing
 tags: ['Importing and Exporting']
-color: '#c1ffca'
+color: 'lightskyblue'
 ---
 
 ## Import from Exported File

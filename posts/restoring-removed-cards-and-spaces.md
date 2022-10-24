@@ -1,7 +1,7 @@
 ---
 title: Restoring Removed Cards and Spaces
 tags: ['Advanced Use']
-color: '#eee697'
+color: '#b9a8ff'
 ---
 
 If you've accidentally removed/deleted a card or space, you can restore it back through `Removed`. In the `Cards` tab, you'll be able to restore or permanently remove cards that have been removed in the current space.

@@ -1,7 +1,7 @@
 ---
 title: Paint Selecting and Bulk Actions
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 date: 2020-04-01
 ---
 

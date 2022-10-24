@@ -1,7 +1,7 @@
 ---
 title: Favoriting Spaces and People
 tags: ['Community']
-color: '#ffc1e7'
+color: 'burlywood'
 ---
 
 You can bookmark spaces or people to return to later by favoriting them.

@@ -1,7 +1,7 @@
 ---
 title: Creating Cards and Connections
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 date: 2020-01-01
 ---
 

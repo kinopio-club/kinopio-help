@@ -1,7 +1,7 @@
 ---
 title: Using Templates and Creating Your Own
 tags: ['Community']
-color: '#ffc1e7'
+color: 'burlywood'
 ---
 <span>Get started with templates by clicking the <img src="/assets/templates.svg" class="icon templates"></span> template button in the top left.</span>
 

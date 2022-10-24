@@ -1,7 +1,7 @@
 ---
 title: Styling Cards with Colors, Formatting, Frames and more
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 ---
 
 

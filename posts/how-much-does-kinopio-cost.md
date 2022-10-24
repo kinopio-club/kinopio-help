@@ -1,7 +1,7 @@
 ---
 title: How Much Does Kinopio Cost? (Pricing)
 tags: ['About Kinopio']
-color: '#bbd0ff'
+color: 'mediumaquamarine'
 ---
 
 All features of Kinopio are free to use and collaborate with, up to a limit of 100 cards and an upload file size limit of 5mb.

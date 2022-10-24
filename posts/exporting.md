@@ -1,7 +1,7 @@
 ---
 title: Exporting Spaces as text, PDFs, or JSON
 tags: ['Importing and Exporting']
-color: '#c1ffca'
+color: 'lightskyblue'
 ---
 
 ## Export Space

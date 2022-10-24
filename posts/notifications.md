@@ -1,7 +1,7 @@
 ---
 title: Notifications
 tags: ['Collaboration']
-color: '#f1ffc4'
+color: 'violet'
 ---
 
 By default, whenever a collaborator (or anyone in your open spaces) adds a card you will receive a notification about it.

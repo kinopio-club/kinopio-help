@@ -1,7 +1,7 @@
 ---
 title: Desktop and Mobile Apps
 tags: ['About Kinopio']
-color: '#bbd0ff'
+color: 'mediumaquamarine'
 ---
 
 <img src="/assets/app-icon-mac.png" class="no-shadow" style="width: 100px"/>

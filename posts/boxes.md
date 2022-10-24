@@ -1,7 +1,7 @@
 ---
 title: Boxes
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 ---
 
 Boxes help you group, add structure, and guide collaborators around cards,

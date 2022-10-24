@@ -1,7 +1,7 @@
 ---
 title: Searching
 tags: ['Getting Around']
-color: '#8fbb8f'
+color: 'pink'
 ---
 
 ## Spaces

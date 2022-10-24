@@ -1,7 +1,7 @@
 ---
 title: Navigate with Minimap
 tags: ['Getting Around']
-color: '#8fbb8f'
+color: 'pink'
 ---
 
 The minimap gives you a birds eye view of a space and lets you click to scroll to specific sections.

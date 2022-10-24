@@ -1,7 +1,7 @@
 ---
 title: Links in Cards
 tags: ['Advanced Use']
-color: '#eee697'
+color: '#b9a8ff'
 ---
 
 <video class="wide" autoplay loop muted playsinline>

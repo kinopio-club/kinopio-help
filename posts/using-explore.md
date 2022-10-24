@@ -1,7 +1,7 @@
 ---
 title: Discover Community Spaces with Explore and Live
 tags: ['Community']
-color: '#ffc1e7'
+color: 'burlywood'
 ---
 
 ## Explore

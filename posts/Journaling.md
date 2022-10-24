@@ -1,7 +1,7 @@
 ---
 title: Journaling
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 ---
 
 Add journal spaces to reflect on your life and moments,

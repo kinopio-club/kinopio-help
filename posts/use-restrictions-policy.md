@@ -1,7 +1,7 @@
 ---
 title: Use Restrictions Policy
 tags: ['Policies and Privacy']
-color: 'pink'
+color: 'salmon'
 ---
 
 Kinopio helps people understand themselves and be understood by sharing thoughts and ideas. But an expressive tool is also one that can be used maliciously.

@@ -1,7 +1,7 @@
 ---
 title: Keyboard Shortcuts
 tags: ['Getting Around']
-color: '#8fbb8f'
+color: 'pink'
 ---
 
 ## Enter and Shift-Enter to make card trees

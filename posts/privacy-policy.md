@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 tags: ['Policies and Privacy']
-color: 'pink'
+color: 'salmon'
 ---
 
 > Friends don't spy on friends.

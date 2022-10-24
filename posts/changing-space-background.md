@@ -1,7 +1,7 @@
 ---
 title: Changing Space Background Image and Color
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 date: 2020-03-02
 ---
 

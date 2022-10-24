@@ -1,7 +1,7 @@
 ---
 title: Linking Spaces with Backlinks
 tags: ['Advanced Use']
-color: '#eee697'
+color: '#b9a8ff'
 ---
 
 Use backlinks to connect your spaces together and weave your own web of knowledge

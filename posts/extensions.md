@@ -1,7 +1,7 @@
 ---
 title: Browser Extensions
 tags: ['About Kinopio']
-color: '#bbd0ff'
+color: 'mediumaquamarine'
 ---
 
 For quickly recording thoughts, inspirations, and urls to your [Inbox](/posts/inbox/) while you're out making waves on the world wide web.

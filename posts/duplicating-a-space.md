@@ -1,7 +1,7 @@
 ---
 title: Duplicating a Space
 tags: ['How to Use']
-color: '#90ffff'
+color: 'khaki'
 ---
 
 You can duplicate a space by exporting through `Spaces → Export → Duplicate Space`
