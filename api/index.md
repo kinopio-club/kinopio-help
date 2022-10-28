@@ -71,48 +71,51 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="users">id</code>                               | `String`  | The unique ID of the user. Is not user updateable
-<code class="users">name</code>                             | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
-<code class="users">email</code>                            | `String`  | The unique email address of the user required to create an account
-<code class="users">emailIsVerified</code>                  | `Boolean` | Whether the user has verified their email address
 <code class="users">apiKey</code>                           | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
-<code class="users">lastSpaceId</code>                      | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
-<code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
-<code class="users">description</code>                      | `String`  | A description of this particular user
-<code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
-<code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
 <code class="users">cardsCreatedCount</code>                | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
-<code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
-<code class="users">isModerator</code>                      | `Boolean` | Whether the user is a moderator of the community forums or discord. Is not user updatable.
-<code class="users">isGuideMaker</code>                     | `Boolean` | Whether the user has written a guide for the help site. Is not user updatable.
-<code class="users">isDonor</code>                          | `Boolean` | Whether the user has donated to Kinopio. Is not user updatable.
-<code class="users">filterShowUsers</code>                  | `Boolean` | Whether the user has has toggled the card user filter
-<code class="users">filterShowDateUpdated</code>            | `Boolean` | Whether the user has has toggled the card date filter
-<code class="users">filterShowAbsoluteDates</code>          | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
-<code class="users">filterComments</code>                   | `Boolean` | Whether comment cards are hidden to the user
-<code class="users">journalPrompts</code>                   | `Array`   | id, name, and packId for each user journal prompt. Private user info.
-<code class="users">newSpacesAreBlank</code>                | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
-<code class="users">shouldEmailNotifications</code>         | `Boolean` | Whether the user has chosen to allow notification emails (default to true)
-<code class="users">shouldEmailBulletin</code>              | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
-<code class="users">shouldEmailWeeklyReview</code>          | `Boolean` | Whether the user has chosen to allow weekly review emails (default to true)
-<code class="users">shouldShowMoreAlignOptions</code>       | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
-<code class="users">shouldUseLastConnectionType</code>	    | `Boolean` | Whether the user has chosen to use last connection type for new connections
-<code class="users">shouldShowCardCollaborationInfo</code>	| `Boolean` | Whether the user has chosen to show collaboration info (update date, users) inside cards
-<code class="users">shouldShowStyleActions</code>           | `Boolean` | Whether the user has chosen to show styling options in both the card-details and multiple-selected-actions dialog
-<code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
-<code class="users">shouldShowCurrentSpaceTags</code>       | `Boolean` | Whether the user has chosen should only tags in the current space in the Tags dialog
-<code class="users">shouldOpenLinksInNewTab</code>          | `Boolean` | Whether the user has chosen to open card urls in a new tab by default
-<code class="users">dialogFavoritesFilters</code>           | `String` | User preference for favorite spaces filter, is either `null`, `'currentUser'`, `'otherUsers'`
-<code class="users">dialogSpaceFilters</code>               | `String` | User preference for spaces filter, is either `null`, `'journals'`, `'spaces'`
+<code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
 <code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
+<code class="users">description</code>                      | `String`  | A description of this particular user
+<code class="users">dialogFavoritesFilters</code>           | `String` | User preference for favorite spaces filter, is either `null`, `'currentUser'`, `'otherUsers'`
+<code class="users">dialogSpaceFilters</code>               | `String` | User preference for spaces filter, is either `null`, `'journals'`, `'spaces'`
+<code class="users">email</code>                            | `String`  | The unique email address of the user required to create an account
+<code class="users">emailIsVerified</code>                  | `Boolean` | Whether the user has verified their email address
+<code class="users">filterShowAbsoluteDates</code>          | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
+<code class="users">filterComments</code>                   | `Boolean` | Whether comment cards are hidden to the user
+<code class="users">filterShowDateUpdated</code>            | `Boolean` | Whether the user has has toggled the card date filter
+<code class="users">filterShowUsers</code>                  | `Boolean` | Whether the user has has toggled the card user filter
+<code class="users">isDonor</code>                          | `Boolean` | Whether the user has donated to Kinopio. Is not user updatable.
+<code class="users">isModerator</code>                      | `Boolean` | Whether the user is a moderator of the community forums or discord. Is not user updatable.
+<code class="users">isGuideMaker</code>                     | `Boolean` | Whether the user has written a guide for the help site. Is not user updatable.
+<code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
+<code class="users">journalPrompts</code>                   | `Array`   | id, name, and packId for each user journal prompt. Private user info.
+<code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
+<code class="users">lastSpaceId</code>                      | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
+<code class="users">name</code>                             | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
+<code class="users">newSpacesAreBlank</code>                | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
+<code class="users">twitterUsername</code>                  | `String` | Twitter username connected to this account
+<code class="users">shouldEmailBulletin</code>              | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
+<code class="users">shouldEmailNotifications</code>         | `Boolean` | Whether the user has chosen to allow notification emails (default to true)
+<code class="users">shouldEmailWeeklyReview</code>          | `Boolean` | Whether the user has chosen to allow weekly review emails (default to true)
+<code class="users">shouldShowCardCollaborationInfo</code>  | `Boolean` | Whether the user has chosen to show collaboration info (update date, users) inside cards
+<code class="users">shouldUseLastConnectionType</code>      | `Boolean` | Whether the user has chosen to use last connection type for new connections
+<code class="users">shouldShowMoreAlignOptions</code>       | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
+<code class="users">shouldShowCurrentSpaceTags</code>       | `Boolean` | Whether the user has chosen should only tags in the current space in the Tags dialog
+<code class="users">shouldNotifyUnlockedStickyCards</code>  | `Boolean` | Whether to eventually notify users that they've unlocked sticky cards (true for new users only, triggered after they create 20 cards)
+<code class="users">shouldOpenLinksInNewTab</code>          | `Boolean` | Whether the user has chosen to open card urls in a new tab by default
+<code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
+<code class="users">shouldShowStyleActions</code>           | `Boolean` | Whether the user has chosen to show styling options in both the card-details and multiple-selected-actions dialog
+<code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
+<code class="users">shouldUseDarkColors</code>              | `String` | User preference for whether the color picker will show dark or light colors
+<code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showWeather</code>                		  | `Boolean` | Whether to add today's weather forecast to new journal spaces
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
-<code class="users">shouldNotifyUnlockedStickyCards</code>  | `Boolean` | Whether to eventually notify users that they've unlocked sticky cards (true for new users only, triggered after they create 20 cards)
-<code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
-<code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
-<code class="users">shouldUseDarkColors</code>              | `String` | User preference for whether the color picker will show dark or light colors
-<code class="users">twitterUsername</code>                  | `String` | Twitter username connected to this account
+<code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
+
+
+
 
 <a class="anchor" data-section="🍓" name="spaces"></a>
 <h2 class="badge spaces">Spaces</h2>
@@ -147,31 +150,31 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="spaces">id</code>                  | `String`  | The unique ID of the space. Is not user updateable
-<code class="spaces">name</code>                | `String`  | The name of the space
-<code class="spaces">url</code>                 | `String`  | The url of a space is determined by its `name` and `id`. For example, `kinopio.club/:space-name-:id`
-<code class="spaces">ownerUserId</code>         | `String`  | The userId of the user who created the space. Used to create url slugs
-<code class="spaces">privacy</code>             | `String`  | Can be `open`, `closed`, `private`
-<code class="spaces">isRemoved</code>           | `Boolean` | Sets whether the space has been soft-removed. (can then be restored or permanently removed)
-<code class="spaces">removedByUserId</code>     | `String`  | The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed
-<code class="spaces">collaboratorKey</code>     | `String`  | Used like an apikey to allow editing, but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
-<code class="spaces">users</code>               | `Array`   | The user who created/owns the space (a space will always have only one user)
-<code class="spaces">collaborators</code>       | `Array`   | A list of users that can also edit the space
-<code class="spaces">cards</code>               | `Array`   | A list of <a href="#cards" class="badge cards">Cards</a> in the space
-<code class="spaces">connections</code>         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
-<code class="spaces">connectionTypes</code>     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
-<code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
-<code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon used by Journal spaces. Possible values are `new-moon`, `waxing-crescent`, `waxing-quarter`, `waxing-gibbous`, `full-moon`, `waning-gibbous`, `waning-quarter`, `waning-crescent`
-<code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
-<code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
-<code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
-<code class="spaces">editedByUserId</code>      | `String`  | The user id of the last user who edited or created a card in the space
-<code class="spaces">createdAt</code>           | `String`  | The date when the space was created
-<code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
 <code class="spaces">background</code>          | `String`  | The image url used by the space background
 <code class="spaces">backgroundTint</code>      | `String`  | The background color used to tint the space background
-<code class="spaces">isTemplate</code>          | `Boolean` | Whether the space is a <a href="/posts/templates/">personal template</a>
-<code class="spaces">isHidden</code>            | `Boolean` | Whether the space is hidden from the users personal list of spaces
+<code class="spaces">cards</code>               | `Array`   | A list of <a href="#cards" class="badge cards">Cards</a> in the space
+<code class="spaces">collaboratorKey</code>     | `String`  | Used like an apikey to allow editing, but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
+<code class="spaces">collaborators</code>       | `Array`   | A list of users that can also edit the space
+<code class="spaces">connectionTypes</code>     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
+<code class="spaces">connections</code>         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
+<code class="spaces">createdAt</code>           | `String`  | The date when the space was created
+<code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
+<code class="spaces">editedByUserId</code>      | `String`  | The user id of the last user who edited or created a card in the space
 <code class="spaces">isFromTweet</code>         | `Boolean` | Whether the space was created by replying to a tweet with `@kinopioclub save`
+<code class="spaces">isHidden</code>            | `Boolean` | Whether the space is hidden from the users personal list of spaces
+<code class="spaces">isRemoved</code>           | `Boolean` | Sets whether the space has been soft-removed. (can then be restored or permanently removed)
+<code class="spaces">isTemplate</code>          | `Boolean` | Whether the space is a <a href="/posts/templates/">personal template</a>
+<code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon used by Journal spaces. Possible values are `new-moon`, `waxing-crescent`, `waxing-quarter`, `waxing-gibbous`, `full-moon`, `waning-gibbous`, `waning-quarter`, `waning-crescent`
+<code class="spaces">name</code>                | `String`  | The name of the space
+<code class="spaces">ownerUserId</code>         | `String`  | The userId of the user who created the space. Used to create url slugs
+<code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
+<code class="spaces">privacy</code>             | `String`  | Can be `open`, `closed`, `private`
+<code class="spaces">removedByUserId</code>     | `String`  | The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed
+<code class="spaces">url</code>                 | `String`  | The url of a space is determined by its `name` and `id`. For example, `kinopio.club/:space-name-:id`
+<code class="spaces">users</code>               | `Array`   | The user who created/owns the space (a space will always have only one user)
+<code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
+<code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
+<code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
 
 
 
@@ -205,34 +208,34 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="cards">id</code>                    		| `String`  | The unique ID of the card. Is not user updateable
+<code class="cards">backgroundColor</code>          | `String`  | The background color for the card
+<code class="cards">commentIsVisible</code>         | `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
+<code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
+<code class="cards">height</code>                   | `Integer` | The card height
+<code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
+<code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
+<code class="cards">isLocked</code>                 | `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
+<code class="cards">isRemoved</code>                | `Boolean` | Whether the card has been soft-removed. (Can be restored or permanently removed by space users)
+<code class="cards">linkToSpaceId</code>            | `String`  | The `spaceId` linked to in the card name
 <code class="cards">name</code>                  		| `String`  | The name of the card is its main text
+<code class="cards">nameUpdatedAt</code>            | `String`  | The date when the card name was last updated
+<code class="cards">nameUpdatedByUserId</code>      | `String`  | The user id that last updated the name of the card
+<code class="cards">resizeWidth</code>              | `Integer` | The width of a card resized by the user. Only affects cards with images or videos
+<code class="cards">shouldHideUrlPreviewImage</code>    | `Boolean` | Whether the card will display it's url preview image
+<code class="cards">shouldHideUrlPreviewInfo</code>     | `Boolean` | Whether the card will display it's url preview title and description
+<code class="cards">shouldUpdateUrlPreview</code>       | `Boolean` | Whether the card should be checked for a url preview the next time it's space is loaded in the kinopio-client app. This attribute is automatically assigned to cards created by /card POSTs
+<code class="cards">spaceId</code>                  | `String`  | The space that the card belongs to
+<code class="cards">urlPreviewDescription</code>    | `String`  | The description displayed in the line of the url preview. Because most sites stuff their description tags with SEO gibberish, descriptions are only displayed for whitelisted domains. Contact support to add a domain to the whitelist.
+<code class="cards">urlPreviewErrorUrl</code>       | `String`  | The last url that the preview failed on (could be a private or broken url). If this matches `urlPreviewUrl`, the url preview won't be created
+<code class="cards">urlPreviewFavicon</code>        | `String`  | The url for the url preview favicon image
+<code class="cards">urlPreviewImage</code>          | `String`  | The url for the url preview image
+<code class="cards">urlPreviewIsVisible</code>      | `Boolean` | Whether the card will display a url preview (aka link unfurl)
+<code class="cards">urlPreviewTitle</code>          | `String`  | The title displayed in the url preview
+<code class="cards">urlPreviewUrl</code>            | `String`  | The url that the card url preview is based on
+<code class="cards">width</code>                    | `Integer` | The card width
 <code class="cards">x</code>                     		| `Integer` | The x-axis position
 <code class="cards">y</code>                     		| `Integer` | The y-axis position
 <code class="cards">z</code>                     		| `Integer` | The z-axis position
-<code class="cards">width</code>                 		| `Integer` | The card width
-<code class="cards">resizeWidth</code>           		| `Integer` | The width of a card resized by the user. Only affects cards with images or videos
-<code class="cards">height</code>                		| `Integer` | The card height
-<code class="cards">frameId</code>               		| `String`  | The id of type of frame applied to the card, if any
-<code class="cards">isRemoved</code>             		| `Boolean` | Whether the card has been soft-removed. (Can be restored or permanently removed by space users)
-<code class="cards">spaceId</code>               		| `String`  | The space that the card belongs to
-<code class="cards">nameUpdatedByUserId</code>   		| `String`  | The user id that last updated the name of the card
-<code class="cards">nameUpdatedAt</code>         		| `String`  | The date when the card name was last updated
-<code class="cards">linkToSpaceId</code>         		| `String`  | The `spaceId` linked to in the card name
-<code class="cards">commentIsVisible</code>      		| `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
-<code class="cards">urlPreviewIsVisible</code>   		| `Boolean` | Whether the card will display a url preview (aka link unfurl)
-<code class="cards">shouldHideUrlPreviewInfo</code>   	| `Boolean` | Whether the card will display it's url preview title and description
-<code class="cards">shouldHideUrlPreviewImage</code>   	| `Boolean` | Whether the card will display it's url preview image
-<code class="cards">urlPreviewUrl</code>         		| `String`  | The url that the card url preview is based on
-<code class="cards">urlPreviewImage</code>       		| `String`  | The url for the url preview image
-<code class="cards">urlPreviewFavicon</code>     		| `String`  | The url for the url preview favicon image
-<code class="cards">urlPreviewTitle</code>       		| `String`  | The title displayed in the url preview
-<code class="cards">urlPreviewDescription</code> 		| `String`  | The description displayed in the line of the url preview. Because most sites stuff their description tags with SEO gibberish, descriptions are only displayed for whitelisted domains. Contact support to add a domain to the whitelist.
-<code class="cards">urlPreviewErrorUrl</code>    		| `String`  | The last url that the preview failed on (could be a private or broken url). If this matches `urlPreviewUrl`, the url preview won't be created
-<code class="cards">shouldUpdateUrlPreview</code>       | `Boolean` | Whether the card should be checked for a url preview the next time it's space is loaded in the kinopio-client app. This attribute is automatically assigned to cards created by /card POSTs
-<code class="cards">backgroundColor</code>       		| `String`  | The background color for the card
-<code class="cards">isLocked</code>              		| `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
-<code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
-<code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 
 
 
@@ -258,13 +261,13 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="connections">id</code>                | `String` | The unique ID of the connection. Is not user updateable
-<code class="connections">startCardId</code>       | `String` | The card that the connection line starts from
-<code class="connections">endCardId</code>         | `String` | The card that the connection line ends at
-<code class="connections">path</code>              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and its curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
 <code class="connections">connectionTypeId</code>  | `String` | The connection-type that the connection belongs to
-<code class="connections">spaceId</code>           | `String` | The space that the connection belongs to
-<code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection type label
 <code class="connections">directionIsVisible</code>   | `Boolean` | The connection has a directional arrow, in the direction of start card to end card
+<code class="connections">endCardId</code>         | `String` | The card that the connection line ends at
+<code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection type label
+<code class="connections">path</code>              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and its curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
+<code class="connections">spaceId</code>           | `String` | The space that the connection belongs to
+<code class="connections">startCardId</code>       | `String` | The card that the connection line starts from
 
 
 
@@ -290,8 +293,8 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="connection-types">id</code>      | `String` | The unique ID of the connection. Is not user updateable
-<code class="connection-types">name</code>    | `String` | The name of the connection-type
 <code class="connection-types">color</code>   | `String` | User color changes your paint stroke and default avatar color
+<code class="connection-types">name</code>    | `String` | The name of the connection-type
 <code class="connection-types">spaceId</code> | `String` | The space that the connection-type belongs to
 
 
@@ -318,16 +321,19 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
+<code class="box">color</code>          | `String` | The color of the box
+<code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
+<code class="box">fill</code>           | `String` | The color of the box
 <code class="box">name</code>           | `String` | The name of the box
+<code class="box">resizeHeight</code>   | `String` | The height of the box
+<code class="box">resizeWidth</code>    | `String` | The width of the box
+<code class="box">spaceId</code>        | `String` | The space that the box belongs to
+<code class="box">userId</code>         | `String` | The user that created the box
 <code class="box">x</code>              | `String` | The x-axis position of the box origin (top-left point)
 <code class="box">y</code>              | `String` | The y-axis position of the box origin
-<code class="box">resizeWidth</code>    | `String` | The width of the box
-<code class="box">resizeHeight</code>   | `String` | The height of the box
-<code class="box">color</code>          | `String` | The color of the box
-<code class="box">fill</code>           | `String` | The color of the box
-<code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
-<code class="box">userId</code>         | `String` | The user that created the box
-<code class="box">spaceId</code>        | `String` | The space that the box belongs to
+
+
+
 
 <a class="anchor" data-section="🦚" name="tags"></a>
 <h2 class="badge tags">Tags</h2>
@@ -349,9 +355,9 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="tags">id</code>      | `String` | The unique ID of the tag. Is not user updateable
-<code class="tags">name</code>    | `String` | The name of the tag
-<code class="tags">color</code>   | `String` | Tag color, displayed on a card
 <code class="tags">cardId</code>  | `String` | The card that the tag belongs to
+<code class="tags">color</code>   | `String` | Tag color, displayed on a card
+<code class="tags">name</code>    | `String` | The name of the tag
 <code class="tags">spaceId</code> | `String` | The space that the tag belongs to
 
 
@@ -375,13 +381,16 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="notifications">id</code>      | `String` | The unique ID of the notification. Is not user updateable
-<code class="notifications">type</code>    | `String` | The action that created the notification (e.g. `addCard`)
-<code class="notifications">recipientUserId</code>   | `String` | The user that'll receive the notification
-<code class="notifications">cardId</code>  | `String` | The card that the notification involves
 <code class="notifications">card</code>    | `Object` | Basic information about the <a href="#cards" class="badge cards">Card</a> `id`, `name`
-<code class="notifications">spaceId</code> | `String` | The space that the notification involves
-<code class="notifications">space</code>   | `Object` | Basic information about the <a href="#spaces" class="badge spaces">Space</a> `id`, `name`, `privacy`, `background`
-<code class="notifications">userId</code>  | `String` | The user that created the notification
-<code class="notifications">user</code>    | `Object` | Basic information about the <a href="#users" class="badge users">User</a> `id`, `name`, `color`
-<code class="notifications">isRead</code>  | `Boolean` | Has the notification been read by the recipient in Kinopio
+<code class="notifications">cardId</code>  | `String` | The card that the notification involves
 <code class="notifications">isEmailed</code>  | `Boolean` | Has the notification been emailed to the recipient. Emails are only sent if `user.shouldEmailNotifications = true`
+<code class="notifications">isRead</code>  | `Boolean` | Has the notification been read by the recipient in Kinopio
+<code class="notifications">recipientUserId</code>   | `String` | The user that'll receive the notification
+<code class="notifications">space</code>   | `Object` | Basic information about the <a href="#spaces" class="badge spaces">Space</a> `id`, `name`, `privacy`, `background`
+<code class="notifications">spaceId</code> | `String` | The space that the notification involves
+<code class="notifications">type</code>    | `String` | The action that created the notification (e.g. `addCard`)
+<code class="notifications">user</code>    | `Object` | Basic information about the <a href="#users" class="badge users">User</a> `id`, `name`, `color`
+<code class="notifications">userId</code>  | `String` | The user that created the notification
+
+
+
