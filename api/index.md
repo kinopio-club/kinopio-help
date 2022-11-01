@@ -74,6 +74,7 @@ Name | Type | Description
 <code class="users">apiKey</code>                           | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
 <code class="users">cardsCreatedCount</code>                | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
+<code class="users">defaultCardBackgroundColor</code>       | `String` | User preference for a default background color to use for new cards
 <code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
 <code class="users">description</code>                      | `String`  | A description of this particular user

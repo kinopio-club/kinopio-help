@@ -21,18 +21,18 @@ Highlight backgrounds with tint colors, personalize the default wallpaper or dye
 
 <img src="https://kinopio-updates.us-east-1.linodeobjects.com/tint-space-backgrounds.png" />
 
-## Set Default Background and Tint
+## Set Defaults
 
-<video autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/set-default-background.mp4">
-</video>
+Prefer grids over squiggles? Or a different background color? You can change your default background for new spaces by
 
+1. Set up a space background image and tint color that you'd like to use
+2. Make it the default for new spaces in `User → Settings → Colors and Themes`
 
-Always prefer grids over squiggles? Or a different background color? You can now set a default background for new spaces
+<img src="https://kinopio-updates.us-east-1.linodeobjects.com/colors-and-theme-settings.png" />
 
-> You can make your background black by setting the tint color to `#000`
+> p.s. You can make your background black by setting the tint color to `#000`
 
 <br/>
 <br/>
 
-> You can find even more example backgrounds to try out in this [background test space](https://kinopio.club/space-backgrounds-Evd_H7siYsx03PkbFsa9M)
+> p.s.s. You can find even more example backgrounds to try out in this [background test space](https://kinopio.club/space-backgrounds-Evd_H7siYsx03PkbFsa9M)

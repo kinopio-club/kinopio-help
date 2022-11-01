@@ -19,12 +19,11 @@ A really helpful way to build knowledge by literally moving ideas around and con
 
 First, connect your Twitter account to Kinopio with
 
-`User → Settings → Connect to Twitter`,
+`User → Settings → Integrations → Twitter`,
 
 <video class="" autoplay loop muted playsinline>
   <source src="https://kinopio-updates.us-east-1.linodeobjects.com/connect-to-twitter-dialog.mp4">
 </video>
-
 
 Next, create new spaces by replying to tweets with:
 
