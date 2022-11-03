@@ -15,4 +15,4 @@ If you have an account, then the space privacy setting dictates who can see what
 
 ![privacy-dialog](/assets/posts/privacy-dialog.png)
 
-p.s. New spaces default to `Closed`
+p.s. New spaces default to `Private`
