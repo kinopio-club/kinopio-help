@@ -79,8 +79,8 @@ Name | Type | Description
 <code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
 <code class="users">description</code>                      | `String`  | A description of this particular user
-<code class="users">dialogFavoritesFilters</code>           | `String` | User preference for favorite spaces filter, is either `null`, `'currentUser'`, `'otherUsers'`
-<code class="users">dialogSpaceFilters</code>               | `String` | User preference for spaces filter, is either `null`, `'journals'`, `'spaces'`
+<code class="users">dialogFavoritesFilters</code>           | `String` | User preference for favorite spaces filter, is either `null`, `currentUser`, `otherUsers`
+<code class="users">dialogSpaceFilters</code>               | `String` | User preference for spaces filter, is either `null`, `journals`, `spaces`
 <code class="users">email</code>                            | `String`  | The unique email address of the user required to create an account
 <code class="users">emailIsVerified</code>                  | `Boolean` | Whether the user has verified their email address
 <code class="users">filterShowAbsoluteDates</code>          | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
@@ -115,6 +115,7 @@ Name | Type | Description
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
+<code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
 
 
 
