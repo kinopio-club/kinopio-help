@@ -78,6 +78,7 @@ Name | Type | Description
 <code class="users">defaultCardBackgroundColor</code>       | `String` | User preference for a default background color to use for new cards
 <code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
+<code class="users">defaultConnectionControlPoint</code>    | `String` | User preference for the default control point for new connections. `null` makes a curved path, `q00,00` makes a straight line
 <code class="users">description</code>                      | `String`  | A description of this particular user
 <code class="users">dialogFavoritesFilters</code>           | `String` | User preference for favorite spaces filter, is either `null`, `currentUser`, `otherUsers`
 <code class="users">dialogSpaceFilters</code>               | `String` | User preference for spaces filter, is either `null`, `journals`, `spaces`
@@ -271,6 +272,7 @@ Name | Type | Description
 <code class="connections">path</code>              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and its curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
 <code class="connections">spaceId</code>           | `String` | The space that the connection belongs to
 <code class="connections">startCardId</code>       | `String` | The card that the connection line starts from
+<code class="connections">controlPoint</code>      | `String` | Custom control point for a connection path curve. `q00,00` makes a straight line
 
 
 
