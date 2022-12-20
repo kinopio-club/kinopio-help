@@ -111,6 +111,7 @@ Name | Type | Description
 <code class="users">shouldShowStyleActions</code>           | `Boolean` | Whether the user has chosen to show styling options in both the card-details and multiple-selected-actions dialog
 <code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
 <code class="users">shouldUseDarkColors</code>              | `String` | User preference for whether the color picker will show dark or light colors
+<code class="users">shouldDisableRightClickToPan</code>     | `Boolean` | Debug user preference which disables right click pan so you can use the native browser context menu. Useful for web inspecting elements
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showWeather</code>                		  | `Boolean` | Whether to add today's weather forecast to new journal spaces
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
