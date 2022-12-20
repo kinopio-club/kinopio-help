@@ -329,7 +329,7 @@ Name | Type | Description
 <code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
 <code class="box">color</code>          | `String` | The color of the box
 <code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
-<code class="box">fill</code>           | `String` | The color of the box
+<code class="box">fill</code>           | `String` | The fill type for the box. Possible values are `filled`, `empty`
 <code class="box">name</code>           | `String` | The name of the box
 <code class="box">resizeHeight</code>   | `String` | The height of the box
 <code class="box">resizeWidth</code>    | `String` | The width of the box
