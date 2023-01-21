@@ -217,7 +217,6 @@ Name | Type | Description
 --- | --- | ---
 <code class="cards">id</code>                    		| `String`  | The unique ID of the card. Is not user updateable
 <code class="cards">backgroundColor</code>          | `String`  | The background color for the card
-<code class="cards">commentIsVisible</code>         | `Boolean` | If the card is a ((comment)), determines whether the full comment displays (instead of '…')
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
 <code class="cards">height</code>                   | `Integer` | The card height
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
