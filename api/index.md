@@ -110,7 +110,6 @@ Name | Type | Description
 <code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
 <code class="users">shouldShowStyleActions</code>           | `Boolean` | Whether the user has chosen to show styling options in both the card-details and multiple-selected-actions dialog
 <code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
-<code class="users">shouldUseDarkColors</code>              | `String` | User preference for whether the color picker will show dark or light colors
 <code class="users">shouldDisableRightClickToPan</code>     | `Boolean` | Debug user preference which disables right click pan so you can use the native browser context menu. Useful for web inspecting elements
 <code class="users">shouldDisableItemJiggle</code>          | `Boolean` | User preference which disables the jiggle animation when cards or boxes are being dragged
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
@@ -120,6 +119,7 @@ Name | Type | Description
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
 <code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
 <code class="users">theme</code>                            | `String`  | User preference for whether to use `light` or `dark` color theme
+<code class="users">themeIsSystem</code>                    | `Boolean` | User preference for whether to inherit theme preference from their computer OS (e.g. if using macOS dark mode, then automatically use Kinopio dark theme). Overrides `theme` preference
 
 
 
