@@ -118,8 +118,6 @@ Name | Type | Description
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
 <code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
-<code class="users">theme</code>                            | `String`  | User preference for whether to use `light` or `dark` color theme
-<code class="users">themeIsSystem</code>                    | `Boolean` | User preference for whether to inherit theme preference from their computer OS (e.g. if using macOS dark mode, then automatically use Kinopio dark theme). Overrides `theme` preference
 
 
 
