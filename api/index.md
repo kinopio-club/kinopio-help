@@ -120,6 +120,8 @@ Name | Type | Description
 <code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
 <code class="users">theme</code>                            | `String`  | User preference for whether to use `light` or `dark` color theme
 <code class="users">themeIsSystem</code>                    | `Boolean` | User preference for whether to inherit theme preference from their computer OS (e.g. if using macOS dark mode, then automatically use Kinopio dark theme). Overrides `theme` preference
+<code class="users">creditsEarned</code>                    | `Integer` | The number of $ credits earned by referring or inviting new users to Kinopio. Is not user updateable
+<code class="users">creditsUsed</code>                      | `Integer` | The number of $ credits subtracted from your payments so far. Is not user updateable
 
 
 
