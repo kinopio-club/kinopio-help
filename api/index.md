@@ -118,6 +118,8 @@ Name | Type | Description
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
 <code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
+<code class="users">theme</code>                            | `String`  | User preference for whether to use `light` or `dark` color theme
+<code class="users">themeIsSystem</code>                    | `Boolean` | User preference for whether to inherit theme preference from their computer OS (e.g. if using macOS dark mode, then automatically use Kinopio dark theme). Overrides `theme` preference
 
 
 
@@ -139,7 +141,6 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/explore-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      	| None
 `GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      		| None
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 		| `canEditSpace`
-`GET`    | <code class="spaces">/space/by-url/:spaceUrl</code>      | Get info on a space by space url format (:space-name-:id)                                 		| `canViewSpace`
 `GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                    		| `canViewSpace`
 `GET`    | <code class="spaces">/space/explore-spaces/feed.json</code>  | `RSS feed` for new spaces added to Explore                                                  	| None
 `GET`    | <code class="spaces">/space/:spaceId/feed.json</code>    | `RSS feed` for cards recently created or updated in a space. Use `?apiKey=` for private spaces  	| `canViewSpace`
