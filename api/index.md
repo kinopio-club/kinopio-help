@@ -75,6 +75,8 @@ Name | Type | Description
 <code class="users">apiKey</code>                           | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
 <code class="users">cardsCreatedCount</code>                | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
+<code class="users">creditsEarned</code>                    | `Integer` | The number of $ credits earned by referring or inviting new users to Kinopio. Is not user updateable
+<code class="users">creditsUsed</code>                      | `Integer` | The number of $ credits subtracted from your payments so far. Is not user updateable
 <code class="users">defaultCardBackgroundColor</code>       | `String` | User preference for a default background color to use for new cards
 <code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
@@ -94,10 +96,10 @@ Name | Type | Description
 <code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 <code class="users">journalPrompts</code>                   | `Array`   | id, name, and packId for each user journal prompt. Private user info.
 <code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
+<code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
 <code class="users">lastSpaceId</code>                      | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
 <code class="users">name</code>                             | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
 <code class="users">newSpacesAreBlank</code>                | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
-<code class="users">twitterUsername</code>                  | `String` | Twitter username connected to this account
 <code class="users">shouldEmailBulletin</code>              | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
 <code class="users">shouldEmailNotifications</code>         | `Boolean` | Whether the user has chosen to allow notification emails (default to true)
 <code class="users">shouldEmailWeeklyReview</code>          | `Boolean` | Whether the user has chosen to allow weekly review emails (default to true)
@@ -111,16 +113,11 @@ Name | Type | Description
 <code class="users">shouldDisableRightClickToPan</code>     | `Boolean` | Debug user preference which disables right click pan so you can use the native browser context menu. Useful for web inspecting elements
 <code class="users">shouldDisableItemJiggle</code>          | `Boolean` | User preference which disables the jiggle animation when cards or boxes are being dragged
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
+<code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded options and info in both the `card-details` and `multiple-selected-actions` dialogs
 <code class="users">showWeather</code>                		  | `Boolean` | Whether to add today's weather forecast to new journal spaces
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
-<code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
-<code class="users">theme</code>                            | `String`  | User preference for whether to use `light` or `dark` color theme
-<code class="users">themeIsSystem</code>                    | `Boolean` | User preference for whether to inherit theme preference from their computer OS (e.g. if using macOS dark mode, then automatically use Kinopio dark theme). Overrides `theme` preference
-<code class="users">creditsEarned</code>                    | `Integer` | The number of $ credits earned by referring or inviting new users to Kinopio. Is not user updateable
-<code class="users">creditsUsed</code>                      | `Integer` | The number of $ credits subtracted from your payments so far. Is not user updateable
-<code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded editing options and info in both the `card-details` and `multiple-selected-actions` dialogs
 
 
 
