@@ -179,6 +179,7 @@ Name | Type | Description
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
 <code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
+<code class="spaces">visits</code>              | `Integer` | The number of times the space has been loaded by a person
 
 
 
