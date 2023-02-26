@@ -215,7 +215,6 @@ Name | Type | Description
 <code class="cards">id</code>                    		| `String`  | The unique ID of the card. Is not user updateable
 <code class="cards">backgroundColor</code>          | `String`  | The background color for the card
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
-<code class="cards">height</code>                   | `Integer` | The card height
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
 <code class="cards">isLocked</code>                 | `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
@@ -236,7 +235,6 @@ Name | Type | Description
 <code class="cards">urlPreviewIsVisible</code>      | `Boolean` | Whether the card will display a url preview (aka link unfurl)
 <code class="cards">urlPreviewTitle</code>          | `String`  | The title displayed in the url preview
 <code class="cards">urlPreviewUrl</code>            | `String`  | The url that the card url preview is based on
-<code class="cards">width</code>                    | `Integer` | The card width
 <code class="cards">x</code>                     		| `Integer` | The x-axis position
 <code class="cards">y</code>                     		| `Integer` | The y-axis position
 <code class="cards">z</code>                     		| `Integer` | The z-axis position
