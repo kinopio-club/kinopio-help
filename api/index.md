@@ -179,6 +179,7 @@ Name | Type | Description
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
 <code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
+<code class="spaces">visits</code>              | `Integer` | The number of times the space has been loaded by a person
 
 
 
@@ -196,8 +197,9 @@ Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="cards">/card/:cardId</code>                | Get info on a card                                                                                                                                                                  | `canViewSpace`
 `GET`     | <code class="cards">/card/multiple?cardIds=cardId1,cardId2</code> | Get info on multiple cards, up to 60 cardIds at a time                                                                                                                    | `canViewSpace`
-`GET`     | <code class="cards">/card/by-tag-name/:tagName</code>   | get all cards with tag matching tagName in your <a href="#spaces" class="badge spaces">Spaces</a>                                                                                   | `apiKey`
-`GET`     | <code class="cards">/card/by-link-to-space/:spaceId</code>   | get the cards and <a href="#spaces" class="badge spaces">Spaces</a> where `linkToSpaceId` is `spaceId`. Will only return spaces that the user can view                         | `apiKey and canViewSpace`
+`GET`     | <code class="cards">/card/by-tag-name/:tagName</code>   | Get all cards with tag matching tagName in your <a href="#spaces" class="badge spaces">Spaces</a>                                                                                   | `apiKey`
+`GET`     | <code class="cards">/card/by-link-to-space/:spaceId</code>   | Get the cards and <a href="#spaces" class="badge spaces">Spaces</a> where `linkToSpaceId` is `spaceId`. Will only return spaces that the user can view                         | `apiKey and canViewSpace`
+`POST`    | <code class="cards">/card/search</code>                 | Get all cards that match a query. Body object must contain `query`. Only matches cards created by the user. Does not return removed cards, or cards from removed spaces. Searches are not case-insensitive                                       | `apiKey`
 `POST`    | <code class="cards">/card</code>                        | Create card from object in request body. Body object must contain `spaceId` and `name`. If not included, `x`, `y`, `z` will be positioned near the top left of the space, in a cascade pattern to prevent overlaps | `canEditSpace`
 `POST`    | <code class="cards">/card/to-inbox</code>               | Create card saved to the user's `Inbox` space from object in request body and . Body object must contain `name`. Will return `404` if the user does not already have an `Inbox` space. Positioning works just like `POST /card`        | `canEditSpace`
 `POST`    | <code class="cards">/card/multiple</code>               | Creates multiple cards from an array of objects in request body. Works just like `POST /card`                                                                                | `canEditSpace`
@@ -214,7 +216,6 @@ Name | Type | Description
 <code class="cards">id</code>                    		| `String`  | The unique ID of the card. Is not user updateable
 <code class="cards">backgroundColor</code>          | `String`  | The background color for the card
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
-<code class="cards">height</code>                   | `Integer` | The card height
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
 <code class="cards">isLocked</code>                 | `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
@@ -223,7 +224,7 @@ Name | Type | Description
 <code class="cards">name</code>                  		| `String`  | The name of the card is its main text
 <code class="cards">nameUpdatedAt</code>            | `String`  | The date when the card name was last updated
 <code class="cards">nameUpdatedByUserId</code>      | `String`  | The user id that last updated the name of the card
-<code class="cards">resizeWidth</code>              | `Integer` | The width of a card resized by the user. Only affects cards with images or videos
+<code class="cards">resizeWidth</code>              | `Integer` | The width of a card that's been manually resized by the user
 <code class="cards">shouldHideUrlPreviewImage</code>    | `Boolean` | Whether the card will display it's url preview image
 <code class="cards">shouldHideUrlPreviewInfo</code>     | `Boolean` | Whether the card will display it's url preview title and description
 <code class="cards">shouldUpdateUrlPreview</code>       | `Boolean` | Whether the card should be checked for a url preview the next time it's space is loaded in the kinopio-client app. This attribute is automatically assigned to cards created by /card POSTs
@@ -235,7 +236,6 @@ Name | Type | Description
 <code class="cards">urlPreviewIsVisible</code>      | `Boolean` | Whether the card will display a url preview (aka link unfurl)
 <code class="cards">urlPreviewTitle</code>          | `String`  | The title displayed in the url preview
 <code class="cards">urlPreviewUrl</code>            | `String`  | The url that the card url preview is based on
-<code class="cards">width</code>                    | `Integer` | The card width
 <code class="cards">x</code>                     		| `Integer` | The x-axis position
 <code class="cards">y</code>                     		| `Integer` | The y-axis position
 <code class="cards">z</code>                     		| `Integer` | The z-axis position
