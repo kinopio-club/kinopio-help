@@ -102,7 +102,7 @@ Name | Type | Description
 <code class="users">shouldEmailBulletin</code>              | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
 <code class="users">shouldEmailNotifications</code>         | `Boolean` | Whether the user has chosen to allow notification emails (default to true)
 <code class="users">shouldEmailWeeklyReview</code>          | `Boolean` | Whether the user has chosen to allow weekly review emails (default to true)
-<code class="users">shouldUseLastConnectionType</code>      | `Boolean` | Whether the user has chosen to use last connection type for new connections
+<code class="users">shouldUseLastConnectionType</code>      | `Boolean` | Whether the user has chosen to use last connection type for new connections (default to true)
 <code class="users">shouldShowMoreAlignOptions</code>       | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
 <code class="users">shouldShowCurrentSpaceTags</code>       | `Boolean` | Whether the user has chosen should only tags in the current space in the Tags dialog
 <code class="users">shouldNotifyUnlockedStickyCards</code>  | `Boolean` | Whether to eventually notify users that they've unlocked sticky cards (true for new users only, triggered after they create 20 cards)
@@ -220,8 +220,10 @@ Name | Type | Description
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
 <code class="cards">isLocked</code>                 | `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
 <code class="cards">isRemoved</code>                | `Boolean` | Whether the card has been soft-removed. (Can be restored or permanently removed by space users)
-<code class="cards">linkToSpaceId</code>            | `String`  | The `spaceId` linked to in the card name
-<code class="cards">name</code>                  		| `String`  | The name of the card is its main text
+<code class="cards">linkToSpaceId</code>              | `String`  | The `spaceId` linked to in the card name
+<code class="cards">linkToCardId</code>               | `String`  | The `cardId` linked to in the card name. A card link will always also include `linkToSpaceId` (but not vice versa)
+<code class="cards">linkToSpaceCollaboratorKey</code> | `String`  | The `collaboratorKey` used to invite someone to the space specified in `linkToSpaceId`. Indicates the the space has a space invite link
+<code class="cards">name</code>                  		  | `String`  | The name of the card is its main text
 <code class="cards">nameUpdatedAt</code>            | `String`  | The date when the card name was last updated
 <code class="cards">nameUpdatedByUserId</code>      | `String`  | The user id that last updated the name of the card
 <code class="cards">resizeWidth</code>              | `Integer` | The width of a card that's been manually resized by the user
