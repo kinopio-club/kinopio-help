@@ -75,6 +75,7 @@ Name | Type | Description
 <code class="users">apiKey</code>                           | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
 <code class="users">cardsCreatedCount</code>                | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
+<code class="users">createdAt</code>           				| `String`  | The date when the user was created
 <code class="users">creditsEarned</code>                    | `Integer` | The number of $ credits earned by referring or inviting new users to Kinopio. Is not user updateable
 <code class="users">creditsUsed</code>                      | `Integer` | The number of $ credits subtracted from your payments so far. Is not user updateable
 <code class="users">defaultCardBackgroundColor</code>       | `String` | User preference for a default background color to use for new cards
@@ -112,7 +113,8 @@ Name | Type | Description
 <code class="users">shouldDisableItemJiggle</code>          | `Boolean` | User preference which disables the jiggle animation when cards or boxes are being dragged
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded options and info in both the `card-details` and `multiple-selected-actions` dialogs
-<code class="users">showWeather</code>                		  | `Boolean` | Whether to add today's weather forecast to new journal spaces
+<code class="users">showWeather</code>                		| `Boolean` | Whether to add today's weather forecast to new journal spaces
+<code class="users">updatedAt</code>           				| `String`  | The date when any changes to the user was made. Also is updated whenever the user starts a Kinopio session
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
@@ -215,6 +217,7 @@ Name | Type | Description
 --- | --- | ---
 <code class="cards">id</code>                    		| `String`  | The unique ID of the card. Is not user updateable
 <code class="cards">backgroundColor</code>          | `String`  | The background color for the card
+<code class="cards">createdAt</code>           | `String`  | The date when the card was created
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
@@ -231,6 +234,7 @@ Name | Type | Description
 <code class="cards">shouldHideUrlPreviewInfo</code>     | `Boolean` | Whether the card will display it's url preview title and description
 <code class="cards">shouldUpdateUrlPreview</code>       | `Boolean` | Whether the card should be checked for a url preview the next time it's space is loaded in the kinopio-client app. This attribute is automatically assigned to cards created by /card POSTs
 <code class="cards">spaceId</code>                  | `String`  | The space that the card belongs to
+<code class="cards">updatedAt</code>           | `String`  | The date when any changes in the card was made, including to it's position. Use `nameUpdatedAt` instead to see when the card name was changed
 <code class="cards">urlPreviewDescription</code>    | `String`  | The description displayed in the line of the url preview. Because most sites stuff their description tags with SEO gibberish, descriptions are only displayed for whitelisted domains. Contact support to add a domain to the whitelist.
 <code class="cards">urlPreviewErrorUrl</code>       | `String`  | The last url that the preview failed on (could be a private or broken url). If this matches `urlPreviewUrl`, the url preview won't be created
 <code class="cards">urlPreviewFavicon</code>        | `String`  | The url for the url preview favicon image
@@ -267,13 +271,15 @@ Name | Type | Description
 --- | --- | ---
 <code class="connections">id</code>                | `String` | The unique ID of the connection. Is not user updateable
 <code class="connections">connectionTypeId</code>  | `String` | The connection-type that the connection belongs to
+<code class="connections">controlPoint</code>      | `String` | Custom control point for a connection path curve. `q00,00` makes a straight line
+<code class="connections">createdAt</code>         | `String`  | The date when the connection was created
 <code class="connections">directionIsVisible</code>   | `Boolean` | The connection has a directional arrow, in the direction of start card to end card
 <code class="connections">endCardId</code>         | `String` | The card that the connection line ends at
 <code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection type label
 <code class="connections">path</code>              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and its curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
 <code class="connections">spaceId</code>           | `String` | The space that the connection belongs to
 <code class="connections">startCardId</code>       | `String` | The card that the connection line starts from
-<code class="connections">controlPoint</code>      | `String` | Custom control point for a connection path curve. `q00,00` makes a straight line
+<code class="connections">updatedAt</code>         | `String`  | The date when any changes to the connection were made
 
 
 
@@ -300,8 +306,10 @@ Name | Type | Description
 --- | --- | ---
 <code class="connection-types">id</code>      | `String` | The unique ID of the connection. Is not user updateable
 <code class="connection-types">color</code>   | `String` | User color changes your paint stroke and default avatar color
+<code class="connection-types">createdAt</code>    | `String`  | The date when the connection type was created
 <code class="connection-types">name</code>    | `String` | The name of the connection-type
 <code class="connection-types">spaceId</code> | `String` | The space that the connection-type belongs to
+<code class="connection-types">updatedAt</code>    | `String`  | The date when any changes were made to the connection type
 
 
 
@@ -328,6 +336,7 @@ Name | Type | Description
 --- | --- | ---
 <code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
 <code class="box">color</code>          | `String` | The color of the box
+<code class="box">createdAt</code>      | `String`  | The date when the box was created
 <code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
 <code class="box">fill</code>           | `String` | The fill type for the box. Possible values are `filled`, `empty`
 <code class="box">name</code>           | `String` | The name of the box
@@ -335,6 +344,7 @@ Name | Type | Description
 <code class="box">resizeWidth</code>    | `String` | The width of the box
 <code class="box">spaceId</code>        | `String` | The space that the box belongs to
 <code class="box">userId</code>         | `String` | The user that created the box
+<code class="box">updatedAt</code>      | `String`  | The date when any changes were made to the box
 <code class="box">x</code>              | `String` | The x-axis position of the box origin (top-left point)
 <code class="box">y</code>              | `String` | The y-axis position of the box origin
 
@@ -363,8 +373,10 @@ Name | Type | Description
 <code class="tags">id</code>      | `String` | The unique ID of the tag. Is not user updateable
 <code class="tags">cardId</code>  | `String` | The card that the tag belongs to
 <code class="tags">color</code>   | `String` | Tag color, displayed on a card
+<code class="tags">createdAt</code>      | `String`  | The date when the tag was created
 <code class="tags">name</code>    | `String` | The name of the tag
 <code class="tags">spaceId</code> | `String` | The space that the tag belongs to
+<code class="tags">updatedAt</code>      | `String`  | The date when any changes were made to the tag
 
 
 
@@ -389,6 +401,7 @@ Name | Type | Description
 <code class="notifications">id</code>      | `String` | The unique ID of the notification. Is not user updateable
 <code class="notifications">card</code>    | `Object` | Basic information about the <a href="#cards" class="badge cards">Card</a> `id`, `name`
 <code class="notifications">cardId</code>  | `String` | The card that the notification involves
+<code class="notifications">createdAt</code>      | `String`  | The date when the notification was created
 <code class="notifications">isEmailed</code>  | `Boolean` | Has the notification been emailed to the recipient. Emails are only sent if `user.shouldEmailNotifications = true`
 <code class="notifications">isRead</code>  | `Boolean` | Has the notification been read by the recipient in Kinopio
 <code class="notifications">recipientUserId</code>   | `String` | The user that'll receive the notification
@@ -397,6 +410,7 @@ Name | Type | Description
 <code class="notifications">type</code>    | `String` | The action that created the notification (e.g. `addCard`)
 <code class="notifications">user</code>    | `Object` | Basic information about the <a href="#users" class="badge users">User</a> `id`, `name`, `color`
 <code class="notifications">userId</code>  | `String` | The user that created the notification
+<code class="notifications">updatedAt</code>      | `String`  | The date when any changes were made to the notification
 
 
 
