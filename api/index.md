@@ -220,7 +220,7 @@ Name | Type | Description
 <code class="cards">backgroundColor</code>          | `String`  | The background color for the card
 <code class="cards">createdAt</code>           | `String`  | The date when the card was created
 <code class="cards">counterIsVisible</code>           | `Boolean`  | Whether the card counter for voting is visible
-<code class="cards">counterIsValue</code>           | `Integer`  | The incremented number of the card counter. Default value is `1`
+<code class="cards">counterIsValue</code>           | `Integer`  | The incremented number of the card counter. Default value is `0`
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
