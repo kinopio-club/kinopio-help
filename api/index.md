@@ -417,3 +417,18 @@ Name | Type | Description
 
 
 
+
+<a class="anchor" data-section="🛎" name="other"></a>
+<h2 class="badge other">Other</h2>
+
+Other routes used by the kinopio-client app, which you can also use in your integrations
+
+<h3 class="badge other">other Routes</h3>
+
+Method | Path | Description | Auth
+--- | --- | --- | ---
+`GET`   | <code class="other">/journal-daily-prompt</code>  | Daily journal prompt added to new journal spaces, updated once a day | None
+`GET`   | <code class="other">/services/community-backgrounds</code>  | Lists the space background images aded to the <a href="https://www.are.na/kinopio/community-backgrounds">are.na channel</a> | None
+`GET`   | <code class="other">/meta/date</code>  | Current time/timezone of kinopio-server | None
+`GET`   | <code class="other">/meta/countries</code>  | 🌏 Lists world countries and their emojis. Used when upgrading your plan | None
+`GET`   | <code class="other">/meta/new-stuff</code>  | Lists posts from the [Kinopio blog](https://blog.kinopio.club) | None
