@@ -245,6 +245,7 @@ Name | Type | Description
 <code class="cards">urlPreviewIsVisible</code>      | `Boolean` | Whether the card will display a url preview (aka link unfurl)
 <code class="cards">urlPreviewTitle</code>          | `String`  | The title displayed in the url preview
 <code class="cards">urlPreviewUrl</code>            | `String`  | The url that the card url preview is based on
+<code class="cards">urlPreviewEmbedHtml</code>            | `String`  | html embed code returned by iframely. Used to display url previews when available (like youtube videos). Html containing `<script>` tags is run inside an iframe.
 <code class="cards">x</code>                     		| `Integer` | The x-axis position
 <code class="cards">y</code>                     		| `Integer` | The y-axis position
 <code class="cards">z</code>                     		| `Integer` | The z-axis position
