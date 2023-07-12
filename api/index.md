@@ -119,7 +119,8 @@ Name | Type | Description
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
-<code class="users">panSpeedIsFast</code>                   | `Boolean` | Panning speed when you hold and drag with the space key or right/middle mouse buttons
+<code class="users">panSpeedIsFast</code>                   | `Boolean` | User preference for panning speed when you hold and drag with the space key or right/middle mouse buttons
+<code class="users">outsideSpaceBackgroundIsStatic</code>   | `Boolean` | User preference for whether the outside space area should use dynamically cycling colors, or whether it should be static grey
 
 
 
