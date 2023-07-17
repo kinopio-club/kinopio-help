@@ -93,7 +93,6 @@ Name | Type | Description
 <code class="users">isDonor</code>                          | `Boolean` | Whether the user has donated to Kinopio. Is not user updatable.
 <code class="users">isModerator</code>                      | `Boolean` | Whether the user is a moderator of the community forums or discord. Is not user updatable.
 <code class="users">isGuideMaker</code>                     | `Boolean` | Whether the user has written a guide for the help site. Is not user updatable.
-<code class="users">isPricingHidden</code>                  | `Boolean` | Whether the user signed up from a client that hides pricing and upgrade info because of app store rules
 <code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 <code class="users">journalPrompts</code>                   | `Array`   | id, name, and packId for each user journal prompt. Private user info.
 <code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
