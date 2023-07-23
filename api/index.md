@@ -94,7 +94,6 @@ Name | Type | Description
 <code class="users">isModerator</code>                      | `Boolean` | Whether the user is a moderator of the community forums or discord. Is not user updatable.
 <code class="users">isGuideMaker</code>                     | `Boolean` | Whether the user has written a guide for the help site. Is not user updatable.
 <code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
-<code class="users">journalPrompts</code>                   | `Array`   | id, name, and packId for each user journal prompt. Private user info.
 <code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
 <code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
 <code class="users">lastSpaceId</code>                      | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
