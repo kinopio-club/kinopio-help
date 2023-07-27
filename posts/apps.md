@@ -8,7 +8,9 @@ color: 'mediumaquamarine'
 
 [Download desktop apps](https://dl.todesktop.com/201223j48l03cxi) for macOS, Windows, or Linux
 
-Or add it to your iOS or Android phone homescreen by following the instructions in `About → Apps`
+[Download iOS app](https://apps.apple.com/us/app/kinopio/id6448743101)
+
+Or add the site to your Android phone homescreen by following the instructions in `About → Apps`
 
 <video class="wide" autoplay loop muted playsinline>
   <source src="https://kinopio-updates.us-east-1.linodeobjects.com/kinopio-desktop-apps.mp4">
