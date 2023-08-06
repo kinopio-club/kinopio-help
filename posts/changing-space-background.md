@@ -8,7 +8,7 @@ date: 2020-03-02
 ## Personalize your spaces and set the mood
 
 <video autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/space-backgrounds-moved.mp4">
+  <source src="https://updates.kinopio.club/space-backgrounds-moved.mp4">
 </video>
 
 You can edit the background for your current space by clicking the icon next to your space name.
@@ -19,7 +19,7 @@ You can edit the background for your current space by clicking the icon next to 
 
 Highlight backgrounds with tint colors, personalize the default wallpaper or dye any background image
 
-<img src="https://kinopio-updates.us-east-1.linodeobjects.com/tint-space-backgrounds.png" />
+<img src="https://updates.kinopio.club/tint-space-backgrounds.png" />
 
 ## Set Defaults
 
@@ -28,7 +28,7 @@ Prefer grids over squiggles? Or a different background color? You can change you
 1. Set up a space background image and tint color that you'd like to use
 2. Make it the default for new spaces in `User → Settings → Colors and Themes`
 
-<img src="https://kinopio-updates.us-east-1.linodeobjects.com/colors-and-theme-settings.png" />
+<img src="https://updates.kinopio.club/colors-and-theme-settings.png" />
 
 > p.s. You can make your background black by setting the tint color to `#000`
 

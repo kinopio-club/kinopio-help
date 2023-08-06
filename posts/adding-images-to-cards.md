@@ -10,7 +10,7 @@ date: 2020-02-01
 You can drag and drop your own images and files onto spaces or cards. You can also use the file picker with `images → upload` (Handy on mobile).
 
 <video class="wide" autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/upload-file-small.mp4">
+  <source src="https://updates.kinopio.club/upload-file-small.mp4">
 </video>
 
 Uploads use the server, so you'll need to be signed in to use them.

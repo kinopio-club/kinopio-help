@@ -14,7 +14,7 @@ You can export your space in a plain text, JSON and PDF formats via `Share → E
 
 You can also specific card names in a space by selecting them by `Painting them, then Copy`
 
-![export-cards](https://kinopio-updates.us-east-1.linodeobjects.com/copy-cards-dialog.png)
+![export-cards](https://updates.kinopio.club/copy-cards-dialog.png)
 
 ## Save as PDF
 
@@ -22,4 +22,4 @@ Save your entire space as a PDF which you can print, send to your friends, or ju
 
 `Share → PDF` (or `Export → PDF`)
 
-![](https://kinopio-updates.us-east-1.linodeobjects.com/save-space-pdf.png)
+![](https://updates.kinopio.club/save-space-pdf.png)

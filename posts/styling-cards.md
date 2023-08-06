@@ -12,7 +12,7 @@ Card → `Style` lets you add heading formatting, tags, colors, and more. It's a
 You can also paint multiple cards to `Style` them together,
 
 <video class="" autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/improved-multi-card-styles.mp4">
+  <source src="https://updates.kinopio.club/improved-multi-card-styles.mp4">
 </video>
 
 Happy styling ヾ(＾∇＾)

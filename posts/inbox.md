@@ -8,7 +8,7 @@ Use an Inbox space to collect thoughts, todos, and ideas that don't have a place
 
 (if you don't already have an Inbox, you can add one from '+ New' button)
 
-<img src="https://kinopio-updates.us-east-1.linodeobjects.com/inbox.png">
+<img src="https://updates.kinopio.club/inbox.png">
 
 ## Add from Anywhere
 
@@ -19,5 +19,5 @@ Add thoughts to your inbox on the go with the Kinopio [browser extensions](http:
 While using Kinopio, click the + button in the bottom-left or press 'i' to quickly capture random ideas without leaving your space or losing context
 
 <video autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/add-to-inbox.mp4">
+  <source src="https://updates.kinopio.club/add-to-inbox.mp4">
 </video>

@@ -9,13 +9,13 @@ On a touch device, dragging your finger along the screen scrolls the page, and t
 ## Tap and hold to paint select cards
 
 <video autoplay loop muted playsinline class="narrow">
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/mobile-press-hold-paint.mp4" height="83">
+  <source src="https://updates.kinopio.club/mobile-press-hold-paint.mp4" height="83">
 </video>
 
 ## Tap and hold to drag cards
 
 <video autoplay loop muted playsinline class="narrow">
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/mobile-press-hold-drag.mp4" height="83">
+  <source src="https://updates.kinopio.club/mobile-press-hold-drag.mp4" height="83">
 </video>
 
 ## Two finger tap to undo, three finger tap to redo

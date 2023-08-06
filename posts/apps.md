@@ -13,7 +13,7 @@ color: 'mediumaquamarine'
 Or add the site to your Android phone homescreen by following the instructions in `About → Apps`
 
 <video class="wide" autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/kinopio-desktop-apps.mp4">
+  <source src="https://updates.kinopio.club/kinopio-desktop-apps.mp4">
 </video>
 
 The desktop app makes Kinopio easier to open and create spaces without having to first open a web browser.
@@ -22,4 +22,4 @@ The desktop app makes Kinopio easier to open and create spaces without having to
 
 The desktop app supports tabs and page refreshing like a web browser. It also gives you more control over the size of your window to let you keep your tasks visible while you work.
 
-![](https://kinopio-updates.us-east-1.linodeobjects.com/kinopio-app-small.png)
+![](https://updates.kinopio.club/kinopio-app-small.png)

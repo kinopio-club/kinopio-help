@@ -11,5 +11,5 @@ Helpful for backgrounds, grouping your space into sections, or for defining cont
 Lock cards or multiple selected cards through `Styles → Lock`. Unlock cards by clicking the `Lock button` on the card.
 
 <video class="" autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/lock-cards.mp4">
+  <source src="https://updates.kinopio.club/lock-cards.mp4">
 </video>
