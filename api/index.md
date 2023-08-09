@@ -75,7 +75,7 @@ Name | Type | Description
 <code class="users">apiKey</code>                           | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
 <code class="users">cardsCreatedCount</code>                | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
-<code class="users">createdAt</code>           				| `String`  | The date when the user was created
+<code class="users">createdAt</code>           				      | `String`  | The date when the user was created
 <code class="users">creditsEarned</code>                    | `Integer` | The number of $ credits earned by referring or inviting new users to Kinopio. Is not user updateable
 <code class="users">creditsUsed</code>                      | `Integer` | The number of $ credits subtracted from your payments so far. Is not user updateable
 <code class="users">defaultCardBackgroundColor</code>       | `String` | User preference for a default background color to use for new cards
@@ -105,6 +105,8 @@ Name | Type | Description
 <code class="users">shouldUseLastConnectionType</code>      | `Boolean` | Whether the user has chosen to use last connection type for new connections (default to true)
 <code class="users">shouldShowMoreAlignOptions</code>       | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
 <code class="users">shouldShowCurrentSpaceTags</code>       | `Boolean` | Whether the user has chosen should only tags in the current space in the Tags dialog
+<code class="users">shouldShowItemActions</code>            | `Boolean` | Whether extra card formatting options (h1, h2, etc.) buttons are visible in the card details dialog
+<code class="users">shouldShowMultipleSelectedItemActions</code>    | `Boolean` | Whether extra card and connection formatting options (h1, h2, etc.) buttons are visible in the multiple selected items dialog
 <code class="users">shouldNotifyUnlockedStickyCards</code>  | `Boolean` | Whether to eventually notify users that they've unlocked sticky cards (true for new users only, triggered after they create 20 cards)
 <code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
 <code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
@@ -112,8 +114,8 @@ Name | Type | Description
 <code class="users">shouldDisableItemJiggle</code>          | `Boolean` | User preference which disables the jiggle animation when cards or boxes are being dragged
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded options and info in both the `card-details` and `multiple-selected-actions` dialogs
-<code class="users">showWeather</code>                		| `Boolean` | Whether to add today's weather forecast to new journal spaces
-<code class="users">updatedAt</code>           				| `String`  | The date when any changes to the user was made. Also is updated whenever the user starts a Kinopio session
+<code class="users">showWeather</code>                		  | `Boolean` | Whether to add today's weather forecast to new journal spaces
+<code class="users">updatedAt</code>           				      | `String`  | The date when any changes to the user was made. Also is updated whenever the user starts a Kinopio session
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
