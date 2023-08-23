@@ -15,7 +15,7 @@ Use of the API is subject to the [Use Restrictions Policy](/posts/use-restrictio
 
 ## Authentication
 
-Kinopio uses token-based authentication using your user `apiKey`. You can get your apiKey in the app through `User → Settings → Api Key`.
+Kinopio uses token-based authentication using your user `apiKey`. You can get your apiKey in the app through `User → Settings → Account → Get Api Key`.
 
 > 🙈 Your API key carries the same privileges as your user account, so be sure to keep it secret!
 
@@ -432,5 +432,4 @@ Method | Path | Description | Auth
 `GET`   | <code class="other">/journal-daily-prompt</code>  | Daily journal prompt added to new journal spaces, updated once a day | None
 `GET`   | <code class="other">/services/community-backgrounds</code>  | Lists the space background images aded to the <a href="https://www.are.na/kinopio/community-backgrounds">are.na channel</a> | None
 `GET`   | <code class="other">/meta/date</code>  | Current time/timezone of kinopio-server | None
-`GET`   | <code class="other">/meta/countries</code>  | 🌏 Lists world countries and their emojis. Used when upgrading your plan | None
 `GET`   | <code class="other">/meta/new-stuff</code>  | Lists posts from the [Kinopio blog](https://blog.kinopio.club) | None
