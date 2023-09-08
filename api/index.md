@@ -111,7 +111,6 @@ Name | Type | Description
 <code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
 <code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
 <code class="users">shouldDisableRightClickToPan</code>     | `Boolean` | Debug user preference which disables right click pan so you can use the native browser context menu. Useful for web inspecting elements
-<code class="users">shouldDisableItemJiggle</code>          | `Boolean` | User preference which disables the jiggle animation when cards or boxes are being dragged
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded options and info in both the `card-details` and `multiple-selected-actions` dialogs
 <code class="users">showWeather</code>                		  | `Boolean` | Whether to add today's weather forecast to new journal spaces
