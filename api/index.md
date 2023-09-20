@@ -184,6 +184,7 @@ Name | Type | Description
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
 <code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
 <code class="spaces">visits</code>              | `Integer` | The number of times the space has been loaded by a person
+<code class="spaces">defaultCardMaxWidth</code> | `Integer` | Sets the max card width for cards in the space that don't have a `resizeWidth`. Defaults to `230` for new spaces.
 
 
 
