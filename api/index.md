@@ -166,6 +166,7 @@ Name | Type | Description
 <code class="spaces">connectionTypes</code>     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
 <code class="spaces">connections</code>         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
 <code class="spaces">createdAt</code>           | `String`  | The date when the space was created
+<code class="spaces">defaultCardMaxWidth</code> | `Integer` | Sets the max card width for cards in the space that don't have a `resizeWidth`. Defaults to `230` for new spaces.
 <code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
 <code class="spaces">editedByUserId</code>      | `String`  | The user id of the last user who edited or created a card in the space
 <code class="spaces">isFromTweet</code>         | `Boolean` | Whether the space was created by replying to a tweet with `@kinopioclub save`
@@ -184,7 +185,7 @@ Name | Type | Description
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
 <code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
 <code class="spaces">visits</code>              | `Integer` | The number of times the space has been loaded by a person
-<code class="spaces">defaultCardMaxWidth</code> | `Integer` | Sets the max card width for cards in the space that don't have a `resizeWidth`. Defaults to `230` for new spaces.
+<code class="spaces">readOnlyKey</code>         | `String`  | Similar to `collaboratorKey` but only allows users and non-signed-in users to read a private space
 
 
 
