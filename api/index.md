@@ -227,6 +227,7 @@ Name | Type | Description
 <code class="cards">counterIsVisible</code>         | `Boolean`  | Whether the card counter for voting is visible
 <code class="cards">counterIsValue</code>           | `Integer`  | The incremented number of the card counter. Default value is `0`
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
+<code class="cards">height</code>                  | `String`  | The reference height of the card. Used to generate space screenshots
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
 <code class="cards">isLocked</code>                 | `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
@@ -251,6 +252,7 @@ Name | Type | Description
 <code class="cards">urlPreviewTitle</code>          | `String`  | The title displayed in the url preview
 <code class="cards">urlPreviewUrl</code>            | `String`  | The url that the card url preview is based on
 <code class="cards">urlPreviewEmbedHtml</code>            | `String`  | html embed code returned by iframely. Used to display url previews when available (like youtube videos). Html containing `<script>` tags is run inside an iframe.
+<code class="cards">width</code>                  | `String`  | The reference width of the card. Used to generate space screenshots
 <code class="cards">x</code>                     		| `Integer` | The x-axis position
 <code class="cards">y</code>                     		| `Integer` | The y-axis position
 <code class="cards">z</code>                     		| `Integer` | The z-axis position
@@ -346,6 +348,8 @@ Name | Type | Description
 <code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
 <code class="box">color</code>          | `String` | The color of the box
 <code class="box">createdAt</code>      | `String`  | The date when the box was created
+<code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space screenshots
+<code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space screenshots
 <code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
 <code class="box">fill</code>           | `String` | The fill type for the box. Possible values are `filled`, `empty`
 <code class="box">name</code>           | `String` | The name of the box
