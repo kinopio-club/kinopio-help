@@ -139,20 +139,21 @@ The `closed` privacy state refers to `Public Read Only`.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id. Use `?textOnly=true` for card names only          						| `canViewSpace`
-`GET`    | <code class="spaces">/space/explore-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      	| None
-`GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      		| None
-`GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 		| `canEditSpace`
-`GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                    		| `canViewSpace`
+`GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id. Use `?textOnly=true` for card names only          						          | `canViewSpace`
+`GET`    | <code class="spaces">/space/explore-spaces</code>            | Get a list of recently updated spaces which are open or closed and have been renamed      	  | None
+`GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      		    | None
+`GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 		    | `canEditSpace`
+`GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                    		    | `canViewSpace`
 `GET`    | <code class="spaces">/space/explore-spaces/feed.json</code>  | `RSS feed` for new spaces added to Explore                                                  	| None
 `GET`    | <code class="spaces">/space/:spaceId/feed.json</code>    | `RSS feed` for cards recently created or updated in a space. Use `?apiKey=` for private spaces  	| `canViewSpace`
-`GET`    | <code class="spaces">/space/inbox</code>  				| Get the current user's inbox space                                                  				| `apiKey`
-`POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   		| `apiKey`
-`PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            		| `canEditSpace`
-`PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  		| `canEditSpace`
-`DELETE` | <code class="spaces">/space</code>                       | Remove space(s) specified in request body                                                 		| `canEditSpace`
-`DELETE` | <code class="spaces">/space/permanent</code>             | Permanently remove space(s) specified in request body                                     		| `canEditSpace`
-`DELETE` | <code class="spaces">/space/collaborator</code>          | Removes collaborator user from space. Request Body Keys: `spaceId`, `userId`              		| `canEditSpace`
+`GET`    | <code class="spaces">/space/inbox</code>  				| Get the current user's inbox space                                                  				              | `apiKey`
+`POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   		    | `apiKey`
+`POST`   | <code class="spaces">/space/screenshot</code>            | Update the `screenshotUrl` and `screenshotThumbnailUrl` for the `spaceId` in request body         | `canEditSpace`
+`PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            		    | `canEditSpace`
+`PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  		    | `canEditSpace`
+`DELETE` | <code class="spaces">/space</code>                       | Remove space(s) specified in request body                                                 		    | `canEditSpace`
+`DELETE` | <code class="spaces">/space/permanent</code>             | Permanently remove space(s) specified in request body                                     		    | `canEditSpace`
+`DELETE` | <code class="spaces">/space/collaborator</code>          | Removes collaborator user from space. Request Body Keys: `spaceId`, `userId`              		    | `canEditSpace`
 
 <h3 class="badge spaces">Space Attributes</h3>
 
@@ -180,6 +181,8 @@ Name | Type | Description
 <code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
 <code class="spaces">privacy</code>             | `String`  | Can be `open`, `closed`, `private`
 <code class="spaces">removedByUserId</code>     | `String`  | The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed
+<code class="spaces">screenshotUrl</code>           | `String`  | URL for the large-sized screenshot jpg image associated with the space
+<code class="spaces">screenshotThumbnailUrl</code>  | `String`  | URL for the thumbnail-sized screenshot jpg image associated with the space
 <code class="spaces">url</code>                 | `String`  | The url of a space is determined by its `name` and `id`. For example, `kinopio.club/:space-name-:id`
 <code class="spaces">users</code>               | `Array`   | The user who created/owns the space (a space will always have only one user)
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
