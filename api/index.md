@@ -79,7 +79,8 @@ Name | Type | Description
 <code class="users">creditsEarned</code>                    | `Integer` | The number of $ credits earned by referring or inviting new users to Kinopio. Is not user updateable
 <code class="users">creditsUsed</code>                      | `Integer` | The number of $ credits subtracted from your payments so far. Is not user updateable
 <code class="users">defaultCardBackgroundColor</code>       | `String` | User preference for a default background color to use for new cards
-<code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces
+<code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces. This becomes `null` if `defaultSpaceBackgroundGradient` is set.
+<code class="users">defaultSpaceBackgroundGradient</code>   | `JSON`   | User preference for the default background gradient to use for new spaces. This becomes `null` if `defaultSpaceBackground` is set.
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
 <code class="users">defaultConnectionControlPoint</code>    | `String` | User preference for the default control point for new connections. `null` makes a curved path, `q00,00` makes a straight line
 <code class="users">description</code>                      | `String`  | A description of this particular user
@@ -103,6 +104,7 @@ Name | Type | Description
 <code class="users">shouldEmailBulletin</code>              | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
 <code class="users">shouldEmailNotifications</code>         | `Boolean` | Whether the user has chosen to allow notification emails (default to true)
 <code class="users">shouldEmailWeeklyReview</code>          | `Boolean` | Whether the user has chosen to allow weekly review emails (default to true)
+<code class="users">shouldIncreaseUIContrast</code>         | `Boolean` | User preference for whether the header and footer buttons should not be translucent or transparent in any way
 <code class="users">shouldUseLastConnectionType</code>      | `Boolean` | Whether the user has chosen to use last connection type for new connections (default to true)
 <code class="users">shouldShowMoreAlignOptions</code>       | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
 <code class="users">shouldShowCurrentSpaceTags</code>       | `Boolean` | Whether the user has chosen should only tags in the current space in the Tags dialog
@@ -161,6 +163,8 @@ Name | Type | Description
 --- | --- | ---
 <code class="spaces">id</code>                  | `String`  | The unique ID of the space. Is not user updateable
 <code class="spaces">background</code>          | `String`  | The image url used by the space background
+<code class="spaces">backgroundIsGradient</code>  | `Boolean`  | Whether the space background uses `backgroundGradient` (instead of the default `background`)
+<code class="spaces">backgroundGradient</code>  | `JSON`    | An array of gradient layer data that's used to build the space background gradient. The gradients are layered and animated using the technique described by [Shelby Wilson](https://shelby.cool/#/gradients)
 <code class="spaces">backgroundTint</code>      | `String`  | The background color used to tint the space background
 <code class="spaces">cards</code>               | `Array`   | A list of <a href="#cards" class="badge cards">Cards</a> in the space
 <code class="spaces">collaboratorKey</code>     | `String`  | Used like an apikey to allow editing, but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
