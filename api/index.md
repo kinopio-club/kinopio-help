@@ -294,6 +294,8 @@ Name | Type | Description
 <code class="connections">directionIsVisible</code>   | `Boolean` | The connection has a directional arrow, in the direction of start card to end card
 <code class="connections">endCardId</code>         | `String` | The card that the connection line ends at
 <code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection type label
+<code class="connections">labelRelativePositionX</code>    | `Float` | Label's `horizontal` position relative to the DOM box of it's parent connection. Is between `0` and `1`. Default middle value is `0.5`
+<code class="connections">labelRelativePositionY</code>    | `Float` | Label's `vertical` position relative to the DOM box of it's parent connection. Is between `0` and `1`. Default middle value is `0.5`
 <code class="connections">path</code>              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and its curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
 <code class="connections">spaceId</code>           | `String` | The space that the connection belongs to
 <code class="connections">startCardId</code>       | `String` | The card that the connection line starts from
