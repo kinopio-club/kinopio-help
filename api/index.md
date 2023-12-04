@@ -150,7 +150,7 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/:spaceId/feed.json</code>    | `RSS feed` for cards recently created or updated in a space. Use `?apiKey=` for private spaces  	| `canViewSpace`
 `GET`    | <code class="spaces">/space/inbox</code>  				| Get the current user's inbox space                                                  				              | `apiKey`
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   		    | `apiKey`
-`POST`   | <code class="spaces">/space/screenshot</code>            | Update the `screenshotUrl` and `screenshotThumbnailUrl` for the `spaceId` in request body         | `canEditSpace`
+`POST`   | <code class="spaces">/space/preview-image</code>         | Update the `previewImage` and `previewThumbnailImage` for the `spaceId` in request body         | `canEditSpace`
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            		    | `canEditSpace`
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  		    | `canEditSpace`
 `DELETE` | <code class="spaces">/space</code>                       | Remove space(s) specified in request body                                                 		    | `canEditSpace`
@@ -185,8 +185,8 @@ Name | Type | Description
 <code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
 <code class="spaces">privacy</code>             | `String`  | Can be `open`, `closed`, `private`
 <code class="spaces">removedByUserId</code>     | `String`  | The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed
-<code class="spaces">screenshotUrl</code>           | `String`  | URL for the large-sized screenshot jpg image associated with the space
-<code class="spaces">screenshotThumbnailUrl</code>  | `String`  | URL for the thumbnail-sized screenshot jpg image associated with the space
+<code class="spaces">previewImage</code>           | `String`  | URL for the large-sized preview jpg image associated with the space
+<code class="spaces">previewThumbnailImage</code>  | `String`  | URL for the thumbnail-sized preview jpg image associated with the space
 <code class="spaces">url</code>                 | `String`  | The url of a space is determined by its `name` and `id`. For example, `kinopio.club/:space-name-:id`
 <code class="spaces">users</code>               | `Array`   | The user who created/owns the space (a space will always have only one user)
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
@@ -234,7 +234,7 @@ Name | Type | Description
 <code class="cards">counterIsVisible</code>         | `Boolean`  | Whether the card counter for voting is visible
 <code class="cards">counterIsValue</code>           | `Integer`  | The incremented number of the card counter. Default value is `0`
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
-<code class="cards">height</code>                  | `String`  | The reference height of the card. Used to generate space screenshots
+<code class="cards">height</code>                  | `String`  | The reference height of the card. Used to generate space preview images
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
 <code class="cards">isLocked</code>                 | `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
@@ -259,7 +259,7 @@ Name | Type | Description
 <code class="cards">urlPreviewTitle</code>          | `String`  | The title displayed in the url preview
 <code class="cards">urlPreviewUrl</code>            | `String`  | The url that the card url preview is based on
 <code class="cards">urlPreviewEmbedHtml</code>            | `String`  | html embed code returned by iframely. Used to display url previews when available (like youtube videos). Html containing `<script>` tags is run inside an iframe.
-<code class="cards">width</code>                  | `String`  | The reference width of the card. Used to generate space screenshots
+<code class="cards">width</code>                  | `String`  | The reference width of the card. Used to generate space preview images
 <code class="cards">x</code>                     		| `Integer` | The x-axis position
 <code class="cards">y</code>                     		| `Integer` | The y-axis position
 <code class="cards">z</code>                     		| `Integer` | The z-axis position
@@ -357,8 +357,8 @@ Name | Type | Description
 <code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
 <code class="box">color</code>          | `String` | The color of the box
 <code class="box">createdAt</code>      | `String`  | The date when the box was created
-<code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space screenshots
-<code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space screenshots
+<code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
+<code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
 <code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
 <code class="box">fill</code>           | `String` | The fill type for the box. Possible values are `filled`, `empty`
 <code class="box">name</code>           | `String` | The name of the box
