@@ -150,7 +150,6 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/:spaceId/feed.json</code>    | `RSS feed` for cards recently created or updated in a space. Use `?apiKey=` for private spaces  	| `canViewSpace`
 `GET`    | <code class="spaces">/space/inbox</code>  				| Get the current user's inbox space                                                  				              | `apiKey`
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   		    | `apiKey`
-`POST`   | <code class="spaces">/space/preview-image</code>         | Update the `previewImage` and `previewThumbnailImage` for the `spaceId` in request body         | `canEditSpace`
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            		    | `canEditSpace`
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  		    | `canEditSpace`
 `DELETE` | <code class="spaces">/space</code>                       | Remove space(s) specified in request body                                                 		    | `canEditSpace`
