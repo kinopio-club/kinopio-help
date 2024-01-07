@@ -98,6 +98,7 @@ Name | Type | Description
 <code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 <code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
 <code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
+<code class="users">lastSidebarSection</code>               | `String`  | The shortname of the sidebar section last viewed. Can be `text`, `stats`, `AIImages`, `inbox`, `removed`, `comments`, `links`, or `tags`. Defaults to `text`.
 <code class="users">lastSpaceId</code>                      | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
 <code class="users">name</code>                             | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
 <code class="users">newSpacesAreBlank</code>                | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
