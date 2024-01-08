@@ -10,14 +10,6 @@ Use an Inbox space to collect thoughts, todos, and ideas that don't have a place
 
 <img src="https://updates.kinopio.club/inbox.png">
 
-## Add from Anywhere
+## Add Ideas and URLs from Anywhere
 
-Add thoughts to your inbox on the go with the Kinopio [browser extensions](http://localhost:8081/posts/extensions/)
-
-## Add from Kinopio
-
-While using Kinopio, click the + button in the bottom-left or press 'i' to quickly capture random ideas without leaving your space or losing context
-
-<video autoplay loop muted playsinline>
-  <source src="https://updates.kinopio.club/add-to-inbox.mp4">
-</video>
+Add anything to your inbox on the go with the Kinopio [browser extensions](http://localhost:8081/posts/extensions/), or through the system share sheet if you have the [iOS app](https://apps.apple.com/us/app/kinopio/id6448743101) installed
