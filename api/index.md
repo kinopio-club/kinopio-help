@@ -103,6 +103,7 @@ Name | Type | Description
 <code class="users">lastSpaceId</code>                      | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
 <code class="users">name</code>                             | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
 <code class="users">newSpacesAreBlank</code>                | `Boolean` | Whether new spaces that the user creates are blank, or have the default onboarding/tutorial cards
+<code class="users">prevInviteEmails</code>                 | `String` | The emails you last used when emailing space invites. Is private user info.
 <code class="users">shouldEmailBulletin</code>              | `Boolean` | Whether the user has chosen to allow bulletin emails (default to true)
 <code class="users">shouldEmailNotifications</code>         | `Boolean` | Whether the user has chosen to allow notification emails (default to true)
 <code class="users">shouldEmailWeeklyReview</code>          | `Boolean` | Whether the user has chosen to allow weekly review emails (default to true)
