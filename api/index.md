@@ -252,7 +252,8 @@ Name | Type | Description
 <code class="cards">shouldHideUrlPreviewInfo</code>     | `Boolean` | Whether the card will display it's url preview title and description
 <code class="cards">shouldUpdateUrlPreview</code>       | `Boolean` | Whether the card should be checked for a url preview the next time it's space is loaded in the kinopio-client app. This attribute is automatically assigned to cards created by /card POSTs
 <code class="cards">spaceId</code>                  | `String`  | The space that the card belongs to
-<code class="cards">updatedAt</code>           | `String`  | The date when any changes in the card was made, including to it's position. Use `nameUpdatedAt` instead to see when the card name was changed
+<code class="cards">tilt</code>                  	| `Integer`  | The amount a card is rotated in degrees. Default value is `0`
+<code class="cards">updatedAt</code>           		| `String`  | The date when any changes in the card was made, including to it's position. Use `nameUpdatedAt` instead to see when the card name was changed
 <code class="cards">urlPreviewDescription</code>    | `String`  | The description displayed in the line of the url preview. Because most sites stuff their description tags with SEO gibberish, descriptions are only displayed for whitelisted domains. Contact support to add a domain to the whitelist.
 <code class="cards">urlPreviewErrorUrl</code>       | `String`  | The last url that the preview failed on (could be a private or broken url). If this matches `urlPreviewUrl`, the url preview won't be created
 <code class="cards">urlPreviewFavicon</code>        | `String`  | The url for the url preview favicon image
