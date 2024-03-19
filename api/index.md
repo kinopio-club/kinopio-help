@@ -95,7 +95,6 @@ Name | Type | Description
 <code class="users">isAmbassador</code>                     | `Boolean` | Whether the user is in the [friends of kinopio](https://kinopio.club/friends-of-kinopio-ambassadors-YNmS6C3fofN3R9mYgO1Bu) ambassador program. Is not user updatable.
 <code class="users">isDonor</code>                          | `Boolean` | Whether the user has donated to Kinopio. Is not user updatable.
 <code class="users">isModerator</code>                      | `Boolean` | Whether the user is a moderator of the community forums or discord. Is not user updatable.
-<code class="users">isGuideMaker</code>                     | `Boolean` | Whether the user has written a guide for the help site. Is not user updatable.
 <code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 <code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
 <code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
