@@ -151,8 +151,8 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                    		    | `canViewSpace`
 `GET`    | <code class="spaces">/space/:spaceId/feed.json</code>    | `RSS feed` for cards recently created or updated in a space. Use `?apiKey=` for private spaces  	| `canViewSpace`
 `GET`    | <code class="spaces">/space/inbox</code>  				| Get the current user's inbox space                                                  				              | `apiKey`
-`GET`    | <code class="spaces">/space/public-spaces</code>            | Get a list of recent public spaces sorted by date `createdAt`                                  | None
-`GET`    | <code class="spaces">/space/public-spaces/feed.json</code>  | `RSS feed` for recent public spaces                                                            | None
+`GET`    | <code class="spaces">/space/everyones-spaces</code>            | Get a list of recent public spaces sorted by date `createdAt`                                  | None
+`GET`    | <code class="spaces">/space/everyones-spaces/feed.json</code>  | `RSS feed` for recent public spaces                                                            | None
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   		    | `apiKey`
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            		    | `canEditSpace`
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  		    | `canEditSpace`
@@ -181,7 +181,7 @@ Name | Type | Description
 <code class="spaces">isFromTweet</code>         | `Boolean` | Whether the space was created by replying to a tweet with `@kinopioclub save`
 <code class="spaces">isHidden</code>            | `Boolean` | Whether the space is hidden from the users personal list of spaces
 <code class="spaces">isRemoved</code>           | `Boolean` | Whether the space has been soft-removed. (can then be restored or permanently removed)
-<code class="spaces">isRestrictedByModerator</code> | `Boolean` | Whether the space has been marked as restricted. Restricted spaces are not shown in Explore, Live, or in the public feed. This value cannot be patched, it is set manually by a moderator only when necessary.
+<code class="spaces">isRestrictedByModerator</code> | `Boolean` | Whether the space has been marked as restricted. Restricted spaces are not shown in Explore, Live, or in the Everyone feed. This value cannot be patched, it is set manually by a moderator only when necessary.
 <code class="spaces">isTemplate</code>          | `Boolean` | Whether the space is a <a href="/posts/templates/">personal template</a>
 <code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon used by Journal spaces. Possible values are `new-moon`, `waxing-crescent`, `waxing-quarter`, `waxing-gibbous`, `full-moon`, `waning-gibbous`, `waning-quarter`, `waning-crescent`
 <code class="spaces">name</code>                | `String`  | The name of the space
