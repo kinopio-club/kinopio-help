@@ -66,7 +66,6 @@ Method | Path | Description | Auth
 `GET`   | <code class="users">/user/inbox-space</code>            | Get info on the user's `Inbox` space. whether a space is an inbox or not is based on name only, so it's possible to have multiple `Inbox` spaces, but only one the most recently updated Inbox will be returned | `apiKey`
 `GET`   | <code class="users">/user/tags</code>                   | Get a list of the last edited <a href="#tags" class="badge tags">Tags</a> in your spaces                                                                  | `apiKey`
 `PATCH` | <code class="users">/user</code>                        | Update the authenticating user(s) based on an object body with user attributes. You can't patch `apiKey`, `password`, `emailIsVerified`, or `email`       | `apiKey`
-`PATCH` | <code class="users">/user/favorites</code>              | Add or remove favorite users or spaces. Acts like a toggle, if the user is already liked it then removes the like. If not already liked it adds the like. request body should be in the format. | `apiKey`
 
 <h3 class="badge users">User Attributes</h3>
 
