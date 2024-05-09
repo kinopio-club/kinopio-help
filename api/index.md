@@ -15,7 +15,7 @@ Use of the API is subject to the [Use Restrictions Policy](/posts/use-restrictio
 
 ## Authentication
 
-Kinopio uses token-based authentication using your user `apiKey`. You can get your apiKey in the app through `User → Settings → Account → Get Api Key`.
+Kinopio uses token-based authentication using your user `apiKey`. You can get your apiKey in the app through `User → Settings → Account → Developer Info`.
 
 > 🙈 Your API key carries the same privileges as your user account, so be sure to keep it secret!
 
