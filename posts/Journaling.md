@@ -9,20 +9,26 @@ Add journal spaces to reflect on your life and moments,
 Edit the journal to fit you with custom prompts, and add the Prompt of the Day to get something new in each journal
 
 <video class="wide" autoplay loop muted playsinline>
-  <source src="https://updates.kinopio.club/add-edit-journal.mp4">
+  <source src="https://help.kinopio.club/assets/posts/Journaling/journal-creation.mp4">
 </video>
 
 ## Daily Tasks
 
 Use journals to help you remember daily tasks or habits by adding checkbox prompts
 
-<img src="https://updates.kinopio.club/journal-checklist.png" class="wide"/>
+<img src="https://help.kinopio.club/assets/posts/Journaling/journal-prompts-habits.png" class="wide"/>
 
 ## Weather
 
 Let Kinopio add the weather for your current location automatically
 
-<img src="https://help.kinopio.club/assets/posts/Journaling/journal-prompts-and-weather.png" class="wide"/>
+<img src="https://help.kinopio.club/assets/posts/Journaling/journal-weather.png" class="wide"/>
+
+## Prompt of the Day
+
+Utilize Kinopio's Prompt of the Day to get something new to think about in each journal
+
+<img src="https://help.kinopio.club/assets/posts/Journaling/prompt-of-day.png" class="wide"/>
 
 ## Moonphases
 
