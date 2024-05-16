@@ -6,7 +6,7 @@ color: 'khaki'
 
 Add journal spaces to reflect on your life and moments,
 
-Edit the journal to fit you with custom prompts, and add prompt packs which present something new each time
+Edit the journal to fit you with custom prompts, and add the Prompt of the Day to get something new in each journal
 
 <video class="wide" autoplay loop muted playsinline>
   <source src="https://updates.kinopio.club/add-edit-journal.mp4">
@@ -17,6 +17,10 @@ Edit the journal to fit you with custom prompts, and add prompt packs which pres
 Use journals to help you remember daily tasks or habits by adding checkbox prompts
 
 <img src="https://updates.kinopio.club/journal-checklist.png" class="wide"/>
+
+## Weather
+
+Let Kinopio add the weather for your current location automatically
 
 ## Moonphases
 
