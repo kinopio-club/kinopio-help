@@ -22,6 +22,8 @@ Use journals to help you remember daily tasks or habits by adding checkbox promp
 
 Let Kinopio add the weather for your current location automatically
 
+<img src="assets/posts/Journaling/journal-prompts-and-weather.png" class="wide"/>
+
 ## Moonphases
 
 Journal spaces are displayed with moonphase icons to visually differentiate them from normal spaces, and to add a bit of romantic flair. The moon phase is a 27 day cycle, beginning and ending with a new moon.
