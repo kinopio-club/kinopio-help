@@ -22,7 +22,7 @@ Use journals to help you remember daily tasks or habits by adding checkbox promp
 
 Let Kinopio add the weather for your current location automatically
 
-<img src="https://updates.kinopio.club/assets/posts/Journaling/journal-prompts-and-weather.png" class="wide"/>
+<img src="https://help.kinopio.club/assets/posts/Journaling/journal-prompts-and-weather.png" class="wide"/>
 
 ## Moonphases
 
