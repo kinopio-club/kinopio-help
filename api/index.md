@@ -77,7 +77,7 @@ Name | Type | Description
 <code class="users">apiKey</code>                           | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
 <code class="users">cardsCreatedCount</code>                | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">cardSettingsDefaultCharacterLimit</code>            | `Integer` | The max number of characters you can enter in a card. Either 300 (default) or 4000 (max). Constrained character limits are meant to encourage using cards to represent single ideas. But this override exists for those who don't want that.
-<code class="users">cardSettingsMaxCardWidthIsWide</code>               | `Boolean` | Defaults to `false` (200px wide cards). If `true`, cards created by this user will have a much wider default maximum width (500px wide cards).
+<code class="users">cardSettingsMaxCardWidth</code>               | `Integer` | When the user creates cards, those cards will set `card.maxWidth` from this property. Sets the maximum default length of a card before it starts wrapping
 <code class="users">cardSettingsShiftEnterShouldAddChildCard</code>		| `Boolean` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
 <code class="users">createdAt</code>           				      | `String`  | The date when the user was created
@@ -251,7 +251,7 @@ Name | Type | Description
 <code class="cards">linkToSpaceId</code>              | `String`  | The `spaceId` linked to in the card name
 <code class="cards">linkToCardId</code>               | `String`  | The `cardId` linked to in the card name. A card link will always also include `linkToSpaceId` (but not vice versa)
 <code class="cards">linkToSpaceCollaboratorKey</code> | `String`  | The `collaboratorKey` used to invite someone to the space specified in `linkToSpaceId`. Indicates the the space has a space invite link
-<code class="cards">maxWidthIsWide</code>     		| `Boolean` | Defaults to `false` (200px wide). If `true`, cards will have a much wider default maximum width (500px wide) before wrapping.
+<code class="cards">maxWidth</code>     		| `Boolean` | Sets the default maximum width before cards text starts wrapping
 <code class="cards">name</code>                  		  | `String`  | The name of the card is its main text. Limited to 2000 characters
 <code class="cards">nameUpdatedAt</code>            | `String`  | The date when the card name was last updated
 <code class="cards">nameUpdatedByUserId</code>      | `String`  | The user id that last updated the name of the card
