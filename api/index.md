@@ -243,6 +243,7 @@ Name | Type | Description
 <code class="cards">counterIsVisible</code>         | `Boolean`  | Whether the card counter for voting is visible
 <code class="cards">counterValue</code>           	| `Integer`  | The incremented number of the card counter. Default value is `0`
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
+<code class="cards">headerFontId</code>                  	| `Integer`  | An id representing the card's header font. Default value is `0` for Recoletta
 <code class="cards">height</code>                  | `String`  | The reference height of the card. Used to generate space preview images
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
