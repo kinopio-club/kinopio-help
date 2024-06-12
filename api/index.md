@@ -244,7 +244,8 @@ Name | Type | Description
 <code class="cards">counterIsVisible</code>         | `Boolean`  | Whether the card counter for voting is visible
 <code class="cards">counterValue</code>           	| `Integer`  | The incremented number of the card counter. Default value is `0`
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
-<code class="cards">headerFontId</code>                  	| `Integer`  | An id representing the card's header font. Default value is `0` for Recoletta
+<code class="cards">headerFontId</code>             | `Integer`  | An id representing the card's header font. Default value is `0` for Recoletta
+<code class="cards">headerFontSize</code> 			| `String`  | The header font size of the card. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size)
 <code class="cards">height</code>                  | `String`  | The reference height of the card. Used to generate space preview images
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
@@ -370,6 +371,8 @@ Name | Type | Description
 <code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
 <code class="box">color</code>          | `String` | The color of the box
 <code class="box">createdAt</code>      | `String`  | The date when the box was created
+<code class="box">headerFontId</code> | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
+<code class="box">headerFontSize</code> | `String`  | The header font size of the box. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size). Similar to `card.headerFontSize`
 <code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
 <code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
 <code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
