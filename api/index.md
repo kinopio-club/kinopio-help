@@ -265,7 +265,8 @@ Name | Type | Description
 <code class="cards">urlPreviewIsVisible</code>      | `Boolean` | Whether the card will display a url preview (aka link unfurl)
 <code class="cards">urlPreviewTitle</code>          | `String`  | The title displayed in the url preview
 <code class="cards">urlPreviewUrl</code>            | `String`  | The url that the card url preview is based on
-<code class="cards">urlPreviewEmbedHtml</code>            | `String`  | html embed code returned by iframely. Used to display url previews when available (like youtube videos). Html containing `<script>` tags is run inside an iframe.
+<code class="cards">urlPreviewEmbedHtml</code>            | `String`  | `DEPRECATED` html embed code returned by iframely. Used to display url previews when available (like youtube videos). Html containing `<script>` tags is run inside an iframe.
+<code class="cards">urlPreviewIframeUrl</code>            | `String`  | Iframe url returned by iframely. Used to display url previews when available (like youtube videos). Cannot be patched.
 <code class="cards">width</code>                  | `String`  | The reference width of the card. Used to generate space preview images
 <code class="cards">x</code>                     		| `Integer` | The x-axis position
 <code class="cards">y</code>                     		| `Integer` | The y-axis position
