@@ -4,19 +4,31 @@ tags: ['How to Use']
 color: 'khaki'
 ---
 
-Add journal spaces to reflect on your life and moments,
+Add journal spaces to reflect on your life and moments!
 
-Edit the journal to fit you with custom prompts, and add prompt packs which present something new each time
+Edit the journal to fit your needs with custom prompts.
 
 <video class="wide" autoplay loop muted playsinline>
-  <source src="https://updates.kinopio.club/add-edit-journal.mp4">
+  <source src="https://help.kinopio.club/assets/posts/Journaling/journal-creation.mp4">
 </video>
 
 ## Daily Tasks
 
-Use journals to help you remember daily tasks or habits by adding checkbox prompts
+Use journals to help you remember daily tasks or habits by adding checkbox prompts.
 
-<img src="https://updates.kinopio.club/journal-checklist.png" class="wide"/>
+<img src="https://help.kinopio.club/assets/posts/Journaling/journal-prompts-habits.png" class="wide"/>
+
+## Weather
+
+Let Kinopio add the weather for your current location automatically. *Make sure to reactivate if you change locations!*
+
+<img src="https://help.kinopio.club/assets/posts/Journaling/journal-weather.png" class="wide"/>
+
+## Prompt of the Day
+
+Utilize Kinopio's **Prompt of the Day** to get something new to think about in each journal. Using journal prompts everyday comes with a [myriad of benefits](https://community.thriveglobal.com/journal-writing-prompts-and-why-to-do-them/) such as providing a great way to self-reflect and learn about yourself.
+
+<img src="https://help.kinopio.club/assets/posts/Journaling/prompt-of-day.png" class="wide"/>
 
 ## Moonphases
 
@@ -66,7 +78,9 @@ Journal spaces are displayed with moonphase icons to visually differentiate them
 Depending on who you ask, the phase of the moon is more about [astronomy](https://spaceplace.nasa.gov/moon-phases/en/), or [astrology](https://thatverynight.com/moon-phases-meaning/).
 
 
-## Pro-Tip
+## Pro-Tips
+
+Utilize [Space List Filters](https://help.kinopio.club/posts/filters/) to hone in on your Journal Spaces or exclude them from the list to focus on non-journals.
 
 Bookmark and use the `/new` URLs [kinopio.club/new/today](https://kinopio.club/new/today) and [kinopio.club/new/tomorrow](https://kinopio.club/new/tomorrow) to load or create daily journal spaces.
 

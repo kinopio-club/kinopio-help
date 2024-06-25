@@ -76,6 +76,10 @@ Name | Type | Description
 <code class="users">id</code>                               | `String`  | The unique ID of the user. Is not user updateable
 <code class="users">apiKey</code>                           | `UUID`    | Used in Authentication headers to make API calls as the currentUser. Generated and returned only when user signs up or in. Is not user updateable
 <code class="users">cardsCreatedCount</code>                | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
+<code class="users">cardsCreatedCountRaw</code>                | `Integer` | Similar to `cardsCreatedCount` except the raw version increments even if your're a free user on a paid user space. This is a vanity metric and is not used to enforce free user limits.
+<code class="users">cardSettingsDefaultCharacterLimit</code>            | `Integer` | The max number of characters you can enter in a card. Either 300 (default) or 4000 (max). Constrained character limits are meant to encourage using cards to represent single ideas. But this override exists for those who don't want that.
+<code class="users">cardSettingsMaxCardWidth</code>               | `Integer` | When the user creates cards, those cards will set `card.maxWidth` from this property. Sets the maximum default length of a card before it starts wrapping
+<code class="users">cardSettingsShiftEnterShouldAddChildCard</code>		| `Boolean` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
 <code class="users">createdAt</code>           				      | `String`  | The date when the user was created
 <code class="users">creditsEarned</code>                    | `Integer` | The number of $ credits earned by referring or inviting new users to Kinopio. Is not user updateable
@@ -125,6 +129,7 @@ Name | Type | Description
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
 <code class="users">panSpeedIsFast</code>                   | `Boolean` | User preference for panning speed when you hold and drag with the space key or right/middle mouse buttons
+<code class="users">prevSettingsSection</code>           	| `String`  | The last used settings section. Can be `general`, `controls`, or `cards`
 <code class="users">outsideSpaceBackgroundIsStatic</code>   | `Boolean` | User preference for whether the outside space area should use dynamically cycling colors, or whether it should be static grey
 <code class="users">studentDiscountIsAvailable</code>   | `Boolean` | Whether the user is eligible for a student discount. Is not user updateable
 
@@ -176,7 +181,6 @@ Name | Type | Description
 <code class="spaces">connectionTypes</code>     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
 <code class="spaces">connections</code>         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
 <code class="spaces">createdAt</code>           | `String`  | The date when the space was created
-<code class="spaces">defaultCardMaxWidth</code> | `Integer` | Sets the max card width for cards in the space that don't have a `resizeWidth`. Defaults to `230` for new spaces.
 <code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
 <code class="spaces">editedByUserId</code>      | `String`  | The user id of the last user who edited or created a card in the space
 <code class="spaces">isFromTweet</code>         | `Boolean` | Whether the space was created by replying to a tweet with `@kinopioclub save`
@@ -240,6 +244,8 @@ Name | Type | Description
 <code class="cards">counterIsVisible</code>         | `Boolean`  | Whether the card counter for voting is visible
 <code class="cards">counterValue</code>           	| `Integer`  | The incremented number of the card counter. Default value is `0`
 <code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
+<code class="cards">headerFontId</code>             | `Integer`  | An id representing the card's header font. Default value is `0` for Recoletta
+<code class="cards">headerFontSize</code> 			| `String`  | The header font size of the card. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size)
 <code class="cards">height</code>                  | `String`  | The reference height of the card. Used to generate space preview images
 <code class="cards">isCreatedThroughPublicApi</code>      | `Boolean` | Whether the card was created through the public API. Cards that created through `POST /card/` will automatically receive this attribute
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
@@ -248,6 +254,7 @@ Name | Type | Description
 <code class="cards">linkToSpaceId</code>              | `String`  | The `spaceId` linked to in the card name
 <code class="cards">linkToCardId</code>               | `String`  | The `cardId` linked to in the card name. A card link will always also include `linkToSpaceId` (but not vice versa)
 <code class="cards">linkToSpaceCollaboratorKey</code> | `String`  | The `collaboratorKey` used to invite someone to the space specified in `linkToSpaceId`. Indicates the the space has a space invite link
+<code class="cards">maxWidth</code>     		| `Boolean` | Sets the default maximum width before cards text starts wrapping
 <code class="cards">name</code>                  		  | `String`  | The name of the card is its main text. Limited to 2000 characters
 <code class="cards">nameUpdatedAt</code>            | `String`  | The date when the card name was last updated
 <code class="cards">nameUpdatedByUserId</code>      | `String`  | The user id that last updated the name of the card
@@ -365,6 +372,8 @@ Name | Type | Description
 <code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
 <code class="box">color</code>          | `String` | The color of the box
 <code class="box">createdAt</code>      | `String`  | The date when the box was created
+<code class="box">headerFontId</code> | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
+<code class="box">headerFontSize</code> | `String`  | The header font size of the box. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size). Similar to `card.headerFontSize`
 <code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
 <code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
 <code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
