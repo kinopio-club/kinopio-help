@@ -91,6 +91,7 @@ Name | Type | Description
 <code class="users">defaultConnectionControlPoint</code>    | `String` | User preference for the default control point for new connections. `null` makes a curved path, `q00,00` makes a straight line
 <code class="users">description</code>                      | `String`  | A description of this particular user
 <code class="users">dialogSpaceFilters</code>               | `String` | User preference for spaces filter, is either `null`, `journals`, `spaces`
+<code class="users">dialogSpaceFiltersSortBy</code>         | `String` | User preference for spaces filter sortBy, is either `null`, `updatedAt`, `createdAt`
 <code class="users">email</code>                            | `String`  | The unique email address of the user required to create an account
 <code class="users">emailIsVerified</code>                  | `Boolean` | Whether the user has verified their email address
 <code class="users">filterShowAbsoluteDates</code>          | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
