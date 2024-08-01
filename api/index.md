@@ -90,8 +90,6 @@ Name | Type | Description
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
 <code class="users">defaultConnectionControlPoint</code>    | `String` | User preference for the default control point for new connections. `null` makes a curved path, `q00,00` makes a straight line
 <code class="users">description</code>                      | `String`  | A description of this particular user
-<code class="users">dialogSpaceFilters</code>               | `String` | User preference for spaces filter, is either `null`, `journals`, `spaces`
-<code class="users">dialogSpaceFiltersSortBy</code>         | `String` | User preference for spaces filter sortBy, is either `null`, `updatedAt`, `createdAt`
 <code class="users">email</code>                            | `String`  | The unique email address of the user required to create an account
 <code class="users">emailIsVerified</code>                  | `Boolean` | Whether the user has verified their email address
 <code class="users">filterShowAbsoluteDates</code>          | `Boolean` | Whether card dates are displayed as absolute (false is default relative)
@@ -126,6 +124,8 @@ Name | Type | Description
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded options and info in both the `card-details` and `multiple-selected-actions` dialogs
 <code class="users">showWeather</code>                		  | `Boolean` | Whether to add today's weather forecast to new journal spaces
+<code class="users">team</code>                             | `JSON` | Information on the team a user is in, including the basic metadata on the other team `users`
+<code class="users">teamUser</code>                         | `JSON` | Describes the user's role in a team. Currently, a user can only belong to a single team.
 <code class="users">updatedAt</code>           				      | `String`  | The date when any changes to the user was made. Also is updated whenever the user starts a Kinopio session
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
@@ -203,6 +203,9 @@ Name | Type | Description
 <code class="spaces">users</code>               | `Array`   | The user who created/owns the space (a space will always have only one user)
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
+<code class="spaces">team</code>                | `JSON` | Information on the team a space is in, including the basic metadata on the other team `users`
+<code class="spaces">teamId</code>              | `String` | The team id that the space belongs to. A space can only belong to one team.
+<code class="spaces">addedToTeamByUserId</code> | `String` | The user who added the space to the team
 <code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
 <code class="spaces">visits</code>              | `Integer` | The number of times the space has been loaded by a person
 <code class="spaces">readOnlyKey</code>         | `String`  | Similar to `collaboratorKey` but only allows users and non-signed-in users to read a private space
