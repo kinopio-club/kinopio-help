@@ -125,8 +125,7 @@ Name | Type | Description
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded options and info in both the `card-details` and `multiple-selected-actions` dialogs
 <code class="users">showWeather</code>                		  | `Boolean` | Whether to add today's weather forecast to new journal spaces
-<code class="users">team</code>                             | `JSON` | Information on the team a user is in, including the basic metadata on the other team `users`
-<code class="users">teamUser</code>                         | `JSON` | Describes the user's role in a team. Currently, a user can only belong to a single team.
+<code class="users">teams</code>                             | `JSON Array` | The teams a user is in, including the basic metadata on the other `users` in each team
 <code class="users">updatedAt</code>           				      | `String`  | The date when any changes to the user was made. Also is updated whenever the user starts a Kinopio session
 <code class="users">weatherLocation</code>                	| `String` | Geographic coordinates (latitude, longitude) used to get weather data. Private user info. Rounded to two decimal places so that exact location cannot be determined
 <code class="users">weatherUnitIsCelcius</code>             | `String` | Whether to display weather information in Celcius or Fahrenheit (default)
