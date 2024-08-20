@@ -4,7 +4,7 @@ tags: ['How to Use']
 color: 'khaki'
 ---
 
-Assign spaces to teams to share them with multiple people at once. Each team member can see and edit any of the spaces in a team.
+Assign spaces to teams to share them with multiple people at once. Each team member can see and edit all of the spaces in a team.
 
 <img src="/assets/posts/teams/teams.png" class=""/>
 
@@ -17,7 +17,7 @@ Each team member becomes an upgraded Kinopio user, so they can create unlimited 
 
 ## Creating Teams
 
-You can create as many teams as you'd like. A single team can be shared by a whole company, but you can create separate teams for departments, or projects.
+You can create as many teams as you'd like. A single team can be shared by a whole company, but you can create smaller teams for departments, or projects as well.
 
 To create a new team, click on `yourself → Teams → New Team`. You'll be able to change the color and name of the team at any time.
 
@@ -37,7 +37,7 @@ Anyone you share the invite code with will be added to your team. If they don't 
 
 # Team User Permissions
 
-Team users can have the role of either `member` or `admin`.
+Team users can have the role of `member` or `admin`.
 
 **Members** can add their spaces to the team, edit team spaces, and invite other people to the team.
 
@@ -45,7 +45,7 @@ Team users can have the role of either `member` or `admin`.
 
 ### Invite Non-Team Collaborators to a Space
 
-Just like in a regular non-team space, collaborators can be invited to a team space through the `Share` button. Invited collaborators in a space will be able to create cards without increasing their free user cards created count.
+Just like in a regular non-team space, collaborators can be invited to a team space through the `Share` button. Invited collaborators in a space will be able to create cards without counting against their free user card limit.
 
 <img src="/assets/posts/teams/share.png" class=""/>
 
@@ -59,9 +59,9 @@ From your spaces list, you can see your personal spaces as well as spaces added 
 </video>
 
 
-A space can only belong to a single space. Spaces can only be added to teams by the original space creator.
+Each space can only belong to a single team. Spaces can only be added to teams by the original space creator.
 
-If you see a team space in your spaces list you can edit it. Once you add a card to that space you'll be treated like a space collaborator and will receive notifications new cards get added there.
+If you see a team space in your spaces list, you can edit it. Once you add a card to that space you'll be treated like a space collaborator and will receive notifications when new cards are added there.
 
 ## Removing Users from the Team
 
@@ -79,6 +79,6 @@ The removed team user will no longer have access to any team spaces and will rev
 
 During the beta period, teams are free.
 
-The plan is that teams will cost 6$/user. If you have multiple teams with the same users on them, you'll only be charged once per unique user.
+Teams will cost 6$/user. If you have multiple teams with the same users on them, you'll only be charged once per unique user.
 
 When teams are ready to ship to everyone, teams will be moved to a free trial and you'll have 14 days to decide whether to pay for them. If you choose not to pay, then team spaces will become read-only and team users will revert to free users.
