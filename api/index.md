@@ -178,6 +178,7 @@ Name | Type | Description
 <code class="spaces">backgroundIsGradient</code>  | `Boolean`  | Whether the space background uses `backgroundGradient` (instead of the default `background`)
 <code class="spaces">backgroundGradient</code>  | `JSON`    | An array of gradient layer data that's used to build the space background gradient. The gradients are layered and animated using the technique described by [Shelby Wilson](https://shelby.cool/#/gradients)
 <code class="spaces">backgroundTint</code>      | `String`  | The background color used to tint the space background
+<code class="spaces">boxes</code>               | `Array`   | A list of <a href="#boxes" class="badge boxes">Boxes</a> in the space
 <code class="spaces">cards</code>               | `Array`   | A list of <a href="#cards" class="badge cards">Cards</a> in the space
 <code class="spaces">collaboratorKey</code>     | `String`  | Used like an apikey to allow editing, but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
 <code class="spaces">collaborators</code>       | `Array`   | A list of users that can also edit the space
@@ -472,4 +473,4 @@ Method | Path | Description | Auth
 `GET`   | <code class="other">/journal-daily-prompt</code>  | Daily journal prompt and dateImage added to new journal spaces, updated once a day | None
 `GET`   | <code class="other">/services/community-backgrounds</code>  | Lists the space background images aded to the <a href="https://www.are.na/kinopio/community-backgrounds">are.na channel</a> | None
 `GET`   | <code class="other">/meta/date</code>  | Current time/timezone of kinopio-server | None
-`GET`   | <code class="other">/meta/blog</code>  | Lists recent [blog](https://kinopio.club/blog) new feature updates | None
+`GET`   | <code class="other">/meta/changelog</code>  | Lists recent Kinopio new feature updates | None
