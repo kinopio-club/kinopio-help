@@ -61,6 +61,8 @@ If the current space is in a group, the `Share` menu will also display the `Copy
 
 Group users can have the role of `member` or `admin`.
 
+<img src="/assets/posts/groups/group-members3.webp" class=""/>
+
 **Members** can add their spaces to the Group, edit Group spaces, and invite other people to the Group.
 
 **Admins** can do everything members can, but they can also edit the Group itself (e.g. Group name and color), change the roles of other users on the Group, remove users from the Group. Admins can also remove the group entirely.
