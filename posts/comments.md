@@ -1,5 +1,5 @@
 ---
-title: Commenting
+title: Comments
 tags: ['Advanced Use']
 color: '#b9a8ff'
 ---

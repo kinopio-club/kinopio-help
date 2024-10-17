@@ -29,6 +29,6 @@ Use the sidebar to get an see all your tags and jump to matching cards.
 
 ## Some Ways to Use Tags
 
-- Group cards by `[[project]]` or `[[team]]`
+- Group cards by `[[project]]`, or `[[team]]`, or `[[assignee]]`
 - Connect `[[related]]` cards across spaces
 - `[[Label]]` important cards that you want to stand out in your space
