@@ -11,8 +11,6 @@ Assign spaces to Groups to share them with multiple people at once. Each Group m
 Groups are helpful if you want to share and collaborate often with the same people on whiteboards, brainstorms, meeting notes, and diagrams.
 
 
-Each Group member becomes an upgraded Kinopio user, so they can create unlimited cards on Group spaces, and their own personal spaces too.
-
 > Only upgraded users can create groups, but any user on a group can contribute spaces to it
 
 ## Creating Groups
@@ -74,11 +72,3 @@ Open the Group details, by clicking on yourself, click the `Groups` button, then
 Removing someone from the Group immediately removes them as a collaborator from all Group spaces, and transfers ownership of their Group spaces to the admin.
 
 The removed Group user will no longer have access to any Group spaces and will revert to being a free user. They will still have access to their account and personal spaces.
-
-## Planned Pricing
-
-During the beta period, Groups are free.
-
-Groups will cost 6$/user. If you have multiple Groups with the same users on them, you'll only be charged once per unique user.
-
-When Groups are ready to ship to everyone, Groups will be moved to a free trial and you'll have 14 days to decide whether to pay for them. If you choose not to pay, then Group spaces will become read-only and Group users will revert to free users.
