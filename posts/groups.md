@@ -49,13 +49,13 @@ If you see a Group space in your spaces list then you can edit it. Once you add 
 Adding people to your Group is very similar to inviting them to a space. From `Yourself → Groups`, click on the name of a Group, and click `Copy Invite to Group URL`.
 
 <img src="/assets/posts/groups/group-details-invite-button.webp" class
-=""/>
+="narrow"/>
 
 Anyone you share the invite code with will be added to your Group. If they don't yet have a Kinopio account, they'll be added once they sign up.
 
 If the current space is in a group, the `Share` menu will also display the `Copy Invite to Group URL` button
 
-<img src="/assets/posts/groups/share-invite-button.webp" class=""/>
+<img src="/assets/posts/groups/share-invite-button.webp" class="narrow"/>
 
 # Group User Permissions
 
