@@ -159,6 +159,7 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/everyones-spaces/feed.json</code>  | `RSS feed` for recent public spaces                                                            | None
 `GET`    | <code class="spaces">/space/date-image</code>  			| Get the image url for today's date card image                                                        | None
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   		    | `apiKey`
+`POST`   | <code class="spaces">/space/search-explore-space</code>   | Get all `showInExplore` spaces based on space name. Body object must contain `query`. Searches are not case-insensitive           | None
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            		    | `canEditSpace`
 `PATCH`  | <code class="spaces">/space/restore</code>               | Restore removed space(s)  from object(s) in request body                                  		    | `canEditSpace`
 `DELETE` | <code class="spaces">/space</code>                       | Remove space(s) specified in request body                                                 		    | `canEditSpace`
