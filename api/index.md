@@ -420,6 +420,7 @@ Name | Type | Description
 <code class="tags">name</code>    | `String` | The name of the tag
 <code class="tags">spaceId</code> | `String` | The space that the tag belongs to
 <code class="tags">updatedAt</code>      | `String`  | The date when any changes were made to the tag
+<code class="tags">userId</code> | `String` | The user who created the tag
 
 
 
