@@ -389,7 +389,6 @@ Name | Type | Description
 <code class="box">updatedAt</code>      | `String`  | The date when any changes were made to the box
 <code class="box">x</code>              | `Integer` | The x-axis position of the box origin (top-left point)
 <code class="box">y</code>              | `Integer` | The y-axis position of the box origin
-<code class="box">z</code>              | `Integer` | The z-axis position of the box
 
 
 
