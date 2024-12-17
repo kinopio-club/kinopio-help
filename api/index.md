@@ -125,7 +125,6 @@ Name | Type | Description
 <code class="users">groups</code>                             | `JSON Array` | The groups a user belongs to, including public metadata on the other `users` in each group
 <code class="users">updatedAt</code>           				      | `String`  | The date when any changes to the user was made. Also is updated whenever the user starts a Kinopio session
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
-<code class="users">panSpeedIsFast</code>                   | `Boolean` | User preference for panning speed when you hold and drag with the space key or right/middle mouse buttons
 <code class="users">prevSettingsSection</code>           	| `String`  | The last used settings section. Can be `general`, `controls`, or `cards`
 <code class="users">outsideSpaceBackgroundIsStatic</code>   | `Boolean` | User preference for whether the outside space area should use dynamically cycling colors, or whether it should be static grey
 <code class="users">studentDiscountIsAvailable</code>   | `Boolean` | Whether the user is eligible for a student discount. Is not user updateable
@@ -421,6 +420,7 @@ Name | Type | Description
 <code class="tags">name</code>    | `String` | The name of the tag
 <code class="tags">spaceId</code> | `String` | The space that the tag belongs to
 <code class="tags">updatedAt</code>      | `String`  | The date when any changes were made to the tag
+<code class="tags">userId</code> | `String` | The user who created the tag
 
 
 
