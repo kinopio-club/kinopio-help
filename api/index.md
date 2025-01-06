@@ -387,8 +387,8 @@ Name | Type | Description
 <code class="box">spaceId</code>        | `String` | The space that the box belongs to
 <code class="box">userId</code>         | `String` | The user that created the box
 <code class="box">updatedAt</code>      | `String`  | The date when any changes were made to the box
-<code class="box">x</code>              | `String` | The x-axis position of the box origin (top-left point)
-<code class="box">y</code>              | `String` | The y-axis position of the box origin
+<code class="box">x</code>              | `Integer` | The x-axis position of the box origin (top-left point)
+<code class="box">y</code>              | `Integer` | The y-axis position of the box origin
 
 
 
