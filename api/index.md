@@ -184,7 +184,8 @@ Name | Type | Description
 <code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
 <code class="spaces">editedByUserId</code>      | `String`  | The user id of the last user who edited or created a card in the space
 <code class="spaces">isFromTweet</code>         | `Boolean` | Whether the space was created by replying to a tweet with `@kinopioclub save`
-<code class="spaces">isHidden</code>            | `Boolean` | Whether the space is hidden from the authenticating user's personal list of spaces
+<code class="spaces">isHidden</code>            | `Boolean` | Whether the space is hidden by the current user
+<code class="spaces">isFavorite</code>          | `Boolean` | Whether the space is favorited by the current user
 <code class="spaces">isRemoved</code>           | `Boolean` | Whether the space has been soft-removed. (can then be restored or permanently removed)
 <code class="spaces">isRestrictedByModerator</code> | `Boolean` | Whether the space has been marked as restricted. Restricted spaces are not shown in Explore, Live, or in the Everyone feed. This value cannot be patched, it is set manually by a moderator only when necessary.
 <code class="spaces">isTemplate</code>          | `Boolean` | Whether the space is a <a href="/posts/templates/">personal template</a>
