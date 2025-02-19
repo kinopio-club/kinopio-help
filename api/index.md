@@ -471,3 +471,4 @@ Method | Path | Description | Auth
 `GET`   | <code class="other">/services/community-backgrounds</code>  | Lists the space background images aded to the <a href="https://www.are.na/kinopio/community-backgrounds">are.na channel</a> | None
 `GET`   | <code class="other">/meta/date</code>  | Current time/timezone of kinopio-server | None
 `GET`   | <code class="other">/meta/changelog</code>  | Lists recent Kinopio new feature updates | None
+`GET`   | <code class="other">/meta/emojis</code>  | List of [unicode emojis](https://github.com/muan/unicode-emoji-json/blob/main/data-by-group.json) for the emoji picker | None
