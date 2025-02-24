@@ -15,12 +15,12 @@ The minimap will display while panning mode is active – when either the space-
 </video>
 
 
-## From the Sidebar
+## From the Footer
 
-`Sidebar → Minimap` will display the minimap and a list of boxes sorted by their starting `y` positions. You can click and drag on the minimap to quickly move around, and click on a box to jump to its position.
+Clicking the little minimap button in the footer will also display the minimap and a list of boxes sorted by their starting `y` positions. You can click and drag on the minimap to quickly move around, and click on a box to jump to its position.
 
 <p>
-<img src="/assets/posts/minimap/minimap.webp" class=""/>
+<img src="/assets/posts/minimap/minimap2.webp" class=""/>
 </p>
 
 If you'd like, you can pin the sidebar to keep the minimap open while you work.
