@@ -374,9 +374,10 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
+<code class="box">background</code>     | `String`  | The image url used by the box background
 <code class="box">color</code>          | `String` | The color of the box
 <code class="box">createdAt</code>      | `String`  | The date when the box was created
-<code class="box">headerFontId</code> | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
+<code class="box">headerFontId</code>   | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
 <code class="box">headerFontSize</code> | `String`  | The header font size of the box. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size). Similar to `card.headerFontSize`
 <code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
 <code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
