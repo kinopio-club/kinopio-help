@@ -16,6 +16,7 @@ prevScroll = {
 }
 let isDrawing = false
 let isTouch = false
+let recordStartTime
 
 randomColor()
 initCanvas()
@@ -72,16 +73,6 @@ function throttle (ms, fn) {
   }
 }
 
-function drawCurrentStroke () {
-  if (currentPaintStroke.length === 0) { return }
-  context.beginPath()
-  context.moveTo(currentPaintStroke[0].x, currentPaintStroke[0].y)
-  currentPaintStroke.forEach((point) => {
-    context.lineTo(point.x, point.y)
-  })
-  context.stroke()
-}
-
 function redrawAllStrokes () {
   if (allStrokes.length === 0) { return }
   allStrokes = allStrokes.filter(stroke => {
@@ -97,8 +88,23 @@ function redrawAllStrokes () {
   })
 }
 
-let recordStartTime
+function updateCanvas() {
+  if (isTouch) { return }
+  initCanvas()
+  initPageCanvas()
+  redrawAllStrokes()
+}
 
+// start
+
+window.onmousedown = function (event) {
+  if (event.button !== 0) { return }
+  startStroke()
+}
+window.ontouchstart = function (event) {
+  isTouch = true
+  startStroke()
+}
 function startStroke () {
   currentPaintStroke = []
   isDrawing = true
@@ -107,6 +113,39 @@ function startStroke () {
   }
 }
 
+// draw
+
+window.onmousemove = throttle(10, function (event) {
+  addPointToStroke({ x: event.clientX / 2, y: event.clientY / 2 })
+})
+window.ontouchmove = throttle(10, function (event) {
+  addPointToStroke({ x: event.touches[0].clientX / 2, y: event.touches[0].clientY / 2 })
+})
+function addPointToStroke ({ x, y }) {
+  if (!isDrawing) { return }
+  currentPaintStroke.push({
+    x,
+    y,
+    scrollX: prevScroll.x / 2,
+    scrollY: prevScroll.y / 2,
+    elapsedTime: Date.now() - recordStartTime,
+  })
+  drawCurrentStroke()
+}
+function drawCurrentStroke () {
+  if (currentPaintStroke.length === 0) { return }
+  context.beginPath()
+  context.moveTo(currentPaintStroke[0].x, currentPaintStroke[0].y)
+  currentPaintStroke.forEach((point) => {
+    context.lineTo(point.x, point.y)
+  })
+  context.stroke()
+}
+
+// stop
+
+window.onmouseup = function (event) { endStroke() }
+window.ontouchend = function (event) { endStroke() }
 function endStroke () {
   allStrokes.push(currentPaintStroke)
   if (isRecording) {
@@ -125,48 +164,8 @@ function endStroke () {
   context.clearRect(0,0, canvas.width, canvas.height)
 }
 
-function addPointToStroke ({ x, y }) {
-  if (!isDrawing) { return }
-  currentPaintStroke.push({
-    x,
-    y,
-    scrollX: prevScroll.x / 2,
-    scrollY: prevScroll.y / 2,
-    elapsedTime: Date.now() - recordStartTime,
-  })
-  drawCurrentStroke()
-}
-
-function updateCanvas() {
-  if (isTouch) { return }
-  initCanvas()
-  initPageCanvas()
-  redrawAllStrokes()
-}
-
-// start
-window.onmousedown = function (event) {
-  if (event.button !== 0) { return }
-  startStroke()
-}
-window.ontouchstart = function (event) {
-  isTouch = true
-  startStroke()
-}
-
-// stop
-window.onmouseup = function (event) { endStroke() }
-window.ontouchend = function (event) { endStroke() }
-
-// draw
-window.onmousemove = throttle(10, function (event) {
-  addPointToStroke({ x: event.clientX / 2, y: event.clientY / 2 })
-})
-window.ontouchmove = throttle(10, function (event) {
-  addPointToStroke({ x: event.touches[0].clientX / 2, y: event.touches[0].clientY / 2 })
-})
-
 // resize
+
 window.onresize = throttle(100, function (event) {
   prevScroll = {
     x: window.scrollX,
@@ -176,6 +175,7 @@ window.onresize = throttle(100, function (event) {
 })
 
 // scroll
+
 window.onscroll = function (event) {
   prevScroll = {
     x: window.scrollX,

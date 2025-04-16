@@ -102,7 +102,7 @@ Name | Type | Description
 <code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 <code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
 <code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
-<code class="users">lastSidebarSection</code>               | `String`  | The shortname of the sidebar section last viewed. Can be `text`, `stats`, `AIImages`, `inbox`, `removed`, `links`, `favorites`, or `tags`. Defaults to `text`.
+<code class="users">lastSidebarSection</code>               | `String`  | The shortname of the sidebar section last viewed. Can be `text`, `stats`, `AIImages`, `inbox`, `removed`, `links`, `favorites`, `history`, `minimap`, or `tags`. Defaults to `text`.
 <code class="users">lastSpaceId</code>                      | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
 <code class="users">name</code>                             | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
 <code class="users">prevHeaderFontId</code>                 | `Integer` | The id of the previous header font selected. Default value is `0` for Recoleta
@@ -182,6 +182,7 @@ Name | Type | Description
 <code class="spaces">connectionTypes</code>     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
 <code class="spaces">connections</code>         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
 <code class="spaces">createdAt</code>           | `String`  | The date when the space was created
+<code class="spaces">drawingImage</code>        | `String`  | The image url for drawings on the space. The image is regenerated on the server after each drawing stroke.
 <code class="spaces">editedAt</code>            | `String`  | The date when card contents in the space was last added or changed
 <code class="spaces">editedByUserId</code>      | `String`  | The user id of the last user who edited or created a card in the space
 <code class="spaces">isFromTweet</code>         | `Boolean` | Whether the space was created by replying to a tweet with `@kinopioclub save`
@@ -375,9 +376,11 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
+<code class="box">background</code>     | `String`  | The image url used by the box background
+<code class="box">backgroundIsStretch</code>     | `Boolean`  | Whether the box background image is stretched (default is `false`, to display images tiled)
 <code class="box">color</code>          | `String` | The color of the box
 <code class="box">createdAt</code>      | `String`  | The date when the box was created
-<code class="box">headerFontId</code> | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
+<code class="box">headerFontId</code>   | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
 <code class="box">headerFontSize</code> | `String`  | The header font size of the box. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size). Similar to `card.headerFontSize`
 <code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
 <code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
@@ -391,6 +394,7 @@ Name | Type | Description
 <code class="box">updatedAt</code>      | `String`  | The date when any changes were made to the box
 <code class="box">x</code>              | `Integer` | The x-axis position of the box origin (top-left point)
 <code class="box">y</code>              | `Integer` | The y-axis position of the box origin
+<code class="box">z</code>              | `Integer` | The z-axis position
 
 
 
@@ -472,3 +476,4 @@ Method | Path | Description | Auth
 `GET`   | <code class="other">/services/community-backgrounds</code>  | Lists the space background images aded to the <a href="https://www.are.na/kinopio/community-backgrounds">are.na channel</a> | None
 `GET`   | <code class="other">/meta/date</code>  | Current time/timezone of kinopio-server | None
 `GET`   | <code class="other">/meta/changelog</code>  | Lists recent Kinopio new feature updates | None
+`GET`   | <code class="other">/meta/emojis</code>  | List of [unicode emojis](https://github.com/muan/unicode-emoji-json/blob/main/data-by-group.json) for the emoji picker | None
