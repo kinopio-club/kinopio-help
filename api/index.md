@@ -476,3 +476,4 @@ Method | Path | Description | Auth
 `GET`   | <code class="other">/meta/date</code>  | Current time/timezone of kinopio-server | None
 `GET`   | <code class="other">/meta/changelog</code>  | Lists recent Kinopio new feature updates | None
 `GET`   | <code class="other">/meta/emojis</code>  | List of [unicode emojis](https://github.com/muan/unicode-emoji-json/blob/main/data-by-group.json) for the emoji picker | None
+`GET`   | <code class="other">/meta/random-name</code>  | returns a random word space name – based on the logic formerly used to generate space names | None
