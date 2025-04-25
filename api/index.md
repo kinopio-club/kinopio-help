@@ -56,6 +56,7 @@ Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`   | <code class="users">/user/public/:userId</code>         | Gets public info on a user                                                                                                                                | None
 `GET`   | <code class="users">/user/public/explore-spaces/:userId</code>   | The a list of spaces with `showInExplore: true` created by the user                                     										  | None
+`GET`   | <code class="users">/user/hidden-spaces</code>          | Get hidden spaces for the authenticating user                                                         | `apiKey`
 `GET`   | <code class="users">/user/public/multiple</code>        | Gets public info for multiple userIds specified in a comma seperated query string (`?userIds=userId_abc,userId_xyz`)                                      | None
 `GET`   | <code class="users">/user</code>                        | Get all info on the authenticating user                                                                                                                   | `apiKey`
 `GET`   | <code class="users">/user/favorite-spaces</code>        | Get favorite spaces for the authenticating user. Favorited spaces which have unread updates will have `isEdited: true`      							  | `apiKey`
