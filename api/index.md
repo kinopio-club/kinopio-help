@@ -122,6 +122,7 @@ Name | Type | Description
 <code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
 <code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
 <code class="users">shouldDisableRightClickToPan</code>     | `Boolean` | Debug user preference which disables right click pan so you can use the native browser context menu. Useful for web inspecting elements
+<code class="users">shouldShowMinimapJumpToList</code>      | `Boolean` | Whether the list of boxes to jump to is expanded in the Minimap dialog
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded options and info in both the `card-details` and `multiple-selected-actions` dialogs
 <code class="users">groups</code>                             | `JSON Array` | The groups a user belongs to, including public metadata on the other `users` in each group
