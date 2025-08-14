@@ -15,6 +15,12 @@ module.exports = function(config) {
     return collection
   })
 
+  config.addCollection("dateSorted", function(collectionApi) {
+    return collectionApi.getAll().sort(function (a, b) {
+      return a.date - b.date; // sort by date - ascending
+      // return b.date - a.date; // sort by date - descending
+    })
+  });
   return {
     templateFormats: [
   	  "md",
