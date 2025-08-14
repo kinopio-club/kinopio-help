@@ -10,5 +10,5 @@ Use backlinks to connect your spaces together and weave your own web of knowledg
 - click `Links` to see all the spaces with links to your current space
 
 <video class="wide" autoplay loop muted playsinline>
-  <source src="https://updates.kinopio.club/backlinks.mp4">
+  <source src="https://files.kinopio.club/backlinks.mp4">
 </video>

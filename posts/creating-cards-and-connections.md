@@ -26,7 +26,7 @@ There's no limit to number of cards and connections you can add to a space.
 ## Connect cards together by dragging from the connector to anywhere on another card
 
 <video autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.s3.us-east-1.amazonaws.com/connect-cards2.mp4">
+  <source src="https://files.kinopio.club/connect-cards2.mp4">
 </video>
 
 Besides that, there's really no right or wrong way to use Kinopio. Do what feels right.

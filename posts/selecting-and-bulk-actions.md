@@ -14,7 +14,7 @@ You can move or edit multiple cards and connections at once by painting over the
 ## Painting over connections lets you make them all the same type quickly
 
 <video autoplay loop muted playsinline class="wide">
-  <source src="https://kinopio-updates.s3.us-east-1.amazonaws.com/paint-select-connections.mp4
+  <source src="https://files.kinopio.club/paint-select-connections.mp4
 ">
 </video>
 

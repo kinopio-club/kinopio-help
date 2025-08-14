@@ -8,7 +8,7 @@ Share your spaces with the world by copying the URL provided in the `Share` dial
 
 
 <video autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.s3.us-east-1.amazonaws.com/share.mp4">
+  <source src="https://files.kinopio.club/share.mp4">
 </video>
 <br/><br/>
 

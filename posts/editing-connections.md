@@ -16,6 +16,6 @@ The connection lines between cards have connection types. These connection types
 Painting to select multiple connections lets you assign them all to the same connection type
 
 <video autoplay loop muted playsinline class="wide">
-  <source src="https://kinopio-updates.s3.us-east-1.amazonaws.com/paint-select-connections.mp4
+  <source src="https://files.kinopio.club/paint-select-connections.mp4
 ">
 </video>

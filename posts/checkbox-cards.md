@@ -11,5 +11,9 @@ Differentiate thoughts from plans with checkbox cards,
 - Or by painting to select multiple cards
 
 <video autoplay loop muted playsinline>
-  <source src="/assets/posts/card-checkboxes.mp4">
+  <source src="/assets/posts/checkbox-cards/demo.mp4">
 </video>
+
+## Pro-Tip
+
+- Boxes can also have checkboxes. They work the same way, except when a box is checked off, it's contents will be faded out to mark them visually as completed
