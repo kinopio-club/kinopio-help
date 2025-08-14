@@ -1,5 +1,5 @@
 ---
-title: Checkbox Cards
+title: Checkbox/Todo Cards
 tags: ['How to Use']
 color: 'khaki'
 ---

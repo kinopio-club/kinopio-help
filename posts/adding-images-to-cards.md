@@ -1,5 +1,5 @@
 ---
-title: Adding Images to Cards
+title: Card Images, Files, Video, Audio, Embeds, Code
 tags: ['How to Use']
 color: 'khaki'
 date: 2020-02-01
@@ -29,8 +29,27 @@ Some websites obscure their image URLs to not include the file extension `https:
 
 ![image-card](/assets/posts/adding-images-to-cards/card-details.webp)
 
-(psst, animated gifs and short silent mp4s work the same way)
+## Animated gifs and short silent mp4s work the same way
 
 <video class="" autoplay loop muted playsinline>
   <source src="/assets/posts/adding-images-to-cards/animated.mp4">
 </video>
+
+## Paste in Youtube, Spotify, and other media site URLs to create interactive embeds
+
+<video class="" autoplay loop muted playsinline>
+  <source src="/assets/posts/adding-images-to-cards/youtube.mp4">
+</video>
+
+
+## Enclose code snippets between triple backticks
+
+You can also change the syntax highlighting for different programming languages.
+
+<img src="/assets/posts/adding-images-to-cards/code.webp" class="wide">
+
+
+## More Pro-Tips
+
+- you can also upload files like pdfs that you want to reference later
+- mp3 files will create audio cards that you can playback

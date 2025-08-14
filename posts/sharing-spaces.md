@@ -1,15 +1,37 @@
 ---
-title: Sharing Spaces
+title: Sharing, Collaborating, and Privacy
 tags: ['How to Use']
 color: 'khaki'
 ---
 
-Share your spaces with the world by copying the URL provided in the `Share` dialog.
+## If you haven't made an account
 
+If you haven't signed up yet, then only you can see what you make regardless of privacy setting.
 
-<video autoplay loop muted playsinline>
-  <source src="https://files.kinopio.club/share.mp4">
+## If you are signed up
+
+Change space privacy, share space URLs, and invite collaborators from `Share`.
+
+<img src="/assets/posts/sharing-spaces/share.webp" class="">
+
+The space privacy setting dictates who can see what. You can change space privacy from `Share` or by clicking the `Space` name button. Each setting in the privacy dialog explains who'll be able to see and edit your space.
+
+<img src="/assets/posts/sharing-spaces/privacy.webp" class="">
+
+You can also reference specific cards via `Card → Share`. This URL will open the space, scroll to the card, and highlight it.
+
+<img src="/assets/posts/sharing-spaces/card.webp" class="">
+
+## Collaborating
+
+When you invite others you'll see their cursors, paint strokes, and other actions in real time. Here's an [example](https://x.com/sfpc/status/1597727116556390404) by the School For Poetic Computation (SFPC).
+
+<video class="wide" autoplay loop muted playsinline>
+  <source src="/assets/posts/sharing-spaces/collab.mp4">
 </video>
-<br/><br/>
 
-> If your space privacy is set to `Private`, a share URL is not shown because only you and your collaborators will be able to access it.
+
+## Pro-Tips
+
+- New spaces default to `Private`
+- You can also use [groups](/posts/groups) to share access to multiple spaces with the same group of people.
