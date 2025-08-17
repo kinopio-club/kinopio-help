@@ -1,8 +1,7 @@
 ---
-title: Editing Connections
-tags: ['How to Use']
-color: 'khaki'
-date: 2020-03-01
+title: Connection Labels
+tags: ['Advanced Use']
+color: '#b9a8ff'
 ---
 
 ## Use connections and labels to add flexible meaning, grouping, and structure to your spaces

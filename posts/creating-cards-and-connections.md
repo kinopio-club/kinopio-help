@@ -1,5 +1,5 @@
 ---
-title: Adding Cards and Connections
+title: Basics of Cards and Connections
 tags: ['How to Use']
 color: 'khaki'
 date: 2020-01-01
