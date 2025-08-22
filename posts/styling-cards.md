@@ -15,6 +15,12 @@ You can also paint multiple cards to style them together,
   <source src="/assets/posts/styling-cards/bulk.mp4">
 </video>
 
+
+If you're often using the same card color, or want to use a specific color in a space, you can quick change your default New Card Color from the footer. 
+
+![](/assets/posts/styling-cards/new-card-color2.webp)
+
+
 Happy styling ヾ(＾∇＾)
 
 

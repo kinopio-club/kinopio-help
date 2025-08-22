@@ -25,26 +25,32 @@ Kinopio requires image URLs to specify image file extensions like `https://space
 
 Some websites obscure their image URLs to not include the file extension `https://space.com/maybe-an-image`. These will only display as links in cards.
 
-## To view the image fullsize, click to open the card, and then click again on the image preview
+## Download File
+
+To view the image fullsize, click to open the card, and then click again on the image preview
 
 ![image-card](/assets/posts/adding-images-to-cards/card-details.webp)
 
-## Animated gifs and short silent mp4s work the same way
+## Gifs
+
+Animated gifs and short silent mp4s work the same way.
 
 <video class="" autoplay loop muted playsinline>
   <source src="/assets/posts/adding-images-to-cards/animated.mp4">
 </video>
 
-## Paste in Youtube, Spotify, and other media site URLs to create interactive embeds
+## Embeds
+
+Paste in Youtube, Spotify, and other media site URLs to create interactive embeds.
 
 <video class="" autoplay loop muted playsinline>
   <source src="/assets/posts/adding-images-to-cards/youtube.mp4">
 </video>
 
 
-## Enclose code snippets between triple backticks
+## Code 
 
-You can also change the syntax highlighting for different programming languages.
+Enclose code snippets between triple backticks. You can also change the syntax highlighting for different programming languages.
 
 <img src="/assets/posts/adding-images-to-cards/code.webp" class="wide">
 

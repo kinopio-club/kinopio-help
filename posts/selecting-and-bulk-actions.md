@@ -15,21 +15,22 @@ On mobile, you'll need to press and hold on an empty area and then drag to paint
 
 
 
-## Hold shift to box select
+## Box Select
 
-Box selecting can be helpful when you want to make a big selection quickly
+Hold shift to Box Select. Box selecting can be helpful when you want to make a big selection quickly.
 
 <video class="wide" autoplay loop muted playsinline>
   <source src="/assets/posts/selecting-and-bulk-actions/box-select.mp4">
 </video>
 
+## Bulk Actions
 
-## After paint selecting Painting over items also lets you take bulk actions on them, including moving them to another space
+Painting over items also lets you take bulk actions on them, including moving them to another space.
 
 ![move-cards](/assets/posts/selecting-and-bulk-actions/select-move.webp)
 
 
-## Selecting All Boxes to Below or to the Right to Make Room in Crowded Spaces
+## Select All, Below, To the Right
 
 Oftentimes in busy spaces cards will be get clustered together, not leaving room for you to make new related cards in that area. To solve this you can hover your mouse near the left or top edge of the window and drag to select everything past that point. This will also select locked items so when you drag your selection, everything will move together.
 

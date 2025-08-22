@@ -1,5 +1,5 @@
 ---
-title: Changing Space Background Image and Color
+title: Space Background Image and Color
 tags: ['How to Use']
 color: 'khaki'
 date: 2020-03-02
