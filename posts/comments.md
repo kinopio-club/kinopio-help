@@ -8,12 +8,8 @@ Comment cards are smaller than normal cards and a bit transparent, letting you g
 
 You can turn cards into comments via either `Card → More Options → Comment`, or by typing `((`.
 
-
-
-TODO comments vid
-
-<video class="" autoplay loop muted playsinline>
-  <source src="https://files.kinopio.club/turn-cards-into-comments.mp4">
+<video autoplay loop muted playsinline class="wide">
+  <source src="/assets/posts/comments/demo.mp4">
 </video>
 
 

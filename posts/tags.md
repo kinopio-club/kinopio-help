@@ -1,5 +1,5 @@
 ---
-title: Tags
+title: Backlinked Tags
 tags: ['Advanced Use']
 color: '#b9a8ff'
 ---
