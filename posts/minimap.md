@@ -1,19 +1,29 @@
 ---
-title: Navigate with Minimap
+title: Minimap
 tags: ['Getting Around']
 color: 'pink'
 ---
 
-The minimap gives you a birds eye view of a space and lets you click to scroll to specific sections.
+Get a birds eye view perspective and jump around big spaces with the minimap. There are two ways to use the minimap, while panning and from the sidebar.
 
-Hold down the `space key` or click the button in the bottom right to toggle on the minimap. Drag the window around to adjust your view, or tap anywhere to scroll there.
+## While Panning
 
-<video class="wide" autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/minimap.mp4">
-</video>
-
-While viewing the minimap you'll also be able to see where your all collaborators are. Handy for jumping to a friend
+The minimap will display while panning mode is active – when either the space-key or the right-mouse button is held down.
 
 <video class="" autoplay loop muted playsinline>
-  <source src="https://kinopio-updates.us-east-1.linodeobjects.com/minimap-3.mp4">
+  <source src="/assets/posts/minimap/minimap-pan.mp4">
 </video>
+
+
+## From the Footer
+
+Clicking the little minimap button in the footer will also display the minimap and a list of boxes sorted by their starting `y` positions. You can click and drag on the minimap to quickly move around, and click on a box to jump to its position.
+
+<p>
+<img src="/assets/posts/minimap/minimap2.webp" class=""/>
+</p>
+
+If you'd like, you can pin the sidebar to keep the minimap open while you work.
+
+You can also use the `M` key to quick toggle the sidebar minimap at any time.
+

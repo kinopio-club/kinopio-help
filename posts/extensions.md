@@ -1,5 +1,5 @@
 ---
-title: Browser Extensions
+title: Browser Extensions and Integrations
 tags: ['About Kinopio']
 color: 'mediumaquamarine'
 ---
@@ -15,6 +15,10 @@ Download for:
 <p>
   <img src="https://us-east-1.linodeobjects.com/kinopio-uploads/IWdfvX-mofsE8vS3b2gF2/firefox-extension.webp" class="wide">
 </p>
+
+## SMS, Telegram, Zapier and more Integrations
+
+Kinopio is also supported by [phonetonote](https://phonetonote.com/), which lets you add cards to your inbox via SMS, Telegram, Zapier, Email, Alfred, and more. API keys saved to phonetonote are encrypted and your messages are never stored there.
 
 ## Security and Privacy
 

@@ -8,6 +8,8 @@ All features of Kinopio are free to use and collaborate with, up to a limit of 1
 
 > Kinopio costs $6/month or $60/year (USD) for unlimited cards and uploads
 
+(The price in the iOS app is a bit higher to accomodate Apple's fees. For this reason, I recommend upgrading through the website)
+
 I want the pricing to feel simple, straightforward, and obvious.
 
 📈 Cards you add will increment the card count

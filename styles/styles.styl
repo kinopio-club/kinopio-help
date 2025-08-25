@@ -300,6 +300,8 @@ canvas.auto-paint
 table
   border-collapse collapse
   max-width 1000px
+  th
+    background-color var(--table-border)
   th,
   td
     padding 12px
@@ -463,7 +465,8 @@ ul.api-contents
   .connection-types,
   .boxes,
   .tags,
-  .notifications
+  .notifications,
+  .other
     color var(--primary)
     padding 2px 5px
   .all
@@ -484,6 +487,8 @@ ul.api-contents
     background mediumaquamarine
   .notifications
     background darkseagreen
+  .other
+    background cadetblue
 
 .table-wrap
   &.all,
@@ -494,7 +499,8 @@ ul.api-contents
   &.connection-types,
   &.boxes,
   &.tags,
-  &.notifications
+  &.notifications,
+  &.other
     background transparent
     border-width 2px
     border-style solid
@@ -516,6 +522,8 @@ ul.api-contents
     border-color mediumaquamarine
   &.notifications
     border-color darkseagreen
+  &.other
+    border-color cadetblue
 
 
 

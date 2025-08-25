@@ -12,6 +12,6 @@ You can configure your firewall to allow Kinopio as a trusted source by configur
 
 Also, these are the domains for Kinopio's external resources:
 
-- `https://kinopio-updates.us-east-1.linodeobjects.com/`
+- `https://files.kinopio.club/`
 - `https://kinopio-email.us-east-1.linodeobjects.com/`
 - `https://kinopio-uploads.us-east-1.linodeobjects.com/`
