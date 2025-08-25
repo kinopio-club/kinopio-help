@@ -7,7 +7,7 @@ color: '#b9a8ff'
 Group related spaces together and share them with multiple people at once. Each Group member can see and edit all of the spaces in a Group.
 
 <p>
-<img src="/assets/posts/groups/group-overview.webp" class="wide"/>
+<img src="/assets/posts/groups/groups.webp" class="wide"/>
 </p>
 
 Groups are helpful if you want to share and collaborate often with the same people on whiteboards, brainstorms, meeting notes, and diagrams.
@@ -21,21 +21,20 @@ You can create as many Groups as you'd like. Use Groups for projects, teams, or 
 
 There are two ways to create new Groups:
 
-- Through `Spaces → Groups → + Group`,
-- Or via `Yourself → Groups → + Group`. You'll be able to change the color and name of the Group at any time.
+- Through `Spaces → Groups → + New`,
+- Or via `Yourself → My Groups → + New`. You'll be able to change the color and name of the Group at any time.
 
-<video class="" autoplay loop muted playsinline>
-  <source src="/assets/posts/groups/add-group-from-user.mp4">
-</video>
+<p>
+<img src="/assets/posts/groups/new.webp" class="wide"/>
+</p>
+
 
 ## Adding Spaces to Groups
 
 From your Spaces list, you can see your personal spaces as well as spaces added to your Groups. To add your own space to the Group, open your space, click the Group button, and then select a Group.
 
 <p>
-<video class="wide" autoplay loop muted playsinline>
-  <source src="/assets/posts/groups/add-space-to-group.mp4">
-</video>
+<img src="/assets/posts/groups/added.webp" class="wide"/>
 </p>
 
 Each space can only belong to a single Group. Spaces can be added to Groups by any member of that group.
@@ -46,22 +45,21 @@ If you see a Group space in your spaces list then you can edit it. Once you add 
 
 ## Inviting Group Members
 
-Adding people to your Group is very similar to inviting them to a space. From `Yourself → Groups`, click on the name of a Group, and click `Copy Invite to Group URL`.
+Adding people to your Group is very similar to inviting them to a space. From `Yourself → My Groups`, click on the name of a Group, and click `Copy Group Invite URL`.
 
-<img src="/assets/posts/groups/group-details-invite-button.webp" class
-="narrow"/>
+<img src="/assets/posts/groups/invite.webp" class=""/>
 
 Anyone you share the invite code with will be added to your Group. If they don't yet have a Kinopio account, they'll be added once they sign up.
 
 If the current space is in a group, the `Share` menu will also display the `Copy Invite to Group URL` button
 
-<img src="/assets/posts/groups/share-invite-button.webp" class="narrow"/>
+<img src="/assets/posts/groups/share2.webp" class=""/>
 
 # Group User Permissions
 
 Group users can have the role of `member` or `admin`.
 
-<img src="/assets/posts/groups/group-members3.webp" class=""/>
+<img src="/assets/posts/groups/members.webp" class=""/>
 
 **Members** can add their spaces to the Group, edit Group spaces, and invite other people to the Group.
 
@@ -71,7 +69,7 @@ Group users can have the role of `member` or `admin`.
 
 ## Removing Users from the Group
 
-Open the Group details, through `Yourself → Groups → Group`. If you're a Group admin, you'll see a `✕ Remove` button under each member to remove them from the group.
+Open the Group details, through `Yourself → My Groups → Group`. If you're a Group admin, you'll see a `✕ Remove` button under each member to remove them from the group. If you're removing yourself from the group, the button will be labelled `✕ Leave`.
 
 Removing someone from the Group immediately removes them as a collaborator from all Group spaces, and transfers ownership of their Group spaces to the Group admin.
 

@@ -9,7 +9,7 @@ color: 'pink'
 To quickly access spaces you can type to filter them by name
 
 <video class="narrow" autoplay loop muted playsinline>
-  <source src="https://updates.kinopio.club/type-to-filter-spaces.mp4">
+  <source src="https://files.kinopio.club/type-to-filter-spaces.mp4">
 </video>
 
 

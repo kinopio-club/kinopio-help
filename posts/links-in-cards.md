@@ -30,7 +30,7 @@ The `→` will link to [folklore.org](folklore.org)
 ## Hiding Links
 
 <video class="wide" autoplay loop muted playsinline>
-  <source src="https://updates.kinopio.club/hide-links-button.mp4">
+  <source src="https://files.kinopio.club/hide-links-button.mp4">
 </video>
 
 There are times when you might not want to display the link URL on a card, but still have a `→` button for a clickable link.

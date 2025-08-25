@@ -1,5 +1,5 @@
 ---
-title: Changing Space Background Image and Color
+title: Space Background Image and Color
 tags: ['How to Use']
 color: 'khaki'
 date: 2020-03-02
@@ -7,11 +7,12 @@ date: 2020-03-02
 
 ## Personalize your spaces and set the mood
 
-<video autoplay loop muted playsinline>
-  <source src="https://updates.kinopio.club/space-backgrounds-moved.mp4">
+<video autoplay loop muted playsinline class="wide">
+  <source src="/assets/posts/change-space-background/demo.mp4">
 </video>
 
-You can edit the background for your current space by clicking the icon next to your space name.
+
+You can change the background for your current space by clicking the thumbnail next to your space name.
 
 > Backgrounds are just urls, much like images in cards, so feel free to copy in image urls from elsewhere on the web too
 
@@ -19,20 +20,18 @@ You can edit the background for your current space by clicking the icon next to 
 
 Highlight backgrounds with tint colors, personalize the default wallpaper or dye any background image
 
-<img src="https://updates.kinopio.club/tint-space-backgrounds.png" />
+<img src="/assets/posts/change-space-background/tint.webp" />
 
 ## Set Defaults
 
 Prefer grids over squiggles? Or a different background color? You can change your default background for new spaces by
 
 1. Set up a space background image and tint color that you'd like to use
-2. Make it the default for new spaces in `User → Settings → Colors and Themes`
+2. Make it the default for new spaces in `User → Settings → General → Theme Settings`
 
-<img src="https://updates.kinopio.club/colors-and-theme-settings.png" />
+<img src="/assets/posts/change-space-background/settings.webp" />
 
-> p.s. You can make your background black by setting the tint color to `#000`
+## Pro Tips
 
-<br/>
-<br/>
-
-> p.s.s. You can find even more example backgrounds to try out in this [background test space](https://kinopio.club/space-backgrounds-Evd_H7siYsx03PkbFsa9M)
+- You can make your background black by setting the tint color to `#000`
+- You can find even more example backgrounds to try out in this [background test space](https://kinopio.club/space-backgrounds-Evd_H7siYsx03PkbFsa9M)
