@@ -69,7 +69,7 @@ Method | Path | Description | Auth
 `GET`   | <code class="users">/user/removed-spaces</code>         | Get <a href="#spaces" class="badge spaces">Spaces</a> removed by the authenticating user                                                                  | `apiKey`
 `GET`   | <code class="users">/user/inbox-space</code>            | Get info on the user's `Inbox` space. whether a space is an inbox or not is based on name only, so it's possible to have multiple `Inbox` spaces, but only one the most recently updated Inbox will be returned | `apiKey`
 `GET`   | <code class="users">/user/tags</code>                   | Get a list of the last edited <a href="#tags" class="badge tags">Tags</a> in your spaces                                                                  | `apiKey`
-`GET`   | <code class="users">/user/todos</code>                  | Get todo cards (card names start with `[]`, `[ ]`, or `[x]`), grouped by space                                                                            | `apiKey`
+`GET`   | <code class="users">/user/todos</code>                  | Get todo cards and boxes (item names start with `[]`, `[ ]`, or `[x]`), grouped by space                                                                            | `apiKey`
 `PATCH` | <code class="users">/user</code>                        | Update the authenticating user(s) based on an object body with user attributes. You can't patch `apiKey`, `password`, `emailIsVerified`, or `email`       | `apiKey`
 
 <h3 class="badge users">User Attributes</h3>
@@ -261,7 +261,7 @@ Name | Type | Description
 <code class="cards">isComment</code>                    | `Boolean` | Whether the card is a comment (an alternative to the `((comment))` name syntax)
 <code class="cards">isLocked</code>                 | `Boolean` | Whether the card is locked and cannot be selected or edited in the client unless unlocked
 <code class="cards">isRemoved</code>                | `Boolean` | Whether the card has been soft-removed. (Can be restored or permanently removed by space users)
-<code class="cards">isTodo</code>                | `Boolean` | Whether the card is has a checkbox (either completed `[x]` or uncompleted `[]`)
+<code class="cards">isTodo</code>                   | `Boolean` | Whether the card has a checkbox (either completed `[x]` or uncompleted `[]`)
 <code class="cards">linkToSpaceId</code>              | `String`  | The `spaceId` linked to in the card name
 <code class="cards">linkToCardId</code>               | `String`  | The `cardId` linked to in the card name. A card link will always also include `linkToSpaceId` (but not vice versa)
 <code class="cards">linkToSpaceCollaboratorKey</code> | `String`  | The `collaboratorKey` used to invite someone to the space specified in `linkToSpaceId`. Indicates the the space has a space invite link
@@ -390,6 +390,7 @@ Name | Type | Description
 <code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
 <code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
 <code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
+<code class="box">isTodo</code>         | `Boolean` | Whether the box has a checkbox (either completed `[x]` or uncompleted `[]`)
 <code class="box">fill</code>           | `String` | The fill type for the box. Possible values are `filled`, `empty`
 <code class="box">name</code>           | `String` | The name of the box
 <code class="box">resizeHeight</code>   | `String` | The height of the box
