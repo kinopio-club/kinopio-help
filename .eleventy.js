@@ -1,9 +1,11 @@
+import { HtmlBasePlugin } from "@11ty/eleventy";
 import pugPlugin from "@11ty/eleventy-plugin-pug";
 
 export default function(config) {
   config.addPassthroughCopy("./assets")
   config.setQuietMode(true)
   
+  config.addPlugin(HtmlBasePlugin);
   config.addPlugin(pugPlugin);
 	
   // https://www.11ty.dev/docs/collections/#collection-api-methods
@@ -32,4 +34,5 @@ export let config = {
   	  "md",
       "css"
     ],
+    pathPrefix: "/help/"
 }
