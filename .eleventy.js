@@ -1,7 +1,11 @@
-module.exports = function(config) {
+import pugPlugin from "@11ty/eleventy-plugin-pug";
+
+export default function(config) {
   config.addPassthroughCopy("./assets")
   config.setQuietMode(true)
-
+  
+  config.addPlugin(pugPlugin);
+	
   // https://www.11ty.dev/docs/collections/#collection-api-methods
   config.addCollection("alphabeticallySorted", collectionApi => {
     const posts = collectionApi.getAll()
@@ -21,10 +25,11 @@ module.exports = function(config) {
       // return b.date - a.date; // sort by date - descending
     })
   });
-  return {
-    templateFormats: [
+}
+
+export let config = {
+  templateFormats: [
   	  "md",
       "css"
-    ]
-  }
+    ],
 }
