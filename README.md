@@ -10,13 +10,13 @@ A simple static [11ty](https://www.11ty.io/docs/usage/) website for [Kinopio](ht
 
 ## Setup
 
-	$ npm install
+	npm install
 
 ## Run
 
-	$ npm use 22
-	$ npm run dev
-	$ npm run styles
+	npm use 22
+	npm run dev
+	npm run styles
 	http://localhost:8081
 
 ## Create a New Post
