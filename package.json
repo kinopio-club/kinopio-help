@@ -13,7 +13,8 @@
   "author": "pirijan",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-pug": "^1.0.0",
     "nodemon": "^2.0.20",
     "stylus": "^0.54.5"
   },

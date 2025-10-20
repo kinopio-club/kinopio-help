@@ -267,7 +267,7 @@ Name | Type | Description
 <code class="cards">linkToCardId</code>               | `String`  | The `cardId` linked to in the card name. A card link will always also include `linkToSpaceId` (but not vice versa)
 <code class="cards">linkToSpaceCollaboratorKey</code> | `String`  | The `collaboratorKey` used to invite someone to the space specified in `linkToSpaceId`. Indicates the the space has a space invite link
 <code class="cards">maxWidth</code>     		| `Boolean` | Sets the default maximum width before cards text starts wrapping
-<code class="cards">name</code>                  		  | `String`  | The name of the card is its main text. Limited to 2000 characters
+<code class="cards">name</code>                  		  | `String`  | The name of the card is its main text. Limited to 4000 characters
 <code class="cards">nameUpdatedAt</code>            | `String`  | The date when the card name was last updated
 <code class="cards">nameUpdatedByUserId</code>      | `String`  | The user id that last updated the name of the card
 <code class="cards">resizeWidth</code>              | `Integer` | The width of a card that's been manually resized by the user
