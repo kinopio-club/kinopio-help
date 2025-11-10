@@ -16,12 +16,13 @@ export default function(config) {
   });
   
   config.addCollection("sitemap", (collectionApi) => {
-    return collectionApi
-      .getAll()
-      .map((item, index, all) => {
-        item.url = "/help" + item.url;
-        return item;
-      });
+    return collectionApi.getAll().map((item, index, all) => {
+       return {
+         url: "/help" + item.url,
+         date: item.date,
+         data: item.data
+       };
+     });
   });
 
   // https://www.11ty.dev/docs/collections/#collection-api-methods
