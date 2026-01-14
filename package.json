@@ -24,5 +24,8 @@
       "styles/"
     ],
     "ext": "styl"
+  },
+  "dependencies": {
+    "@quasibit/eleventy-plugin-schema": "^1.12.0"
   }
 }
