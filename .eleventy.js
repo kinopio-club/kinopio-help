@@ -1,6 +1,7 @@
 import { HtmlBasePlugin } from "@11ty/eleventy";
 import pugPlugin from "@11ty/eleventy-plugin-pug";
 import sitemap from "@quasibit/eleventy-plugin-sitemap";
+import schema from "@quasibit/eleventy-plugin-schema";
 
 export default function(config) {
   config.addPassthroughCopy("./assets")
@@ -8,6 +9,7 @@ export default function(config) {
   
   config.addPlugin(HtmlBasePlugin);
   config.addPlugin(pugPlugin);
+  config.addPlugin(schema);
 	
   config.addPlugin(sitemap, {
       sitemap: {
