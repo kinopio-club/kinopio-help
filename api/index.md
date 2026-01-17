@@ -419,10 +419,10 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="list">/list/:listId</code>  | Get info on a list, including cards                                       | `canViewSpace`
-`POST`    | <code class="list">/list</code>         | Create a list from object in request body. Object must contain `spaceId`   | `canEditSpace`
-`PATCH`   | <code class="list">/list</code>         | Update list from object in request body                                    | `canEditSpace`
-`DELETE`  | <code class="list">/list/:listId</code>         | Permenently remove list                                            | `canEditSpace`
+`GET`     | <code class="list">/list/:listId</code>   | Get info on a list, including cards                                       | `canViewSpace`
+`POST`    | <code class="list">/list</code>           | Create a list from object in request body. Object must contain `spaceId`   | `canEditSpace`
+`PATCH`   | <code class="list">/list</code>           | Update list from object in request body                                    | `canEditSpace`
+`DELETE`  | <code class="list">/list/:listId</code>   | Permenently remove list                                            | `canEditSpace`
 
 <h3 class="badge lists">List Attributes</h3>
 
