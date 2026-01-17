@@ -374,36 +374,36 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="box">/box/:boxId</code>  | Get info on a box                                                         | `canViewSpace`
-`POST`    | <code class="box">/box</code>         | Create a box from object in request body. Object must contain `spaceId`   | `canEditSpace`
-`PATCH`   | <code class="box">/box</code>         | Update box from object in request body                                    | `canEditSpace`
-`DELETE`  | <code class="box">/box</code>         | Permenently remove box, from object in request body                       | `canEditSpace`
+`GET`     | <code class="boxes">/box/:boxId</code>  | Get info on a box                                                         | `canViewSpace`
+`POST`    | <code class="boxes">/box</code>         | Create a box from object in request body. Object must contain `spaceId`   | `canEditSpace`
+`PATCH`   | <code class="boxes">/box</code>         | Update box from object in request body                                    | `canEditSpace`
+`DELETE`  | <code class="boxes">/box</code>         | Permenently remove box, from object in request body                       | `canEditSpace`
 
 <h3 class="badge boxes">Box Attributes</h3>
 
 Name | Type | Description
 --- | --- | ---
-<code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
-<code class="box">background</code>     | `String`  | The image url used by the box background
-<code class="box">backgroundIsStretch</code>     | `Boolean`  | Whether the box background image is stretched (default is `false`, to display images tiled)
-<code class="box">color</code>          | `String` | The color of the box
-<code class="box">createdAt</code>      | `String`  | The date when the box was created
-<code class="box">headerFontId</code>   | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
-<code class="box">headerFontSize</code> | `String`  | The header font size of the box. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size). Similar to `card.headerFontSize`
-<code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
-<code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
-<code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
-<code class="box">isTodo</code>         | `Boolean` | Whether the box has a checkbox (either completed `[x]` or uncompleted `[]`)
-<code class="box">fill</code>           | `String` | The fill type for the box. Possible values are `filled`, `empty`
-<code class="box">name</code>           | `String` | The name of the box
-<code class="box">resizeHeight</code>   | `String` | The height of the box
-<code class="box">resizeWidth</code>    | `String` | The width of the box
-<code class="box">spaceId</code>        | `String` | The space that the box belongs to
-<code class="box">userId</code>         | `String` | The user that created the box
-<code class="box">updatedAt</code>      | `String`  | The date when any changes were made to the box
-<code class="box">x</code>              | `Integer` | The x-axis position of the box origin (top-left point)
-<code class="box">y</code>              | `Integer` | The y-axis position of the box origin
-<code class="box">z</code>              | `Integer` | The z-axis position
+<code class="boxes">id</code>             | `String` | The unique ID of the connection. Is not user updateable
+<code class="boxes">background</code>     | `String`  | The image url used by the box background
+<code class="boxes">backgroundIsStretch</code>     | `Boolean`  | Whether the box background image is stretched (default is `false`, to display images tiled)
+<code class="boxes">color</code>          | `String` | The color of the box
+<code class="boxes">createdAt</code>      | `String`  | The date when the box was created
+<code class="boxes">headerFontId</code>   | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
+<code class="boxes">headerFontSize</code> | `String`  | The header font size of the box. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size). Similar to `card.headerFontSize`
+<code class="boxes">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
+<code class="boxes">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
+<code class="boxes">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
+<code class="boxes">isTodo</code>         | `Boolean` | Whether the box has a checkbox (either completed `[x]` or uncompleted `[]`)
+<code class="boxes">fill</code>           | `String` | The fill type for the box. Possible values are `filled`, `empty`
+<code class="boxes">name</code>           | `String` | The name of the box
+<code class="boxes">resizeHeight</code>   | `String` | The height of the box
+<code class="boxes">resizeWidth</code>    | `String` | The width of the box
+<code class="boxes">spaceId</code>        | `String` | The space that the box belongs to
+<code class="boxes">userId</code>         | `String` | The user that created the box
+<code class="boxes">updatedAt</code>      | `String`  | The date when any changes were made to the box
+<code class="boxes">x</code>              | `Integer` | The x-axis position of the box origin (top-left point)
+<code class="boxes">y</code>              | `Integer` | The y-axis position of the box origin
+<code class="boxes">z</code>              | `Integer` | The z-axis position
 
 
 
@@ -419,27 +419,27 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="list">/list/:listId</code>   | Get info on a list, including cards                                       | `canViewSpace`
-`POST`    | <code class="list">/list</code>           | Create a list from object in request body. Object must contain `spaceId`   | `canEditSpace`
-`PATCH`   | <code class="list">/list</code>           | Update list from object in request body                                    | `canEditSpace`
-`DELETE`  | <code class="list">/list/:listId</code>   | Permenently remove list                                            | `canEditSpace`
+`GET`     | <code class="lists">/list/:listId</code>   | Get info on a list, including cards                                       | `canViewSpace`
+`POST`    | <code class="lists">/list</code>           | Create a list from object in request body. Object must contain `spaceId`   | `canEditSpace`
+`PATCH`   | <code class="lists">/list</code>           | Update list from object in request body                                    | `canEditSpace`
+`DELETE`  | <code class="lists">/list/:listId</code>   | Permenently remove list                                            | `canEditSpace`
 
 <h3 class="badge lists">List Attributes</h3>
 
 Name | Type | Description
 --- | --- | ---
-<code class="list">id</code>             | `String` | The unique ID of the list. Is not user updateable
-<code class="list">color</code>          | `String` | The color of the list
-<code class="list">createdAt</code>      | `String`  | The date when the list was created
-<code class="list">name</code>           | `String` | The name of the list
-<code class="list">height</code>         | `String` | The rendered height of the list
-<code class="list">resizeWidth</code>    | `String` | The width of the list
-<code class="list">spaceId</code>        | `String` | The space that the list belongs to
-<code class="list">userId</code>         | `String` | The user that created the list
-<code class="list">updatedAt</code>      | `String`  | The date when any changes were made to the list
-<code class="list">x</code>              | `Integer` | The x-axis position of the list origin (top-left point)
-<code class="list">y</code>              | `Integer` | The y-axis position of the list origin
-<code class="list">z</code>              | `Integer` | The z-axis position
+<code class="lists">id</code>             | `String` | The unique ID of the list. Is not user updateable
+<code class="lists">color</code>          | `String` | The color of the list
+<code class="lists">createdAt</code>      | `String`  | The date when the list was created
+<code class="lists">name</code>           | `String` | The name of the list
+<code class="lists">height</code>         | `String` | The rendered height of the list
+<code class="lists">resizeWidth</code>    | `String` | The width of the list
+<code class="lists">spaceId</code>        | `String` | The space that the list belongs to
+<code class="lists">userId</code>         | `String` | The user that created the list
+<code class="lists">updatedAt</code>      | `String`  | The date when any changes were made to the list
+<code class="lists">x</code>              | `Integer` | The x-axis position of the list origin (top-left point)
+<code class="lists">y</code>              | `Integer` | The y-axis position of the list origin
+<code class="lists">z</code>              | `Integer` | The z-axis position
 
 
 
