@@ -370,7 +370,7 @@ Boxes are items used by users to contain or organize cards in a space. They can 
 
 <h3 class="badge boxes">Box Routes</h3>
 
-Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the connection type belongs to.
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the box belongs to.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
@@ -408,6 +408,41 @@ Name | Type | Description
 
 
 
+<a class="anchor" data-section="🍱" name="lists"></a>
+<h2 class="badge lists">Lists</h2>
+
+Lists are items used by users to contain or organize cards in a space. They can be named, colored, and positioned
+
+<h3 class="badge lists">List Routes</h3>
+
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the list belongs to.
+
+Method | Path | Description | Auth
+--- | --- | --- | ---
+`GET`     | <code class="list">/list/:listId</code>  | Get info on a list, including cards                                       | `canEditSpace`
+`POST`    | <code class="list">/list</code>         | Create a list from object in request body. Object must contain `spaceId`   | `canEditSpace`
+`PATCH`   | <code class="list">/list</code>         | Update list from object in request body                                    | `canEditSpace`
+`DELETE`  | <code class="list">/list</code>         | Permenently remove list                                                    | `canEditSpace`
+
+<h3 class="badge lists">List Attributes</h3>
+
+Name | Type | Description
+--- | --- | ---
+<code class="list">id</code>             | `String` | The unique ID of the list. Is not user updateable
+<code class="list">color</code>          | `String` | The color of the list
+<code class="list">createdAt</code>      | `String`  | The date when the list was created
+<code class="list">name</code>           | `String` | The name of the list
+<code class="list">height</code>         | `String` | The rendered height of the list
+<code class="list">resizeWidth</code>    | `String` | The width of the list
+<code class="list">spaceId</code>        | `String` | The space that the list belongs to
+<code class="list">userId</code>         | `String` | The user that created the list
+<code class="list">updatedAt</code>      | `String`  | The date when any changes were made to the list
+<code class="list">x</code>              | `Integer` | The x-axis position of the list origin (top-left point)
+<code class="list">y</code>              | `Integer` | The y-axis position of the list origin
+<code class="list">z</code>              | `Integer` | The z-axis position
+
+
+
 <a class="anchor" data-section="🦚" name="tags"></a>
 <h2 class="badge tags">Tags</h2>
 
@@ -415,7 +450,7 @@ Each tag you add to a card is considered a seperate entity. So if you have two c
 
 <h3 class="badge tags">Tags Routes</h3>
 
-Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the connection type belongs to.
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the tag belongs to.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
