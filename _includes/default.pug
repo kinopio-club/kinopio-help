@@ -11,6 +11,9 @@ html(lang="en" style='background-color:' + backgroundColor)
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(name="description" content="Help site for Kinopio, the spatial thinking tool for building new ideas and solving hard problems.")
     link(rel="stylesheet" href="/styles/styles.css")
+    if schema
+      each s in schema
+        script(type="application/ld+json")!= JSON.stringify(s)
   body(style='background-color:' + backgroundColor)
     .content-wrap
       header

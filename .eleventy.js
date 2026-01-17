@@ -1,6 +1,31 @@
-module.exports = function(config) {
+import { HtmlBasePlugin } from "@11ty/eleventy";
+import pugPlugin from "@11ty/eleventy-plugin-pug";
+import sitemap from "@quasibit/eleventy-plugin-sitemap";
+import schema from "@quasibit/eleventy-plugin-schema";
+
+export default function(config) {
   config.addPassthroughCopy("./assets")
   config.setQuietMode(true)
+  
+  config.addPlugin(HtmlBasePlugin);
+  config.addPlugin(pugPlugin);
+  config.addPlugin(schema);
+	
+  config.addPlugin(sitemap, {
+      sitemap: {
+        hostname: "https://kinopio.club",
+      },
+  });
+  
+  config.addCollection("sitemap", (collectionApi) => {
+    return collectionApi.getAll().map((item, index, all) => {
+       return {
+         url: "/help" + item.url,
+         date: item.date,
+         data: item.data
+       };
+     });
+  });
 
   // https://www.11ty.dev/docs/collections/#collection-api-methods
   config.addCollection("alphabeticallySorted", collectionApi => {
@@ -21,10 +46,13 @@ module.exports = function(config) {
       // return b.date - a.date; // sort by date - descending
     })
   });
-  return {
-    templateFormats: [
+}
+
+export let config = {
+  templateFormats: [
   	  "md",
-      "css"
-    ]
-  }
+      "css",
+      "njk",
+    ],
+    pathPrefix: "/help/"
 }
