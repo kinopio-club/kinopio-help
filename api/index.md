@@ -90,7 +90,7 @@ Name | Type | Description
 <code class="users">creditsUsed</code>                      | `Integer` | The number of $ credits subtracted from your payments so far. Is not user updateable
 <code class="users">defaultCardBackgroundColor</code>       | `String` | User preference for a default background color to use for new cards
 <code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces. This becomes `null` if `defaultSpaceBackgroundGradient` is set.
-<code class="users">defaultSpaceBackgroundGradient</code>   | `JSON`   | User preference for the default background gradient to use for new spaces. This becomes `null` if `defaultSpaceBackground` is set.
+<code class="users">defaultSpaceBackgroundGradient</code>   | `Object`   | User preference for the default background gradient to use for new spaces. This becomes `null` if `defaultSpaceBackground` is set.
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
 <code class="users">defaultConnectionControlPoint</code>    | `String` | User preference for the default control point for new connections. `null` makes a curved path, `q00,00` makes a straight line
 <code class="users">description</code>                      | `String`  | A description of this particular user
@@ -178,7 +178,7 @@ Name | Type | Description
 <code class="spaces">id</code>                  | `String`  | The unique ID of the space. Is not user updateable
 <code class="spaces">background</code>          | `String`  | The image url used by the space background
 <code class="spaces">backgroundIsGradient</code>  | `Boolean`  | Whether the space background uses `backgroundGradient` (instead of the default `background`)
-<code class="spaces">backgroundGradient</code>  | `JSON`    | An array of gradient layer data that's used to build the space background gradient. The gradients are layered and animated using the technique described by [Shelby Wilson](https://shelby.cool/#/gradients)
+<code class="spaces">backgroundGradient</code>  | `Object`    | An array of gradient layer data that's used to build the space background gradient. The gradients are layered and animated using the technique described by [Shelby Wilson](https://shelby.cool/#/gradients)
 <code class="spaces">backgroundTint</code>      | `String`  | The background color used to tint the space background
 <code class="spaces">boxes</code>               | `Array`   | A list of <a href="#boxes" class="badge boxes">Boxes</a> in the space
 <code class="spaces">cards</code>               | `Array`   | A list of <a href="#cards" class="badge cards">Cards</a> in the space
@@ -196,6 +196,8 @@ Name | Type | Description
 <code class="spaces">isRemoved</code>           | `Boolean` | Whether the space has been soft-removed. (can then be restored or permanently removed)
 <code class="spaces">isRestrictedByModerator</code> | `Boolean` | Whether the space has been marked as restricted. Restricted spaces are not shown in Explore, Live, or in the Everyone feed. This value cannot be patched, it is set manually by a moderator only when necessary.
 <code class="spaces">isTemplate</code>          | `Boolean` | Whether the space is a <a href="/posts/templates/">personal template</a>
+<code class="spaces">lines</code>                | `Array`   | A list of the Line dividers in the space
+<code class="spaces">lists</code>                | `Object`   | A list of the <a href="#lists" class="badge lists">Lists</a> in the space
 <code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon representing when the space was created. Possible values are `new-moon`, `waxing-crescent`, `waxing-quarter`, `waxing-gibbous`, `full-moon`, `waning-gibbous`, `waning-quarter`, `waning-crescent`
 <code class="spaces">name</code>                | `String`  | The name of the space
 <code class="spaces">ownerUserId</code>         | `String`  | The userId of the user who created the space. Used to create url slugs
@@ -208,7 +210,7 @@ Name | Type | Description
 <code class="spaces">users</code>               | `Array`   | The user who created/owns the space (a space will always have only one user)
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
-<code class="spaces">group</code>                | `JSON`   | Information on the group that a space belongs to (if any), including public metadata on the other group `users`
+<code class="spaces">group</code>                | `Object`   | Information on the group that a space belongs to (if any), including public metadata on the other group `users`
 <code class="spaces">groupId</code>              | `String` | The group id that the space belongs to. A space can only belong to one group.
 <code class="spaces">addedTogroupByUserId</code> | `String` | The user who added the space to the group
 <code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
