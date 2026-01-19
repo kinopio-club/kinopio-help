@@ -243,9 +243,9 @@ Method | Path | Description | Auth
 `PATCH`   | <code class="cards">/card/update-counter</code>         | Increment or decrement a card counter for voting. Body object must contain `cardId`, and either `shouldIncrement: true` or `shouldDecrement: true` 							| None
 `PATCH`   | <code class="cards">/card/list</code>                   | Add card to specified list. The card's position and width will also be updated. Body object must contain card `id`, and `listId`                                              | `canEditSpace`
 `PATCH`   | <code class="cards">/card/restore</code>                | Restore removed card specified in body                                                                                                                                              | `canEditSpace`
-`DELETE`  | <code class="cards">/card/list</code>                   | Remove card from the list specified in body. The card's position will be shifted to the right of the list. Body object must contain card `id`                                       | `canEditSpace`
 `DELETE`  | <code class="cards">/card</code>                        | Remove card specified in body                                                                                                                                                       | `canEditSpace`
 `DELETE`  | <code class="cards">/card/permanent</code>              | Permanently remove card specified in body                                                                                                                                           | `canEditSpace`
+`DELETE`  | <code class="cards">/card/list</code>                   | Remove card from the list specified in body. The card's position will be shifted to the right of the list. Body object must contain card `id`                                       | `canEditSpace`
 
 <h3 class="badge cards">Card Attributes</h3>
 
