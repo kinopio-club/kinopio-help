@@ -89,7 +89,7 @@ Name | Type | Description
 <code class="users">creditsUsed</code>                      | `Integer` | The number of $ credits subtracted from your payments so far. Is not user updateable
 <code class="users">defaultCardBackgroundColor</code>       | `String` | User preference for a default background color to use for new cards
 <code class="users">defaultSpaceBackground</code>           | `String` | User preference for a default background url to use for new spaces. This becomes `null` if `defaultSpaceBackgroundGradient` is set.
-<code class="users">defaultSpaceBackgroundGradient</code>   | `JSON`   | User preference for the default background gradient to use for new spaces. This becomes `null` if `defaultSpaceBackground` is set.
+<code class="users">defaultSpaceBackgroundGradient</code>   | `Object`   | User preference for the default background gradient to use for new spaces. This becomes `null` if `defaultSpaceBackground` is set.
 <code class="users">defaultSpaceBackgroundTint</code>       | `String` | User preference for a default background color used to tint new spaces
 <code class="users">defaultConnectionControlPoint</code>    | `String` | User preference for the default control point for new connections. `null` makes a curved path, `q00,00` makes a straight line
 <code class="users">description</code>                      | `String`  | A description of this particular user
@@ -177,7 +177,7 @@ Name | Type | Description
 <code class="spaces">id</code>                  | `String`  | The unique ID of the space. Is not user updateable
 <code class="spaces">background</code>          | `String`  | The image url used by the space background
 <code class="spaces">backgroundIsGradient</code>  | `Boolean`  | Whether the space background uses `backgroundGradient` (instead of the default `background`)
-<code class="spaces">backgroundGradient</code>  | `JSON`    | An array of gradient layer data that's used to build the space background gradient. The gradients are layered and animated using the technique described by [Shelby Wilson](https://shelby.cool/#/gradients)
+<code class="spaces">backgroundGradient</code>  | `Object`    | An array of gradient layer data that's used to build the space background gradient. The gradients are layered and animated using the technique described by [Shelby Wilson](https://shelby.cool/#/gradients)
 <code class="spaces">backgroundTint</code>      | `String`  | The background color used to tint the space background
 <code class="spaces">boxes</code>               | `Array`   | A list of <a href="#boxes" class="badge boxes">Boxes</a> in the space
 <code class="spaces">cards</code>               | `Array`   | A list of <a href="#cards" class="badge cards">Cards</a> in the space
@@ -195,6 +195,8 @@ Name | Type | Description
 <code class="spaces">isRemoved</code>           | `Boolean` | Whether the space has been soft-removed. (can then be restored or permanently removed)
 <code class="spaces">isRestrictedByModerator</code> | `Boolean` | Whether the space has been marked as restricted. Restricted spaces are not shown in Explore, Live, or in the Everyone feed. This value cannot be patched, it is set manually by a moderator only when necessary.
 <code class="spaces">isTemplate</code>          | `Boolean` | Whether the space is a <a href="/posts/templates/">personal template</a>
+<code class="spaces">lines</code>                | `Array`   | A list of the Line dividers in the space
+<code class="spaces">lists</code>                | `Object`   | A list of the <a href="#lists" class="badge lists">Lists</a> in the space
 <code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon representing when the space was created. Possible values are `new-moon`, `waxing-crescent`, `waxing-quarter`, `waxing-gibbous`, `full-moon`, `waning-gibbous`, `waning-quarter`, `waning-crescent`
 <code class="spaces">name</code>                | `String`  | The name of the space
 <code class="spaces">ownerUserId</code>         | `String`  | The userId of the user who created the space. Used to create url slugs
@@ -207,7 +209,7 @@ Name | Type | Description
 <code class="spaces">users</code>               | `Array`   | The user who created/owns the space (a space will always have only one user)
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
 <code class="spaces">tags</code>                | `Array`   | A list of <a href="#tags" class="badge tags">Tags</a>
-<code class="spaces">group</code>                | `JSON`   | Information on the group that a space belongs to (if any), including public metadata on the other group `users`
+<code class="spaces">group</code>                | `Object`   | Information on the group that a space belongs to (if any), including public metadata on the other group `users`
 <code class="spaces">groupId</code>              | `String` | The group id that the space belongs to. A space can only belong to one group.
 <code class="spaces">addedTogroupByUserId</code> | `String` | The user who added the space to the group
 <code class="spaces">updatedAt</code>           | `String`  | The date when any changes in the space were made including a member visiting it
@@ -239,6 +241,8 @@ Method | Path | Description | Auth
 `PATCH`   | <code class="cards">/card</code>                        | Update card from object in request body. Body object must contain `id`. `spaceId` cannot be patched                                                                          | `canEditSpace`
 `PATCH`   | <code class="cards">/card/multiple</code>               | Updates multiple cards from an array of objects in request body. Works just like `PATCH /card`                                                                               | `canEditSpace`
 `PATCH`   | <code class="cards">/card/update-counter</code>         | Increment or decrement a card counter for voting. Body object must contain `cardId`, and either `shouldIncrement: true` or `shouldDecrement: true` 							| None
+`PATCH`   | <code class="cards">/card/to-list</code>                | Add card to specified list. The card's position and width will also be updated. Body object must contain card `id`, and `listId`                                              | `canEditSpace`
+`PATCH`  | <code class="cards">/card/from-list</code>               | Remove card from the list specified in body. The card's position will be shifted to the right of the list. Body object must contain card `id`                                       | `canEditSpace`
 `PATCH`   | <code class="cards">/card/restore</code>                | Restore removed card specified in body                                                                                                                                              | `canEditSpace`
 `DELETE`  | <code class="cards">/card</code>                        | Remove card specified in body                                                                                                                                                       | `canEditSpace`
 `DELETE`  | <code class="cards">/card/permanent</code>              | Permanently remove card specified in body                                                                                                                                           | `canEditSpace`
@@ -368,41 +372,76 @@ Boxes are items used by users to contain or organize cards in a space. They can 
 
 <h3 class="badge boxes">Box Routes</h3>
 
-Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the connection type belongs to.
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the box belongs to.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
-`GET`     | <code class="box">/box/:boxId</code>  | Get info on a box                                                         | None
-`POST`    | <code class="box">/box</code>         | Create a box from object in request body. Object must contain `spaceId`   | `canEditSpace`
-`PATCH`   | <code class="box">/box</code>         | Update box from object in request body                                    | `canEditSpace`
-`DELETE`  | <code class="box">/box</code>         | Permenently remove box                                                    | `canEditSpace`
+`GET`     | <code class="boxes">/box/:boxId</code>  | Get info on a box                                                         | `canViewSpace`
+`POST`    | <code class="boxes">/box</code>         | Create a box from object in request body. Object must contain `spaceId`   | `canEditSpace`
+`PATCH`   | <code class="boxes">/box</code>         | Update box from object in request body                                    | `canEditSpace`
+`DELETE`  | <code class="boxes">/box</code>         | Permenently remove box, from object in request body                       | `canEditSpace`
 
 <h3 class="badge boxes">Box Attributes</h3>
 
 Name | Type | Description
 --- | --- | ---
-<code class="box">id</code>             | `String` | The unique ID of the connection. Is not user updateable
-<code class="box">background</code>     | `String`  | The image url used by the box background
-<code class="box">backgroundIsStretch</code>     | `Boolean`  | Whether the box background image is stretched (default is `false`, to display images tiled)
-<code class="box">color</code>          | `String` | The color of the box
-<code class="box">createdAt</code>      | `String`  | The date when the box was created
-<code class="box">headerFontId</code>   | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
-<code class="box">headerFontSize</code> | `String`  | The header font size of the box. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size). Similar to `card.headerFontSize`
-<code class="box">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
-<code class="box">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
-<code class="box">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
-<code class="box">isTodo</code>         | `Boolean` | Whether the box has a checkbox (either completed `[x]` or uncompleted `[]`)
-<code class="box">fill</code>           | `String` | The fill type for the box. Possible values are `filled`, `empty`
-<code class="box">name</code>           | `String` | The name of the box
-<code class="box">resizeHeight</code>   | `String` | The height of the box
-<code class="box">resizeWidth</code>    | `String` | The width of the box
-<code class="box">spaceId</code>        | `String` | The space that the box belongs to
-<code class="box">userId</code>         | `String` | The user that created the box
-<code class="box">updatedAt</code>      | `String`  | The date when any changes were made to the box
-<code class="box">x</code>              | `Integer` | The x-axis position of the box origin (top-left point)
-<code class="box">y</code>              | `Integer` | The y-axis position of the box origin
-<code class="box">z</code>              | `Integer` | The z-axis position
+<code class="boxes">id</code>             | `String` | The unique ID of the connection. Is not user updateable
+<code class="boxes">background</code>     | `String`  | The image url used by the box background
+<code class="boxes">backgroundIsStretch</code>     | `Boolean`  | Whether the box background image is stretched (default is `false`, to display images tiled)
+<code class="boxes">color</code>          | `String` | The color of the box
+<code class="boxes">createdAt</code>      | `String`  | The date when the box was created
+<code class="boxes">headerFontId</code>   | `Integer`  | An id representing the header font of the box. Default value is `0` for Recoletta. Similar to `card.headerFontId`
+<code class="boxes">headerFontSize</code> | `String`  | The header font size of the box. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size). Similar to `card.headerFontSize`
+<code class="boxes">infoHeight</code>     | `String`  | The reference height of the box info area. Used to generate space preview images
+<code class="boxes">infoWidth</code>      | `String`  | The reference width of the box info area. Used to generate space preview images
+<code class="boxes">isLocked</code>       | `Boolean` | Whether the box is locked and cannot be selected or edited in the client unless unlocked
+<code class="boxes">isTodo</code>         | `Boolean` | Whether the box has a checkbox (either completed `[x]` or uncompleted `[]`)
+<code class="boxes">fill</code>           | `String` | The fill type for the box. Possible values are `filled`, `empty`
+<code class="boxes">name</code>           | `String` | The name of the box
+<code class="boxes">resizeHeight</code>   | `String` | The height of the box
+<code class="boxes">resizeWidth</code>    | `String` | The width of the box
+<code class="boxes">spaceId</code>        | `String` | The space that the box belongs to
+<code class="boxes">userId</code>         | `String` | The user that created the box
+<code class="boxes">updatedAt</code>      | `String`  | The date when any changes were made to the box
+<code class="boxes">x</code>              | `Integer` | The x-axis position of the box origin (top-left point)
+<code class="boxes">y</code>              | `Integer` | The y-axis position of the box origin
+<code class="boxes">z</code>              | `Integer` | The z-axis position
 
+
+
+
+<a class="anchor" data-section="🍱" name="lists"></a>
+<h2 class="badge lists">Lists</h2>
+
+Lists are items used by users to contain or organize cards in a space. They can be named, colored, and positioned
+
+<h3 class="badge lists">List Routes</h3>
+
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the list belongs to.
+
+Method | Path | Description | Auth
+--- | --- | --- | ---
+`GET`     | <code class="lists">/list/:listId</code>   | Get info on a list, including cards                                       | `canViewSpace`
+`POST`    | <code class="lists">/list</code>           | Create a list from object in request body. Object must contain `spaceId`   | `canEditSpace`
+`PATCH`   | <code class="lists">/list</code>           | Update list from object in request body                                    | `canEditSpace`
+`DELETE`  | <code class="lists">/list/:listId</code>   | Permenently remove list                                            | `canEditSpace`
+
+<h3 class="badge lists">List Attributes</h3>
+
+Name | Type | Description
+--- | --- | ---
+<code class="lists">id</code>             | `String` | The unique ID of the list. Is not user updateable
+<code class="lists">color</code>          | `String` | The color of the list
+<code class="lists">createdAt</code>      | `String`  | The date when the list was created
+<code class="lists">name</code>           | `String` | The name of the list
+<code class="lists">height</code>         | `String` | The rendered height of the list
+<code class="lists">resizeWidth</code>    | `String` | The width of the list
+<code class="lists">spaceId</code>        | `String` | The space that the list belongs to
+<code class="lists">userId</code>         | `String` | The user that created the list
+<code class="lists">updatedAt</code>      | `String`  | The date when any changes were made to the list
+<code class="lists">x</code>              | `Integer` | The x-axis position of the list origin (top-left point)
+<code class="lists">y</code>              | `Integer` | The y-axis position of the list origin
+<code class="lists">z</code>              | `Integer` | The z-axis position
 
 
 
@@ -413,7 +452,7 @@ Each tag you add to a card is considered a seperate entity. So if you have two c
 
 <h3 class="badge tags">Tags Routes</h3>
 
-Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the connection type belongs to.
+Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the tag belongs to.
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
