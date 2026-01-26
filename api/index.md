@@ -81,7 +81,7 @@ Name | Type | Description
 <code class="users">cardsCreatedCount</code>                | `Integer` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">cardsCreatedCountRaw</code>                | `Integer` | Similar to `cardsCreatedCount` except the raw version increments even if your're a free user on a paid user space. This is a vanity metric and is not used to enforce free user limits.
 <code class="users">cardSettingsDefaultCharacterLimit</code>            | `Integer` | The max number of characters you can enter in a card. Either 300 (default) or 4000 (max). Constrained character limits are meant to encourage using cards to represent single ideas. But this override exists for those who don't want that.
-<code class="users">cardSettingsMaxCardWidth</code>               | `Integer` | When the user creates cards, those cards will set `card.maxWidth` from this property. Sets the maximum default length of a card before it starts wrapping
+<code class="users">cardSettingsCardWrapWidth</code>               | `Integer` | Sets the maximum default length of a card before it starts wrapping on cards created by the user
 <code class="users">cardSettingsShiftEnterShouldAddChildCard</code>		| `Boolean` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
 <code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
 <code class="users">createdAt</code>           				      | `String`  | The date when the user was created
