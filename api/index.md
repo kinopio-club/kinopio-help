@@ -42,7 +42,6 @@ Method | Name | Description | Auth
 
 
 
-
 <a class="anchor" data-section="👯‍♀️" name="users"></a>
 <h2 class="badge users">Users</h2>
 
@@ -82,7 +81,7 @@ Name | Type | Description
 <code class="users">cardsCreatedCountRaw</code>                | `Integer` | Similar to `cardsCreatedCount` except the raw version increments even if your're a free user on a paid user space. This is a vanity metric and is not used to enforce free user limits.
 <code class="users">cardSettingsDefaultCharacterLimit</code>            | `Integer` | The max number of characters you can enter in a card. Either 300 (default) or 4000 (max). Constrained character limits are meant to encourage using cards to represent single ideas. But this override exists for those who don't want that.
 <code class="users">cardSettingsCardWrapWidth</code>               | `Integer` | Sets the maximum default length of a card before it starts wrapping on cards created by the user
-<code class="users">cardSettingsShiftEnterShouldAddChildCard</code>		| `Boolean` | The number of cards the user has created if they're not a paid user, used to enforce the free user limit. Is not user updatable.
+<code class="users">cardSettingsShiftEnterShouldAddChildCard</code>		| `Boolean` | Sets whether shift-enter while editing a card creates a new-child (`true`) or a line break (`false`)
 <code class="users">color</code>                            | `String`  | User color changes your paint stroke and default avatar color
 <code class="users">createdAt</code>           				      | `String`  | The date when the user was created
 <code class="users">creditsEarned</code>                    | `Integer` | The number of $ credits earned by referring or inviting new users to Kinopio. Is not user updateable
@@ -150,18 +149,18 @@ The `closed` privacy state refers to `Public Read Only`.
 Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`    | <code class="spaces">/space/:spaceId</code>              | Get info on a space by id. Use `?textOnly=true` for card names only          						          | `canViewSpace`
-`GET`    | <code class="spaces">/space/:spaceId/public-meta</code>  	| Get public space info on non-private spaces                                                        | None
-`GET`    | <code class="spaces">/space/:spaceId/favorites</code>    | Get a list of users who have favorited the spaceId 													| None
+`GET`    | <code class="spaces">/space/:spaceId/public-meta</code>  	| Get public space info on non-private spaces                                                     | None
+`GET`    | <code class="spaces">/space/:spaceId/favorites</code>    | Get a list of users who have favorited the spaceId 													                      | None
 `GET`    | <code class="spaces">/space/:spaceId/feed.json</code>    | `RSS feed` for cards recently created or updated in a space. Use `?apiKey=` for private spaces  	| `canViewSpace`
 `GET`    | <code class="spaces">/space/:spaceId/<br>removedCards</code> | Get <a href="#cards" class="badge cards">Cards</a> removed in a space                 		    | `canEditSpace`
 `GET`    | <code class="spaces">/space/explore-spaces</code>            | Get a list of recently updated public spaces which have been added to Explore. Sorted by date `showInExploreUpdatedAt` | None
 `GET`    | <code class="spaces">/space/explore-spaces/feed.json</code>  | `RSS feed` for new spaces added to Explore                                                    | None
 `GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      		    | None
-`GET`    | <code class="spaces">/space/multiple?spaceIds=spaceId1,spaceId2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                    		    | `canViewSpace`
+`GET`    | <code class="spaces">/space/multiple?spaceIds=id1,id2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                    		              | `canViewSpace`
 `GET`    | <code class="spaces">/space/inbox</code>  				| Get the current user's inbox space                                                  				              | `apiKey`
-`GET`    | <code class="spaces">/space/everyones-spaces</code>            | Get a list of recent public spaces sorted by date `createdAt`                                  | None
-`GET`    | <code class="spaces">/space/everyones-spaces/feed.json</code>  | `RSS feed` for recent public spaces                                                            | None
-`GET`    | <code class="spaces">/space/date-image</code>  			| Get the image url for today's date card image                                                        | None
+`GET`    | <code class="spaces">/space/everyones-spaces</code>            | Get a list of recent public spaces sorted by date `createdAt`                               | None
+`GET`    | <code class="spaces">/space/everyones-spaces/feed.json</code>  | `RSS feed` for recent public spaces                                                         | None
+`GET`    | <code class="spaces">/space/date-image</code>  			| Get the image url for today's date card image                                                         | None
 `POST`   | <code class="spaces">/space</code>                       | Create a new space(s) from object(s) in request body. The owner will be the apiKey user   		    | `apiKey`
 `POST`   | <code class="spaces">/space/search-explore-space</code>   | Get all `showInExplore` spaces based on space name. Body object must contain `query`. Searches are not case-insensitive           | None
 `PATCH`  | <code class="spaces">/space</code>                       | Update space(s) from object(s) in request body                                            		    | `canEditSpace`
