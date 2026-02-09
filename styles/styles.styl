@@ -304,9 +304,11 @@ table
     background-color var(--table-border)
   th,
   td
-    padding 12px
+    padding 8px
     text-align left
     border-bottom 1px solid var(--table-border)
+    &:nth-child(2)
+      white-space nowrap
   tr
     &:hover
       background var(--table-hover-background)
