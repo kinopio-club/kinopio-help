@@ -412,7 +412,7 @@ Name | Type | Description
 <a class="anchor" data-section="🍱" name="lists"></a>
 <h2 class="badge lists">Lists</h2>
 
-Lists are items used by users to contain or organize cards in a space. They can be named, colored, and positioned
+Lists are items used by users to vertically contain and organize cards in a space. They can be named, colored, and positioned. <a href="#cards" class="badge cards">Cards</a> that belong to lists have a `listId`, and `listPositionIndex`.
 
 <h3 class="badge lists">List Routes</h3>
 
