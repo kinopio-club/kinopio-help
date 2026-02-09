@@ -27,5 +27,6 @@
   },
   "dependencies": {
     "@quasibit/eleventy-plugin-schema": "^1.12.0"
-  }
+  },
+  "type": "module"
 }
