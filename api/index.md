@@ -429,18 +429,19 @@ Method | Path | Description | Auth
 
 Name | Type | Description
 --- | --- | ---
-<code class="lists">id</code>             | `String` | The unique ID of the list. Is not user updateable
-<code class="lists">color</code>          | `String` | The color of the list
-<code class="lists">createdAt</code>      | `String`  | The date when the list was created
-<code class="lists">name</code>           | `String` | The name of the list
-<code class="lists">height</code>         | `String` | The rendered height of the list
-<code class="lists">resizeWidth</code>    | `String` | The width of the list
-<code class="lists">spaceId</code>        | `String` | The space that the list belongs to
-<code class="lists">userId</code>         | `String` | The user that created the list
-<code class="lists">updatedAt</code>      | `String`  | The date when any changes were made to the list
-<code class="lists">x</code>              | `Integer` | The x-axis position of the list origin (top-left point)
-<code class="lists">y</code>              | `Integer` | The y-axis position of the list origin
-<code class="lists">z</code>              | `Integer` | The z-axis position
+<code class="lists">id</code>                                         | `String` | The unique ID of the list. Is not user updateable
+<code class="lists">color</code>                                      | `String` | The color of the list
+<code class="lists">createdAt</code>                                  | `String`  | The date when the list was created
+<code class="lists">name</code>                                       | `String` | The name of the list
+<code class="lists">height</code>                                     | `String` | The rendered height of the list
+<code class="lists">resizeWidth</code>                                | `String` | The width of the list
+<code class="lists">shouldUpdateList</code>                           | `Boolean` | Whether the list dimensions, and the child cards positions inside it, should be updated the next time the space is loaded. This is set automatically when adding cards to a list via the API.
+<code class="lists">spaceId</code>                                    | `String` | The space that the list belongs to
+<code class="lists">userId</code>                                     | `String` | The user that created the list
+<code class="lists">updatedAt</code>                                  | `String`  | The date when any changes were made to the list
+<code class="lists">x</code>                                          | `Integer` | The x-axis position of the list origin (top-left point)
+<code class="lists">y</code>                                          | `Integer` | The y-axis position of the list origin
+<code class="lists">z</code>                                          | `Integer` | The z-axis position
 
 
 
