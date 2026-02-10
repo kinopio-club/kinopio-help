@@ -14,7 +14,7 @@ A simple static [11ty](https://www.11ty.io/docs/usage/) website for [Kinopio](ht
 
 ## Run
 
-	npm use 22
+	nvm use 22
 	npm run dev
 	npm run styles
 	http://localhost:8081
