@@ -423,8 +423,6 @@ Method | Path | Description | Auth
 `GET`     | <code class="lists">/list/:listId</code>    | Get info on a list, including cards                                                             | `canViewSpace`
 `POST`    | <code class="lists">/list</code>            | Create a list from object in request body. Body object must contain `spaceId`                   | `canEditSpace`
 `PATCH`   | <code class="lists">/list</code>            | Update list from object in request body. Body object must contain `id` and `spaceId`            | `canEditSpace`
-`PATCH`   | <code class="lists">/add-card</code>            | Add card in request body to specified list. The card's position and width will also be updated. Body object must contain card `id`, and `listId`. If body object has `shouldPrepend: true`, the card will be added to the top of the list instead of the bottom     | `canEditSpace`
-`PATCH`   | <code class="lists">/remove-card</code>        | Remove card from the list specified in body. The card's position will be shifted to the right of the list. Body object must contain card `id`                                       | `canEditSpace`
 `DELETE`  | <code class="lists">/list/</code>           | Permenently remove list in request body. Body object must contain `id` and `spaceId`            | `canEditSpace`
 
 <h3 class="badge lists">List Attributes</h3>
