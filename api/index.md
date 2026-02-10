@@ -240,8 +240,6 @@ Method | Path | Description | Auth
 `PATCH`   | <code class="cards">/card</code>                        | Update card from object in request body. Body object must contain `id`. `spaceId` cannot be patched                                                                          | `canEditSpace`
 `PATCH`   | <code class="cards">/card/multiple</code>               | Updates multiple cards from an array of objects in request body. Works just like `PATCH /card`                                                                               | `canEditSpace`
 `PATCH`   | <code class="cards">/card/update-counter</code>         | Increment or decrement a card counter for voting. Body object must contain `cardId`, and either `shouldIncrement: true` or `shouldDecrement: true` 							| None
-`PATCH`   | <code class="cards">/card/add-to-list</code>                | Add card to specified list. The card's position and width will also be updated. Body object must contain card `id`, and `listId`. If body object has `shouldPrepend: true`, the card will be added to the top of the list     | `canEditSpace`
-`PATCH`  | <code class="cards">/card/remove-from-list</code>               | Remove card from the list specified in body. The card's position will be shifted to the right of the list. Body object must contain card `id`                                       | `canEditSpace`
 `PATCH`   | <code class="cards">/card/restore</code>                | Restore removed card specified in body                                                                                                                                              | `canEditSpace`
 `DELETE`  | <code class="cards">/card</code>                        | Remove card specified in body                                                                                                                                                       | `canEditSpace`
 `DELETE`  | <code class="cards">/card/permanent</code>              | Permanently remove card specified in body                                                                                                                                           | `canEditSpace`
@@ -423,6 +421,8 @@ Method | Path | Description | Auth
 `GET`     | <code class="lists">/list/:listId</code>    | Get info on a list, including cards                                                             | `canViewSpace`
 `POST`    | <code class="lists">/list</code>            | Create a list from object in request body. Body object must contain `spaceId`                   | `canEditSpace`
 `PATCH`   | <code class="lists">/list</code>            | Update list from object in request body. Body object must contain `id` and `spaceId`            | `canEditSpace`
+`PATCH`   | <code class="lists">/add-card</code>            | Add card in request body to specified list. The card's position and width will also be updated. Body object must contain card `id`, and `listId`. If body object has `shouldPrepend: true`, the card will be added to the top of the list instead of the bottom     | `canEditSpace`
+`PATCH`   | <code class="lists">/remove-card</code>        | Remove card from the list specified in body. The card's position will be shifted to the right of the list. Body object must contain card `id`                                       | `canEditSpace`
 `DELETE`  | <code class="lists">/list/</code>           | Permenently remove list in request body. Body object must contain `id` and `spaceId`            | `canEditSpace`
 
 <h3 class="badge lists">List Attributes</h3>
@@ -435,7 +435,7 @@ Name | Type | Description
 <code class="lists">name</code>                                       | `String` | The name of the list
 <code class="lists">height</code>                                     | `String` | The rendered height of the list
 <code class="lists">resizeWidth</code>                                | `String` | The width of the list
-<code class="lists">shouldUpdateList</code>                           | `Boolean` | Whether the list dimensions, and the child cards positions inside it, should be updated the next time the space is loaded. This is set automatically when adding cards to a list via the API.
+<code class="lists">shouldUpdateList</code>                           | `Boolean` | Whether the list dimensions, and the positions of the cards inside it, should be updated the next time the space is loaded. This is set automatically when adding cards to a list via the API.
 <code class="lists">spaceId</code>                                    | `String` | The space that the list belongs to
 <code class="lists">userId</code>                                     | `String` | The user that created the list
 <code class="lists">updatedAt</code>                                  | `String`  | The date when any changes were made to the list
