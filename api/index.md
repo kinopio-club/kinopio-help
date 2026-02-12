@@ -117,7 +117,9 @@ Name | Type | Description
 <code class="users">shouldShowMoreAlignOptions</code>       | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
 <code class="users">shouldShowCurrentSpaceTags</code>       | `Boolean` | Whether the user has chosen should only tags in the current space in the Tags dialog
 <code class="users">shouldShowItemActions</code>            | `Boolean` | Whether extra card formatting options (h1, h2, etc.) buttons are visible in the card details dialog
+<code class="users">shouldShowMultipleSelectedBoxActions</code>     | `Boolean` | Whether extra box formatting options (color, fill, etc.) buttons are visible in the multiple selected items dialog
 <code class="users">shouldShowMultipleSelectedLineActions</code>    | `Boolean` | Whether extra connection formatting options (type, reverse, etc.) buttons are visible in the multiple selected items dialog
+<code class="users">shouldShowMultipleSelectedListActions</code>    | `Boolean` | Whether extra list formatting options (color, etc.) buttons are visible in the multiple selected items dialog
 <code class="users">shouldNotifyUnlockedStickyCards</code>  | `Boolean` | Whether to eventually notify users that they've unlocked sticky cards (true for new users only, triggered after they create 20 cards)
 <code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
 <code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
