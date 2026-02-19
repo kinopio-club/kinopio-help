@@ -258,7 +258,7 @@ Name | Type | Description
 <code class="cards">codeBlockLanguage</code>        | `String`  | Code language syntax highlighting to use for markdown <code>```</code> code blocks
 <code class="cards">counterIsVisible</code>         | `Boolean`  | Whether the card counter for voting is visible
 <code class="cards">counterValue</code>           	| `Integer`  | The incremented number of the card counter. Default value is `0`
-<code class="cards">frameId</code>                  | `String`  | The id of type of frame applied to the card, if any
+<code class="cards">frameId</code>                  | `Integer`  | The id of type of frame applied to the card, if any
 <code class="cards">headerFontId</code>             | `Integer`  | An id representing the card's header font. Default value is `0` for Recoletta
 <code class="cards">headerFontSize</code> 			| `String`  | The header font size of the card. Can be either `s`(small-size, default), `m`(medium-size), or `l`(large-size)
 <code class="cards">height</code>                  | `String`  | The reference height of the card. Used to generate space preview images
@@ -436,6 +436,7 @@ Name | Type | Description
 <code class="lists">createdAt</code>                                  | `String`  | The date when the list was created
 <code class="lists">name</code>                                       | `String` | The name of the list
 <code class="lists">height</code>                                     | `String` | The rendered height of the list
+<code class="lists">frameId</code>                                    | `Integer`  | The id of type of frame applied to the list, if any
 <code class="lists">resizeWidth</code>                                | `String` | The width of the list
 <code class="lists">shouldUpdateList</code>                           | `Boolean` | Whether the list dimensions, and the positions of the cards inside it, should be updated the next time the space is loaded. This is set automatically when adding cards to a list via the API.
 <code class="lists">spaceId</code>                                    | `String` | The space that the list belongs to
