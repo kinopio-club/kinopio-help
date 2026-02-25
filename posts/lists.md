@@ -47,9 +47,8 @@ You can hide/show the contents of lists by expanding them with the arrow button.
 
 ## Task Lists
 
-If one or more cards in the list are todo cards then a progress meter will appear on the card. As you check off todos, the meter will update. 
-
+If one or more cards in the list are todo cards then a progress meter will appear on the card. As you check off todos, the meter and the todos remaining count will update.
 
 <video autoplay loop muted playsinline class="">
-  <source src="/assets/posts/lists/tasks.mp4">
+  <source src="/assets/posts/lists/tasks3.mp4">
 </video>
