@@ -159,6 +159,7 @@ Method | Path | Description | Auth
 `GET`    | <code class="spaces">/space/explore-spaces/feed.json</code>  | `RSS feed` for new spaces added to Explore                                                    | None
 `GET`    | <code class="spaces">/space/live-spaces</code>           | Get a list of currently being edited spaces which are open or closed                      		    | None
 `GET`    | <code class="spaces">/space/multiple?spaceIds=id1,id2</code> | Get info on multiple spaces, up to 60 spaceIds at a time                    		              | `canViewSpace`
+`GET`    | <code class="spaces">/space/public/multiple?spaceIds=id1,id2</code>        | Gets public info for multiple public spaces, up to 60 spaceIds at a time.          None
 `GET`    | <code class="spaces">/space/inbox</code>  				| Get the current user's inbox space                                                  				              | `apiKey`
 `GET`    | <code class="spaces">/space/everyones-spaces</code>            | Get a list of recent public spaces sorted by date `createdAt`                               | None
 `GET`    | <code class="spaces">/space/everyones-spaces/feed.json</code>  | `RSS feed` for recent public spaces                                                         | None
