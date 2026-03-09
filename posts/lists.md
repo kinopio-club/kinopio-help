@@ -16,13 +16,7 @@ Just like boxes, List names are optional, so it’s totally okay to have a List 
 
 ## Creating Lists
 
-There are a couple ways you can create a list. 
-
-Drag and release cards on top of each other to snap them together into a new list:
-
-<video autoplay loop muted playsinline class="">
-  <source src="/assets/posts/lists/snap.mp4">
-</video>
+There are two ways you can create a list:
 
 Use the Lists toolbar icon (L) then click and drag to draw an empty list:
 
