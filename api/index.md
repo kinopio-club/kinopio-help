@@ -207,6 +207,8 @@ Name | Type | Description
 <code class="spaces">removedByUserId</code>     | `String`  | The user who soft-removed the space. All space users can restore it via the API, but only the user who removed it will see it listed
 <code class="spaces">previewImage</code>           | `String`  | URL for the large-sized preview jpg image associated with the space
 <code class="spaces">previewThumbnailImage</code>  | `String`  | URL for the thumbnail-sized preview jpg image associated with the space
+<code class="spaces">previewImagePrivate</code>           | `String`  | Same as `previewImage`, except images in cards are not rendered. This is used for private space unfurling.
+<code class="spaces">previewThumbnailImagePrivate</code>  | `String`  | Same as `previewImageThumbnail`, except images in cards are not rendered. This is used for private space unfurling.
 <code class="spaces">url</code>                 | `String`  | The url of a space is determined by its `name` and `id`. For example, `kinopio.club/:space-name-:id`
 <code class="spaces">users</code>               | `Array`   | The user who created/owns the space (a space will always have only one user)
 <code class="spaces">showInExplore</code>       | `Boolean` | Whether the space is shown in explore
