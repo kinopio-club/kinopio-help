@@ -127,6 +127,7 @@ Name | Type | Description
 <code class="users">shouldShowMinimapJumpToList</code>      | `Boolean` | Whether the list of boxes to jump to is expanded in the Minimap dialog
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded options and info in both the `card-details` and `multiple-selected-actions` dialogs
+<code class="users">sidebarResizeWidth</code>              | `Integer` | Manually resized width of the sidebar dialog
 <code class="users">groups</code>                             | `JSON Array` | The groups a user belongs to, including public metadata on the other `users` in each group
 <code class="users">updatedAt</code>           				      | `String`  | The date when any changes to the user was made. Also is updated whenever the user starts a Kinopio session
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
