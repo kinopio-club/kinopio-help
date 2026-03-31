@@ -202,6 +202,7 @@ Name | Type | Description
 <code class="spaces">lists</code>                | `Object`   | A list of the <a href="#lists" class="badge lists">Lists</a> in the space
 <code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon representing when the space was created. Possible values are `new-moon`, `waxing-crescent`, `waxing-quarter`, `waxing-gibbous`, `full-moon`, `waning-gibbous`, `waning-quarter`, `waning-crescent`
 <code class="spaces">name</code>                | `String`  | The name of the space
+<code class="spaces">note</code>                | `String`  | The sidebar space note associated with the current user
 <code class="spaces">ownerUserId</code>         | `String`  | The userId of the user who created the space. Used to create url slugs
 <code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
 <code class="spaces">privacy</code>             | `String`  | Can be `open`, `closed`, `private`
