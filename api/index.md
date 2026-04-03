@@ -101,10 +101,11 @@ Name | Type | Description
 <code class="users">isAmbassador</code>                     | `Boolean` | Whether the user is in the [friends of kinopio](https://kinopio.club/friends-of-kinopio-ambassadors-YNmS6C3fofN3R9mYgO1Bu) ambassador program. Is not user updatable.
 <code class="users">isDonor</code>                          | `Boolean` | Whether the user has donated to Kinopio. Is not user updatable.
 <code class="users">isModerator</code>                      | `Boolean` | Whether the user is a moderator of the community forums or discord. Is not user updatable.
+<code class="users">isDebugMode</code>                      | `Boolean` | Whether the user has debug mode enabled, which displays item ids and other attributes in the kinopio-client.
 <code class="users">isUpgraded</code>                       | `Boolean` | Whether the user currently has a paid subscription. Is not user updatable.
 <code class="users">lastReadNewStuffId</code>               | `String`  | The id of the last read article from the 'new stuff' newsfeed
 <code class="users">lastUsedImagePickerService</code>       | `String`  | The user's last used image picker service, is either `stickers`, `gifs`, `bing`, `backgrounds`, `recent`, `ai`
-<code class="users">lastSidebarSection</code>               | `String`  | The shortname of the sidebar section last viewed. Can be `text`, `stats`, `inbox`, `removed`, `links`, `favorites`, `history`, `minimap`, or `tags`. Defaults to `text`.
+<code class="users">lastSidebarSection</code>               | `String`  | The shortname of the sidebar section last viewed. Can be `stats`, `inbox`, `removed`, `links`, `favorites`, `history`, `minimap`, `tags`, `todos`, `note`. Defaults to `inbox`.
 <code class="users">lastSpaceId</code>                      | `String`  | The spaceId of the last space edited. Used to return you to the same space the next time you visit kinopio.club
 <code class="users">name</code>                             | `String`  | The unique name of the user. Is a url-safe string (no spaces or special characters) because it's also used for url slugs
 <code class="users">prevHeaderFontId</code>                 | `Integer` | The id of the previous header font selected. Default value is `0` for Recoleta
@@ -123,10 +124,10 @@ Name | Type | Description
 <code class="users">shouldNotifyUnlockedStickyCards</code>  | `Boolean` | Whether to eventually notify users that they've unlocked sticky cards (true for new users only, triggered after they create 20 cards)
 <code class="users">shouldPauseConnectionDirections</code>  | `Boolean` | User pereference for whether connection directions should be static, instead of animating along their connection path
 <code class="users">shouldUseStickyCards</code>             | `Boolean` | User pereference for whether cards should stick to their mouse cursor
-<code class="users">shouldDisableRightClickToPan</code>     | `Boolean` | Debug user preference which disables right click pan so you can use the native browser context menu. Useful for web inspecting elements
 <code class="users">shouldShowMinimapJumpToList</code>      | `Boolean` | Whether the list of boxes to jump to is expanded in the Minimap dialog
 <code class="users">showInExploreUpdatedAt</code>           | `String` | When the user last opened the Explore dialog. Used to determine new/unread Explore spaces
 <code class="users">showItemActions</code>                  | `Boolean` | Whether the user has chosen to show expanded options and info in both the `card-details` and `multiple-selected-actions` dialogs
+<code class="users">sidebarResizeWidth</code>              | `Integer` | Manually resized width of the sidebar dialog
 <code class="users">groups</code>                             | `JSON Array` | The groups a user belongs to, including public metadata on the other `users` in each group
 <code class="users">updatedAt</code>           				      | `String`  | The date when any changes to the user was made. Also is updated whenever the user starts a Kinopio session
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
@@ -201,6 +202,7 @@ Name | Type | Description
 <code class="spaces">lists</code>                | `Object`   | A list of the <a href="#lists" class="badge lists">Lists</a> in the space
 <code class="spaces">moonPhase</code>           | `String`  | Name of the moonPhase icon representing when the space was created. Possible values are `new-moon`, `waxing-crescent`, `waxing-quarter`, `waxing-gibbous`, `full-moon`, `waning-gibbous`, `waning-quarter`, `waning-crescent`
 <code class="spaces">name</code>                | `String`  | The name of the space
+<code class="spaces">note</code>                | `String`  | The sidebar space note associated with the current user
 <code class="spaces">ownerUserId</code>         | `String`  | The userId of the user who created the space. Used to create url slugs
 <code class="spaces">originSpaceId</code>       | `String`  | If the space was created by duplicating another space, the origin space id is recorded
 <code class="spaces">privacy</code>             | `String`  | Can be `open`, `closed`, `private`
