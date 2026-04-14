@@ -1,5 +1,5 @@
 ---
-title: Favoriting Spaces and People
+title: Favoriting and Following Spaces and People
 tags: ['Community']
 color: 'burlywood'
 ---
