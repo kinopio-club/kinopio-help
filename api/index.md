@@ -133,7 +133,8 @@ Name | Type | Description
 <code class="users">website</code>                          | `String`  | The user's website, url validity is not checked
 <code class="users">prevSettingsSection</code>           	| `String`  | The last used settings section. Can be `general`, `controls`, or `cards`
 <code class="users">outsideSpaceBackgroundIsStatic</code>   | `Boolean` | User preference for whether the outside space area should use dynamically cycling colors, or whether it should be static grey
-<code class="users">studentDiscountIsAvailable</code>   | `Boolean` | Whether the user is eligible for a student discount. Is not user updateable
+<code class="users">studentDiscountIsAvailable</code>       | `Boolean` | Whether the user is eligible for a student discount. Is not user updateable
+<code class="users">shouldShowMinimap</code>                | `Boolean` | Whether the bottom-right minimap is persistently visible
 
 
 
