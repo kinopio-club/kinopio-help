@@ -1,10 +1,10 @@
 ---
-title: Minimap
+title: Minimap and Table of Contents
 tags: ['Getting Around']
 color: 'pink'
 ---
 
-Get a birds eye view perspective and jump around big spaces with the minimap. There are two ways to use the minimap, while panning and from the sidebar.
+Get a birds eye view perspective and jump around big spaces with the minimap. There are two ways to use the minimap, while panning and from the footer buttons.
 
 ## While Panning
 
@@ -17,13 +17,6 @@ The minimap will display while panning mode is active – when either the space-
 
 ## From the Footer
 
-Clicking the little minimap button in the footer will also display the minimap and a list of boxes sorted by their starting `y` positions. You can click and drag on the minimap to quickly move around, and click on a box to jump to its position.
+Clicking the little minimap button in the bottom-right of the footer (or pressing the `M` key) will toggle on the persistent minimap. You can click or drag on the minimap to quickly move around.
 
-<p>
-<img src="/assets/posts/minimap/minimap2.webp" class=""/>
-</p>
-
-If you'd like, you can pin the sidebar to keep the minimap open while you work.
-
-You can also use the `M` key to quick toggle the sidebar minimap at any time.
-
+You can also click the TOC button to quickly jump between lines, boxes, and lists sorted by distance from the top of the page.
