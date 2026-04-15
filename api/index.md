@@ -531,6 +531,7 @@ Other routes used by the kinopio-client app, which you can also use in your inte
 
 Method | Path | Description | Auth
 --- | --- | --- | ---
+`GET`   | <code class="other">/affiliate</code>  | returns affiliate info, promo url, commissions earned, and pending payout | `AffiliateUser`
 `GET`   | <code class="other">/services/community-backgrounds</code>  | Lists the space background images aded to the <a href="https://www.are.na/kinopio/community-backgrounds">are.na channel</a> | None
 `GET`   | <code class="other">/meta/date</code>  | Current time/timezone of kinopio-server | None
 `GET`   | <code class="other">/meta/changelog</code>  | Lists recent Kinopio new feature updates | None
