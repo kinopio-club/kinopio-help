@@ -114,7 +114,7 @@ Name | Type | Description
 <code class="users">shouldEmailNotifications</code>         | `Boolean` | Whether the user has chosen to allow notification emails (default to true)
 <code class="users">shouldEmailWeeklyReview</code>          | `Boolean` | Whether the user has chosen to allow weekly review emails (default to true)
 <code class="users">shouldIncreaseUIContrast</code>         | `Boolean` | User preference for whether the header and footer buttons should not be translucent or transparent in any way
-<code class="users">shouldUseLastConnectionType</code>      | `Boolean` | Whether the user has chosen to use last connection type for new connections (default to true)
+<code class="users">shouldUseLastConnectionColor</code>      | `Boolean` | Whether the user has chosen to use last connection color for new connections (default to true)
 <code class="users">shouldShowMoreAlignOptions</code>       | `Boolean` | Whether the user has chosen to view more card position alignment and distribution options (default to true)
 <code class="users">shouldShowCurrentSpaceTags</code>       | `Boolean` | Whether the user has chosen should only tags in the current space in the Tags dialog
 <code class="users">shouldShowItemActions</code>            | `Boolean` | Whether extra card formatting options (h1, h2, etc.) buttons are visible in the card details dialog
@@ -186,7 +186,6 @@ Name | Type | Description
 <code class="spaces">cards</code>               | `Array`   | A list of <a href="#cards" class="badge cards">Cards</a> in the space
 <code class="spaces">collaboratorKey</code>     | `String`  | Used like an apikey to allow editing, but just for that space. allows anonymous users who aren't signed in to edit a space. You can rotate this key, but you should still treat it as a secret
 <code class="spaces">collaborators</code>       | `Array`   | A list of users that can also edit the space
-<code class="spaces">connectionTypes</code>     | `Array`   | A list of <a href="#connection-types" class="badge connection-types">Connection Types</a>
 <code class="spaces">connections</code>         | `Array`   | A list of <a href="#connections" class="badge connections">Connections</a>
 <code class="spaces">createdAt</code>           | `String`  | The date when the space was created
 <code class="spaces">drawingImage</code>        | `String`  | The image url for drawings on the space. The image is regenerated on the server after each drawing stroke.
@@ -308,7 +307,7 @@ Name | Type | Description
 <a class="anchor" data-section="🍆" name="connections"></a>
 <h2 class="badge connections">Connections</h2>
 
-Connections are the lines that connect cards together. Connections have a `connection-type` which assigns them a color and allows the user to thematically group cards together by connected type.
+Connections are the lines that connect cards together.
 
 <h3 class="badge connections">Connection Routes</h3>
 
@@ -317,7 +316,7 @@ Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs 
 Method | Path | Description | Auth
 --- | --- | --- | ---
 `GET`     | <code class="connections">/connection/<br/>:connectionId</code> | Get info on a connection                                                                                    | None
-`POST`    | <code class="connections">/connection</code>                    | Create connection(s) from object in request body. Object must contain `spaceId`, `connectionTypeId`   | `canEditSpace`
+`POST`    | <code class="connections">/connection</code>                    | Create connection(s) from object in request body. Object must contain `spaceId` and `color`                 | `canEditSpace`
 `PATCH`   | <code class="connections">/connection</code>                    | Update connection(s) from object in request body. `spaceId` cannot be patched.                              | `canEditSpace`
 `DELETE`  | <code class="connections">/connection</code>                    | Permenently remove connection(s) speced in req body                                                         | `canEditSpace`
 
@@ -326,50 +325,21 @@ Method | Path | Description | Auth
 Name | Type | Description
 --- | --- | ---
 <code class="connections">id</code>                | `String` | The unique ID of the connection. Is not user updateable
-<code class="connections">connectionTypeId</code>  | `String` | The connection-type that the connection belongs to
+<code class="connections">color</code>             | `String` | The connection color
 <code class="connections">controlPoint</code>      | `String` | Custom control point for a connection path curve. `q00,00` makes a straight line
 <code class="connections">createdAt</code>         | `String`  | The date when the connection was created
 <code class="connections">directionIsVisible</code>   | `Boolean` | The connection has a directional arrow, in the direction of start card to end card
 <code class="connections">endItemId</code>         | `String` | The card or box that the connection line ends at
-<code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection type label
+<code class="connections">labelIsVisible</code>    | `Boolean` | The connection has a connection label
 <code class="connections">labelRelativePositionX</code>    | `Float` | Label's `horizontal` position relative to the DOM box of it's parent connection. Is between `0` (max left) and `1` (max right). Default is `0.5` (middle)
 <code class="connections">labelRelativePositionY</code>    | `Float` | Label's `vertical` position relative to the DOM box of it's parent connection. Is between `0` (max top) and `1` (max bottom). Default is `0.5` (middle)
+<code class="connections">name</code>              | `String` | The connection name, is displayed if `labelIsVisible`
 <code class="connections">path</code>              | `String` | <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">SVG path</a> that defines the connection line and its curve, e.g. 'm524,138 q90,40 49,123' is a quadratic bezier curve made up of origin XY, control point XY, and end XY points.
 <code class="connections">point1Cardinal</code>    | `String` | The cardinal direction used to connect to the `startItem`. Possible values are `north`, `south`, `west`, `east`, `northEast`, `southEast`, `southWest`, `northWest`.
 <code class="connections">point2Cardinal</code>    | `String` | Same as `point1Cardinal`, but for connecting to the `endItem`
 <code class="connections">spaceId</code>           | `String` | The space that the connection belongs to
 <code class="connections">startItemId</code>       | `String` | The card or box that the connection line starts from
 <code class="connections">updatedAt</code>         | `String`  | The date when any changes to the connection were made
-
-
-
-
-<a class="anchor" data-section="💐" name="connection-types"></a>
-<h2 class="badge connection-types">Connection Types</h2>
-
-Connection Types group <a href="#connections" class="badge connections">Connections</a> together to allow the attributes of multiple connection lines to be represented and edited together.
-
-<h3 class="badge connection-types">Connection Type Routes</h3>
-
-Routes with Auth `canEditSpace` requires that your Authorization apiKey belongs to a user with the permission to edit the space that the connection type belongs to.
-
-Method | Path | Description | Auth
---- | --- | --- | ---
-`GET`     | <code class="connection-types">/connection-type/:connectionTypeId</code>  | Get info on a connectionType                                                                         | None
-`POST`    | <code class="connection-types">/connection-type</code>                    | Create connectionType(s) from object (or array) in request body. Object must contain `spaceId`       | `canEditSpace`
-`PATCH`   | <code class="connection-types">/connection-type</code>                    | Update connectionType(s) from object in request body. `spaceId` cannot be patched.                   | `canEditSpace`
-`DELETE`  | <code class="connection-types">/connection-type</code>                    | Permenently remove connectionType                                                                    | `canEditSpace`
-
-<h3 class="badge connection-types">Connection Type Attributes</h3>
-
-Name | Type | Description
---- | --- | ---
-<code class="connection-types">id</code>      | `String` | The unique ID of the connection. Is not user updateable
-<code class="connection-types">color</code>   | `String` | User color changes your paint stroke and default avatar color
-<code class="connection-types">createdAt</code>    | `String`  | The date when the connection type was created
-<code class="connection-types">name</code>    | `String` | The name of the connection-type
-<code class="connection-types">spaceId</code> | `String` | The space that the connection-type belongs to
-<code class="connection-types">updatedAt</code>    | `String`  | The date when any changes were made to the connection type
 
 
 
