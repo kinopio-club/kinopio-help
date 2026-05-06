@@ -14,4 +14,4 @@ For more details and how to sign up see the [Affiliate Program space](https://ki
 
 Once you're an affiliate you can use the [dashboard](https://kinopio.club/affiliate) to verify your promo URL, and view your pending payouts and commissions.
 
-For integrating with other tracking systems, you can also fetch your commissions data through the public [API](/api).
+For integrating with other tracking systems, you can also fetch your commissions data through the public [API](https://kinopio.club/api).

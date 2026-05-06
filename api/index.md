@@ -7,6 +7,11 @@ pageSearchIsVisible: false
 currentPage: api
 title: Kinopio API
 ---
+
+> This page has been deprecated and replaced by [https://kinopio.club/api](https://kinopio.club/api) please use that instead.
+
+-----
+
 <img src="/assets/cat.png" class="cat no-shadow"/>
 
 The Kinopio API is used to find, save, and update the spaces of signed up users. You can use it to make cool things too.
