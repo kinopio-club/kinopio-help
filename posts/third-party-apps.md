@@ -8,4 +8,4 @@ Use app-specific API Keys to let other apps authenticate, read, and write to you
 
 You can create App API Keys in `User Settings → General → API` to use with cool third-party community tools and integrations
 
-<img src="/assets/posts/third-party-apps/api.webp" class="narrow" />
+<img src="/assets/posts/third-party-apps/api.webp" class="small" />
