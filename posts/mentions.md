@@ -4,6 +4,8 @@ tags: ['Advanced Use']
 color: '#b9a8ff'
 ---
 
+> To keep Kinopio safe, only signed in users can use @mentions
+
 ## @User
 
 Type `@` in a card to assign cards to space collaborators, group members, as well as non-member contributors in an [Open to Comments](https://kinopio.club/help/posts/sharing-spaces/) space. @mentioned users will be receive an email notification about the card.
